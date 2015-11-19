@@ -1,13 +1,70 @@
-.kaas {
-  color: green; }
-  .kaas p {
-    color: red; }
+html h1 {
+  font-size: 2em;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300; }
+html h2 {
+  font-size: 1.5em;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600; }
+html h3 {
+  font-size: 1.17em;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600; }
+html h4 {
+  font-size: 1em;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600; }
+html h5 {
+  font-size: 0.83em;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600; }
+html h6 {
+  font-size: 0.67em;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600; }
+html p {
+  font-size: 1em;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400; }
 
-.beren {
-  color: #b3d4fc; }
-  .beren p {
-    color: red; }
-  .beren h1 {
-    color: #666; }
+.container {
+  margin: 0 auto;
+  width: 960px; }
+
+.header .header-content {
+  background: url(../../resources/assets/img/background_header.gif) no-repeat;
+  background-size: cover;
+  border: 1px solid black;
+  overflow: hidden;
+  padding: 0px 0px 10px 0px;
+  position: relative; }
+  .header .header-content .title {
+    float: right;
+    width: 70%; }
+    .header .header-content .title h1 {
+      color: white; }
+    .header .header-content .title h3 {
+      color: white; }
+    .header .header-content .title a {
+      position: absolute;
+      top: 0px;
+      bottom: 0px;
+      left: 0px;
+      right: 0px; }
+.header .nav ul {
+  border-top: 1px solid white;
+  margin: 0px;
+  background: black;
+  padding: 0px; }
+  .header .nav ul li {
+    display: inline-block;
+    border-right: 1px solid white;
+    padding: 10px; }
+    .header .nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 30px; }
+  .header .nav ul li:first-child {
+    border-left: 1px solid white; }
 
 /*# sourceMappingURL=main.css.map */

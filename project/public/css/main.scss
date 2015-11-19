@@ -1,20 +1,105 @@
-.kaas {
-  color: green;
-
-  p {
-    color: red;
+$font-stack: 'Open Sans', sans-serif;
+html {
+  h1 {
+    font-size: 2em;
+    font-family: $font-stack;
+    font-weight: 300;
   }
 
-
+  h2 {
+    font-size: 1.5em;
+    font-family: $font-stack;
+  font-weight: 600;
 }
 
-.beren {
-  color: #b3d4fc;
-  p {
-    color: red;
+  h3 {
+    font-size: 1.17em;
+    font-family: $font-stack;
+    font-weight: 600;
   }
 
-  h1{
-    color: #666;
+  h4 {
+    font-size: 1em;
+    font-family: $font-stack;
+    font-weight: 600;
+  }
+
+  h5 {
+    font-size: 0.83em;
+    font-family: $font-stack;
+    font-weight: 600;
+  }
+
+  h6 {
+    font-size: 0.67em;
+    font-family: $font-stack;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 1em;
+    font-family: $font-stack;
+    font-weight: 400;
   }
 }
+
+.container {
+  margin: 0 auto;
+  width: 960px;
+}
+
+.header {
+  .header-content {
+    background: url(../../resources/assets/img/background_header.gif) no-repeat;
+    background-size: cover;
+    border: 1px solid black;
+    overflow: hidden;
+    padding: 0px 0px 10px 0px;
+    position: relative;
+    .title {
+      float: right;
+      width: 70%;
+
+      h1 {
+        color: white;
+      }
+
+      h3 {
+        color: white;
+      }
+
+      a {
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+      }
+    }
+  }
+
+  .nav {
+    ul {
+      border-top: 1px solid white;
+      margin: 0px;
+      background: black;
+      padding: 0px;
+      li {
+        display: inline-block;
+        border-right: 1px solid white;
+        padding: 10px;
+
+        a {
+          color: white;
+          text-decoration: none;
+          padding: 10px 30px;
+        }
+      }
+      li:first-child {
+        border-left: 1px solid white;
+      }
+    }
+  }
+}
+
+
