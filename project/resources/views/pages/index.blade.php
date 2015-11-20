@@ -10,8 +10,9 @@
             A ad aut blanditiis dicta eius eos error et minima nihil, nobis pariatur quam voluptatum.
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque eveniet iste nihil recusandae veritatis? A ad cum, dolorum eaque,
             excepturi nobis odio officiis quas reiciendis reprehenderit sequi, temporibus veniam voluptate?</p>
-        <div class="stripe-left"></div>
+        <div id="steam"></div>
     </div>
+    <div class="stripe-under-left"></div>
     <div class="game-post">
         <div class="title">
             <h1>Kazenspel</h1>
@@ -21,6 +22,6 @@
             A ad aut blanditiis dicta eius eos error et minima nihil, nobis pariatur quam voluptatum.
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque eveniet iste nihil recusandae veritatis? A ad cum, dolorum eaque,
             excepturi nobis odio officiis quas reiciendis reprehenderit sequi, temporibus veniam voluptate?</p>
-        <div class="stripe-right"></div>
     </div>
+    <div class="stripe-upper-left"></div>
 @endsection

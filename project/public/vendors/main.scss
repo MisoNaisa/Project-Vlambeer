@@ -1,5 +1,16 @@
 $font-stack: 'Open Sans', sans-serif;
 html {
+
+  body {
+    background-color: #FAC846;
+
+    .container {
+      margin: 0 auto;
+      background: #666;
+      padding: 0px;
+    }
+  }
+
   h1 {
     font-size: 2em;
     font-family: $font-stack;
@@ -43,9 +54,9 @@ html {
   }
 }
 
-.container {
-  margin: 0 auto;
-}
+
+
+
 
 .header {
   .header-content {
@@ -99,13 +110,46 @@ html {
 }
 
 .section {
+
+  .stripe-upper-left {
+    background: url(../../resources/assets/img/stripe-upper-left.png) no-repeat;
+    min-height: 150px;
+    background-size: cover;
+  }
+
+  .stripe-upper-right {
+    background: url(../../resources/assets/img/stripe-upper-right.png) no-repeat;
+    min-height: 150px;
+    background-size: cover;
+  }
+
+  .stripe-under-left {
+    background: url(../../resources/assets/img/stripe-under-left.png) no-repeat;
+    min-height: 150px;
+    background-size: cover;
+  }
+
+  .stripe-under-right {
+    background: url(../../resources/assets/img/stripe-under-right.png) no-repeat;
+    min-height: 150px;
+    background-size: cover;
+  }
+  .game-post:first-child {
+    background: #666;
+  }
+
   .game-post {
+    background: black;
+    color: white;
+    position: relative;
 
     .title {
       padding: 70px 0px;
       text-align: center;
       z-index: 1;
       position: relative;
+      background: black;
+      color: white;
     }
 
     .title:before {
@@ -119,12 +163,29 @@ html {
       background: url("http://lorempixel.com/100/100");
       opacity: 0.4;
     }
+
+    p {
+      margin: 0px;
+      padding: 10px 5px;
+    }
+
+    #steam {
+      background: url("../../resources/assets/img/steam.png");
+      min-height: 55px;
+      width: 65px;
+      background-size: 60px;
+      background-repeat: no-repeat;
+      position: absolute;
+      right: 10px;
+      bottom: -100px;
+    }
+
   }
 }
 
 
 .footer {
-  background: black;
+  background: darkgray;
 
   p {
     color: white;
