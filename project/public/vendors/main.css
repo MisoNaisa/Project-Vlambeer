@@ -64,4 +64,21 @@ html p {
       text-decoration: none;
       padding: 10px 30px; }
 
+.footer {
+  background: black; }
+  .footer p {
+    color: white; }
+  .footer .contact-rami {
+    width: 50%; }
+    .footer .contact-rami p:nth-child(2) {
+      font-style: italic; }
+  .footer .contact-jan {
+    width: 50%; }
+    .footer .contact-jan p:nth-child(2) {
+      font-style: italic; }
+  .footer .contact-info {
+    width: 50%; }
+    .footer .contact-info p {
+      font-size: 10px; }
+
 /*# sourceMappingURL=main.css.map */

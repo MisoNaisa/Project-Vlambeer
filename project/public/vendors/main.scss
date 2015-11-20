@@ -98,4 +98,39 @@ html {
   }
 }
 
+.footer {
+  background: black;
 
+  p {
+    color: white;
+
+  }
+
+  .contact-rami {
+    width: 50%;
+
+    p:nth-child(2) {
+      font-style: italic;
+    }
+  }
+
+  .contact-jan {
+    width: 50%;
+
+    p:nth-child(2) {
+      font-style: italic;
+    }
+  }
+
+  .contact-info {
+    width: 50%;
+
+    p {
+      font-size: 10px;
+    }
+  }
+
+
+
+
+}
