@@ -9,12 +9,32 @@
 </head>
 <body>
 
-
-
-<!-- INSERT HTML -->
-
-
 <div class="container">
+
+<!-- Begin header -->
+    <div class="header">
+        <div class="header-content">
+            <div class="title">
+                <a href="#"></a>
+                <h1>Vlambeer</h1>
+                <h3>Bringing back arcade since 1982</h3>
+            </div>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="#">Games</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+<!-- End of header-->
+
+    <div class="section">
+        @yield('section')
+    </div>
+
+<!-- Begin Footer -->
     <div class="footer">
 
         <div class="footer-left col-xs-8">
@@ -53,6 +73,8 @@
         </div>
 
     </div>
+    <!-- End Footer-->
 </div>
+
 </body>
 </html>
