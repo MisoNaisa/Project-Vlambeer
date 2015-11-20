@@ -11,11 +11,16 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
-
-Route::get('home', 'HomeController@index');
+Route::get('/', 'indexController@index');
 
 Route::get('index', 'IndexController@index');
+
+Route::get('contact', 'HomeController@index');
+
+Route::get('info_game', 'HomeController@index');
+
+Route::get('overview_games', 'HomeController@index');
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
