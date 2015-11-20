@@ -3,8 +3,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="/vendor/main.css">
+    <link rel="stylesheet" href="/vendor/bootstrap.css">
     <title>Vlambeer</title>
 </head>
 <body>
