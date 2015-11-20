@@ -28,8 +28,7 @@ html p {
   font-weight: 400; }
 
 .container {
-  margin: 0 auto;
-  width: 960px; }
+  margin: 0 auto; }
 
 .header .header-content {
   background: url(../../resources/assets/img/background_header.gif) no-repeat;
@@ -64,7 +63,5 @@ html p {
       color: white;
       text-decoration: none;
       padding: 10px 30px; }
-  .header .nav ul li:first-child {
-    border-left: 1px solid white; }
 
 /*# sourceMappingURL=main.css.map */
