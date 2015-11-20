@@ -69,13 +69,38 @@ html p {
   .footer p {
     color: white; }
   .footer .contact-rami {
-    width: 50%; }
+    width: 50%;
+    border: 1px solid grey; }
+    .footer .contact-rami a {
+      display: block;
+      text-align: center; }
+    .footer .contact-rami p {
+      text-align: center;
+      margin-bottom: 5px; }
     .footer .contact-rami p:nth-child(2) {
-      font-style: italic; }
+      font-style: italic;
+      margin-top: 5px; }
   .footer .contact-jan {
-    width: 50%; }
+    width: 50%;
+    border: 1px solid grey; }
+    .footer .contact-jan a {
+      display: block;
+      text-align: center; }
+    .footer .contact-jan p {
+      text-align: center;
+      margin-bottom: 5px; }
     .footer .contact-jan p:nth-child(2) {
-      font-style: italic; }
+      font-style: italic;
+      margin-top: 5px; }
+  .footer .contact-vlambeer {
+    width: 50%;
+    border: 1px solid grey; }
+    .footer .contact-vlambeer a {
+      display: block;
+      text-align: center; }
+    .footer .contact-vlambeer p {
+      text-align: center;
+      margin-bottom: 5px; }
   .footer .contact-info {
     width: 50%; }
     .footer .contact-info p {

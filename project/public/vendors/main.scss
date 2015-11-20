@@ -103,22 +103,68 @@ html {
 
   p {
     color: white;
-
   }
 
   .contact-rami {
     width: 50%;
+    border: 1px solid grey;
+
+    a {
+      display: block;
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+      margin-bottom: 5px;
+    }
 
     p:nth-child(2) {
       font-style: italic;
+      margin-top: 5px;
     }
+
   }
 
   .contact-jan {
     width: 50%;
+    border: 1px solid grey;
+
+    a {
+      display: block;
+      text-align: center;
+    }
+
+    p {
+    text-align: center ;
+      margin-bottom: 5px;
+    }
 
     p:nth-child(2) {
       font-style: italic;
+      margin-top: 5px;
+    }
+  }
+
+  .contact-vlambeer {
+    width: 50%;
+    border: 1px solid grey;
+
+    a {
+      display: block;
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+  }
+
+  .contact-friends {
+
+    a {
+
     }
   }
 
@@ -129,7 +175,6 @@ html {
       font-size: 10px;
     }
   }
-
 
 
 
