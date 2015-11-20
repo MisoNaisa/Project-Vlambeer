@@ -1,4 +1,6 @@
 /project/vendor
 /project/node_modules
 /project.env
-.idea/workspace.xml
+/.idea
+/project/.idea
+

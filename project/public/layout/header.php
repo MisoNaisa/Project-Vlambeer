@@ -34,6 +34,6 @@
             </ul>
         </div>
     </div>
-<!--</div>    DEZE DIV SLUIT DE CONTAINER HIERBOVEN AF-->
+</div>  <!--  DEZE DIV SLUIT DE CONTAINER HIERBOVEN AF-->
 </body>
 </html>
