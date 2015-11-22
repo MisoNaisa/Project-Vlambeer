@@ -1,8 +1,4 @@
 /project/vendor
-/project/node_modules
-/project.env
-/.idea
-/.idea/watcherTasks.xml
-/.idea/workspace.xml
-/project/.idea
+/project/.env
 /.idea/*
+/project/.idea
