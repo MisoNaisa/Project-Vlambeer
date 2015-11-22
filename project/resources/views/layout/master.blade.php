@@ -17,14 +17,19 @@
             <div class="title">
                 <a href="#"></a>
                 <h1>Vlambeer</h1>
-                <h3>Bringing back arcade since 1982</h3>
+                <h3>
+                    <?php
+                        $vlambeer_year = '1' . rand(7,9) . rand(2,8) . rand(1,9);
+                        echo "Bringing back arcade since ". $vlambeer_year
+                    ?>
+                </h3>
             </div>
         </div>
         <div class="nav">
             <ul>
                 <li><a href="/index">Home</a></li>
-                <li><a href="#">Games</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="/overview_games">Games</a></li>
+                <li><a href="/contact">Contact</a></li>
             </ul>
         </div>
     </div>

@@ -11,18 +11,8 @@
 |
 */
 
-Route::get('/', 'indexController@index');
-
-Route::get('index', 'IndexController@index');
-
-Route::get('contact', 'HomeController@index');
-
-Route::get('info_game', 'HomeController@index');
-
-Route::get('overview_games', 'HomeController@index');
-
-
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
+Route::get('/', 'PagesController@index');
+Route::get('/index', 'PagesController@index');
+Route::get('/contact', 'PagesController@contact');
+Route::get('/overview_games', 'PagesController@overview_games');
+Route::get('/info_game', 'PagesController@info_game');

@@ -34,7 +34,7 @@ html p {
   font-weight: 400; }
 
 .header .header-content {
-  background: url(../../resources/assets/img/background_header.gif) no-repeat;
+  background: url("../img/background_header.gif") no-repeat;
   background-size: cover;
   border: 1px solid black;
   overflow: hidden;
@@ -68,19 +68,19 @@ html p {
       padding: 10px 30px; }
 
 .section .stripe-upper-left {
-  background: url(../../resources/assets/img/stripe-upper-left.png) no-repeat;
+  background: url(../img/stripe-upper-left.png) no-repeat;
   min-height: 150px;
   background-size: cover; }
 .section .stripe-upper-right {
-  background: url(../../resources/assets/img/stripe-upper-right.png) no-repeat;
+  background: url(../img/stripe-upper-right.png) no-repeat;
   min-height: 150px;
   background-size: cover; }
 .section .stripe-under-left {
-  background: url(../../resources/assets/img/stripe-under-left.png) no-repeat;
+  background: url(../img/stripe-under-left.png) no-repeat;
   min-height: 150px;
   background-size: cover; }
 .section .stripe-under-right {
-  background: url(../../resources/assets/img/stripe-under-right.png) no-repeat;
+  background: url(../img/stripe-under-right.png) no-repeat;
   min-height: 150px;
   background-size: cover; }
 .section .game-post:first-child {
@@ -110,7 +110,7 @@ html p {
     margin: 0px;
     padding: 10px 5px; }
   .section .game-post #steam {
-    background: url("../../resources/assets/img/steam.png");
+    background: url("../img/steam.png");
     min-height: 55px;
     width: 65px;
     background-size: 60px;
