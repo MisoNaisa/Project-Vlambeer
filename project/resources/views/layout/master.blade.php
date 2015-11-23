@@ -3,8 +3,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="vendors/main.css">
     <link rel="stylesheet" href="vendors/bootstrap.css">
+    <link rel="stylesheet" href="vendors/main.css">
+
+
     <title>Vlambeer</title>
 </head>
 <body>
@@ -15,7 +17,7 @@
     <div class="header">
         <div class="header-content">
             <div class="title">
-                <a href="#"></a>
+                <a href="/index"></a>
                 <h1>Vlambeer</h1>
                 <h3>
                     <?php
@@ -34,6 +36,7 @@
         </div>
     </div>
 <!-- End of header-->
+
 
     <div class="section">
         @yield('section')
