@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="vendors/main.css">
     <link rel="stylesheet" href="css/jordey.css">
     <link rel="stylesheet" href="css/alex.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 
     <title>Vlambeer</title>
@@ -59,29 +60,33 @@
                     <p>Rami Ismail</p>
                     <p>Business and Development</p>
                     <a href="mailto:rami@vlambeer.com">rami@vlambeer.com</a>
-                    <a href="https://twitter.com/search?q=tha_rami&src=typd">@tha_rami</a>
+                    <a href="https://twitter.com/search?q=tha_rami&src=typd">@tha_rami <i class="fa fa-twitter"></i></a>
                 </div>
                 <div class="contact-jan">
                     <p>Jan Willem Nijman</p>
                     <p>Game Design</p>
                     <a href="mailto:jw@vlambeer.com">jw@vlambeer.com</a>
-                    <a href="https://twitter.com/jwaaaap">@jwaaaap</a>
+                    <a href="https://twitter.com/jwaaaap">@jwaaaap <i class="fa fa-twitter"></i></a>
                 </div>
                 <div class="contact-vlambeer">
                     <p>Vlambeer</p>
-                    <a href="https://twitter.com/search?q=vlambeer&src=typd">@vlambeer</a>
+                    <a href="https://twitter.com/search?q=vlambeer&src=typd">@vlambeer <i class="fa fa-twitter"></i></a>
                 </div>
 
-                <div class="contact-friends">
-                    <a href="https://www.facebook.com/Vlambeer/?fref=ts">Like us on Facebook!</a>
+                <div class="contact-fb">
+                    <a href="https://www.facebook.com/Vlambeer/?fref=ts">Like us on Facebook! <i class="fa fa-facebook-square"></i></a>
+
                 </div>
 
+                </div>
+            </div>
+
+                <div class="footer-bottom">
                 <div class="contact-info">
                     <p><a href="mailto:info@vlambeer.com">info@vlambeer.com</a> | Neude 5, 3512 AD, Utrecht, the Netherlands | +31621206363</p>
                 </div>
 
             </div>
-        </div>
     </div>
     <!-- End Footer-->
 </div>

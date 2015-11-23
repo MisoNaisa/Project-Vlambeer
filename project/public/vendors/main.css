@@ -81,12 +81,20 @@ html p {
 .footer {
   background: darkgray; }
   .footer .footer-left {
-    padding-left: 50px; }
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 33px; }
+    .footer .footer-left p {
+      font-size: 18px; }
   .footer p {
     color: white; }
   .footer .contact-rami {
     width: 50%;
-    border: 1px solid grey; }
+    background-color: black;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding-bottom: 10px; }
     .footer .contact-rami a {
       display: block;
       text-align: center; }
@@ -98,7 +106,11 @@ html p {
       margin-top: 5px; }
   .footer .contact-jan {
     width: 50%;
-    border: 1px solid grey; }
+    background-color: black;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding-bottom: 10px; }
     .footer .contact-jan a {
       display: block;
       text-align: center; }
@@ -110,16 +122,28 @@ html p {
       margin-top: 5px; }
   .footer .contact-vlambeer {
     width: 50%;
-    border: 1px solid grey; }
+    background-color: black;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding-bottom: 10px; }
     .footer .contact-vlambeer a {
       display: block;
       text-align: center; }
     .footer .contact-vlambeer p {
       text-align: center;
       margin-bottom: 5px; }
-  .footer .contact-info {
-    width: 50%; }
-    .footer .contact-info p {
-      font-size: 10px; }
+  .footer .contact-fb {
+    margin-top: 12px; }
+    .footer .contact-fb a {
+      color: #2c4075; }
+  .footer .footer-bottom {
+    background-color: black;
+    float: left;
+    width: 100%; }
+    .footer .footer-bottom .contact-info {
+      width: 19%;
+      margin-left: 18px; }
+      .footer .footer-bottom .contact-info p {
+        font-size: 10px; }
 
 /*# sourceMappingURL=main.css.map */
