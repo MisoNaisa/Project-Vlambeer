@@ -1,8 +1,15 @@
-$().ready(function() {
-    $('.game-post').hover(function() {
-        $('.game-post').addClass('transition');
-    },
-    function() {
-        $('.game-post').removeClass('transistion');
-    })
+$(document).ready(function(){
+    $("div").find(".game-post").hover(function() {
+        $(this).addClass('transition');
+
+    }, function() {
+        $(this).removeClass('transition');
+    });
 });
+//
+//.find( "span" )
+//    .hover(function() {
+//        $( this ).addClass( "hilite" );
+//    }, function() {
+//        $( this ).removeClass( "hilite" );
+//    })

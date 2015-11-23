@@ -1,17 +1,11 @@
 .transition {
-    -webkit-transform: scale(1.6);
-    -moz-transform: scale(1.6);
-    -o-transform: scale(1.6);
-    transform: scale(1.6);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
 }
-#content {
+.game-post {
     -webkit-transition: all .4s ease-in-out;
     -moz-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
-}
-
-#content {
-    width:80px;
-    margin:25px;
-    background-color: red;
 }
