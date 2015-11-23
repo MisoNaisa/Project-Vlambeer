@@ -80,6 +80,8 @@ html p {
 
 .footer {
   background: darkgray; }
+  .footer h3 {
+    margin-top: 35px; }
   .footer p {
     color: white; }
   .footer .footer-left {
@@ -91,25 +93,35 @@ html p {
       margin-top: 0; }
     .footer .footer-left p {
       font-size: 17px;
-      float: left;
       margin: 0px;
       margin-top: 5px; }
-    .footer .footer-left .tweets .tweet {
-      background-color: white;
-      float: left;
-      margin-bottom: 15px;
-      width: 100%; }
-    .footer .footer-left .tweets img {
-      float: left; }
-    .footer .footer-left .tweets h3 {
-      float: left;
-      margin-top: 7px;
-      margin-bottom: 0px;
-      width: 100%; }
-    .footer .footer-left .tweets p {
-      color: black;
-      font-size: 12px;
-      float: left; }
+    .footer .footer-left .tweets {
+      background-color: #BFE5E5;
+      border-radius: 5px;
+      height: 326px;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      padding: 17px; }
+      .footer .footer-left .tweets h3 {
+        margin: 4px;
+        margin-bottom: 13px; }
+      .footer .footer-left .tweets i {
+        color: #55acee; }
+      .footer .footer-left .tweets .tweet {
+        background-color: white;
+        margin-bottom: 15px;
+        width: 100%; }
+        .footer .footer-left .tweets .tweet img {
+          float: left; }
+        .footer .footer-left .tweets .tweet h3 {
+          float: left;
+          margin-top: 7px;
+          margin-bottom: 0px;
+          width: 100%; }
+        .footer .footer-left .tweets .tweet p {
+          color: black;
+          font-size: 12px;
+          float: left; }
   .footer .contact-rami {
     width: 50%;
     background-color: black;
@@ -155,7 +167,7 @@ html p {
       text-align: center;
       margin-bottom: 5px; }
   .footer .contact-fb {
-    margin-top: 12px; }
+    margin-top: 30px; }
     .footer .contact-fb a {
       color: #2c4075; }
   .footer .footer-bottom {
@@ -164,7 +176,7 @@ html p {
     width: 100%; }
     .footer .footer-bottom .contact-info {
       width: 19%;
-      margin-left: 18px; }
+      margin-left: 35px; }
       .footer .footer-bottom .contact-info p {
         font-size: 10px; }
 

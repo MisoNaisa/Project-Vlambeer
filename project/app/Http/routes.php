@@ -38,7 +38,7 @@ Route::get('/twittertest', function(){
         ->buildOauth($url, $requestMethod)
         ->performRequest();
     $data = json_decode($data);
-//var_dump($data);
-//    die();
+var_dump($data);
+    die();
 //    echo $data->location;
 });

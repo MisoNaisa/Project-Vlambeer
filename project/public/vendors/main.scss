@@ -129,6 +129,10 @@ html {
 .footer {
   background: darkgray;
 
+  h3 {
+    margin-top: 35px;
+  }
+
   p {
     color: white;
   }
@@ -145,34 +149,47 @@ html {
 
     p {
       font-size: 17px;
-      float: left;
       margin: 0px;
       margin-top: 5px;
     }
     .tweets {
+      background-color: #BFE5E5;
+      border-radius: 5px;
+      height: 326px;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      padding: 17px;
+
+      h3 {
+        margin: 4px;
+        margin-bottom: 13px;
+      }
+      
+      i {
+        color: #55acee;
+      }
 
       .tweet {
         background-color: white;
-        float: left;
         margin-bottom: 15px;
         width: 100%;
-      }
 
-      img {
-        float: left;
-      }
+        img {
+          float: left;
+        }
 
-      h3 {
-        float: left;
-        margin-top: 7px;
-        margin-bottom: 0px;
-        width: 100%;
-      }
+        h3 {
+          float: left;
+          margin-top: 7px;
+          margin-bottom: 0px;
+          width: 100%;
+        }
 
-      p {
-        color: black;
-        font-size: 12px;
-        float: left;
+        p {
+          color: black;
+          font-size: 12px;
+          float: left;
+        }
       }
     }
   }
@@ -247,7 +264,8 @@ html {
   }
 
   .contact-fb {
-    margin-top: 12px;
+    margin-top: 30px;
+    
     a {
       color: #2c4075;
     }
@@ -260,7 +278,7 @@ html {
 
     .contact-info {
       width: 19%;
-      margin-left: 18px;
+      margin-left: 35px;
 
       p {
         font-size: 10px;

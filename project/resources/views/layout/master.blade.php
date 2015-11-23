@@ -54,6 +54,7 @@
                 bringing back arcade games since 1864.</p>
 
                 <div class="tweets">
+                    <h3>Tweets <i class="fa fa-twitter"></i></h3>
                     <div class="tweet">
                         <div class="row">
                         <img src="{{$tweetV->profile_image_url}}" class="col-md-2">
