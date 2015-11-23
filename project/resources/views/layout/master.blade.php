@@ -56,26 +56,26 @@
                 <div class="contact-rami">
                     <p>Rami Ismail</p>
                     <p>Business and Development</p>
-                    <a href="">rami@vlambeer.com</a>
-                    <a href="">@tha_rami</a>
+                    <a href="mailto:rami@vlambeer.com">rami@vlambeer.com</a>
+                    <a href="https://twitter.com/search?q=tha_rami&src=typd">@tha_rami</a>
                 </div>
                 <div class="contact-jan">
                     <p>Jan Willem Nijman</p>
                     <p>Game Design</p>
-                    <a href="">jw@vlambeer.com</a>
-                    <a href="">@jwaaaap</a>
+                    <a href="mailto:jw@vlambeer.com">jw@vlambeer.com</a>
+                    <a href="https://twitter.com/jwaaaap">@jwaaaap</a>
                 </div>
                 <div class="contact-vlambeer">
                     <p>Vlambeer</p>
-                    <a href="">@vlambeer</a>
+                    <a href="https://twitter.com/search?q=vlambeer&src=typd">@vlambeer</a>
                 </div>
 
                 <div class="contact-friends">
-                    <a href="">Friends</a>
+                    <a href="https://www.facebook.com/Vlambeer/?fref=ts">Like us on Facebook!</a>
                 </div>
 
                 <div class="contact-info">
-                    <p><a href="">info@vlambeer.com</a> | Neude 5, 3512 AD, Utrecht, the Netherlands | +31621206363</p>
+                    <p><a href="mailto:info@vlambeer.com">info@vlambeer.com</a> | Neude 5, 3512 AD, Utrecht, the Netherlands | +31621206363</p>
                 </div>
 
             </div>
