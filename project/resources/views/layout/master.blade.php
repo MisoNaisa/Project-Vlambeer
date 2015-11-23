@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="vendors/bootstrap.css">
     <link rel="stylesheet" href="vendors/main.css">
-    <link rel="stylesheet" href="vendors/jordey.css">
+    <link rel="stylesheet" href="css/jordey.css">
+    <link rel="stylesheet" href="css/alex.css">
 
 
     <title>Vlambeer</title>
@@ -86,4 +87,5 @@
 </div>
 
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </html>

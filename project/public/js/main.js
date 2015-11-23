@@ -1,8 +1,8 @@
 $().ready(function() {
-    $('#content').hover(function() {
-        $('#content').addClass('transition');
+    $('.game-post').hover(function() {
+        $('.game-post').addClass('transition');
     },
     function() {
-        $('#content').removeClass('transistion');
+        $('.game-post').removeClass('transistion');
     })
 });
