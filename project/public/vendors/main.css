@@ -34,7 +34,7 @@ html p {
   font-weight: 400; }
 
 .header .header-content {
-  background: url("../img/background_header.gif") no-repeat;
+  background: url(../../resources/assets/img/background_header.gif) no-repeat;
   background-size: cover;
   border: 1px solid black;
   overflow: hidden;
@@ -67,50 +67,66 @@ html p {
       text-decoration: none;
       padding: 10px 30px; }
 
-.section .stripe-upper-left {
-  background: url(../img/stripe-upper-left.png) no-repeat;
-  min-height: 150px;
-  background-size: cover; }
-.section .stripe-upper-right {
-  background: url(../img/stripe-upper-right.png) no-repeat;
-  min-height: 150px;
-  background-size: cover; }
-.section .stripe-under-left {
-  background: url(../img/stripe-under-left.png) no-repeat;
-  min-height: 150px;
-  background-size: cover; }
-.section .stripe-under-right {
-  background: url(../img/stripe-under-right.png) no-repeat;
-  min-height: 150px;
-  background-size: cover; }
-.section .game-post:first-child {
+.section * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative; }
+.section .game-post:nth-child(1) p {
   background: #666; }
-.section .game-post {
-  background: black;
+.section .game-post:nth-child(2) p {
+  background: lightblue; }
+.section .game-post:nth-child(3) p {
+  background: #666; }
+.section .game-post:nth-child(4) p {
+  background: lightblue; }
+.section .shaped-under {
+  overflow: hidden;
+  height: 200px;
+  width: 100%;
+  background: lightblue;
+  background-size: cover;
+  /* -webkit-shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%); */
+  /* shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%); */
+  -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 140% 0%);
+  -webkit-shape-margin: 20px; }
+
+.game-post {
   color: white;
-  position: relative;}
-  .section .game-post .title {
-    padding: 70px 0px;
-    text-align: center;
-    z-index: 1;
-    position: relative;
-    background: black;
-    color: white; }
-  .section .game-post .title:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: url("http://lorempixel.com/100/100");
-    opacity: 0.4; }
-  .section .game-post p {
+  position: relative;
+  margin: 30px 0px 0px 0px; }
+  .game-post p {
     margin: 0px;
-    padding: 10px 5px; }
-  .section .game-post #steam {
-    background: url("../img/steam.png");
+    padding: 10px 10px; }
+  .game-post .title {
+    padding: 10px 0px;
+    text-align: center;
+    position: relative;
+    color: white; }
+  .game-post .shaped-above {
+    overflow: hidden;
+    height: 250px;
+    width: 100%;
+    background: lightblue;
+    background-size: cover;
+    /* -webkit-shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%); */
+    /* shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%); */
+    -webkit-clip-path: polygon(0% 0%, 0% 0%, 140% 100%, 0% 100%);
+    -webkit-shape-margin: 20px; }
+    .game-post .shaped-above .title {
+      padding: 140px 0px !important; }
+  .game-post .shaped-under {
+    overflow: hidden;
+    height: 200px;
+    width: 100%;
+    background: lightblue;
+    background-size: cover;
+    /* -webkit-shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%); */
+    /* shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%); */
+    -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 140% 0%);
+    -webkit-shape-margin: 20px; }
+  .game-post #steam {
+    background: url("../../resources/assets/img/steam.png");
     min-height: 55px;
     width: 65px;
     background-size: 60px;
