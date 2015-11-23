@@ -60,7 +60,7 @@ html {
 
 .header {
   .header-content {
-    background: url(../../resources/assets/img/background_header.gif) no-repeat;
+    background: url(../img/background_header.gif) no-repeat;
     background-size: cover;
     border: 1px solid black;
     overflow: hidden;
@@ -177,7 +177,9 @@ html {
     overflow: hidden;
     height: 250px;
     width: 100%;
-    background: lightblue;
+    //background: lightblue;
+    background-image: url(http://www.vlambeer.com/wp-content/uploads/2012/02/LOGO-510x286.png);
+    background-repeat: no-repeat;;
     background-size: cover;
     /* -webkit-shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%); */
     /* shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%); */
@@ -202,7 +204,7 @@ html {
   }
 
   #steam {
-    background: url("../../resources/assets/img/steam.png");
+    background: url("../img/steam.png");
     min-height: 55px;
     width: 65px;
     background-size: 60px;
