@@ -94,6 +94,18 @@ html p {
       float: left;
       margin: 0px;
       margin-top: 5px; }
+    .footer .footer-left .tweets .tweet {
+      background-color: white;
+      float: left; }
+    .footer .footer-left .tweets img {
+      float: left;
+      margin-right: 5px; }
+    .footer .footer-left .tweets h3 {
+      float: left; }
+    .footer .footer-left .tweets p {
+      color: black;
+      font-size: 12px;
+      float: left; }
   .footer .contact-rami {
     width: 50%;
     background-color: black;

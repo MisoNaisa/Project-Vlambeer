@@ -149,6 +149,27 @@ html {
       margin: 0px;
       margin-top: 5px;
     }
+    .tweets {
+
+      .tweet {
+        background-color: white;
+        float: left;
+      }
+      img {
+        float: left;
+        margin-right: 5px;
+      }
+
+      h3 {
+        float: left;
+      }
+
+      p {
+        color: black;
+        font-size: 12px;
+        float: left;
+      }
+    }
   }
 
 

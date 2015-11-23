@@ -52,6 +52,31 @@
                 <p>VLAMBEER IS A DUTCH INDEPENDENT GAME STUDIO</p>
                 <p>made up of Rami Ismail and Jan Willem Nijman,
                 bringing back arcade games since 1864.</p>
+
+                <div class="tweets">
+                    <div class="tweet">
+                        <div class="row">
+                        <img src="{{$tweetV->profile_image_url}}" class="col-md-2 img-responsive" width="100%">
+                        <div class="tweet-content col-md-10">
+                            <h3><a href="https://twitter.com/{{$tweetV->screen_name}}">
+                                    {{$tweetV->screen_name}}</a></h3>
+                            <p>{{$tweetV->status->text}}</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="tweet">
+                        <img src="{{$tweetR->profile_image_url}}">
+                        <h3><a href="https://twitter.com/search?src=typd&q={{$tweetR->screen_name}}">
+                                {{$tweetR->screen_name}}</a></h3>
+                        <p>{{$tweetR->status->text}}</p>
+                    </div>
+                    <div class="tweet">
+                        <img src="{{$tweetJ->profile_image_url}}">
+                        <h3><a href="https://twitter.com/{{$tweetJ->screen_name}}">
+                            {{$tweetJ->screen_name}}</a></h3>
+                        <p>{{$tweetJ->status->text}}</p>
+                    </div>
+                </div>
             </div>
 
             <div class="footer-right col-xs-5">
