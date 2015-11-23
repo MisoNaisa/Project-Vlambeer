@@ -1,0 +1,22 @@
+.section {
+  .game-post {
+    color: white;
+
+    img {
+      height: 200px;
+      width: 100%;
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    #steam {
+      background: url("../img/steam.png");
+      min-height: 55px;
+      width: 65px;
+      background-size: 60px;
+      background-repeat: no-repeat;
+    }
+  }
+}

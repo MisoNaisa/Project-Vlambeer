@@ -1,0 +1,15 @@
+.section .game-post {
+  color: white; }
+  .section .game-post img {
+    height: 200px;
+    width: 100%; }
+  .section .game-post .title {
+    text-align: center; }
+  .section .game-post #steam {
+    background: url("../img/steam.png");
+    min-height: 55px;
+    width: 65px;
+    background-size: 60px;
+    background-repeat: no-repeat; }
+
+/*# sourceMappingURL=jordey.css.map */
