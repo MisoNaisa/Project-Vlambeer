@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="vendors/bootstrap.css">
     <link rel="stylesheet" href="vendors/main.css">
+    <link rel="stylesheet" href="vendors/jordey.css">
 
 
     <title>Vlambeer</title>
