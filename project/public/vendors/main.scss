@@ -2,8 +2,7 @@ $font-stack: 'Open Sans', sans-serif;
 html {
 
   body {
-    background-color: #FAC846;
-
+    background-color: #f3e600;
     .container {
       margin: 0 auto;
       background: #666;
@@ -129,6 +128,10 @@ html {
 
 .footer {
   background: darkgray;
+
+  .footer-left {
+    padding-left: 50px;
+  }
 
   p {
     color: white;
