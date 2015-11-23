@@ -129,19 +129,29 @@ html {
 .footer {
   background: darkgray;
 
+  p {
+    color: white;
+  }
+
   .footer-left {
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 33px;
 
-    p {
+    p:first-child {
       font-size: 18px;
+      margin-top: 0;
+    }
+
+    p {
+      font-size: 17px;
+      float: left;
+      margin: 0px;
+      margin-top: 5px;
     }
   }
 
-  p {
-    color: white;
-  }
+
 
   .contact-rami {
     width: 50%;
