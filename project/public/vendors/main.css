@@ -80,14 +80,20 @@ html p {
 
 .footer {
   background: darkgray; }
+  .footer p {
+    color: white; }
   .footer .footer-left {
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 33px; }
+    .footer .footer-left p:first-child {
+      font-size: 18px;
+      margin-top: 0; }
     .footer .footer-left p {
-      font-size: 18px; }
-  .footer p {
-    color: white; }
+      font-size: 17px;
+      float: left;
+      margin: 0px;
+      margin-top: 5px; }
   .footer .contact-rami {
     width: 50%;
     background-color: black;

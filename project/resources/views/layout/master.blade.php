@@ -49,8 +49,8 @@
     <div class="footer">
         <div class="row">
             <div class="footer-left col-xs-7">
-                <p>VLAMBEER IS A DUTCH INDEPENDENT GAME STUDIO made up of
-                Rami Ismail and Jan Willem Nijman,
+                <p>VLAMBEER IS A DUTCH INDEPENDENT GAME STUDIO</p>
+                <p>made up of Rami Ismail and Jan Willem Nijman,
                 bringing back arcade games since 1864.</p>
             </div>
 
