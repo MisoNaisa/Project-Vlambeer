@@ -30,8 +30,8 @@
         <div class="nav">
             <ul>
                 <li><a href="/index">Home</a></li>
-                <li><a href="/overview_games">Games</a></li>
-                <li><a href="/contact">Contact</a></li>
+                <li><a href="/overview_games">Webshop Games</a></li>
+                <li><a href="/contact">Webshop Merchandise</a></li>
             </ul>
         </div>
     </div>
