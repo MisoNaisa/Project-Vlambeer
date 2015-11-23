@@ -11,7 +11,8 @@ class PagesController extends Controller
 {
 
     public function index() {
-        return view('pages.index');
+        $games = \App\Game::all();
+        return view('pages.index', compact('games'));
     }
 
     public function contact() {

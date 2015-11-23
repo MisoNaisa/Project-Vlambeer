@@ -1,5 +1,5 @@
 html body {
-  background-color: #FAC846; }
+  background-color: #f3e600; }
   html body .container {
     margin: 0 auto;
     background: #666;
@@ -80,6 +80,8 @@ html p {
 
 .footer {
   background: darkgray; }
+  .footer .footer-left {
+    padding-left: 50px; }
   .footer p {
     color: white; }
   .footer .contact-rami {
