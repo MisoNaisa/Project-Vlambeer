@@ -1,8 +1,19 @@
+.section .game-post:first-child {
+  margin-top: 50px; }
 .section .game-post {
-  color: white; }
+  color: black;
+  background: white;
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  border-radius: 25px; }
   .section .game-post img {
     height: 200px;
-    width: 100%; }
+    width: 100%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px; }
+  .section .game-post p {
+    padding: 10px; }
   .section .game-post .title {
     text-align: center; }
   .section .game-post #steam {
@@ -10,6 +21,7 @@
     min-height: 55px;
     width: 65px;
     background-size: 60px;
-    background-repeat: no-repeat; }
+    background-repeat: no-repeat;
+    float: right; }
 
 /*# sourceMappingURL=jordey.css.map */
