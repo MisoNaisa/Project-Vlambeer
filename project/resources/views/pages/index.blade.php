@@ -2,30 +2,18 @@
 
 @section('section')
     <div class="game-post">
+        
         <div class="title">
             <h1>Kazenspel</h1>
             <h3>Word een met je innerlijke beer</h3>
         </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam maxime nobis placeat, quam quasi quos!
-            A ad aut blanditiis dicta eius eos error et minima nihil, nobis pariatur quam voluptatum.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque eveniet iste nihil recusandae veritatis? A ad cum, dolorum eaque,
-            excepturi nobis odio officiis quas reiciendis reprehenderit sequi, temporibus veniam voluptate?</p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque in magni perferendis quaerat temporibus unde vero?
+            Blanditiis dolorum ducimus, expedita fugit incidunt natus nisi obcaecati porro quia reiciendis. Dicta, voluptates.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam deleniti quasi velit! Adipisci atque dolorem eaque itaque nam omnis tempora
+            vel. Aliquam aspernatur autem consectetur eligendi quasi quos, velit!
+        </p>
         <div id="steam"></div>
-    </div>
-
-    <div class="game-post">
-        <div class="shaped-above">
-            <div class="title">
-                <h1>Kazenspel</h1>
-                <h3>Word een met je innerlijke beer</h3>
-            </div>
-        </div>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam maxime nobis placeat, quam quasi quos!
-            A ad aut blanditiis dicta eius eos error et minima nihil, nobis pariatur quam voluptatum.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque eveniet iste nihil recusandae veritatis? A ad cum, dolorum eaque,
-            excepturi nobis odio officiis quas reiciendis reprehenderit sequi, temporibus veniam voluptate?</p>
-        <div class="shaped-under"></div>
     </div>
 
     <div class="game-post">
@@ -33,26 +21,13 @@
             <h1>Kazenspel</h1>
             <h3>Word een met je innerlijke beer</h3>
         </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam maxime nobis placeat, quam quasi quos!
-            A ad aut blanditiis dicta eius eos error et minima nihil, nobis pariatur quam voluptatum.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque eveniet iste nihil recusandae veritatis? A ad cum, dolorum eaque,
-            excepturi nobis odio officiis quas reiciendis reprehenderit sequi, temporibus veniam voluptate?</p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque in magni perferendis quaerat temporibus unde vero?
+            Blanditiis dolorum ducimus, expedita fugit incidunt natus nisi obcaecati porro quia reiciendis. Dicta, voluptates.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam deleniti quasi velit! Adipisci atque dolorem eaque itaque nam omnis tempora
+            vel. Aliquam aspernatur autem consectetur eligendi quasi quos, velit!
+        </p>
         <div id="steam"></div>
-    </div>
-
-    <div class="game-post">
-        <div class="shaped-above">
-            <div class="title">
-                <h1>Kazenspel</h1>
-                <h3>Word een met je innerlijke beer</h3>
-            </div>
-        </div>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam maxime nobis placeat, quam quasi quos!
-            A ad aut blanditiis dicta eius eos error et minima nihil, nobis pariatur quam voluptatum.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque eveniet iste nihil recusandae veritatis? A ad cum, dolorum eaque,
-            excepturi nobis odio officiis quas reiciendis reprehenderit sequi, temporibus veniam voluptate?</p>
-        <div class="shaped-under"></div>
     </div>
 
     <div class="game-post">
@@ -60,13 +35,13 @@
             <h1>Kazenspel</h1>
             <h3>Word een met je innerlijke beer</h3>
         </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam maxime nobis placeat, quam quasi quos!
-            A ad aut blanditiis dicta eius eos error et minima nihil, nobis pariatur quam voluptatum.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque eveniet iste nihil recusandae veritatis? A ad cum, dolorum eaque,
-            excepturi nobis odio officiis quas reiciendis reprehenderit sequi, temporibus veniam voluptate?</p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque in magni perferendis quaerat temporibus unde vero?
+            Blanditiis dolorum ducimus, expedita fugit incidunt natus nisi obcaecati porro quia reiciendis. Dicta, voluptates.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam deleniti quasi velit! Adipisci atque dolorem eaque itaque nam omnis tempora
+            vel. Aliquam aspernatur autem consectetur eligendi quasi quos, velit!
+        </p>
         <div id="steam"></div>
     </div>
-
-
 
 @endsection

@@ -110,108 +110,19 @@ html {
 }
 
 .section {
-
-  *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-    position:relative;
-  }
-
-  .game-post:nth-child(1) {
-    p {
-      background: #666;
-    }
-  }
-
-  .game-post:nth-child(2) {
-    p {
-      background: lightblue;
-    }
-  }
-
-  .game-post:nth-child(3) {
-    p {
-      background: #666;
-    }
-  }
-
-  .game-post:nth-child(4) {
-    p {
-      background: lightblue;
-    }
-  }
-
-  .shaped-under {
-    overflow: hidden;
-    height: 200px;
-    width: 100%;
-    background: lightblue;
-    background-size: cover;
-    /* -webkit-shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%); */
-    /* shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%); */
-    -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 140% 0%);
-    -webkit-shape-margin: 20px;
-  }
-
-}
-
-.game-post {
-  color: white;
-  position: relative;
-  margin: 30px 0px 0px 0px;
-
-  p {
-    margin: 0px;
-    padding: 10px 10px;
-  }
-
-  .title {
-    padding: 10px 0px;
-    text-align: center;
-    position: relative;
+  .game-post {
     color: white;
-  }
-
-  .shaped-above {
-    overflow: hidden;
-    height: 250px;
-    width: 100%;
-    //background: lightblue;
-    background-image: url(http://www.vlambeer.com/wp-content/uploads/2012/02/LOGO-510x286.png);
-    background-repeat: no-repeat;;
-    background-size: cover;
-    /* -webkit-shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%); */
-    /* shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%); */
-    -webkit-clip-path: polygon(0% 0%, 0% 0%, 140% 100%, 0% 100%);
-    -webkit-shape-margin: 20px;
-
     .title {
-      padding: 140px 0px !important;
+      text-align: center;
     }
-  }
 
-  .shaped-under {
-    overflow: hidden;
-    height: 200px;
-    width: 100%;
-    background: lightblue;
-    background-size: cover;
-    /* -webkit-shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%); */
-    /* shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%); */
-    -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 140% 0%);
-    -webkit-shape-margin: 20px;
-  }
-
-  #steam {
-    background: url("../img/steam.png");
-    min-height: 55px;
-    width: 65px;
-    background-size: 60px;
-    background-repeat: no-repeat;
-    position: absolute;
-    right: 10px;
-    bottom: -100px;
+    #steam {
+      background: url("../img/steam.png");
+      min-height: 55px;
+      width: 65px;
+      background-size: 60px;
+      background-repeat: no-repeat;
+    }
   }
 }
 

@@ -67,74 +67,16 @@ html p {
       text-decoration: none;
       padding: 10px 30px; }
 
-.section * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  position: relative; }
-.section .game-post:nth-child(1) p {
-  background: #666; }
-.section .game-post:nth-child(2) p {
-  background: lightblue; }
-.section .game-post:nth-child(3) p {
-  background: #666; }
-.section .game-post:nth-child(4) p {
-  background: lightblue; }
-.section .shaped-under {
-  overflow: hidden;
-  height: 200px;
-  width: 100%;
-  background: lightblue;
-  background-size: cover;
-  /* -webkit-shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%); */
-  /* shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%); */
-  -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 140% 0%);
-  -webkit-shape-margin: 20px; }
-
-.game-post {
-  color: white;
-  position: relative;
-  margin: 30px 0px 0px 0px; }
-  .game-post p {
-    margin: 0px;
-    padding: 10px 10px; }
-  .game-post .title {
-    padding: 10px 0px;
-    text-align: center;
-    position: relative;
-    color: white; }
-  .game-post .shaped-above {
-    overflow: hidden;
-    height: 250px;
-    width: 100%;
-    background-image: url(http://www.vlambeer.com/wp-content/uploads/2012/02/LOGO-510x286.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* -webkit-shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%); */
-    /* shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%); */
-    -webkit-clip-path: polygon(0% 0%, 0% 0%, 140% 100%, 0% 100%);
-    -webkit-shape-margin: 20px; }
-    .game-post .shaped-above .title {
-      padding: 140px 0px !important; }
-  .game-post .shaped-under {
-    overflow: hidden;
-    height: 200px;
-    width: 100%;
-    background: lightblue;
-    background-size: cover;
-    /* -webkit-shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%); */
-    /* shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%); */
-    -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 140% 0%);
-    -webkit-shape-margin: 20px; }
-  .game-post #steam {
+.section .game-post {
+  color: white; }
+  .section .game-post .title {
+    text-align: center; }
+  .section .game-post #steam {
     background: url("../img/steam.png");
     min-height: 55px;
     width: 65px;
     background-size: 60px;
-    background-repeat: no-repeat;
-    position: absolute;
-    right: 10px;
-    bottom: -100px; }
+    background-repeat: no-repeat; }
 
 .footer {
   background: darkgray; }
