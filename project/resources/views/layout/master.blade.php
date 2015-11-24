@@ -13,19 +13,20 @@
     <title>Vlambeer</title>
 </head>
 <body>
-
-<div class="container">
-
 <!-- Begin header -->
-    <div class="header">
-        <div class="header-content">
-            <div class="title">
-                <a href="/index"></a>
+<div class="header">
+    <a href="/index"></a>
+    <div class="container">
+        <div class="title">
+            <div class="logo">
+                <img src="../img/vlambeer-logo.png" alt="logo">
                 <h1>Vlambeer</h1>
+            </div>
+            <div class="slogan">
                 <h3>
                     <?php
-                        $vlambeer_year = '1' . rand(7,9) . rand(2,8) . rand(1,9);
-                        echo "Bringing back arcade since ". $vlambeer_year
+                    $vlambeer_year = '1' . rand(7,9) . rand(2,8) . rand(1,9);
+                    echo "Bringing back arcade since ". $vlambeer_year
                     ?>
                 </h3>
             </div>
@@ -34,11 +35,14 @@
             <ul>
                 <li><a href="/index">Home</a></li>
                 <li><a href="/overview_games">Webshop Games</a></li>
-                <li><a href="/contact">Webshop Merchandise</a></li>
+                <li><a href="/overview_merchandise">Webshop Merchandise</a></li>
+                <li><a href="/contact">Contact</a></li>
             </ul>
         </div>
     </div>
+</div>
 <!-- End of header-->
+<div class="container">
 
 
     <div class="section">

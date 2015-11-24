@@ -11,45 +11,50 @@ html {
   }
 
   h1 {
-    font-size: 2em;
+    font-size: 32px;
     font-family: $font-stack;
     font-weight: 300;
   }
 
   h2 {
-    font-size: 1.5em;
+    font-size: 24px;
     font-family: $font-stack;
-  font-weight: 600;
+    font-weight: 600;
 }
 
   h3 {
-    font-size: 1.17em;
+    font-size: 18px;
     font-family: $font-stack;
     font-weight: 600;
   }
 
   h4 {
-    font-size: 1em;
+    font-size: 16px;
     font-family: $font-stack;
     font-weight: 600;
   }
 
   h5 {
-    font-size: 0.83em;
+    font-size: 13px;
     font-family: $font-stack;
     font-weight: 600;
   }
 
   h6 {
-    font-size: 0.67em;
+    font-size: 10px;
     font-family: $font-stack;
     font-weight: 600;
   }
 
   p {
-    font-size: 1em;
+    font-size: 16px;
     font-family: $font-stack;
     font-weight: 400;
+  }
+
+  a {
+    font-family: $font-stack;
+    font-weight: 600;
   }
 }
 
@@ -58,50 +63,59 @@ html {
 
 
 .header {
-  .header-content {
-    background: url(../img/background_header.gif) no-repeat;
-    background-size: cover;
-    border: 1px solid black;
-    overflow: hidden;
-    padding: 0px 0px 10px 0px;
-    position: relative;
-    .title {
-      float: right;
-      width: 70%;
+  color: white;
+  background: black;
+  z-index: 10000010;
+  position: fixed;
+  top: 0;
+  max-width: 1920px;
+  width: 100%;
 
-      h1 {
-        color: white;
+  .container {
+    background: black;
+  }
+
+  .title {
+    .logo {
+      float: left;
+
+      img {
+        float: left;
+        width: 58px;
       }
+      h1 {
+        float: left;
+        margin: 10px 0px 0px 5px;
+      }
+    }
+
+    .slogan {
+      float: left;
 
       h3 {
-        color: white;
-      }
-
-      a {
-        position: absolute;
-        top: 0px;
-        bottom: 0px;
-        left: 0px;
-        right: 0px;
+        margin: 22px 15px 0px 20px;
       }
     }
   }
 
   .nav {
+    float: right;
     ul {
-      border-top: 1px solid white;
-      margin: 0px;
+      margin: 20px 0px 0px 0px;
       background: black;
       padding: 0px;
       li {
         display: inline-block;
-        border-right: 1px solid white;
-        padding: 10px;
+        padding: 4px;
 
         a {
           color: white;
           text-decoration: none;
           padding: 10px 30px;
+        }
+
+        a:hover {
+          color: gainsboro;
         }
       }
     }
@@ -109,6 +123,7 @@ html {
 }
 
 .section {
+  margin-top: 50px;
   .game-post {
     color: white;
     .title {

@@ -5,78 +5,87 @@ html body {
     background: #666;
     padding: 0px; }
 html h1 {
-  font-size: 2em;
+  font-size: 32px;
   font-family: "Open Sans", sans-serif;
   font-weight: 300; }
 html h2 {
-  font-size: 1.5em;
+  font-size: 24px;
   font-family: "Open Sans", sans-serif;
   font-weight: 600; }
 html h3 {
-  font-size: 1.17em;
+  font-size: 18px;
   font-family: "Open Sans", sans-serif;
   font-weight: 600; }
 html h4 {
-  font-size: 1em;
+  font-size: 16px;
   font-family: "Open Sans", sans-serif;
   font-weight: 600; }
 html h5 {
-  font-size: 0.83em;
+  font-size: 13px;
   font-family: "Open Sans", sans-serif;
   font-weight: 600; }
 html h6 {
-  font-size: 0.67em;
+  font-size: 10px;
   font-family: "Open Sans", sans-serif;
   font-weight: 600; }
 html p {
-  font-size: 1em;
+  font-size: 16px;
   font-family: "Open Sans", sans-serif;
   font-weight: 400; }
+html a {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600; }
 
-.header .header-content {
-  background: url(../img/background_header.gif) no-repeat;
-  background-size: cover;
-  border: 1px solid black;
-  overflow: hidden;
-  padding: 0px 0px 10px 0px;
-  position: relative; }
-  .header .header-content .title {
-    float: right;
-    width: 70%; }
-    .header .header-content .title h1 {
-      color: white; }
-    .header .header-content .title h3 {
-      color: white; }
-    .header .header-content .title a {
-      position: absolute;
-      top: 0px;
-      bottom: 0px;
-      left: 0px;
-      right: 0px; }
-.header .nav ul {
-  border-top: 1px solid white;
-  margin: 0px;
+.header {
+  color: white;
   background: black;
-  padding: 0px; }
-  .header .nav ul li {
-    display: inline-block;
-    border-right: 1px solid white;
-    padding: 10px; }
-    .header .nav ul li a {
-      color: white;
-      text-decoration: none;
-      padding: 10px 30px; }
+  z-index: 10000010;
+  position: fixed;
+  top: 0;
+  max-width: 1920px;
+  width: 100%; }
+  .header .container {
+    background: black; }
+  .header .title .logo {
+    float: left; }
+    .header .title .logo img {
+      float: left;
+      width: 58px; }
+    .header .title .logo h1 {
+      float: left;
+      margin: 10px 0px 0px 5px; }
+  .header .title .slogan {
+    float: left; }
+    .header .title .slogan h3 {
+      margin: 22px 15px 0px 20px; }
+  .header .nav {
+    float: right; }
+    .header .nav ul {
+      margin: 20px 0px 0px 0px;
+      background: black;
+      padding: 0px; }
+      .header .nav ul li {
+        display: inline-block;
+        padding: 4px; }
+        .header .nav ul li a {
+          color: white;
+          text-decoration: none;
+          padding: 10px 30px; }
+        .header .nav ul li a:hover {
+          color: gainsboro; }
 
-.section .game-post {
-  color: white; }
-  .section .game-post .title {
-    text-align: center; }
-  .section .game-post #steam {
-    background: url("../img/steam.png");
-    min-height: 55px;
-    width: 65px;
-    background-size: 60px;
-    background-repeat: no-repeat; }
+.section {
+  margin-top: 50px; }
+  .section .game-post {
+    color: white; }
+    .section .game-post .title {
+      text-align: center; }
+    .section .game-post #steam {
+      background: url("../img/steam.png");
+      min-height: 55px;
+      width: 65px;
+      background-size: 60px;
+      background-repeat: no-repeat; }
 
 .footer {
   background: darkgray; }
