@@ -13,7 +13,7 @@
 
 
 Route::get('/', 'PagesController@index');
-Route::get('/index', 'PagesController@index');
+//Route::get('/index', 'PagesController@index');
 Route::get('/contact', 'PagesController@contact');
 Route::get('/overview_games', 'PagesController@overview_games');
 Route::get('/info_game', 'PagesController@info_game');

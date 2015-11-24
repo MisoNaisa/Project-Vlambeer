@@ -15,27 +15,29 @@ class PagesController extends Controller
         $tweetR = \App\Tweet::getStatusRami();
         $tweetJ = \App\Tweet::getStatusJan();
         $games = \App\Game::all();
+
+//        dd($games);
         return view('pages.index', compact('games', 'tweetV', 'tweetR', 'tweetJ'));
     }
 
     public function contact() {
-        $tweetV = $this->getStatusVlambeer();
-        $tweetR = $this->getStatusRami();
-        $tweetJ = $this->getStatusJan();
-        return view('pages.contact');
+        $tweetV = \App\Tweet::getStatusVlambeer();
+        $tweetR = \App\Tweet::getStatusRami();
+        $tweetJ = \App\Tweet::getStatusJan();
+        return view('pages.contact', compact( 'tweetV', 'tweetR', 'tweetJ'));
     }
 
     public function overview_games() {
-        $tweetV = $this->getStatusVlambeer();
-        $tweetR = $this->getStatusRami();
-        $tweetJ = $this->getStatusJan();
-        return view('pages.overview_games');
+        $tweetV = \App\Tweet::getStatusVlambeer();
+        $tweetR = \App\Tweet::getStatusRami();
+        $tweetJ = \App\Tweet::getStatusJan();
+        return view('pages.overview_games', compact('tweetV', 'tweetR', 'tweetJ'));
     }
 
     public function info_game() {
-        $tweetV = $this->getStatusVlambeer();
-        $tweetR = $this->getStatusRami();
-        $tweetJ = $this->getStatusJan();
-        return view('pages.info_game');
+        $tweetV = \App\Tweet::getStatusVlambeer();
+        $tweetR = \App\Tweet::getStatusRami();
+        $tweetJ = \App\Tweet::getStatusJan();
+        return view('pages.info_game', compact('tweetV', 'tweetR', 'tweetJ'));
     }
 }
