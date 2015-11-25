@@ -131,6 +131,19 @@ html {
   overflow: hidden;
   .game-post {
     color: white;
+    overflow: hidden;
+
+    p {
+      width: 80%;
+      float: left;
+      margin-top: 0px;
+    }
+
+    a {
+      width: 20%;
+      float: left;
+    }
+
     .title {
       text-align: center;
     }
@@ -175,7 +188,6 @@ html {
     .tweets {
       background-color: #BFE5E5;
       border-radius: 5px;
-      height: 326px;
       margin-bottom: 20px;
       margin-top: 20px;
       padding: 17px;
