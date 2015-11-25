@@ -22,6 +22,14 @@
                 <a href="{{$game['vita_payment_link']}}">
                     <div id="playstation"></div>
                 </a>
+                <? } if($game['game_name'] == "Luftrausers"){?>
+                <a href="{{$game['regular_payment_link']}}">
+                    <div id="gowebsite"></div>
+                </a>
+                <? } if($game['game_name'] == "Ridiculous Fishing"){?>
+                <a href="{{$game['regular_payment_link']}}">
+                    <div id="appledroid"></div>
+                </a>
                 <? }?>
             </div>
         @endforeach

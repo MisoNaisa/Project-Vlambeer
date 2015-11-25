@@ -121,6 +121,18 @@ html a {
       width: 65px;
       background-size: 60px;
       background-repeat: no-repeat; }
+    .section .game-post #gowebsite {
+      background: url("../img/gowebsite.png");
+      min-height: 55px;
+      width: 65px;
+      background-size: 60px;
+      background-repeat: no-repeat; }
+    .section .game-post #appledroid {
+      background: url("../img/appledroid.png");
+      min-height: 55px;
+      width: 65px;
+      background-size: 60px;
+      background-repeat: no-repeat; }
 
 .footer {
   background: rgba(128, 128, 128, 0.3); }
