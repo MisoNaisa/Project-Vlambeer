@@ -2,3 +2,9 @@
 /project/.env
 /.idea/*
 /project/.idea
+/project/vendor
+/project/Homestead.yaml
+/project/Homestead.json
+project/vendor/composer/installed.json
+project/vendor/composer/autoload_real.php
+project/vendor/autoload.php
