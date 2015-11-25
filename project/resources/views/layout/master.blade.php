@@ -16,12 +16,13 @@
 <!-- Begin header -->
 <div class="header">
     <div class="container">
-        <a href="/">
             <div class="title">
+                <a href="/">
                 <div class="logo">
                     <img src="../img/vlambeer-logo.png" alt="logo">
                     <h1>Vlambeer</h1>
                 </div>
+                </a>
                 <div class="slogan">
                     <h3>
                         <?php
@@ -31,7 +32,6 @@
                     </h3>
                 </div>
             </div>
-        </a>
         <div class="nav">
             <ul>
                 <li><a href="/">Home</a></li>

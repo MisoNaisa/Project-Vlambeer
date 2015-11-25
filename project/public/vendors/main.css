@@ -45,6 +45,8 @@ html a {
   width: 100%; }
   .header .container {
     background: black; }
+  .header .title a {
+    color: white; }
   .header .title .logo {
     float: left; }
     .header .title .logo img {
@@ -74,7 +76,8 @@ html a {
           color: gainsboro; }
 
 .section {
-  margin-top: 50px; }
+  margin-top: 50px;
+  overflow: hidden; }
   .section .game-post {
     color: white; }
     .section .game-post .title {

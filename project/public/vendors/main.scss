@@ -75,6 +75,10 @@ html {
   }
 
   .title {
+    a {
+      color: white;
+    }
+
     .logo {
       float: left;
 
@@ -86,6 +90,7 @@ html {
         float: left;
         margin: 10px 0px 0px 5px;
       }
+
     }
 
     .slogan {
