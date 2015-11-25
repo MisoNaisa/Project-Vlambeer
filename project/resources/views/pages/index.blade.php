@@ -10,7 +10,10 @@
                 <p>
                     {{$game['description']}}
                 </p>
-                <a href="#">Kopen jonguh</a>
+                <a href="#">
+                    <div id="steam"></div>
+                </a>
+
             </div>
         @endforeach
 @endsection
