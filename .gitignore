@@ -1,10 +1,8 @@
-/project/vendor
-/project/.env
+project/vendor
+project/.env
 /.idea/*
-/project/.idea
-/project/vendor
-/project/Homestead.yaml
-/project/Homestead.json
-project/vendor/composer/installed.json
-project/vendor/composer/autoload_real.php
-project/vendor/autoload.php
+project/.idea
+project/vendor
+project/Homestead.yaml
+project/Homestead.json
+
