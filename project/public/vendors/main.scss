@@ -129,18 +129,31 @@ html {
   margin-top: 50px;
   overflow: hidden;
   .game-post {
-    color: white;
     overflow: hidden;
+    color: black;
+    background: white;
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    border-radius: 25px;
+
+    img {
+      height: 300px;
+      width: 100%;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+    }
 
     p {
       width: 80%;
       float: left;
       margin-top: 0px;
+      padding: 10px;
     }
 
     a {
-      width: 20%;
-      float: left;
+      width: 10%;
+      float: right;
     }
 
     .title {
@@ -159,7 +172,7 @@ html {
 
 
 .footer {
-  background: darkgray;
+  background: rgba(128,128,128, 0.3);
 
   h3 {
     margin-top: 35px;
