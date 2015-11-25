@@ -6,3 +6,4 @@ project/vendor
 project/Homestead.yaml
 project/Homestead.json
 
+project/vendor/composer/autoload_classmap.php
