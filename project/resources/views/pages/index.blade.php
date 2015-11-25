@@ -10,7 +10,7 @@
                 <p>
                     {{$game['description']}}
                 </p>
-                <a href="#">
+                <a href="{{$game['steam_payment_link']}}">
                     <div id="steam"></div>
                 </a>
 
