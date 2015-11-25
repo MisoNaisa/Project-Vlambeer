@@ -37,5 +37,26 @@ class GamesTableSeeder extends Seeder
             'ios_payment_link'=>'https://itunes.apple.com/us/app/super-crate-box/id483025428?mt=8',
             'vita_payment_link'=>'https://www.playstation.com/en-gb/games/super-crate-box-psvita/'
         ]);
+        DB::table('games')->insert([
+            'id'=>'4',
+            'game_name'=>'Luftrausers',
+            'description'=>'The skies will be set aflame and the seas will overflow with wreckage in Vlambeers stylish arcade shooter LUFTRAUSERS! Select from over 125 combinations of weapons, bodies, and propulsion systems and take to the skies to battle enemy fighter planes, battleships, submarines, and rival aces for glory, honor, and high scores.',
+            'game_background_img'=>'http://www.rockpapershotgun.com/images/12/apr/Luftrausers.jpg',
+            'regular_payment_link'=>'http://luftrausers.com/'
+        ]);
+        DB::table('games')->insert([
+            'id'=>'5',
+            'game_name'=>'Super Bread Box',
+            'description'=>'Super Bread Box',
+            'game_background_img'=>'http://2.bp.blogspot.com/-VlIgr-BUODY/UHIeLXjoORI/AAAAAAAACqw/6AkQhX849yI/s1600/sbb.png',
+            'regular_payment_link'=>'http://superbreadbox.com/'
+        ]);
+        DB::table('games')->insert([
+            'id'=>'6',
+            'game_name'=>'Ridiculous Fishing',
+            'description'=>'Ridiculous Fishing',
+            'game_background_img'=>'http://www.vlambeer.com/wp-content/uploads/2012/04/bgSplash.png',
+            'regular_payment_link'=>'http://www.ridiculousfishing.com/'
+        ]);
     }
 }
