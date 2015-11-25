@@ -10,10 +10,19 @@
                 <p>
                     {{$game['description']}}
                 </p>
+                <?if($game['steam_payment_link'] != null){ ?>
                 <a href="{{$game['steam_payment_link']}}">
                     <div id="steam"></div>
                 </a>
-
+                <?} if($game['ios_payment_link'] != null){?>
+                <a href="{{$game['ios_payment_link']}}">
+                    <div id="apple"></div>
+                </a>
+               <? } if($game['vita_payment_link'] != null){?>
+                <a href="{{$game['vita_payment_link']}}">
+                    <div id="playstation"></div>
+                </a>
+                <? }?>
             </div>
         @endforeach
 @endsection
