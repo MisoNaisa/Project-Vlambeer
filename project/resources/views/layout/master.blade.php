@@ -3,12 +3,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="vendors/bootstrap.css">
     <link rel="stylesheet" href="vendors/main.css">
-    <link rel="stylesheet" href="css/jordey.css">
     <link rel="stylesheet" href="css/alex.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
 
     <title>Vlambeer</title>
 </head>
@@ -35,8 +35,8 @@
         <div class="nav">
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="/overview_games">Webshop Games</a></li>
-                <li><a href="/overview_merchandise">Webshop Merchandise</a></li>
+                <li><a href="/overview_games">Games</a></li>
+                <li><a href="/overview_merchandise">Shop</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>
         </div>
