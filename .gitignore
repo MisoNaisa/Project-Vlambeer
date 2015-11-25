@@ -1,4 +1,8 @@
-/project/vendor
-/project/.env
+project/vendor
+project/.env
 /.idea/*
-/project/.idea
+project/.idea
+project/vendor
+project/Homestead.yaml
+project/Homestead.json
+
