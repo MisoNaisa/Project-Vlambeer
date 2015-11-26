@@ -23,14 +23,14 @@ class GamesTableSeeder extends Seeder
             'id'=>'2',
             'game_name'=>'Serious Sam: The Random Encounter (PC)',
             'description'=>'Serious Sam: The Random Encounter',
-            'game_background_img'=>'http://images2.wikia.nocookie.net/__cb20120105005351/serious/images/6/6f/TREMajorMechanoid.jpg',
+            'game_background_img'=>'http://cdn.dbolical.com/videos/games/1/17/16583/Serious_Sam_The_Random_Encounter_-_Launch_Trailer.mp4.jpg',
             'steam_payment_link'=>'http://store.steampowered.com/app/201480/',
         ]);
         DB::table('games')->insert([
             'id'=>'3',
             'game_name'=>'Super Crate Box',
             'description'=>'Super Crate Box',
-            'game_background_img'=>'http://pixelannihilation.files.wordpress.com/2010/10/scb.png?w=630',
+            'game_background_img'=>'http://www.vlambeer.com/wp-content/uploads/2012/01/header-510x186.png',
             'ios_game_background_img'=>'http://a2.mzstatic.com/us/r1000/091/Purple/v4/42/21/79/4221792e-a630-f38e-0dfa-3500b110f2ee/mzm.ubyemkid.175x175-75.jpg',
             'vita_game_background_img'=>'http://uk.playstation.com/media/VHzg0SBQ/161/SuperCrateBox-Featured-image.jpg',
             'steam_payment_link'=>'http://supercratebox.com',

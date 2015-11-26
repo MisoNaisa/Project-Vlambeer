@@ -6,10 +6,24 @@ $(document).ready(function(){
         $(this).removeClass('transition');
     });
 });
-//
-//.find( "span" )
-//    .hover(function() {
-//        $( this ).addClass( "hilite" );
-//    }, function() {
-//        $( this ).removeClass( "hilite" );
-//    })
+
+
+
+//    Jordey zijn zooi
+    $(".game-post").hover(function(){
+        var background = $(this).find('img').attr("src");
+        $("body").addClass('backgroundTransition');
+        setTimeout(function(){
+            $('body').css("background",'url(' + background + ')')
+            $('body').removeClass('backgroundTransition');
+        },100);
+
+    }, function(){
+        var defaultBackground = "http://vlambeer.dev/img/background.jpg";
+        $("body").addClass('backgroundTransition');
+        setTimeout(function(){
+            $('body').css("background",'url(' + defaultBackground + ')');
+            $('body').removeClass('backgroundTransition');
+        },100);
+    });
+

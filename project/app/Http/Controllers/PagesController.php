@@ -28,7 +28,6 @@ class PagesController extends Controller
     }
 
     public function overview_games() {
-        dd('something');
         $tweetV = \App\Tweet::getStatusVlambeer();
         $tweetR = \App\Tweet::getStatusRami();
         $tweetJ = \App\Tweet::getStatusJan();

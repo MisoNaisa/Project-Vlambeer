@@ -3,13 +3,30 @@ html {
 
   body {
     background: url("../img/background.jpg");
-    background-size: cover;
-    
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    background-position: center !important;
+
     .container {
       margin: 0 auto;
-      background: rgba(1,1,1, 0.3);
       padding: 0px;
     }
+    &:before {
+      content: " ";
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0, 0.3);
+      z-index: -1;
+      opacity: 0;
+      transition: all 100ms ease;
+    }
+  }
+
+  .backgroundTransition:before {
+    opacity: 1;
   }
 
   h1 {
