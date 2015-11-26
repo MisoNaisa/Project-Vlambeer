@@ -210,6 +210,7 @@ html {
 
   h3 {
     margin-top: 35px;
+    color: black;
   }
 
   p {
@@ -217,7 +218,7 @@ html {
   }
 
   .footer-left {
-    padding-left: 50px;
+    padding-left: 78px;
     padding-right: 50px;
     padding-top: 33px;
 
@@ -273,79 +274,81 @@ html {
   }
 
 
+  .footer-right {
 
-  .contact-rami {
-    width: 50%;
-    background-color: black;
-    border: 1px solid grey;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
+    .contact-rami {
+      width: 70%;
+      background-color: black;
+      border: 1px solid grey;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
 
-    a {
-      display: block;
-      text-align: center;
+      a {
+        display: block;
+        text-align: center;
+      }
+
+      p {
+        text-align: center;
+        margin-bottom: 5px;
+      }
+
+      p:nth-child(2) {
+        font-style: italic;
+        margin-top: 5px;
+      }
+
     }
 
-    p {
-      text-align: center;
-      margin-bottom: 5px;
+    .contact-jan {
+      width: 70%;
+      background-color: black;
+      border: 1px solid grey;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+
+      a {
+        display: block;
+        text-align: center;
+      }
+
+      p {
+        text-align: center;
+        margin-bottom: 5px;
+      }
+
+      p:nth-child(2) {
+        font-style: italic;
+        margin-top: 5px;
+      }
     }
 
-    p:nth-child(2) {
-      font-style: italic;
-      margin-top: 5px;
+    .contact-vlambeer {
+      width: 70%;
+      background-color: black;
+      border: 1px solid grey;
+      border-radius: 5px;
+      padding-bottom: 10px;
+
+      a {
+        display: block;
+        text-align: center;
+      }
+
+      p {
+        text-align: center;
+        margin-bottom: 5px;
+      }
     }
 
-  }
+    .contact-fb {
+      margin-top: 30px;
 
-  .contact-jan {
-    width: 50%;
-    background-color: black;
-    border: 1px solid grey;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-
-    a {
-      display: block;
-      text-align: center;
-    }
-
-    p {
-    text-align: center ;
-      margin-bottom: 5px;
-    }
-
-    p:nth-child(2) {
-      font-style: italic;
-      margin-top: 5px;
-    }
-  }
-
-  .contact-vlambeer {
-    width: 50%;
-    background-color: black;
-    border: 1px solid grey;
-    border-radius: 5px;
-    padding-bottom: 10px;
-
-    a {
-      display: block;
-      text-align: center;
-    }
-
-    p {
-      text-align: center;
-      margin-bottom: 5px;
-    }
-  }
-
-  .contact-fb {
-    margin-top: 30px;
-    
-    a {
-      color: #2c4075;
+      a {
+        color: #2c4075;
+      }
     }
   }
 

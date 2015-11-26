@@ -141,11 +141,12 @@ html a {
 .footer {
   background: rgba(128, 128, 128, 0.3); }
   .footer h3 {
-    margin-top: 35px; }
+    margin-top: 35px;
+    color: black; }
   .footer p {
     color: white; }
   .footer .footer-left {
-    padding-left: 50px;
+    padding-left: 78px;
     padding-right: 50px;
     padding-top: 33px; }
     .footer .footer-left p:first-child {
@@ -181,53 +182,53 @@ html a {
           color: black;
           font-size: 12px;
           float: left; }
-  .footer .contact-rami {
-    width: 50%;
+  .footer .footer-right .contact-rami {
+    width: 70%;
     background-color: black;
     border: 1px solid grey;
     border-radius: 5px;
     margin-bottom: 10px;
     padding-bottom: 10px; }
-    .footer .contact-rami a {
+    .footer .footer-right .contact-rami a {
       display: block;
       text-align: center; }
-    .footer .contact-rami p {
+    .footer .footer-right .contact-rami p {
       text-align: center;
       margin-bottom: 5px; }
-    .footer .contact-rami p:nth-child(2) {
+    .footer .footer-right .contact-rami p:nth-child(2) {
       font-style: italic;
       margin-top: 5px; }
-  .footer .contact-jan {
-    width: 50%;
+  .footer .footer-right .contact-jan {
+    width: 70%;
     background-color: black;
     border: 1px solid grey;
     border-radius: 5px;
     margin-bottom: 10px;
     padding-bottom: 10px; }
-    .footer .contact-jan a {
+    .footer .footer-right .contact-jan a {
       display: block;
       text-align: center; }
-    .footer .contact-jan p {
+    .footer .footer-right .contact-jan p {
       text-align: center;
       margin-bottom: 5px; }
-    .footer .contact-jan p:nth-child(2) {
+    .footer .footer-right .contact-jan p:nth-child(2) {
       font-style: italic;
       margin-top: 5px; }
-  .footer .contact-vlambeer {
-    width: 50%;
+  .footer .footer-right .contact-vlambeer {
+    width: 70%;
     background-color: black;
     border: 1px solid grey;
     border-radius: 5px;
     padding-bottom: 10px; }
-    .footer .contact-vlambeer a {
+    .footer .footer-right .contact-vlambeer a {
       display: block;
       text-align: center; }
-    .footer .contact-vlambeer p {
+    .footer .footer-right .contact-vlambeer p {
       text-align: center;
       margin-bottom: 5px; }
-  .footer .contact-fb {
+  .footer .footer-right .contact-fb {
     margin-top: 30px; }
-    .footer .contact-fb a {
+    .footer .footer-right .contact-fb a {
       color: #2c4075; }
   .footer .footer-bottom {
     background-color: black;

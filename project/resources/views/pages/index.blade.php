@@ -10,7 +10,7 @@
                 <p>
                     {{$game['description']}}
                 </p>
-                <?if($game['steam_payment_link'] != null){ ?>
+                <? if($game['steam_payment_link'] != null){ ?>
                 <a href="{{$game['steam_payment_link']}}">
                     <div id="steam"></div>
                 </a>

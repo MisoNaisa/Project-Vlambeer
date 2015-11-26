@@ -53,7 +53,7 @@
 <!-- Begin Footer -->
     <div class="footer">
         <div class="row">
-            <div class="footer-left col-xs-7">
+            <div class="footer-left col-xs-8">
                 <p>VLAMBEER IS A DUTCH INDEPENDENT GAME STUDIO</p>
                 <p>made up of Rami Ismail and Jan Willem Nijman,
                 bringing back arcade games since 1864.</p>
@@ -93,7 +93,7 @@
                 </div>
             </div>
 
-            <div class="footer-right col-xs-5">
+            <div class="footer-right col-xs-4">
                 <h3>Contact</h3>
                 <div class="contact-rami">
                     <p>Rami Ismail</p>
