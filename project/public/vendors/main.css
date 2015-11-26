@@ -107,6 +107,36 @@ html a {
       width: 65px;
       background-size: 60px;
       background-repeat: no-repeat; }
+    .section .game-post #apple {
+      background: url("../img/apple.png");
+      min-height: 55px;
+      width: 65px;
+      background-size: 60px;
+      background-repeat: no-repeat; }
+    .section .game-post #playstation {
+      background: url("../img/playstation.png");
+      min-height: 55px;
+      width: 65px;
+      background-size: 60px;
+      background-repeat: no-repeat; }
+    .section .game-post #gowebsite {
+      background: url("../img/gowebsite.png");
+      min-height: 55px;
+      width: 65px;
+      background-size: 60px;
+      background-repeat: no-repeat; }
+    .section .game-post #appledroid {
+      background: url("../img/appledroid.png");
+      min-height: 55px;
+      width: 65px;
+      background-size: 60px;
+      background-repeat: no-repeat; }
+    .section .game-post #superbreadbox {
+      background: url("../img/superbreadbox.png");
+      min-height: 55px;
+      width: 65px;
+      background-size: 60px;
+      background-repeat: no-repeat; }
 
 .footer {
   background: rgba(128, 128, 128, 0.3); }
