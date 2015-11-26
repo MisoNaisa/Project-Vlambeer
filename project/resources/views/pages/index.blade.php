@@ -26,6 +26,10 @@
                 <a href="{{$game['regular_payment_link']}}">
                     <div id="gowebsite"></div>
                 </a>
+                <? } if($game['game_name'] == "Super Bread Box"){?>
+                <a href="{{$game['regular_payment_link']}}">
+                    <div id="superbreadbox"></div>
+                </a>
                 <? } if($game['game_name'] == "Ridiculous Fishing"){?>
                 <a href="{{$game['regular_payment_link']}}">
                     <div id="appledroid"></div>

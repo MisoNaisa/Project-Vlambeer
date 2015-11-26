@@ -131,6 +131,12 @@ html a {
       width: 65px;
       background-size: 60px;
       background-repeat: no-repeat; }
+    .section .game-post #superbreadbox {
+      background: url("../img/superbreadbox.png");
+      min-height: 55px;
+      width: 65px;
+      background-size: 60px;
+      background-repeat: no-repeat; }
 
 .footer {
   background: rgba(128, 128, 128, 0.3); }
