@@ -1,12 +1,14 @@
-html body {
+body {
   background: url("../img/background.jpg");
   background-size: cover !important;
   background-attachment: fixed !important;
   background-position: center !important; }
-  html body .container {
+  body .container {
     margin: 0 auto;
-    padding: 0px; }
-  html body:before {
+    padding: 0px;
+    color: #FFFFFF;
+    background: rgba(1, 1, 1, 0.3); }
+  body:before {
     content: " ";
     position: fixed;
     left: 0;
@@ -17,37 +19,46 @@ html body {
     z-index: -1;
     opacity: 0;
     transition: all 100ms ease; }
-html .backgroundTransition:before {
+
+.backgroundTransition:before {
   opacity: 1; }
-html h1 {
+
+h1 {
   font-size: 32px;
   font-family: "Open Sans", sans-serif;
   font-weight: 300; }
-html h2 {
+
+h2 {
   font-size: 24px;
   font-family: "Open Sans", sans-serif;
   font-weight: 600; }
-html h3 {
+
+h3 {
   font-size: 18px;
   font-family: "Open Sans", sans-serif;
   font-weight: 600; }
-html h4 {
+
+h4 {
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
   font-weight: 600; }
-html h5 {
+
+h5 {
   font-size: 13px;
   font-family: "Open Sans", sans-serif;
   font-weight: 600; }
-html h6 {
+
+h6 {
   font-size: 10px;
   font-family: "Open Sans", sans-serif;
   font-weight: 600; }
-html p {
+
+p {
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
   font-weight: 400; }
-html a {
+
+a {
   font-family: "Open Sans", sans-serif;
   font-weight: 600; }
 
@@ -92,6 +103,14 @@ html a {
 
 .section {
   margin-top: 100px; }
+  .section .transition {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1); }
+  .section .maps {
+    width: 100%;
+    height: 650px; }
   .section .game-post {
     overflow: hidden;
     color: black;
@@ -99,7 +118,10 @@ html a {
     width: 50%;
     margin: 0 auto;
     margin-bottom: 60px;
-    border-radius: 25px; }
+    border-radius: 25px;
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out; }
     .section .game-post .title h1 {
       margin-bottom: 0px; }
     .section .game-post .img {
@@ -168,6 +190,22 @@ html a {
       width: 165px;
       background-size: 150px;
       background-repeat: no-repeat; }
+  .section .picture {
+    height: 75px;
+    margin-top: 20px;
+    background-position: center !important;
+    background-size: contain !important; }
+  .section .rami {
+    background: url("../img/team_rami.png") no-repeat; }
+  .section .rami:hover {
+    background: url("../img/rami-vlambeer.png") no-repeat; }
+  .section .jan {
+    background: url("../img/team_jw.png") no-repeat; }
+  .section .jan:hover {
+    background: url("../img/jan-vlambeer.jpg") no-repeat; }
+  .section .link {
+    color: #FFFFFF;
+    text-decoration: underline; }
 
 .footer {
   background: rgba(128, 128, 128, 0.3); }
