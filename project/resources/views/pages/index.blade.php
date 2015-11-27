@@ -29,10 +29,6 @@
                 <a href="{{$game['vita_payment_link']}}">
                     <div id="playstation"></div>
                 </a>
-                <? } if($game['game_name'] == "Luftrausers"){?>
-                <a href="{{$game['regular_payment_link']}}">
-                    <div id="gowebsite"></div>
-                </a>
                 <? } if($game['game_name'] == "Super Bread Box"){?>
                 <a href="{{$game['regular_payment_link']}}">
                     <div id="superbreadbox"></div>
