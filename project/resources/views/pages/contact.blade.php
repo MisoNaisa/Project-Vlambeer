@@ -19,8 +19,9 @@
                 <p>
                     Rami Ismail<br>
                     Business and Development <br>
-                    rami@vlambeer.com <br>
-                    @tha_rami <br>
+                    <a href="mailto:rami@vlambeer.com">rami@vlambeer.com</a>
+                     <br>
+                    <a href="https://twitter.com/search?q=tha_rami&src=typd">@tha_rami <i class="fa fa-twitter"></i></a> <br>
                 </p>
             </div>
             <div class="col-xs-2 jan picture">
@@ -28,17 +29,18 @@
             </div>
             <div class="col-xs-10">
                 <p>
-                    Rami Ismail<br>
-                    Business and Development <br>
-                    rami@vlambeer.com <br>
-                    @tha_rami <br>
+                    Jan Willem Nijman<br>
+                    Game Design <br>
+                    <a href="mailto:jw@vlambeer.com">jw@vlambeer.com</a>
+                     <br>
+                    <a href="https://twitter.com/jwaaaap">@jwaaaap <i class="fa fa-twitter"></i></a> <br>
                 </p>
             </div>
         </div>
         <div class="companyLocation col-xs-12">
             <p>
-                Facebook<br><br>
-                info@vlambeer.com | Neude 5, 3512 AD<br>
+                <a href="https://www.facebook.com/Vlambeer/?fref=ts">Like us on Facebook! <i class="fa fa-facebook-square"></i></a><br><br>
+                <a href="mailto:info@vlambeer.com">info@vlambeer.com</a> | Neude 5, 3512 AD<br>
                 Utrecht, The Netherlands | +316 21 20 63 63
             </p>
             <iframe class="maps" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJvwsb9kRvxkcR1a9sC9TEo9k&key=AIzaSyCcK7dBjnowNw9k4E0pfeLCN-7wcEil66E" allowfullscreen></iframe>
