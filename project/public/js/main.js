@@ -27,3 +27,7 @@ $(document).ready(function(){
         },100);
     });
 
+    $(document).hover(function(){
+        
+    }
+
