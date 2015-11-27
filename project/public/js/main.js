@@ -11,7 +11,8 @@ $(document).ready(function(){
 
 //    Jordey zijn zooi
     $(".game-post").hover(function(){
-        var background = $(this).find('img').attr("src");
+        var background = $(this).find('.img').css('background-image').replace('url(', '').replace(')', '');
+        console.log(background);
         $("body").addClass('backgroundTransition');
         setTimeout(function(){
             $('body').css("background",'url(' + background + ')')
