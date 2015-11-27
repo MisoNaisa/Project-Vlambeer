@@ -26,8 +26,3 @@ $(document).ready(function(){
             $('body').removeClass('backgroundTransition');
         },100);
     });
-
-    $(document).hover(function(){
-        
-    }
-
