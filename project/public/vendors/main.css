@@ -96,19 +96,22 @@ html a {
     overflow: hidden;
     color: black;
     background: white;
-    width: 60%;
+    width: 50%;
     margin: 0 auto;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
     border-radius: 25px; }
+    .section .game-post .title h1 {
+      margin-bottom: 0px; }
     .section .game-post img {
       height: 300px;
       width: 100%;
       border-top-left-radius: 25px;
       border-top-right-radius: 25px; }
     .section .game-post p {
-      width: 80%;
+      width: 90%;
       float: left;
       margin-top: 0px;
+      margin-bottom: 0px;
       padding: 10px;
       margin-right: 100px; }
     .section .game-post a {
@@ -119,7 +122,8 @@ html a {
     .section .game-post .title {
       text-align: center; }
     .section .game-post h2 {
-      margin-left: 10px; }
+      margin-left: 10px;
+      margin-bottom: 10px; }
     .section .game-post #steam {
       background: url("../img/steam.png");
       min-height: 55px;
@@ -265,5 +269,13 @@ html a {
       margin-left: 35px; }
       .footer .footer-bottom .contact-info p {
         font-size: 10px; }
+  @media screen and (min-width: 1500px) {
+    .footer .section .game-post {
+      width: 60%;
+      margin: 0 auto;
+      margin-bottom: 100px;
+      border-radius: 25px; }
+      .footer .section .game-post p {
+        margin-bottom: 10px; } }
 
 /*# sourceMappingURL=main.css.map */
