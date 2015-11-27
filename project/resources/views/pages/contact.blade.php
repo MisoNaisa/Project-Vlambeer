@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('section')
-    <div class="container">
+    <div class="container contact">
         <div class="col-xs-6">
             <h3>Contact</h3>
             <p>
@@ -12,8 +12,8 @@
         </div>
 
         <div class="col-xs-6">
-            <div class="col-xs-2">
-                <img src="img/team_rami.png" alt="team_rami">
+            <div class="col-xs-2 rami picture">
+                {{--<img src="img/team_rami.png" alt="team_rami">--}}
             </div>
             <div class="col-xs-10">
                 <p>
@@ -23,8 +23,8 @@
                     @tha_rami <br>
                 </p>
             </div>
-            <div class="col-xs-2">
-                <img src="img/team_jw.png" alt="team_jw">
+            <div class="col-xs-2 jan picture">
+                {{--<img src="img/team_jw.png" alt="team_jw">--}}
             </div>
             <div class="col-xs-10">
                 <p>
