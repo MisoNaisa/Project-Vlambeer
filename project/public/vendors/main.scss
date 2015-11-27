@@ -165,15 +165,22 @@ html {
       float: left;
       margin-top: 0px;
       padding: 10px;
+      margin-right: 100px;
     }
 
     a {
       width: 10%;
-      float: right;
+      float: left;
+      margin-bottom: 10px;
+      margin-left: 20px;
     }
 
     .title {
       text-align: center;
+    }
+
+    h2 {
+      margin-left: 10px;
     }
 
     #steam {
@@ -187,7 +194,7 @@ html {
       background: url("../img/apple.png");
       min-height: 55px;
       width: 65px;
-      background-size: 60px;
+      background-size: 70px;
       background-repeat: no-repeat;
     }
     #playstation {
@@ -197,15 +204,15 @@ html {
       background-size: 60px;
       background-repeat: no-repeat;
     }
-    #gowebsite {
-      background: url("../img/gowebsite.png");
+    #venuspatrol {
+      background: url("../img/venuspatrol.png");
       min-height: 55px;
       width: 65px;
       background-size: 60px;
       background-repeat: no-repeat;
     }
-    #appledroid {
-      background: url("../img/appledroid.png");
+    #android {
+      background: url("../img/android.png");
       min-height: 55px;
       width: 65px;
       background-size: 60px;
@@ -216,6 +223,13 @@ html {
       min-height: 55px;
       width: 65px;
       background-size: 60px;
+      background-repeat: no-repeat;
+    }
+    #gowebsite {
+      background: url("../img/gowebsite.png");
+      min-height: 30px;
+      width: 165px;
+      background-size: 150px;
       background-repeat: no-repeat;
     }
   }

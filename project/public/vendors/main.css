@@ -109,12 +109,17 @@ html a {
       width: 80%;
       float: left;
       margin-top: 0px;
-      padding: 10px; }
+      padding: 10px;
+      margin-right: 100px;}
     .section .game-post a {
       width: 10%;
-      float: right; }
+      float: left;
+      margin-bottom: 10px;
+      margin-left: 20px; }
     .section .game-post .title {
       text-align: center; }
+    .section .game-post h2 {
+      margin-left:10px;  }
     .section .game-post #steam {
       background: url("../img/steam.png");
       min-height: 55px;
@@ -125,7 +130,7 @@ html a {
       background: url("../img/apple.png");
       min-height: 55px;
       width: 65px;
-      background-size: 60px;
+      background-size: 70px;
       background-repeat: no-repeat; }
     .section .game-post #playstation {
       background: url("../img/playstation.png");
@@ -133,14 +138,14 @@ html a {
       width: 65px;
       background-size: 60px;
       background-repeat: no-repeat; }
-    .section .game-post #gowebsite {
-      background: url("../img/gowebsite.png");
+    .section .game-post #venuspatrol {
+      background: url("../img/venuspatrol.png");
       min-height: 55px;
       width: 65px;
       background-size: 60px;
       background-repeat: no-repeat; }
-    .section .game-post #appledroid {
-      background: url("../img/appledroid.png");
+    .section .game-post #android {
+      background: url("../img/android.png");
       min-height: 55px;
       width: 65px;
       background-size: 60px;
@@ -150,6 +155,12 @@ html a {
       min-height: 55px;
       width: 65px;
       background-size: 60px;
+      background-repeat: no-repeat; }
+    .section .game-post #gowebsite {
+      background: url("../img/gowebsite.png");
+      min-height: 30px;
+      width: 165px;
+      background-size: 150px;
       background-repeat: no-repeat; }
 
 .footer {

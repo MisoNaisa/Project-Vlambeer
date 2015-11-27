@@ -13,7 +13,7 @@ class GamesTableSeeder extends Seeder
     {
         DB::table('games')->insert([
             'id'=>'1',
-            'game_name'=>'Gun Godz (PC, Mac)',
+            'game_name'=>'Gun Godz',
             'description'=>'Builded with one-year venus patrol subscription & admin atomics capsule',
             'game_background_img'=>'http://www.vlambeer.com/wp-content/uploads/2012/02/LOGO-510x286.png',
             'steam_payment_link'=>'http://venuspatrol.com/subscribe/#subscriptionform',
@@ -21,7 +21,7 @@ class GamesTableSeeder extends Seeder
         ]);
         DB::table('games')->insert([
             'id'=>'2',
-            'game_name'=>'Serious Sam: The Random Encounter (PC)',
+            'game_name'=>'Serious Sam: The Random Encounter',
             'description'=>'Serious Sam: The Random Encounter',
             'game_background_img'=>'http://cdn.dbolical.com/videos/games/1/17/16583/Serious_Sam_The_Random_Encounter_-_Launch_Trailer.mp4.jpg',
             'steam_payment_link'=>'http://store.steampowered.com/app/201480/',

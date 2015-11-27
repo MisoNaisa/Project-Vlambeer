@@ -56,7 +56,10 @@
             <div class="footer-left col-xs-8">
                 <p>VLAMBEER IS A DUTCH INDEPENDENT GAME STUDIO</p>
                 <p>made up of Rami Ismail and Jan Willem Nijman,
-                bringing back arcade games since 1864.</p>
+                <?php
+                $vlambeer_year = '1' . rand(7,9) . rand(2,8) . rand(1,9);
+                echo "bringing back arcade since ". $vlambeer_year
+                ?>
 
                 <div class="tweets">
                     <h3>Tweets <i class="fa fa-twitter"></i></h3>
