@@ -3,7 +3,7 @@
 @section('section')
     @foreach($games as $game)
         <div class="game-post">
-            <img src={{$game['game_background_img']}}>
+            <div class="img" style="background: url({{$game['game_background_img']}})"> </div>
             <div class="title">
                 <h1>{{$game['game_name']}}</h1>
             </div>
