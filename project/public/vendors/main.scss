@@ -253,6 +253,7 @@ html {
     padding-right: 50px;
     padding-top: 33px;
 
+
     p:first-child {
       font-size: 18px;
       margin-top: 0;
@@ -306,9 +307,11 @@ html {
 
 
   .footer-right {
-
+    float: right;
+    padding-right: 78px;
+    padding-left: 0px;
+    
     .contact-rami {
-      width: 70%;
       background-color: black;
       border: 1px solid grey;
       border-radius: 5px;
@@ -333,7 +336,6 @@ html {
     }
 
     .contact-jan {
-      width: 70%;
       background-color: black;
       border: 1px solid grey;
       border-radius: 5px;
@@ -357,7 +359,6 @@ html {
     }
 
     .contact-vlambeer {
-      width: 70%;
       background-color: black;
       border: 1px solid grey;
       border-radius: 5px;

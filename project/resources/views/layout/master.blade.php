@@ -96,7 +96,7 @@
                 </div>
             </div>
 
-            <div class="footer-right col-xs-4">
+            <div class="footer-right col-xs-3">
                 <h3>Contact</h3>
                 <div class="contact-rami">
                     <p>Rami Ismail</p>

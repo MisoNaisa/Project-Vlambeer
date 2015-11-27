@@ -110,7 +110,7 @@ html a {
       float: left;
       margin-top: 0px;
       padding: 10px;
-      margin-right: 100px;}
+      margin-right: 100px; }
     .section .game-post a {
       width: 10%;
       float: left;
@@ -119,7 +119,7 @@ html a {
     .section .game-post .title {
       text-align: center; }
     .section .game-post h2 {
-      margin-left:10px;  }
+      margin-left: 10px; }
     .section .game-post #steam {
       background: url("../img/steam.png");
       min-height: 55px;
@@ -207,54 +207,55 @@ html a {
           color: black;
           font-size: 12px;
           float: left; }
-  .footer .footer-right .contact-rami {
-    width: 70%;
-    background-color: black;
-    border: 1px solid grey;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    padding-bottom: 10px; }
-    .footer .footer-right .contact-rami a {
-      display: block;
-      text-align: center; }
-    .footer .footer-right .contact-rami p {
-      text-align: center;
-      margin-bottom: 5px; }
-    .footer .footer-right .contact-rami p:nth-child(2) {
-      font-style: italic;
-      margin-top: 5px; }
-  .footer .footer-right .contact-jan {
-    width: 70%;
-    background-color: black;
-    border: 1px solid grey;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    padding-bottom: 10px; }
-    .footer .footer-right .contact-jan a {
-      display: block;
-      text-align: center; }
-    .footer .footer-right .contact-jan p {
-      text-align: center;
-      margin-bottom: 5px; }
-    .footer .footer-right .contact-jan p:nth-child(2) {
-      font-style: italic;
-      margin-top: 5px; }
-  .footer .footer-right .contact-vlambeer {
-    width: 70%;
-    background-color: black;
-    border: 1px solid grey;
-    border-radius: 5px;
-    padding-bottom: 10px; }
-    .footer .footer-right .contact-vlambeer a {
-      display: block;
-      text-align: center; }
-    .footer .footer-right .contact-vlambeer p {
-      text-align: center;
-      margin-bottom: 5px; }
-  .footer .footer-right .contact-fb {
-    margin-top: 30px; }
-    .footer .footer-right .contact-fb a {
-      color: #2c4075; }
+  .footer .footer-right {
+    float: right;
+    padding-right: 78px;
+    padding-left: 0px; }
+    .footer .footer-right .contact-rami {
+      background-color: black;
+      border: 1px solid grey;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      padding-bottom: 10px; }
+      .footer .footer-right .contact-rami a {
+        display: block;
+        text-align: center; }
+      .footer .footer-right .contact-rami p {
+        text-align: center;
+        margin-bottom: 5px; }
+      .footer .footer-right .contact-rami p:nth-child(2) {
+        font-style: italic;
+        margin-top: 5px; }
+    .footer .footer-right .contact-jan {
+      background-color: black;
+      border: 1px solid grey;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      padding-bottom: 10px; }
+      .footer .footer-right .contact-jan a {
+        display: block;
+        text-align: center; }
+      .footer .footer-right .contact-jan p {
+        text-align: center;
+        margin-bottom: 5px; }
+      .footer .footer-right .contact-jan p:nth-child(2) {
+        font-style: italic;
+        margin-top: 5px; }
+    .footer .footer-right .contact-vlambeer {
+      background-color: black;
+      border: 1px solid grey;
+      border-radius: 5px;
+      padding-bottom: 10px; }
+      .footer .footer-right .contact-vlambeer a {
+        display: block;
+        text-align: center; }
+      .footer .footer-right .contact-vlambeer p {
+        text-align: center;
+        margin-bottom: 5px; }
+    .footer .footer-right .contact-fb {
+      margin-top: 30px; }
+      .footer .footer-right .contact-fb a {
+        color: #2c4075; }
   .footer .footer-bottom {
     background-color: black;
     float: left;
