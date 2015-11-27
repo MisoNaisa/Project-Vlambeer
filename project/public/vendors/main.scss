@@ -148,10 +148,16 @@ html {
     overflow: hidden;
     color: black;
     background: white;
-    width: 60%;
+    width: 50%;
     margin: 0 auto;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
     border-radius: 25px;
+
+  .title{
+    h1{
+      margin-bottom: 0px;
+    }
+  }
 
     img {
       height: 300px;
@@ -161,9 +167,10 @@ html {
     }
 
     p {
-      width: 80%;
+      width: 90%;
       float: left;
       margin-top: 0px;
+      margin-bottom: 0px;
       padding: 10px;
       margin-right: 100px;
     }
@@ -181,6 +188,7 @@ html {
 
     h2 {
       margin-left: 10px;
+      margin-bottom: 10px;
     }
 
     #steam {
@@ -399,6 +407,19 @@ html {
     }
   }
 
+  @media screen and(min-width:1500px){
+    .section{
+      .game-post{
+        width: 60%;
+        margin: 0 auto;
+        margin-bottom: 100px;
+        border-radius: 25px;
 
+      p{
+        margin-bottom: 10px;
+      }
+      }
+    }
+  }
 
 }
