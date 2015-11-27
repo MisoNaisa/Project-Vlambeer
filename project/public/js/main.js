@@ -19,7 +19,7 @@ $(document).ready(function(){
         },100);
 
     }, function(){
-        var defaultBackground = "http://vlambeer.dev/img/background.jpg";
+        var defaultBackground = "../img/background.jpg";
         $("body").addClass('backgroundTransition');
         setTimeout(function(){
             $('body').css("background",'url(' + defaultBackground + ')');
