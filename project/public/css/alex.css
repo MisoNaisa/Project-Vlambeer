@@ -43,3 +43,8 @@
 .jan:hover {
     background: url("../img/jan-vlambeer.jpg") no-repeat;
 }
+
+.link {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
