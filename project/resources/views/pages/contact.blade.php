@@ -37,18 +37,12 @@
         </div>
     </div>
 
-    <div class="companyLocation">
+    <div class="companyLocation col-xs-12">
         <p>
             Facebook<br><br>
             info@vlambeer.com | Neude 5, 3512 AD<br>
             Utrecht, The Netherlands | +316 21 20 63 63
         </p>
-        <iframe
-                width="600"
-                height="450"
-                frameborder="0" style="border:0"
-                src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY
-    &q=Space+Needle,Seattle+WA" allowfullscreen>
-        </iframe>sssssjjjjjjzzijn
+        <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJvwsb9kRvxkcR1a9sC9TEo9k&key=AIzaSyCcK7dBjnowNw9k4E0pfeLCN-7wcEil66E" allowfullscreen></iframe>
     </div>
 @endsection
