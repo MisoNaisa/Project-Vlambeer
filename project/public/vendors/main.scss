@@ -300,7 +300,12 @@ $font-stack: 'Open Sans', sans-serif;
     h1 {
       font-size: 30px;
       text-align: center;
+
+      a {
+        color: white;
+      }
     }
+
 
     .img {
       width: 100%;

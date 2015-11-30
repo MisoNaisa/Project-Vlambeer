@@ -212,6 +212,8 @@ a {
   .game-overview .game-box h1 {
     font-size: 30px;
     text-align: center; }
+    .game-overview .game-box h1 a {
+      color: white; }
   .game-overview .game-box .img {
     width: 100%;
     height: 240px;
