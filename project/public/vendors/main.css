@@ -219,13 +219,15 @@ a {
     height: 240px;
     border-radius: 25px;
     background-size: cover !important;
-    background-position: center !important; }
+    background-position: center !important;
+    box-shadow: 0px 0px 50px white; }
     .game-overview .game-box .img .description {
       background-color: #fff;
       opacity: 0;
       height: 240px;
       border-radius: 25px;
-      font-size: 17px; }
+      font-size: 17px;
+      transition: opacity .5s; }
     .game-overview .game-box .img :hover.description {
       color: black;
       opacity: 0.6;
