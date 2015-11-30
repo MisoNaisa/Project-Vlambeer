@@ -208,7 +208,8 @@ a {
     text-decoration: underline; }
 
 .game-overview {
-  overflow: hidden; }
+  overflow: hidden;
+  padding-top: 30px; }
   .game-overview .game-box h1 {
     font-size: 30px;
     text-align: center; }
