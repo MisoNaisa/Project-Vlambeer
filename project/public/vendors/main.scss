@@ -292,6 +292,43 @@ $font-stack: 'Open Sans', sans-serif;
 
 }
 
+.game-overview {
+  overflow: hidden;
+
+  .game-box {
+
+    h1 {
+      font-size: 30px;
+      text-align: center;
+    }
+
+    .img {
+      width: 100%;
+      height: 240px;
+      border-radius: 25px;
+      background-size: cover !important;
+      background-position: center !important;
+
+      .description {
+        background-color: #fff;
+        opacity: 0;
+        height: 240px;
+        border-radius: 25px;
+        font-size: 17px;
+      }
+
+      :hover.description {
+        color: black;
+        opacity: 0.6;
+        text-align: center;
+        padding: 20px;
+
+      }
+    }
+
+  }
+}
+
 
 .footer {
   background: rgba(128,128,128, 0.3);

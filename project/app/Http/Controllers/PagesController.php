@@ -28,10 +28,11 @@ class PagesController extends Controller
     }
 
     public function overview_games() {
+        $games = \App\Game::all();
         $tweetV = \App\Tweet::getStatusVlambeer();
         $tweetR = \App\Tweet::getStatusRami();
         $tweetJ = \App\Tweet::getStatusJan();
-        return view('pages.overview_games', compact('tweetV', 'tweetR', 'tweetJ'));
+        return view('pages.overview_games', compact('games', 'tweetV', 'tweetR', 'tweetJ'));
     }
 
     public function info_game() {
