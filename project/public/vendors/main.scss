@@ -6,12 +6,6 @@ $font-stack: 'Open Sans', sans-serif;
     background-attachment: fixed !important;
     background-position: center !important;
 
-    .container {
-      margin: 0 auto;
-      padding: 0px;
-      color: #FFFFFF;
-      background: rgba(1,1,1,.3);
-    }
     &:before {
       content: " ";
       position: fixed;
@@ -25,6 +19,13 @@ $font-stack: 'Open Sans', sans-serif;
       transition: all 100ms ease;
     }
   }
+
+.container {
+  margin: 0 auto;
+  padding: 0px;
+  color: #FFFFFF;
+  background: rgba(1,1,1,.3);
+}
 
   .backgroundTransition:before {
     opacity: 1;
