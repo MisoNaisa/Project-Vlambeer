@@ -3,6 +3,11 @@ body {
   background-size: cover !important;
   background-attachment: fixed !important;
   background-position: center !important; }
+  body .container {
+    margin: 0 auto;
+    padding: 0px;
+    color: #FFFFFF;
+    background: rgba(1, 1, 1, 0.3); }
   body:before {
     content: " ";
     position: fixed;
@@ -218,17 +223,17 @@ a {
     background-position: center !important;
     box-shadow: 0px 0px 50px white; }
     .game-overview .game-box .img .description {
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: #fff;
       opacity: 0;
       height: 240px;
       border-radius: 25px;
       font-size: 17px;
-      transition: opacity .5s;
-      text-align: center;
-      color: white;
-      padding: 20px; }
+      transition: opacity .5s; }
     .game-overview .game-box .img :hover.description {
-      opacity: 1; }
+      color: black;
+      opacity: 0.6;
+      text-align: center;
+      padding: 20px; }
 
 .footer {
   background: rgba(128, 128, 128, 0.3); }

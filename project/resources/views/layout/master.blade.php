@@ -43,13 +43,14 @@
     </div>
 </div>
 <!-- End of header-->
+<div class="container">
+
 
     <div class="section">
         @yield('section')
     </div>
 
 <!-- Begin Footer -->
-    <div class="container">
     <div class="footer">
         <div class="row">
             <div class="footer-left col-xs-8">
@@ -134,6 +135,5 @@
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="js/jquery.vide.js"></script>
 <script src="js/main.js"></script>
 </html>
