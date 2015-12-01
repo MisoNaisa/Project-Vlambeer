@@ -27,3 +27,13 @@ $(document).ready(function(){
             $('body').removeClass('backgroundTransition');
         },100);
     });
+
+
+    $(function(){
+        $(window).load(function(){ // On load
+            var hoogte = window.innerHeight;
+            $('.section').css('margin-top', hoogte + 'px');
+            console.log(hoogte);
+        });
+    });
+

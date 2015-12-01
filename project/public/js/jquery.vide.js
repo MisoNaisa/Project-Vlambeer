@@ -234,7 +234,7 @@
     // Set styles of a video wrapper
     $wrapper = vide.$wrapper = $('<div>').css({
       position: 'absolute',
-      'z-index': -1,
+      'z-index': 9999,
       top: 0,
       left: 0,
       bottom: 0,
@@ -274,9 +274,9 @@
     }
 
     // If a parent element has a static position, make it relative
-    if ($element.css('position') === 'static') {
-      $element.css('position', 'relative');
-    }
+    //if ($element.css('position') === 'static') {
+    //  $element.css('position', 'relative');
+    //}
 
     $element.prepend($wrapper);
 

@@ -11,6 +11,7 @@ $font-stack: 'Open Sans', sans-serif;
       padding: 0px;
       color: #FFFFFF;
       background: rgba(1,1,1,.3);
+      clear: both;
     }
     &:before {
       content: " ";
@@ -143,7 +144,7 @@ $font-stack: 'Open Sans', sans-serif;
 }
 
 .section {
-  margin-top: 100px;
+  margin-top: 55px;
 
   .transition {
     -webkit-transform: scale(1.1);
@@ -156,6 +157,10 @@ $font-stack: 'Open Sans', sans-serif;
   .maps{
     width: 100%;
     height: 650px;
+  }
+
+  .game-post:first-child {
+    margin-top: 75px;
   }
 
   .game-post {
@@ -291,6 +296,11 @@ $font-stack: 'Open Sans', sans-serif;
   }
 
 }
+
+video {
+  z-index: 1;
+}
+
 
 .game-overview {
   overflow: hidden;
