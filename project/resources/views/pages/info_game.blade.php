@@ -1,6 +1,5 @@
 @extends('layout.master')
 
-<<<<<<< HEAD
 @section('bodyAttributes')
     class="info-game"
 @endsection
@@ -9,12 +8,6 @@
 
 
     <div style="width: 100%;"
-=======
-@section('section')
-
-    {{--style="width: 100%; height: 500px;--}}
-    <div
->>>>>>> origin/master
          data-vide-bg="webm: ../video/serious-sam"
          data-vide-options="posterType: jpg, loop: true, muted: true, position: 0% 0%">
     </div>
