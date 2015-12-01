@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\CustomClasses\GiantBomb\Api as GiantBombApi;
+
 
 class PagesController extends Controller
 {
@@ -41,4 +43,10 @@ class PagesController extends Controller
         $tweetJ = \App\Tweet::getStatusJan();
         return view('pages.info_game', compact('tweetV', 'tweetR', 'tweetJ'));
     }
+
+    public function test() {
+        $allGames = new GiantBombApi();
+        return view(print_r( $allGames->getGameByid('41999') ) );
+    }
+
 }
