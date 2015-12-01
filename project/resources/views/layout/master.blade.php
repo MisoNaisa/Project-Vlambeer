@@ -12,7 +12,7 @@
 
     <title>Vlambeer</title>
 </head>
-<body>
+<body @yield('bodyAttributes')>
 
 <!-- Begin header -->
 <div class="header">

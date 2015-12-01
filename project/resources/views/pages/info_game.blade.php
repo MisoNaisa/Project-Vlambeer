@@ -1,11 +1,13 @@
 @extends('layout.master')
 
+@section('bodyAttributes')
+    class="info-game"
+@endsection
+
 @section('section')
 
 
-
-
-    <div style="width: 100%; height: 500px;"
+    <div style="width: 100%;"
          data-vide-bg="webm: ../video/serious-sam"
          data-vide-options="posterType: jpg, loop: true, muted: true, position: 0% 0%">
     </div>

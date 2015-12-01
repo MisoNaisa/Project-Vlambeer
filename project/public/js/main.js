@@ -9,7 +9,8 @@ $(document).ready(function(){
 
 
 
-//    Jordey zijn zooi
+//  Home  - image background
+
     $(".game-post").hover(function(){
         var background = $(this).find('.img').css('background-image').replace('url(', '').replace(')', '');
         console.log(background);
@@ -28,12 +29,11 @@ $(document).ready(function(){
         },100);
     });
 
+    // Game-info page - Full screen bg video
 
     $(function(){
         $(window).load(function(){ // On load
-            var hoogte = window.innerHeight;
-            $('.section').css('margin-top', hoogte + 'px');
-            console.log(hoogte);
+            $('.info-game .section').css('margin-top', window.innerHeight + 'px');
         });
     });
 
