@@ -159,48 +159,25 @@ a {
     .section .game-post h2 {
       margin-left: 10px;
       margin-bottom: 10px; }
+    .section .game-post .payment-img {
+      min-height: 55px;
+      width: 65px;
+      background-size: 60px !important;
+      background-repeat: no-repeat !important; }
     .section .game-post #steam {
-      background: url("../img/steam.png");
-      min-height: 55px;
-      width: 65px;
-      background-size: 60px;
-      background-repeat: no-repeat; }
+      background: url("../img/steam.png"); }
     .section .game-post #apple {
-      background: url("../img/apple.png");
-      min-height: 55px;
-      width: 65px;
-      background-size: 70px;
-      background-repeat: no-repeat; }
+      background: url("../img/apple.png"); }
     .section .game-post #playstation {
-      background: url("../img/playstation.png");
-      min-height: 55px;
-      width: 65px;
-      background-size: 60px;
-      background-repeat: no-repeat; }
+      background: url("../img/playstation.png"); }
     .section .game-post #venuspatrol {
-      background: url("../img/venuspatrol.png");
-      min-height: 55px;
-      width: 65px;
-      background-size: 60px;
-      background-repeat: no-repeat; }
+      background: url("../img/venuspatrol.png"); }
     .section .game-post #android {
-      background: url("../img/android.png");
-      min-height: 55px;
-      width: 65px;
-      background-size: 60px;
-      background-repeat: no-repeat; }
+      background: url("../img/android.png"); }
     .section .game-post #superbreadbox {
-      background: url("../img/superbreadbox.png");
-      min-height: 55px;
-      width: 65px;
-      background-size: 60px;
-      background-repeat: no-repeat; }
+      background: url("../img/superbreadbox.png"); }
     .section .game-post #gowebsite {
-      background: url("../img/gowebsite.png");
-      min-height: 30px;
-      width: 165px;
-      background-size: 150px;
-      background-repeat: no-repeat; }
+      background: url("../img/gowebsite.png"); }
   .section .picture {
     height: 75px;
     margin-top: 20px;
@@ -278,7 +255,7 @@ a {
   background: rgba(128, 128, 128, 0.3); }
   .footer h3 {
     margin-top: 35px;
-    color: black; }
+    color: white; }
   .footer p {
     color: white; }
   .footer .footer-left {
@@ -322,67 +299,44 @@ a {
     float: right;
     padding-right: 78px;
     padding-left: 0px; }
-    .footer .footer-right .contact-rami {
+    .footer .footer-right .contact-default-styling {
       background-color: black;
       border: 1px solid grey;
       border-radius: 5px;
       margin-bottom: 10px;
       padding-bottom: 10px; }
-      .footer .footer-right .contact-rami a {
+      .footer .footer-right .contact-default-styling a {
         display: block;
-        text-align: center; }
-      .footer .footer-right .contact-rami p {
+        text-align: center;
+        text-decoration: none; }
+      .footer .footer-right .contact-default-styling p {
         text-align: center;
         margin-bottom: 5px; }
-      .footer .footer-right .contact-rami p:nth-child(2) {
+      .footer .footer-right .contact-default-styling p:nth-child(2) {
         font-style: italic;
         margin-top: 5px; }
-    .footer .footer-right .contact-jan {
-      background-color: black;
-      border: 1px solid grey;
-      border-radius: 5px;
-      margin-bottom: 10px;
-      padding-bottom: 10px; }
-      .footer .footer-right .contact-jan a {
-        display: block;
-        text-align: center; }
-      .footer .footer-right .contact-jan p {
-        text-align: center;
-        margin-bottom: 5px; }
-      .footer .footer-right .contact-jan p:nth-child(2) {
-        font-style: italic;
-        margin-top: 5px; }
-    .footer .footer-right .contact-vlambeer {
-      background-color: black;
-      border: 1px solid grey;
-      border-radius: 5px;
-      padding-bottom: 10px; }
-      .footer .footer-right .contact-vlambeer a {
-        display: block;
-        text-align: center; }
-      .footer .footer-right .contact-vlambeer p {
-        text-align: center;
-        margin-bottom: 5px; }
-    .footer .footer-right .contact-fb {
-      margin-top: 30px; }
-      .footer .footer-right .contact-fb a {
-        color: #2c4075; }
-  .footer .footer-bottom {
-    background-color: black;
-    float: left;
-    width: 100%; }
-    .footer .footer-bottom .contact-info {
-      width: 19%;
-      margin-left: 35px; }
-      .footer .footer-bottom .contact-info p {
-        font-size: 10px; }
-  @media screen and (min-width: 1500px) {
-    .footer .section .game-post {
-      width: 60%;
-      margin: 0 auto;
-      margin-bottom: 100px;
-      border-radius: 25px; }
-      .footer .section .game-post p {
-        margin-bottom: 10px; } }
+  .footer .contact-fb {
+    margin-top: 30px; }
+    .footer .contact-fb a {
+      color: #2c4075; }
+
+.footer-bottom {
+  background-color: black;
+  float: left;
+  width: 100%; }
+  .footer-bottom .contact-info {
+    width: 19%;
+    margin-left: 35px; }
+    .footer-bottom .contact-info p {
+      font-size: 10px; }
+
+@media screen and (min-width: 1500px) {
+  .section .game-post {
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    border-radius: 25px; }
+    .section .game-post p {
+      margin-bottom: 10px; } }
 
 /*# sourceMappingURL=main.css.map */

@@ -225,54 +225,33 @@ $font-stack: 'Open Sans', sans-serif;
       margin-bottom: 10px;
     }
 
+  .payment-img {
+    min-height: 55px;
+    width: 65px;
+    background-size: 60px !important;
+    background-repeat: no-repeat !important;
+  }
+
     #steam {
       background: url("../img/steam.png");
-      min-height: 55px;
-      width: 65px;
-      background-size: 60px;
-      background-repeat: no-repeat;
     }
     #apple {
       background: url("../img/apple.png");
-      min-height: 55px;
-      width: 65px;
-      background-size: 70px;
-      background-repeat: no-repeat;
     }
     #playstation {
       background: url("../img/playstation.png");
-      min-height: 55px;
-      width: 65px;
-      background-size: 60px;
-      background-repeat: no-repeat;
     }
     #venuspatrol {
       background: url("../img/venuspatrol.png");
-      min-height: 55px;
-      width: 65px;
-      background-size: 60px;
-      background-repeat: no-repeat;
     }
     #android {
       background: url("../img/android.png");
-      min-height: 55px;
-      width: 65px;
-      background-size: 60px;
-      background-repeat: no-repeat;
     }
     #superbreadbox {
       background: url("../img/superbreadbox.png");
-      min-height: 55px;
-      width: 65px;
-      background-size: 60px;
-      background-repeat: no-repeat;
     }
     #gowebsite {
       background: url("../img/gowebsite.png");
-      min-height: 30px;
-      width: 165px;
-      background-size: 150px;
-      background-repeat: no-repeat;
     }
   }
 
@@ -399,7 +378,7 @@ $font-stack: 'Open Sans', sans-serif;
 
   h3 {
     margin-top: 35px;
-    color: black;
+    color: white;
   }
 
   p {
@@ -468,8 +447,8 @@ $font-stack: 'Open Sans', sans-serif;
     float: right;
     padding-right: 78px;
     padding-left: 0px;
-    
-    .contact-rami {
+
+  .contact-default-styling {
       background-color: black;
       border: 1px solid grey;
       border-radius: 5px;
@@ -479,6 +458,7 @@ $font-stack: 'Open Sans', sans-serif;
       a {
         display: block;
         text-align: center;
+        text-decoration: none;
       }
 
       p {
@@ -492,46 +472,7 @@ $font-stack: 'Open Sans', sans-serif;
       }
 
     }
-
-    .contact-jan {
-      background-color: black;
-      border: 1px solid grey;
-      border-radius: 5px;
-      margin-bottom: 10px;
-      padding-bottom: 10px;
-
-      a {
-        display: block;
-        text-align: center;
-      }
-
-      p {
-        text-align: center;
-        margin-bottom: 5px;
-      }
-
-      p:nth-child(2) {
-        font-style: italic;
-        margin-top: 5px;
-      }
-    }
-
-    .contact-vlambeer {
-      background-color: black;
-      border: 1px solid grey;
-      border-radius: 5px;
-      padding-bottom: 10px;
-
-      a {
-        display: block;
-        text-align: center;
-      }
-
-      p {
-        text-align: center;
-        margin-bottom: 5px;
-      }
-    }
+  }
 
     .contact-fb {
       margin-top: 30px;
@@ -573,4 +514,4 @@ $font-stack: 'Open Sans', sans-serif;
     }
   }
 
-}
+

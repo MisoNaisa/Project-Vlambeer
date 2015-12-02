@@ -99,19 +99,19 @@
 
             <div class="footer-right col-xs-3">
                 <h3>Contact</h3>
-                <div class="contact-rami">
+                <div class="contact-default-styling contact-rami">
                     <p>Rami Ismail</p>
                     <p>Business and Development</p>
                     <a href="mailto:rami@vlambeer.com">rami@vlambeer.com</a>
                     <a href="https://twitter.com/search?q=tha_rami&src=typd">@tha_rami <i class="fa fa-twitter"></i></a>
                 </div>
-                <div class="contact-jan">
+                <div class="contact-default-styling contact-jan">
                     <p>Jan Willem Nijman</p>
                     <p>Game Design</p>
                     <a href="mailto:jw@vlambeer.com">jw@vlambeer.com</a>
                     <a href="https://twitter.com/jwaaaap">@jwaaaap <i class="fa fa-twitter"></i></a>
                 </div>
-                <div class="contact-vlambeer">
+                <div class="contact-default-styling contact-vlambeer">
                     <p>Vlambeer</p>
                     <a href="https://twitter.com/search?q=vlambeer&src=typd">@vlambeer <i class="fa fa-twitter"></i></a>
                 </div>
