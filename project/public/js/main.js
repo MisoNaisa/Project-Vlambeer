@@ -31,10 +31,23 @@ $(document).ready(function(){
 
     // Game-info page - Full screen bg video
 
-    $(function(){
-        $(window).load(function(){ // On load
+    $('.info-game .section').css('margin-top', window.innerHeight + 'px');
 
-            $('.info-game .section').css('margin-top', window.innerHeight + 'px');
-        });
+
+
+    $(".section .video-table .fa").click( function (){
+        $('video').prop('muted', !$('video').prop('muted'));
+
+        if ( $('.section .video-table .fa-volume-off').hasClass('hidden') ) {
+            $('.section .video-table .hidden').removeClass('hidden');
+            $('.section .video-table .fa-volume-up').addClass('hidden');
+        } else {
+            $('.section .video-table .hidden').removeClass('hidden');
+            $('.section .video-table .fa-volume-off').addClass('hidden');
+        }
+
     });
+
+
+
 
