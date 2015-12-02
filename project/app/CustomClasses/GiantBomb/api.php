@@ -258,10 +258,18 @@ class Api
     }
 
     public function getAllGameInfoById($id) {
-        $this->fetch(array( 'game', $id ), array('name', 'deck', 'description', 'images', 'genres'));
+        $this->fetch(array( 'game', $id ), array('id', 'name', 'deck', 'original_game_rating'));
         $games = $this->__toObject();
         return $games['results'];
     }
+
+    public function getGameNameById($id) {
+        $this->fetch(array( 'game', $id ), array('name'));
+        $games = $this->__toObject();
+        return $games['results']['name'];
+    }
+
+
 
 
 }
