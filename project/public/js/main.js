@@ -33,6 +33,7 @@ $(document).ready(function(){
 
     $(function(){
         $(window).load(function(){ // On load
+
             $('.info-game .section').css('margin-top', window.innerHeight + 'px');
         });
     });

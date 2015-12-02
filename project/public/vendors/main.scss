@@ -82,7 +82,7 @@ $font-stack: 'Open Sans', sans-serif;
 .header {
   color: white;
   background: black;
-  z-index: 10000010;
+  z-index: 10;
   position: fixed;
   top: 0;
   width: 100%;
@@ -295,11 +295,32 @@ $font-stack: 'Open Sans', sans-serif;
     text-decoration: underline;
   }
 
+//  game_info css begin
+
+  video {
+    z-index: 1;
+  }
+
+  .video-table {
+    display: table;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 9999;
+
+    h1 {
+      color: white;
+      text-align: center;
+      margin-bottom: 10%;
+      font-size: 50px;
+      text-shadow: 3px 3px 3px black;
+      }
+  }
+
+// game_info css eind
 }
 
-video {
-  z-index: 1;
-}
+
 
 
 .game-overview {
