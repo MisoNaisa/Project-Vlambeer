@@ -1,3 +1,4 @@
 
-
-{{var_dump($gamesArray)}}
+<pre>
+{{print_r($gamesArray)}}
+</pre>

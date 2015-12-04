@@ -50,12 +50,10 @@ class PagesController extends Controller
 
     public function test() {
         $games = new GiantBombApi();
-        $gamesArray = $games->getAllGameInfoById(46090);
-        $tweetV = \App\Tweet::getStatusVlambeer();
-        $tweetR = \App\Tweet::getStatusRami();
-        $tweetJ = \App\Tweet::getStatusJan();
+        $gamesArray = $games->getAllGames();
 
-        return view('pages.giantbomb_api', compact('gamesArray', 'tweetV', 'tweetR', 'tweetJ'));
+
+        return view('pages.giantbomb_api', compact('gamesArray'));
     }
 
 }
