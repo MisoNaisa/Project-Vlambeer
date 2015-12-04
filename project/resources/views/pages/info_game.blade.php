@@ -20,6 +20,22 @@
     </div>
 
     <div class="container">
+
+
+        <div id="slider">
+            <a class="control_next noselect"><i class="fa fa-arrow-right"></i></a>
+            <a class="control_prev noselect"><i class="fa fa-arrow-left"></i></a>
+            <ul>
+                <li><img src="http://placehold.it/350x150" /></li>
+                <li><img src="http://placehold.it/350x150" /></li>
+                <li><img src="http://placehold.it/350x150" /></li>
+                <li><img src="http://placehold.it/350x150" /></li>
+            </ul>
+        </div>
+
+        {{var_dump($gamesArray)}}
+
+
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda ducimus eos et fuga, fugit, id illum impedit in inventore, maiores minima nesciunt nisi officiis quibusdam quidem rem rerum tenetur vel.</p>
     </div>
 @endsection
