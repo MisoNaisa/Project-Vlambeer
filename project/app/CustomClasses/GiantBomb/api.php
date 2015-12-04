@@ -2,6 +2,7 @@
 
 namespace App\CustomClasses\GiantBomb;
 
+use DB;
 /**
  *
  *  Class GiantBomb
@@ -248,6 +249,17 @@ class Api
     public function getAllGames() {
         $this->fetch(array( 'company', '3010-7731' ), array('published_games', 'description'));
         $games = $this->__toObject();
+        $allGames = [];
+        foreach( $games['results']['published_games'] as $game ) {
+            array_push($allGames, $this->getGameById($game['id']) );
+        }
+
+        return DB::table('games')->select('id', 'game_background_img')->get();
+    }
+
+    public function getAllGameIds() {
+        $this->fetch(array( 'company', '3010-7731' ), array('published_games', 'description'));
+        $games = $this->__toObject();
         return $games['results']['published_games'];
     }
 
@@ -258,16 +270,16 @@ class Api
     }
 
     public function getAllGameInfoById($id) {
-        $this->fetch(array( 'game', $id ), array('id', 'name', 'deck', 'original_game_rating'));
+        $this->fetch(array( 'game', $id ), array('id', 'name', 'description', 'images', 'deck', 'original_game_rating'));
         $games = $this->__toObject();
         return $games['results'];
     }
 
-    public function getGameNameById($id) {
-        $this->fetch(array( 'game', $id ), array('name'));
-        $games = $this->__toObject();
-        return $games['results']['name'];
-    }
+//    public function getGameNameById($id) {
+//        $this->fetch(array( 'game', $id ), array('name'));
+//        $games = $this->__toObject();
+//        return $games['results']['name'];
+//    }
 
 
 
