@@ -45,7 +45,7 @@ class GamesTableSeeder extends Seeder
             'regular_payment_link'=>'http://superbreadbox.com/'
         ]);
         DB::table('games')->insert([
-            'id'=>'6',
+            'id'=>'40158',
             'game_name'=>'Ridiculous Fishing',
             'game_background_img'=>'http://www.vlambeer.com/wp-content/uploads/2012/04/bgSplash.png',
             'ios_payment_link'=>'https://itunes.apple.com/us/app/ridiculous-fishing-tale-redemption/id601831815?l=nl&ls=1&mt=8',

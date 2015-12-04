@@ -246,15 +246,23 @@ class Api
 
     //    Easy to use functions
 
-    public function getAllGames() {
-        $this->fetch(array( 'company', '3010-7731' ), array('published_games', 'description'));
-        $games = $this->__toObject();
-        $allGames = [];
-        foreach( $games['results']['published_games'] as $game ) {
-            array_push($allGames, $this->getGameById($game['id']) );
+    public function getAllGameIdsFromDb() {
+        //        Get all Game ID's from database
+        $idList = DB::table('games')->select('id')->get();
+        $idsArray = [];
+        foreach ($idList as $id) {
+            array_push($idsArray, $id->id);
         }
+        return $idsArray;
+    }
 
-        return DB::table('games')->select('id', 'game_background_img')->get();
+    public function getAllGames() {
+        $idsGames = $this->getAllGameIdsFromDb();
+        $allGames = [];
+        foreach( $idsGames as $game ) {
+            array_push($allGames, $this->getGameById($game) );
+        }
+        return $allGames;
     }
 
     public function getAllGameIds() {
@@ -263,17 +271,18 @@ class Api
         return $games['results']['published_games'];
     }
 
+    public function getAllGameInfoById($id) {
+        $this->fetch(array( 'game', $id ), array('id', 'name', 'description', 'images', 'deck', 'original_game_rating'));
+        $games = $this->__toObject();
+        return $games['results'];
+    }
+
     public function getGameById($id) {
         $this->fetch(array( 'game', $id ), array('id', 'name', 'deck', 'original_game_rating'));
         $games = $this->__toObject();
         return $games['results'];
     }
 
-    public function getAllGameInfoById($id) {
-        $this->fetch(array( 'game', $id ), array('id', 'name', 'description', 'images', 'deck', 'original_game_rating'));
-        $games = $this->__toObject();
-        return $games['results'];
-    }
 
 //    public function getGameNameById($id) {
 //        $this->fetch(array( 'game', $id ), array('name'));

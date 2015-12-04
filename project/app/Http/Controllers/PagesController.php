@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Game;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\CustomClasses\GiantBomb\Api as GiantBombApi;
+use Illuminate\Support\Facades\DB;
 
 
 class PagesController extends Controller
@@ -54,6 +56,13 @@ class PagesController extends Controller
         $games = new GiantBombApi();
         $gamesArray = $games->getAllGameIds();
 
+       foreach($games as $game) {
+
+        if (Game::where('id', '=', $gamesArray)->exists()) {
+            // when exist in database
+            echo 'data already in database';
+        }
+       }
 
         return view('pages.giantbomb_api', compact('gamesArray'));
     }
