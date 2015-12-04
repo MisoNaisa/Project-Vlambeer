@@ -53,18 +53,7 @@ class PagesController extends Controller
     }
 
     public function test() {
-        $games = new GiantBombApi();
-        $gamesArray = $games->getAllGameIds();
 
-       foreach($games as $game) {
-
-        if (Game::where('id', '=', $gamesArray)->exists()) {
-            // when exist in database
-            echo 'data already in database';
-        }
-       }
-
-        return view('pages.giantbomb_api', compact('gamesArray'));
     }
 
 }
