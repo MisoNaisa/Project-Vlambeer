@@ -2,6 +2,7 @@
 
 namespace App\CustomClasses\GiantBomb;
 
+use DB;
 /**
  *
  *  Class GiantBomb
@@ -250,9 +251,10 @@ class Api
         $games = $this->__toObject();
         $allGames = [];
         foreach( $games['results']['published_games'] as $game ) {
-            array_push($allGames, $games['id']);
+            array_push($allGames, $this->getGameById($game['id']) );
         }
-        return $allGames;
+
+        return DB::table('games')->select('id', 'game_background_img')->get();
     }
 
     public function getAllGameIds() {
@@ -273,11 +275,11 @@ class Api
         return $games['results'];
     }
 
-    public function getGameNameById($id) {
-        $this->fetch(array( 'game', $id ), array('name'));
-        $games = $this->__toObject();
-        return $games['results']['name'];
-    }
+//    public function getGameNameById($id) {
+//        $this->fetch(array( 'game', $id ), array('name'));
+//        $games = $this->__toObject();
+//        return $games['results']['name'];
+//    }
 
 
 
