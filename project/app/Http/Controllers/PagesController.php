@@ -50,7 +50,7 @@ class PagesController extends Controller
 
     public function test() {
         $games = new GiantBombApi();
-        $gamesArray = $games->getAllGames();
+        $gamesArray = $games->getAllGameIds();
 
 
         return view('pages.giantbomb_api', compact('gamesArray'));

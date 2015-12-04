@@ -250,16 +250,15 @@ class Api
         $games = $this->__toObject();
         $allGames = [];
         foreach( $games['results']['published_games'] as $game ) {
-            $allGames.array_push( $this->getGameById($game['id'] ));
+            array_push($allGames, $games['id']);
         }
-
         return $allGames;
     }
 
     public function getAllGameIds() {
         $this->fetch(array( 'company', '3010-7731' ), array('published_games', 'description'));
         $games = $this->__toObject();
-        return $games['results'];
+        return $games['results']['published_games'];
     }
 
     public function getGameById($id) {
