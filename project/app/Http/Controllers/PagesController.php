@@ -49,6 +49,9 @@ class PagesController extends Controller
         $tweetJ = \App\Tweet::getStatusJan();
         $games = new GiantBombApi();
         $gamesArray = $games->getAllGameInfoById(34402);
+
+//        echo $gamesArray['description'];
+//        die();
         return view('pages.info_game', compact('tweetV', 'tweetR', 'tweetJ', 'gamesArray'));
     }
 

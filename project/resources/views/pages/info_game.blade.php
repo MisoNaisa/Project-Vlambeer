@@ -18,7 +18,7 @@
 
         </div>
     </div>
-    
+
     <div class="container">
 
 
@@ -36,9 +36,13 @@
             </ul>
         </div>
 
+        <div class="gameInfo">
 
 
 
-        {{$gamesArray['description']}}
+            {{ print_r(preg_replace("/<img[^>]+\>/i", "",str_replace('href="','target="_blank" href="http://giantbomb.com',$gamesArray['description']))) }}
+        </div>
+
+
     </div>
 @endsection
