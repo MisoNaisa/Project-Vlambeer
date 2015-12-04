@@ -8,10 +8,6 @@
                 <div class="title">
                     <h1>{{$game['game_name']}}</h1>
                 </div>
-                <p>
-                    {{$game['description']}}
-                </p>
-
                 <div class="game-buy">
                     <h2>Buy This game here for:</h2>
                     @if($game['game_name'] == "Gun Godz")
@@ -29,8 +25,8 @@
                             <div class="payment-img" id="apple"></div>
                         </a>
                     @endif
-                    @if($game['vita_payment_link'] != null)
-                        <a href="{{$game['vita_payment_link']}}">
+                    @if($game['psn_payment_link'] != null)
+                        <a href="{{$game['psn_payment_link']}}">
                             <div class="payment-img" id="playstation"></div>
                         </a>
                     @endif
@@ -40,11 +36,8 @@
                         </a>
                     @endif
                     @if($game['game_name'] == "Ridiculous Fishing")
-                        <a href="{{$game['regular_payment_link']}}">
+                        <a href="{{$game['android_payment_link']}}">
                             <div class="payment-img" id="android"></div>
-                        </a>
-                        <a href="{{$game['ios_payment_link']}}">
-                            <div class="payment-img" id="apple"></div>
                         </a>
                     @endif
                 </div>
