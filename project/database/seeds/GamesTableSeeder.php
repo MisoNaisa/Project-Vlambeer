@@ -12,19 +12,19 @@ class GamesTableSeeder extends Seeder
     public function run()
     {
         DB::table('games')->insert([
-            'id'=>'1',
+            'id'=>'37491',
             'game_name'=>'Gun Godz',
             'game_background_img'=>'http://www.vlambeer.com/wp-content/uploads/2012/02/LOGO-510x286.png',
             'steam_payment_link'=>'http://venuspatrol.com/subscribe/#subscriptionform',
         ]);
         DB::table('games')->insert([
-            'id'=>'2',
+            'id'=>'34402',
             'game_name'=>'Serious Sam: The Random Encounter',
             'game_background_img'=>'http://cdn.dbolical.com/videos/games/1/17/16583/Serious_Sam_The_Random_Encounter_-_Launch_Trailer.mp4.jpg',
             'steam_payment_link'=>'http://store.steampowered.com/app/201480/',
         ]);
         DB::table('games')->insert([
-            'id'=>'3',
+            'id'=>'32945',
             'game_name'=>'Super Crate Box',
             'game_background_img'=>'http://www.vlambeer.com/wp-content/uploads/2012/01/header-510x186.png',
             'steam_payment_link'=>'http://store.steampowered.com/app/212800/?l=dutch',
@@ -32,14 +32,14 @@ class GamesTableSeeder extends Seeder
             'psn_payment_link'=>'https://www.playstation.com/en-gb/games/super-crate-box-psvita/'
         ]);
         DB::table('games')->insert([
-            'id'=>'4',
+            'id'=>'39474',
             'game_name'=>'Luftrausers',
             'game_background_img'=>'http://www.rockpapershotgun.com/images/12/apr/Luftrausers.jpg',
             'steam_payment_link'=>'http://store.steampowered.com/app/233150/?l=dutch',
             'psn_payment_link'=>'https://www.playstation.com/nl-nl/games/luftrausers-ps3/'
         ]);
         DB::table('games')->insert([
-            'id'=>'5',
+            'id'=>'46090',
             'game_name'=>'Super Bread Box',
             'game_background_img'=>'http://2.bp.blogspot.com/-VlIgr-BUODY/UHIeLXjoORI/AAAAAAAACqw/6AkQhX849yI/s1600/sbb.png',
             'regular_payment_link'=>'http://superbreadbox.com/'

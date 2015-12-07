@@ -96,7 +96,7 @@ class GamesController extends Controller
     public function test() {
         $games = new GiantBombApi();
         $gamesArray = $games->getAllGameIds();
-        $dbGames = DB::select("SELECT * FROM games");
+        $dbGames = \App\Game::all();
 
         $pluckIdFromApi = array_pluck($gamesArray, 'id');
         $pluckIdFromDb  = array_pluck($dbGames, 'id');
