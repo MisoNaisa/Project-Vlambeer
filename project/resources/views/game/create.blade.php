@@ -5,7 +5,6 @@
     <div class="col-md-4 col-md-push-4">
 
 
-
         <h3>Add Game</h3>
 
         <form action="{{ action('GamesController@store') }}" method="post">

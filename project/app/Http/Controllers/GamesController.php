@@ -36,10 +36,13 @@ class GamesController extends Controller
         $gamesArray = $games->getAllGameIds();
         $dbGames = \App\Game::all();
 
-        $pluckIdFromApi = array_pluck($gamesArray, 'name');
-        $pluckIdFromDb  = array_pluck($dbGames, 'game_name');
+        $pluckIdFromApi = array_pluck($gamesArray, 'id');
+        $pluckIdFromDb  = array_pluck($dbGames, 'id');
 
         $results = array_diff($pluckIdFromApi , $pluckIdFromDb);
+
+        foreach($results as $result)
+        { dd($games->getGameNameFromApi($result)); }
 
 
         return view('game.create', compact('results', 'tweetV', 'tweetR', 'tweetJ'));
