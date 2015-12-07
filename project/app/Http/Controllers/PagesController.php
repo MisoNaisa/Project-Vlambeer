@@ -56,7 +56,9 @@ class PagesController extends Controller
     }
 
     public function test() {
-
+        $games = new GiantBombApi();
+        $gamesArray = $games->getAllGameInfoById(34402);
+        dd($gamesArray);
     }
 
 }
