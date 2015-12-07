@@ -6,10 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\CustomClasses\GiantBomb\Api as GiantBombApi;
-use DB;
 
-class GamesController extends Controller
+class Shopcontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +16,7 @@ class GamesController extends Controller
      */
     public function index()
     {
-
+        //
     }
 
     /**
@@ -28,21 +26,7 @@ class GamesController extends Controller
      */
     public function create()
     {
-        $tweetV = \App\Tweet::getStatusVlambeer();
-        $tweetR = \App\Tweet::getStatusRami();
-        $tweetJ = \App\Tweet::getStatusJan();
-
-        $games = new GiantBombApi();
-        $gamesArray = $games->getAllGameIds();
-        $dbGames = \App\Game::all();
-
-        $pluckIdFromApi = array_pluck($gamesArray, 'name');
-        $pluckIdFromDb  = array_pluck($dbGames, 'game_name');
-
-        $results = array_diff($pluckIdFromApi , $pluckIdFromDb);
-
-
-        return view('game.create', compact('results', 'tweetV', 'tweetR', 'tweetJ'));
+        //
     }
 
     /**
@@ -75,9 +59,7 @@ class GamesController extends Controller
      */
     public function edit($id)
     {
-        $game = \App\Game::where('id', $id)->first();
-
-        return view('game.edit', compact('game'));
+        //
     }
 
     /**
@@ -101,21 +83,5 @@ class GamesController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function test() {
-
-        $games = new GiantBombApi();
-        $gamesArray = $games->getAllGameIds();
-        $dbGames = \App\Game::all();
-
-        $pluckIdFromApi = array_pluck($gamesArray, 'name');
-        $pluckIdFromDb  = array_pluck($dbGames, 'game_name');
-
-        $result = array_diff($pluckIdFromApi , $pluckIdFromDb);
-
-        dd($pluckIdFromApi,$pluckIdFromDb, $result);
-
-        return view('pages.giantbomb_api', compact('gamesArray'));
     }
 }
