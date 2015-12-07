@@ -28,7 +28,11 @@ class GamesController extends Controller
      */
     public function create()
     {
-        //
+        $tweetV = \App\Tweet::getStatusVlambeer();
+        $tweetR = \App\Tweet::getStatusRami();
+        $tweetJ = \App\Tweet::getStatusJan();
+
+        return view('game.create', compact('tweetV', 'tweetR', 'tweetJ'));
     }
 
     /**
@@ -61,7 +65,9 @@ class GamesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $game = \App\Game::where('id', $id)->first();
+
+        return view('game.edit', compact('game'));
     }
 
     /**
