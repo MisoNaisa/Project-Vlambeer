@@ -32,7 +32,17 @@ class GamesController extends Controller
         $tweetR = \App\Tweet::getStatusRami();
         $tweetJ = \App\Tweet::getStatusJan();
 
-        return view('game.create', compact('tweetV', 'tweetR', 'tweetJ'));
+        $games = new GiantBombApi();
+        $gamesArray = $games->getAllGameIds();
+        $dbGames = \App\Game::all();
+
+        $pluckIdFromApi = array_pluck($gamesArray, 'name');
+        $pluckIdFromDb  = array_pluck($dbGames, 'game_name');
+
+        $results = array_diff($pluckIdFromApi , $pluckIdFromDb);
+
+
+        return view('game.create', compact('results', 'tweetV', 'tweetR', 'tweetJ'));
     }
 
     /**
@@ -93,19 +103,19 @@ class GamesController extends Controller
         //
     }
 
-        public function test() {
+    public function test() {
 
-            $games = new GiantBombApi();
-            $gamesArray = $games->getAllGameIds();
-            $dbGames = \App\Game::all();
+        $games = new GiantBombApi();
+        $gamesArray = $games->getAllGameIds();
+        $dbGames = \App\Game::all();
 
-            $pluckIdFromApi = array_pluck($gamesArray, 'name');
-            $pluckIdFromDb  = array_pluck($dbGames, 'game_name');
+        $pluckIdFromApi = array_pluck($gamesArray, 'name');
+        $pluckIdFromDb  = array_pluck($dbGames, 'game_name');
 
-            $result = array_diff($pluckIdFromApi , $pluckIdFromDb);
+        $result = array_diff($pluckIdFromApi , $pluckIdFromDb);
 
-            dd($pluckIdFromApi,$pluckIdFromDb, $result);
+        dd($pluckIdFromApi,$pluckIdFromDb, $result);
 
-            return view('pages.giantbomb_api', compact('gamesArray'));
-        }
+        return view('pages.giantbomb_api', compact('gamesArray'));
+    }
 }
