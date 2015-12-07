@@ -19,7 +19,7 @@ $font-stack: 'Open Sans', sans-serif;
       margin: 0 auto;
       padding: 0px;
       color: #FFFFFF;
-      background: rgba(1,1,1,.3);
+      background: rgba(1,1,1,.6);
       clear: both;
     }
     &:before {
@@ -320,6 +320,47 @@ $font-stack: 'Open Sans', sans-serif;
     }
   }
 
+  .gameinfo {
+    padding: 10px;
+    margin-top: 50px;
+
+    a {
+      text-decoration: none;
+      color: gray;
+    }
+  }
+  // slider begin
+  #slider {
+    float: right;
+    position: relative;
+    overflow: hidden;
+    margin: 20px;
+    border-radius: 4px;
+    height: 285px;
+
+    ul {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        position: relative;
+        display: block;
+        float: left;
+        margin: 0;
+        padding: 0;
+        width: 480px;
+        //height: 230px;
+        text-align: center;
+        line-height: 300px;
+        img{
+          background: grey;
+        }
+      }
+    }
+  //eind slider
+
 // game_info css eind
 }
 
@@ -371,42 +412,6 @@ $font-stack: 'Open Sans', sans-serif;
 
   }
 }
-
-#slider {
-
-  float: right;
-
-  position: relative;
-  overflow: hidden;
-  margin: 20px;
-  border-radius: 4px;
-
-  ul {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    height: 200px;
-    list-style: none;
-
-    li {
-      position: relative;
-      display: block;
-      float: left;
-      margin: 0;
-      padding: 0;
-      width: 480px;
-      height: 230px;
-      text-align: center;
-      line-height: 300px;
-      img{
-        background: grey;
-      }
-
-    }
-
-
-
-  }
 
 
 
