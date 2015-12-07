@@ -48,11 +48,11 @@ class PagesController extends Controller
         $tweetR = \App\Tweet::getStatusRami();
         $tweetJ = \App\Tweet::getStatusJan();
         $games = new GiantBombApi();
-        $gamesArray = $games->getAllGameInfoById(34402);
 
-//        echo $gamesArray['description'];
-//        die();
-        return view('pages.info_game', compact('tweetV', 'tweetR', 'tweetJ', 'gamesArray'));
+        $gameInfo = $games->getAllGameInfoById(34402);
+      $gameDesc = preg_replace("/<img[^>]+\>/i", "",str_replace('href="','target="_blank" href="http://giantbomb.com',$gameInfo['description']));
+//
+        return view('pages.info_game', compact('tweetV', 'tweetR', 'tweetJ', 'gameInfo','gameDesc'));
     }
 
     public function test() {

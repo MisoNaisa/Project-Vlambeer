@@ -14,7 +14,7 @@
             <div class="table-holder"></div>
             <i class="fa fa-volume-up hidden noselect"></i>
             <i class="fa fa-volume-off noselect"></i>
-            <h1>{{$gamesArray['name']}}</h1>
+            <h1>{{$gameInfo['name']}}</h1>
 
         </div>
     </div>
@@ -28,7 +28,7 @@
             <ul>
 
 
-                @foreach($gamesArray['images'] as $img)
+                @foreach($gameInfo['images'] as $img)
 
                     <li><img src="{{ $img['medium_url'] }}" /></li>
 
@@ -37,12 +37,14 @@
         </div>
 
         <div class="gameInfo">
+            {!! $gameDesc !!}
 
-
-
-            {{ print_r(preg_replace("/<img[^>]+\>/i", "",str_replace('href="','target="_blank" href="http://giantbomb.com',$gamesArray['description']))) }}
         </div>
 
 
     </div>
 @endsection
+
+
+// text uitlijnen, zowel rechts als boven
+// video gaat soms over tekst heen

@@ -269,10 +269,12 @@ a {
       float: left;
       margin: 0;
       padding: 0;
-      width: 500px;
-      height: 300px;
+      width: 480px;
+      height: 230px;
       text-align: center;
       line-height: 300px; }
+      #slider ul li img {
+        background: grey; }
   #slider a.control_prev, #slider a.control_next {
     position: absolute;
     top: 40%;

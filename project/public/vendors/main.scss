@@ -381,7 +381,6 @@ $font-stack: 'Open Sans', sans-serif;
   margin: 20px;
   border-radius: 4px;
 
-
   ul {
     position: relative;
     margin: 0;
@@ -395,13 +394,20 @@ $font-stack: 'Open Sans', sans-serif;
       float: left;
       margin: 0;
       padding: 0;
-      width: 500px;
-      height: 300px;
-
+      width: 480px;
+      height: 230px;
       text-align: center;
       line-height: 300px;
+      img{
+        background: grey;
+      }
+
     }
+
+
+
   }
+
 
 
   a.control_prev, a.control_next {
