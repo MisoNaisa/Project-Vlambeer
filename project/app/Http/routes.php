@@ -13,11 +13,8 @@
 
 
 Route::get('/', 'PagesController@index');
-//Route::get('/index', 'PagesController@index');
 Route::get('/contact', 'PagesController@contact');
 Route::get('/overview_games', 'PagesController@overview_games');
 Route::get('/info_game', 'PagesController@info_game');
 Route::get('/test', 'GamesController@test');
-//Route::get('/create', 'GamesController@create');
-
-Route::resource('/', 'GamesController');
+Route::resource('/games', 'GamesController');
