@@ -75,9 +75,12 @@ class GamesController extends Controller
      */
     public function edit($id)
     {
+        $tweetV = \App\Tweet::getStatusVlambeer();
+        $tweetR = \App\Tweet::getStatusRami();
+        $tweetJ = \App\Tweet::getStatusJan();
         $game = \App\Game::where('id', $id)->first();
 
-        return view('game.edit', compact('game'));
+        return view('game.edit', compact('game','tweetV', 'tweetR', 'tweetJ'));
     }
 
     /**
@@ -89,7 +92,15 @@ class GamesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'id' => 'required',
+            'game_name' => 'required|max:50|string',
+            'game_background_video' => 'string',
+            'game_background_img' => 'required|string'
+        ]);
+
+        \App\Game::where('id', $id)->update($request->except('_token','_method'));
+        return redirect('/');
     }
 
     /**
