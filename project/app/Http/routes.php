@@ -18,3 +18,4 @@ Route::get('/overview_games', 'PagesController@overview_games');
 Route::get('/info_game', 'PagesController@info_game');
 Route::get('/test', 'GamesController@test');
 Route::resource('/games', 'GamesController');
+Route::resource('/testgiant', 'PagesController@test');

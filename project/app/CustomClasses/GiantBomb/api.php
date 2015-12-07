@@ -286,9 +286,11 @@ class Api
     }
 
     public function getAllGameInfoById($id) {
+        $gamesObject = DB::table('games')->where('id', $id)->get();
         $this->fetch(array( 'game', $id ), array('id', 'name', 'description', 'images', 'deck', 'original_game_rating'));
         $games = $this->__toObject();
-        return $games['results'];
+        $total = array_merge( $games['results'], get_object_vars($gamesObject['0']) );
+        return $total;
     }
 
 
