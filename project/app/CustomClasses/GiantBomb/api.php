@@ -246,21 +246,35 @@ class Api
 
     //    Easy to use functions
 
-    public function getAllGameIdsFromDb() {
+    public function getAllGameInfoFromDb() {
         //        Get all Game ID's from database
-        $idList = DB::table('games')->select('id')->get();
-        $idsArray = [];
-        foreach ($idList as $id) {
-            array_push($idsArray, $id->id);
+        $gamesObject = DB::table('games')->get();
+        $gamesArray = [];
+        foreach ($gamesObject as $games) {
+            array_push($gamesArray, [
+                'id' => $games->id,
+                'game_bg' => $games->game_background_img,
+                'game_bg_video' => $games->game_background_video,
+                'regular_pay_link' => $games->regular_payment_link,
+                'stream_pay_link' => $games->steam_payment_link,
+                'ios_pay_link' => $games->ios_payment_link,
+                'psn_pay_link' => $games->psn_payment_link,
+                'android_pay_link' => $games->android_payment_link,
+                'created' => $games->created_at,
+                'updated_at' => $games->updated_at
+            ]);
+
         }
-        return $idsArray;
+        return $gamesArray;
     }
 
     public function getAllGames() {
-        $idsGames = $this->getAllGameIdsFromDb();
+        $allGamesFromDb = $this->getAllGameInfoFromDb(); // FromDb
         $allGames = [];
-        foreach( $idsGames as $game ) {
-            array_push($allGames, $this->getGameById($game) );
+        foreach( $allGamesFromDb as $game ) {
+            $gameArray = $this->getAllGameInfoById($game['id']); // giantBomb
+            $total = array_merge($game, $gameArray);
+            array_push($allGames, $total);
         }
         return $allGames;
     }
@@ -276,20 +290,6 @@ class Api
         $games = $this->__toObject();
         return $games['results'];
     }
-
-    public function getGameById($id) {
-        $this->fetch(array( 'game', $id ), array('id', 'name', 'deck', 'original_game_rating'));
-        $games = $this->__toObject();
-        return $games['results'];
-    }
-
-
-//    public function getGameNameById($id) {
-//        $this->fetch(array( 'game', $id ), array('name'));
-//        $games = $this->__toObject();
-//        return $games['results']['name'];
-//    }
-
 
 
 
