@@ -291,6 +291,12 @@ class Api
         return $games['results'];
     }
 
+    public function getShortDescription($id) {
+        $this->fetch(array('game', $id), array('description'));
+        $games = $this->__toObject();
+        return substr(0, 100, $games->description);
+    }
+
 
 
 }

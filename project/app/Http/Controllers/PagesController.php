@@ -32,15 +32,18 @@ class PagesController extends Controller
     }
 
     public function overview_games() {
-        $games = \App\Game::all();
-
         $gamesFromApi = new GiantBombApi();
         $gamesArray = $gamesFromApi->getAllGames();
-        
+
+        foreach ($gamesArray as &$game)
+        {
+            $game['description'] = substr($game['description'], 0, 500);
+        }
+//        dd($gamesArray);
         $tweetV = \App\Tweet::getStatusVlambeer();
         $tweetR = \App\Tweet::getStatusRami();
         $tweetJ = \App\Tweet::getStatusJan();
-        return view('pages.overview_games', compact('games', 'tweetV', 'tweetR', 'tweetJ', 'gamesArray'));
+        return view('pages.overview_games', compact('tweetV', 'tweetR', 'tweetJ', 'gamesArray'));
     }
 
     public function info_game() {
