@@ -22,6 +22,7 @@ class GamesTableSeeder extends Seeder
             'game_name'=>'Serious Sam: The Random Encounter',
             'game_background_img'=>'http://cdn.dbolical.com/videos/games/1/17/16583/Serious_Sam_The_Random_Encounter_-_Launch_Trailer.mp4.jpg',
             'steam_payment_link'=>'http://store.steampowered.com/app/201480/',
+            'game_background_video'=>'serious-sam',
         ]);
         DB::table('games')->insert([
             'id'=>'32945',

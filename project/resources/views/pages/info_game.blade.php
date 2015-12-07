@@ -7,8 +7,8 @@
 @section('section')
 
 
-    <div style="width: 100%;"
-         data-vide-bg="mp4: ../video/serious-sam, poster: http://cdn.dbolical.com/videos/games/1/17/16583/Serious_Sam_The_Random_Encounter_-_Launch_Trailer.mp4.jpg"
+    <div style="width: 100%";
+         data-vide-bg="mp4: ../video/{{$gameInfo['game_background_video']}}"
          data-vide-options="posterType: jpg, loop: true, position: 0% 0%; ">
         <div class="video-table">
             <div class="table-holder"></div>
@@ -20,7 +20,6 @@
     </div>
 
     <div class="container">
-
 
         <div id="slider">
             <a class="control_next noselect"><i class="fa fa-arrow-right"></i></a>
