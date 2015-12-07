@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="vendors/bootstrap.css">
-    <link rel="stylesheet" href="vendors/main.css">
-    <link rel="stylesheet" href="css/alex.css">
+    <link rel="stylesheet" href="/vendors/bootstrap.css">
+    <link rel="stylesheet" href="/vendors/main.css">
+    <link rel="stylesheet" href="/css/alex.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
     <title>Vlambeer</title>
 </head>
