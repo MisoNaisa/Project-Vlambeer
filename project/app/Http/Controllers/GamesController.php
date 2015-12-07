@@ -28,7 +28,11 @@ class GamesController extends Controller
      */
     public function create()
     {
-        //
+        $tweetV = \App\Tweet::getStatusVlambeer();
+        $tweetR = \App\Tweet::getStatusRami();
+        $tweetJ = \App\Tweet::getStatusJan();
+
+        return view('game.create', compact('tweetV', 'tweetR', 'tweetJ'));
     }
 
     /**
@@ -61,7 +65,9 @@ class GamesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $game = \App\Game::where('id', $id)->first();
+
+        return view('game.edit', compact('game'));
     }
 
     /**
@@ -90,7 +96,7 @@ class GamesController extends Controller
     public function test() {
         $games = new GiantBombApi();
         $gamesArray = $games->getAllGameIds();
-        $dbGames = DB::select("SELECT * FROM games");
+        $dbGames = \App\Game::all();
 
         $pluckIdFromApi = array_pluck($gamesArray, 'id');
         $pluckIdFromDb  = array_pluck($dbGames, 'id');
