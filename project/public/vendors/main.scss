@@ -19,7 +19,7 @@ $font-stack: 'Open Sans', sans-serif;
       margin: 0 auto;
       padding: 0px;
       color: #FFFFFF;
-      background: rgba(1,1,1,.6);
+      background: rgba(1,1,1,.4);
       clear: both;
     }
     &:before {
@@ -326,7 +326,7 @@ $font-stack: 'Open Sans', sans-serif;
 
     a {
       text-decoration: none;
-      color: gray;
+      color: burlywood;
     }
   }
   // slider begin
