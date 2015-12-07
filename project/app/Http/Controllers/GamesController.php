@@ -93,28 +93,19 @@ class GamesController extends Controller
         //
     }
 
-    public function test() {
-        $games = new GiantBombApi();
-        $gamesArray = $games->getAllGameIds();
-        $dbGames = \App\Game::all();
+        public function test() {
 
-        $pluckIdFromApi = array_pluck($gamesArray, 'id');
-        $pluckIdFromDb  = array_pluck($dbGames, 'id');
+            $games = new GiantBombApi();
+            $gamesArray = $games->getAllGameIds();
+            $dbGames = \App\Game::all();
 
-//        dd(var_dump($pluckIdFromApi, $pluckIdFromDb));
+            $pluckIdFromApi = array_pluck($gamesArray, 'name');
+            $pluckIdFromDb  = array_pluck($dbGames, 'game_name');
 
-        foreach($games as $game){
+            $result = array_diff($pluckIdFromApi , $pluckIdFromDb);
 
+            dd($pluckIdFromApi,$pluckIdFromDb, $result);
+
+            return view('pages.giantbomb_api', compact('gamesArray'));
         }
-
-        //       foreach($games as $game) {
-//
-//        if (Game::where('id', '=', $games->getAllGameIds())->exists()) {
-//            // when exist in database
-//            echo 'data already in database';
-//        }
-//       }
-
-        return view('pages.giantbomb_api', compact('gamesArray'));
-    }
 }
