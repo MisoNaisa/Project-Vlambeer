@@ -293,7 +293,11 @@ class Api
         return $total;
     }
 
-
+    public function getGameNameFromApi($id) {
+        $this->fetch(array( 'game', $id ), array('id', 'name'));
+        $data = $this->__toObject();
+        return $data['results'];
+    }
 
 
 }

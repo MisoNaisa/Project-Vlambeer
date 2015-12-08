@@ -4,22 +4,19 @@
 <div class="container">
     <div class="col-md-4 col-md-push-4">
 
-
-
         <h3>Add Game</h3>
+        {{ dd($gameNames) }}
 
         <form action="{{ action('GamesController@store') }}" method="post">
 
-        <div class="form-group">
-            <label for="game_name">Game</label>
-            <select name="game_name">
-                <option value=""></option>
+            <div class="form-group">
+                <label for="game_name">Game</label>
 
-                @foreach($results as $result)
-                        <option value="{{ $result }}">{{ $result }}</option>
-                @endforeach
+                <select name="game_name" style="color:black">
+                    <option value=""></option>
 
-            </select>
+
+                </select>
         </div>
 
         <div class="form-group">
