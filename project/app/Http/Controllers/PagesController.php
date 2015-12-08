@@ -35,10 +35,6 @@ class PagesController extends Controller
         $gamesFromApi = new GiantBombApi();
         $gamesArray = $gamesFromApi->getAllGames();
 
-        foreach ($gamesArray as &$game)
-        {
-            $game['description'] = substr($game['description'], 0, 500);
-        }
 //        dd($gamesArray);
         $tweetV = \App\Tweet::getStatusVlambeer();
         $tweetR = \App\Tweet::getStatusRami();

@@ -7,7 +7,7 @@
                 @foreach($gamesArray as $game)
                     <div class="game-box col-md-5 col-md-push-1">
                         <div class="img" style="background: url( {{$game['game_bg']}} )">
-                            <div class="description"> {!! $game['description'] !!} </div>
+                            <div class="description"> {!! $game['deck'] !!} </div>
                         </div>
                         <div class="title">
                             <h1><a href=""> {{$game['name']}}</a></h1>
