@@ -20,7 +20,7 @@
             <div class="title">
                 <a href="/">
                 <div class="logo">
-                    <img src="../img/vlambeer-logo.png" alt="logo">
+                    <img src="/img/vlambeer-logo.png" alt="logo">
                     <h1>Vlambeer</h1>
                 </div>
                 </a>
