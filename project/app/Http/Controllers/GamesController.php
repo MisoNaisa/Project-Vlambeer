@@ -92,14 +92,16 @@ class GamesController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $this->validate($request,[
-            'id' => 'required',
-            'game_name' => 'required|max:50|string',
             'game_background_video' => 'string',
             'game_background_img' => 'required|string'
         ]);
 
-        \App\Game::where('id', $id)->update($request->except('_token','_method'));
+        $game = \App\Game::find($request['game_id']);
+        $game->game_background_img = $request['game_background_img'];
+        $game->game_background_video = $request['game_background_video'];
+        $game->save();
         return redirect('/');
     }
 

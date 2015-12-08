@@ -10,5 +10,5 @@ class Game extends Model
 
     public $timestamp = false;
 
-    protected $fillable = ['game_name', 'game_background_video', 'game_background_image', 'poster'];
+    protected $fillable = ['game_name', 'game_background_video', 'game_background_img'];
 }

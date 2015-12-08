@@ -7,7 +7,7 @@
 
         <form class="col-md-4" action="{{action('GamesController@update')}}" method="POST">
             <input name="_method" type="hidden" value="PUT">
-            <input name="id" type="hidden" value="{{$game['id']}}">
+            <input name="game_id" type="hidden" value="{{$game['id']}}">
             {{csrf_field()}}
 
             <div class="form-group">
