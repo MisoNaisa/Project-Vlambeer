@@ -288,6 +288,8 @@ a {
       height: 300px;
       text-align: center;
       line-height: 300px; }
+      #slider ul li img {
+        background: gray; }
   #slider a.control_prev, #slider a.control_next {
     position: absolute;
     top: 40%;
@@ -307,10 +309,12 @@ a {
       opacity: 1;
       -webkit-transition: all 0.2s ease; }
   #slider a.control_prev {
-    border-radius: 0 2px 2px 0; }
+    border-radius: 0 2px 2px 0;
+    margin-left: 10px; }
   #slider a.control_next {
     right: 0;
-    border-radius: 2px 0 0 2px; }
+    border-radius: 2px 0 0 2px;
+    margin-right: 10px; }
   #slider .slider_option {
     position: relative;
     margin: 10px auto;

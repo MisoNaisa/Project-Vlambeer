@@ -421,6 +421,10 @@ $font-stack: 'Open Sans', sans-serif;
 
       text-align: center;
       line-height: 300px;
+
+      img {
+        background: gray;
+      }
     }
   }
 
@@ -449,11 +453,13 @@ $font-stack: 'Open Sans', sans-serif;
 
   a.control_prev {
     border-radius: 0 2px 2px 0;
+    margin-left: 10px;
   }
 
   a.control_next {
     right: 0;
     border-radius: 2px 0 0 2px;
+    margin-right: 10px;
   }
 
   .slider_option {
