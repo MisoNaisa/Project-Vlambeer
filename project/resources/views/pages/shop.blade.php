@@ -11,15 +11,29 @@
         </div>
         <h1>Merchandise</h1>
         <div id="slider">
-            {{--<a class="control_next noselect"><i class="fa fa-arrow-right"></i></a>--}}
-            {{--<a class="control_prev noselect"><i class="fa fa-arrow-left"></i></a>--}}
-            {{--<ul>--}}
-                {{--@foreach($gameInfo['images'] as $img)--}}
-                    {{--<li><img src="{{ $img['medium_url'] }}" /></li>--}}
-                {{--@endforeach--}}
-            {{--</ul>--}}
+            <a class="control_next noselect"><i class="fa fa-arrow-right"></i></a>
+            <a class="control_prev noselect"><i class="fa fa-arrow-left"></i></a>
+            <ul>
+                @foreach($gameInfo['images'] as $img)
+                    {{dd($gameInfo)}}
+                    <li><img src="{{ $img['screen_url'] }}" /></li>
+                @endforeach
+            </ul>
         </div>
         <div class="products-overview">
+            <div class="row col-md-12">
+                <div class="product-box col-md-4">
+                    <img src="http://lorempixel.com/200/200" alt="product">
+                </div>
+
+                <div class="product-box col-md-4">
+                    <img src="http://lorempixel.com/200/200" alt="product">
+                </div>
+
+                <div class="product-box col-md-4">
+                    <img src="http://lorempixel.com/200/200" alt="product">
+                </div>
+            </div>
             <div class="row col-md-12">
                 <div class="product-box col-md-4">
                     <img src="http://lorempixel.com/200/200" alt="product">
