@@ -5,6 +5,8 @@ $(document).ready(function(){
     }, function() {
         $(this).removeClass('transition');
     });
+
+    jQuery('selector').slippry();
 });
 
 
