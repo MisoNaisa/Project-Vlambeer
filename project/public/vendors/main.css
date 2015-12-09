@@ -310,14 +310,15 @@ a {
   background: white;
   border-radius: 100%;
   padding: 0px;
-  padding-left: 6px; }
+  padding-left: 10px; }
 
 .flex-nav-next a {
   height: 50px;
+  width: 51px;
   background: white;
   border-radius: 100%;
   padding: 0px;
-  padding-right: 6px; }
+  padding-right: 10px; }
 
 .info-game .flexslider {
   width: 50%;

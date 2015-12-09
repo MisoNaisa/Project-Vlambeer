@@ -91,7 +91,6 @@ $font-stack: 'Open Sans', sans-serif;
     font-weight: 600;
   }
 
-
 .header {
   color: white;
   background: black;
@@ -476,17 +475,18 @@ $font-stack: 'Open Sans', sans-serif;
       background: white;
       border-radius: 100%;
       padding: 0px;
-      padding-left: 6px;
+      padding-left: 10px;
     }
 }
 
 .flex-nav-next {
   a {
     height: 50px;
+    width: 51px;
     background: white;
     border-radius: 100%;
     padding: 0px;
-    padding-right: 6px;
+    padding-right: 10px;
   }
 }
 
