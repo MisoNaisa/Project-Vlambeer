@@ -3,7 +3,7 @@
 @section('section')
     <div class="container">
         @foreach($games as $game)
-            <div class="game-post">
+            <div class="game-post clickable" onclick="javascript:location.href='info_game/{{$game['id']}}'">
                 <div class="img" style="background: url({{$game['game_background_img']}})"> </div>
                 <div class="title">
                     <h1>{{$game['game_name']}}</h1>

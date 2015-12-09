@@ -255,7 +255,7 @@ class Api
                 'id' => $games->id,
                 'game_bg' => $games->game_background_img,
                 'game_bg_video' => $games->game_background_video,
-                'regular_pay_link' => $games->regular_payment_link,
+                'regular_pay_link' => $games->custom_payment_link,
                 'stream_pay_link' => $games->steam_payment_link,
                 'ios_pay_link' => $games->ios_payment_link,
                 'psn_pay_link' => $games->psn_payment_link,
