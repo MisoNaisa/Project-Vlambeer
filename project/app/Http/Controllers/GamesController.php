@@ -18,7 +18,10 @@ class GamesController extends Controller
      */
     public function index()
     {
-
+        $tweetV = \App\Tweet::getStatusVlambeer();
+        $tweetR = \App\Tweet::getStatusRami();
+        $tweetJ = \App\Tweet::getStatusJan();
+        return view('game.main', compact('tweetV', 'tweetR', 'tweetJ'));
     }
 
     /**
@@ -45,7 +48,6 @@ class GamesController extends Controller
         foreach($results as $result){
             $gameNames = $games->getGameNameFromApi($result);
         }
-
 
         return view('game.create', compact('gameNames', 'tweetV', 'tweetR', 'tweetJ'));
     }
