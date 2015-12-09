@@ -6,6 +6,9 @@
   -ms-user-select: none;
   user-select: none; }
 
+.noDisplay {
+  display: none; }
+
 body {
   background: url("../img/background.jpg");
   background-size: cover !important;
@@ -265,46 +268,42 @@ a {
           margin: 0px; }
         .section .products-overview .row .product-box .product-info p {
           margin-bottom: 0px; }
-
-.noDisplay {
-  display: none; }
-
-.game-overview {
-  overflow: hidden;
-  padding-top: 30px; }
-  .game-overview .game-box h1 {
-    font-size: 30px;
-    text-align: center; }
-    .game-overview .game-box h1 a {
-      color: white; }
-  .game-overview .game-box h2 {
-    margin-left: 0px;
-    margin-right: 0px; }
-  .game-overview .game-box .img {
-    width: 100%;
-    height: 240px;
-    border-radius: 25px;
-    background-size: cover !important;
-    background-position: center !important;
-    box-shadow: 0px 0px 50px white; }
-    .game-overview .game-box .img .description {
-      display: table-cell;
-      vertical-align: middle;
-      width: 457.5px;
-      background-color: rgba(0, 0, 0, 0.5);
-      opacity: 0;
+  .section .game-overview {
+    overflow: hidden;
+    padding-top: 30px; }
+    .section .game-overview .game-box h1 {
+      font-size: 30px;
+      text-align: center; }
+      .section .game-overview .game-box h1 a {
+        color: white; }
+    .section .game-overview .game-box h2 {
+      margin-left: 0px;
+      margin-right: 0px; }
+    .section .game-overview .game-box .img {
+      width: 100%;
       height: 240px;
       border-radius: 25px;
-      font-size: 17px;
-      transition: opacity .5s;
-      text-align: center;
-      color: white;
-      padding: 20px; }
-      .game-overview .game-box .img .description a {
+      background-size: cover !important;
+      background-position: center !important;
+      box-shadow: 0px 0px 50px white; }
+      .section .game-overview .game-box .img .description {
+        display: table-cell;
+        vertical-align: middle;
+        width: 457.5px;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        height: 240px;
+        border-radius: 25px;
+        font-size: 17px;
+        transition: opacity .5s;
+        text-align: center;
         color: white;
-        font-size: 13px; }
-    .game-overview .game-box .img :hover.description {
-      opacity: 1; }
+        padding: 20px; }
+        .section .game-overview .game-box .img .description a {
+          color: white;
+          font-size: 13px; }
+      .section .game-overview .game-box .img :hover.description {
+        opacity: 1; }
 
 .flex-nav-prev a {
   height: 50px;
@@ -402,16 +401,15 @@ a {
     margin-top: 30px; }
     .footer .contact-fb a {
       color: #2c4075; }
-
-.footer-bottom {
-  background-color: black;
-  float: left;
-  width: 100%; }
-  .footer-bottom .contact-info {
-    width: 19%;
-    margin-left: 35px; }
-    .footer-bottom .contact-info p {
-      font-size: 10px; }
+  .footer .footer-bottom {
+    background-color: black;
+    float: left;
+    width: 100%; }
+    .footer .footer-bottom .contact-info {
+      width: 19%;
+      margin-left: 35px; }
+      .footer .footer-bottom .contact-info p {
+        font-size: 10px; }
 
 @media screen and (min-width: 1500px) {
   .section .game-post {
