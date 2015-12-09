@@ -1,11 +1,12 @@
 @extends('layout.master')
 
 @section('bodyAttributes')
-    class="info-game"
+    class="info-game @if (!empty($gameInfo['game_background_video'])) video-enable @endif"
 @endsection
 
 @section('section')
 
+    @if (!empty($gameInfo['game_background_video']))
     <div style="width: 100%";
          data-vide-bg="mp4: ../video/{{$gameInfo['game_background_video']}}"
          data-vide-options="posterType: jpg, loop: true, position: 0% 0%; ">
@@ -16,6 +17,7 @@
             <h1>{{$gameInfo['name']}}</h1>
         </div>
     </div>
+    @endif
 
     <div class="container">
 
