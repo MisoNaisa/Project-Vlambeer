@@ -10,12 +10,7 @@
                 </div>
                 <div class="game-buy">
                     <h2>Buy This game here for:</h2>
-                    @if($game['game_name'] == "Gun Godz")
-                        <a href="{{$game['steam_payment_link']}}">
-                            <div class="payment-img" id="venuspatrol"></div>
-                        </a>
-                    @endif
-                    @if($game['steam_payment_link'] != null && $game['game_name'] != "Gun Godz")
+                    @if($game['steam_payment_link'] != null)
                         <a href="{{$game['steam_payment_link']}}">
                             <div class="payment-img" id="steam"></div>
                         </a>
@@ -30,14 +25,14 @@
                             <div class="payment-img" id="playstation"></div>
                         </a>
                     @endif
-                    @if($game['game_name'] == "Super Bread Box")
-                        <a href="{{$game['regular_payment_link']}}">
-                            <div class="payment-img" id="superbreadbox"></div>
-                        </a>
-                    @endif
-                    @if($game['game_name'] == "Ridiculous Fishing")
+                    @if($game['android_payment_link'] != null)
                         <a href="{{$game['android_payment_link']}}">
                             <div class="payment-img" id="android"></div>
+                        </a>
+                    @endif
+                    @if($game['custom_payment_link'] != null)
+                        <a href="{{$game['custom_payment_link']}}">
+                            <i class="fa fa-shopping-cart fa-3x"></i>
                         </a>
                     @endif
                 </div>

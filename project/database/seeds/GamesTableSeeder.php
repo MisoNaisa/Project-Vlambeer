@@ -15,7 +15,7 @@ class GamesTableSeeder extends Seeder
             'id'=>'37491',
             'game_name'=>'Gun Godz',
             'game_background_img'=>'http://www.vlambeer.com/wp-content/uploads/2012/02/LOGO-510x286.png',
-            'steam_payment_link'=>'http://venuspatrol.com/subscribe/#subscriptionform',
+            'custom_payment_link'=>'http://venuspatrol.com/subscribe/#subscriptionform',
         ]);
         DB::table('games')->insert([
             'id'=>'34402',
@@ -43,7 +43,7 @@ class GamesTableSeeder extends Seeder
             'id'=>'46090',
             'game_name'=>'Super Bread Box',
             'game_background_img'=>'http://2.bp.blogspot.com/-VlIgr-BUODY/UHIeLXjoORI/AAAAAAAACqw/6AkQhX849yI/s1600/sbb.png',
-            'regular_payment_link'=>'http://superbreadbox.com/'
+            'custom_payment_link'=>'http://superbreadbox.com/'
         ]);
         DB::table('games')->insert([
             'id'=>'40158',
