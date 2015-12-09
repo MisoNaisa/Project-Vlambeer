@@ -20,10 +20,8 @@
     <div class="container">
 
         <div class="gameinfo">
-            <div id="slider">
-                <a class="control_next noselect"><i class="fa fa-arrow-right"></i></a>
-                <a class="control_prev noselect"><i class="fa fa-arrow-left"></i></a>
-                <ul>
+            <div class="flexslider">
+                <ul class="slides">
                     @foreach($gameInfo['images'] as $img)
                         <li><img src="{{ $img['medium_url'] }}" /></li>
                     @endforeach

@@ -6,7 +6,12 @@ $(document).ready(function(){
         $(this).removeClass('transition');
     });
 
-    jQuery('selector').slippry();
+});
+
+$(window).load(function() {
+    $('.flexslider').flexslider({
+        animation: "slide"
+    });
 });
 
 

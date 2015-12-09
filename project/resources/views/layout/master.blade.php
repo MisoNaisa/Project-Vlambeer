@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="/vendors/bootstrap.css">
     <link rel="stylesheet" href="/vendors/main.css">
-    <link rel="stylesheet" href="/vendors/slippry.css">
+    <link rel="stylesheet" href="/vendors/flexslider.css">
     <link rel="stylesheet" href="/css/alex.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
@@ -140,6 +140,6 @@
 <script src="/js/main.js"></script>
 
 <!-- SSlider Javascript file -->
-<script src="/js/slippry.min.js"></script>
+<script src="/js/jquery.flexslider.js"></script>
 
 </html>

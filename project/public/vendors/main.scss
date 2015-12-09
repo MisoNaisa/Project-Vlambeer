@@ -465,94 +465,46 @@ $font-stack: 'Open Sans', sans-serif;
   }
 }
 
-// default slider
-#slider {
+// slider css begin
 
-  float: right;
-
-  position: relative;
-  overflow: hidden;
-  margin: 20px;
-  border-radius: 4px;
-
-  ul {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    height: 200px;
-    list-style: none;
-
-    li {
-      position: relative;
-      display: block;
-      float: left;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      line-height: 300px;
-      img {
-        background: gray;
-      }
+.flex-nav-prev {
+    a {
+      height: 50px;
+      background: white;
+      border-radius: 100%;
+      padding: 0px;
+      padding-left: 6px;
     }
+}
+
+.flex-nav-next {
+  a {
+    height: 50px;
+    background: white;
+    border-radius: 100%;
+    padding: 0px;
+    padding-right: 6px;
   }
 }
 
-  // Slider Info game
-  .info-game #slider ul li {
-    width: 500px;
-    height: 300px;
-  }
+.info-game .flexslider {
+  width: 50%;
+  float: right;
+  margin-left: 5px;
+}
 
-  // Shop slider
-  .shop #slider ul li {
-    width: 100%;
-  }
+.info-game .flexslider .slides img {
+  height: 350px;
+}
 
-  .shop #slider ul li img {
-    //width: 100%;
-  }
+.shop .flexslider {
+  margin: 0px 65px;
+}
 
-  a.control_prev, a.control_next {
-    position: absolute;
-    top: 40%;
-    z-index: 999;
-    display: block;
-    padding: 4% 3%;
-    width: auto;
-    height: auto;
-    background: #2a2a2a;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 18px;
-    opacity: 0.8;
-    cursor: pointer;
-
-    &:hover{
-      opacity: 1;
-      -webkit-transition: all 0.2s ease;
-    }
-  }
-
-  a.control_prev {
-    border-radius: 0 2px 2px 0;
-    margin-left: 10px;
-  }
-
-  a.control_next {
-    right: 0;
-    border-radius: 2px 0 0 2px;
-    margin-right: 10px;
-  }
-
-  .slider_option {
-    position: relative;
-    margin: 10px auto;
-    width: 160px;
-    font-size: 18px;
-  }
-
-
+.shop .flexslider .slides img {
+  height: 450px;
+}
+// slider css eind
 
 .footer {
   background: rgba(128,128,128, 0.3);

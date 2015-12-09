@@ -15,17 +15,13 @@
         </div>
         <h1>Merchandise</h1>
 
-        <ul id="slippry-demo">
-            <li>
-                <a href="#slide1"><img src="assets/img/slippry-01.jpg" alt="Welcome to Slippry!"></a>
-            </li>
-            <li>
-                <a href="#slide2"><img src="assets/img/slippry-02.jpg"  alt="This is an awesome jQuery slider plugin."></a>
-            </li>
-            <li>
-                <a href="#slide3"><img src="assets/img/slippry-03.jpg" alt="Check it out, you are going to <span class='red'>?</span> it :)"></a>
-            </li>
-        </ul>
+        <div class="flexslider">
+            <ul class="slides">
+                @foreach($gameInfo['images'] as $img)
+                    <li><img src="{{ $img['medium_url'] }}" /></li>
+                @endforeach
+            </ul>
+        </div>
 
         <div class="products-overview">
             <div class="row col-md-12">
