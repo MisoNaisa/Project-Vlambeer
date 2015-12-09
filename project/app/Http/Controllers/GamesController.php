@@ -118,11 +118,11 @@ class GamesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $game = \App\Game::where('id', $id)->first();
+        $game->delete();
     }
 
     public function test() {
-
         $games = new GiantBombApi();
         $gamesArray = $games->getAllGameIds();
         $dbGames = \App\Game::all();
