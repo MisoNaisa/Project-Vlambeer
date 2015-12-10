@@ -7,13 +7,18 @@
 @section('section')
     <div class="container">
         <div class="shop-header">
-            <ul>
-                <li>Login</li>
-                <li>Register</li>
-                <li><i class="fa fa-shopping-cart"></i></li>
-            </ul>
+            <div class="posfixed">
+                <ul>
+                    <li class="noselect"></li>
+                    <li>Login</li>
+                    <li>Register</li>
+                    <li><i class="fa fa-shopping-cart"></i></li>
+                    <li class="noselect"></li>
+                </ul>
+            </div>
         </div>
-        <h1>Merchandise</h1>
+
+        <h1 id="shop-title" >Merchandise</h1>
 
         <div class="flexslider">
             <ul class="slides">
