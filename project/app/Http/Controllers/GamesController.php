@@ -18,10 +18,8 @@ class GamesController extends Controller
      */
     public function index()
     {
-        $tweetV = \App\Tweet::getStatusVlambeer();
-        $tweetR = \App\Tweet::getStatusRami();
-        $tweetJ = \App\Tweet::getStatusJan();
-        return view('game.main', compact('tweetV', 'tweetR', 'tweetJ'));
+        $allGames = \App\Game::all();
+        return view('game.main', compact('allGames') );
     }
 
     /**
