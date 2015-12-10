@@ -1,3 +1,8 @@
 .clickable {
     cursor: pointer;
 }
+
+.btn_sale{
+    width: 50px;
+    float: right;
+}
