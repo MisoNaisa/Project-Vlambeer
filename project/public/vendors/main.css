@@ -78,7 +78,7 @@ a {
 .header {
   color: white;
   background: black;
-  z-index: 99999;
+  z-index: 9999;
   position: fixed;
   top: 0;
   width: 100%; }
@@ -206,7 +206,7 @@ a {
     width: 100%;
     height: 100%;
     bottom: 0;
-    z-index: 9999;
+    z-index: 999;
     background: transparent url("http://socialr.nl/wp-content/themes/willow/images/5x5-dotted.gif") repeat scroll 0 0;
     color: white; }
     .section .video-table .table-holder {
@@ -236,13 +236,13 @@ a {
   .section #shop-title {
     margin-left: 65px; }
   .section .shop-header {
-    z-index: 99999;
+    z-index: 9999;
     background: black;
     float: right;
     width: 300px; }
     .section .shop-header .posfixed {
       position: fixed;
-      z-index: 99999;
+      z-index: 9999;
       background: black;
       border-bottom-left-radius: 50px;
       border-bottom-right-radius: 50px;

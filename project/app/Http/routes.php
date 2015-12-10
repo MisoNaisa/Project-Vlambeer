@@ -19,7 +19,9 @@ Route::get('/info_game/{id}', 'PagesController@info_game');
 Route::get('/test', 'GamesController@test');
 Route::get('/shop', 'PagesController@shop');
 
-Route::resource('/shop', 'ProductsController');
+Route::get('/shop', 'PagesController@shop');
+
+//Route::resource('/shop', 'ProductsController');
 
 Route::get('/shop/edit', 'PagesController@edit');
 Route::get('/shop/create', 'PagesController@create');
