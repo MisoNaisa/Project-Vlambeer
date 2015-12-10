@@ -26,6 +26,31 @@
             </div>
 
             <div class="form-group">
+                <label for="custom_payment_link">Game custom payment link</label>
+                <input class="form-control" type="text" name="custom_payment_link" value="{{$game['custom_payment_link']}}">
+            </div>
+
+            <div class="form-group">
+                <label for="steam_payment_link">Game steam payment link</label>
+                <input class="form-control" type="text" name="steam_payment_link" value="{{$game['steam_payment_link']}}">
+            </div>
+
+            <div class="form-group">
+                <label for="ios_payment_link">Game ios payment link</label>
+                <input class="form-control" type="text" name="ios_payment_link" value="{{$game['ios_payment_link']}}">
+            </div>
+
+            <div class="form-group">
+                <label for="psn_payment_link">Game psn payment link</label>
+                <input class="form-control" type="text" name="psn_payment_link" value="{{$game['psn_payment_link']}}">
+            </div>
+
+            <div class="form-group">
+                <label for="android_payment_link">Game android payment link</label>
+                <input class="form-control" type="text" name="android_payment_link" value="{{$game['android_payment_link']}}">
+            </div>
+
+            <div class="form-group">
                 <input class="btn btn-primary" type="submit">
             </div>
 
