@@ -6,17 +6,14 @@ $(document).ready(function(){
         $(this).removeClass('transition');
     });
 
-});
-
-$(window).load(function() {
     $('.flexslider').flexslider({
         animation: "slide"
     });
-});
 
 
 
-//  Home  - image background
+
+    //  Home  - image background
 
     $(".game-post").hover(function(){
         var background = $(this).find('.img').css('background-image').replace('url(', '').replace(')', '');
@@ -52,9 +49,14 @@ $(window).load(function() {
             $('.section .video-table .hidden').removeClass('hidden');
             $('.section .video-table .fa-volume-off').addClass('hidden');
         }
+    });
 
+    $('.admin .clickable').click(function (){
+        $(this).next().toggle("fast");
+        $(this).toggleClass('active-row-title');
+        $(this).next().toggleClass('active-row');
     });
 
 
 
-
+});

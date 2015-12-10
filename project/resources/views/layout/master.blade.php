@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="https://bootswatch.com/yeti/bootstrap.min.css">
+    <link rel="stylesheet" href="/vendors/bootstrap.css">
     <link rel="stylesheet" href="/vendors/main.css">
     <link rel="stylesheet" href="/vendors/flexslider.css">
     <link rel="stylesheet" href="/css/alex.css">

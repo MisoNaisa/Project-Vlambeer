@@ -2,6 +2,19 @@
     cursor: pointer;
 }
 
+.admin .container {
+    background: rgba(0,0,0,0.8);
+}
+
+.admin table .detail {
+    display: none;
+    background: #75190A;
+    border-top: 2px solid #fff;
+}
+
+.admin .active-row-title {
+    background: #75190A;
+}
 .btn_sale{
     width: 50px;
     float: right;
