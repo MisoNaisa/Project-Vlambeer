@@ -20,6 +20,7 @@ Route::get('/test', 'GamesController@test');
 Route::get('/shop', 'PagesController@shop');
 
 Route::get('/shop/edit', 'PagesController@edit');
+Route::get('/shop/create', 'PagesController@create');
 Route::resource('/games', 'GamesController');
 
 Route::resource('admin/games', 'GamesController');
