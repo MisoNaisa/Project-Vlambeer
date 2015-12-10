@@ -20,8 +20,10 @@
     @endif
 
     <div class="container">
-
         <div class="gameinfo">
+            @if (empty($gameInfo['game_background_video']))
+                <h1>{{$gameInfo['name']}}</h1>
+            @endif
             <div class="flexslider">
                 <ul class="slides">
                     @foreach($gameInfo['images'] as $img)
