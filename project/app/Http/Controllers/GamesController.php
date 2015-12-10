@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\GameCreateRequest;
+use App\Game;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\CustomClasses\GiantBomb\Api as GiantBombApi;
-use DB;
 
 class GamesController extends Controller
 {
@@ -42,9 +43,11 @@ class GamesController extends Controller
 
         $results = array_diff($pluckIdFromApi , $pluckIdFromDb);
 
-        $results = [1,2,3,4];
+        $results = range(1,10);
+        $gameNames=[];
         foreach($results as $result){
-            $gameNames = $games->getGameNameFromApi($result);
+
+            array_push($gameNames,$games->getGameNameFromApi($result));
         }
 
         return view('game.create', compact('gameNames', 'tweetV', 'tweetR', 'tweetJ'));
@@ -53,12 +56,30 @@ class GamesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     *
+     * @param \App\Http\Requests\GameCreateRequest $request
+     *
+     * GameCreateRequest -> Validator
+     *
+     * Usage of GiantBombApi to get the name
      */
-    public function store(Request $request)
+    public function store(GameCreateRequest $request, Game $game)
     {
-        //
+        $games = new GiantBombApi();
+
+        $game->id                     = $request->input('id');
+        $game->game_name              = $games->getGameNameFromApi($request->input('id'))['name'];
+        $game->game_background_video  = $request->file('game_background_video')->getClientOriginalName();
+        $game->game_background_img    = $request->input('game_background_img');
+        $game->regular_payment_link   = $request->input('regular_payment_link');
+        $game->steam_payment_link     = $request->input('steam_payment_link');
+        $game->ios_payment_link       = $request->input('ios_payment_link');
+        $game->psn_payment_link       = $request->input('psn_payment_link');
+        $game->android_payment_link   = $request->input('android_payment_link');
+
+        $game->save();
+
     }
 
     /**
