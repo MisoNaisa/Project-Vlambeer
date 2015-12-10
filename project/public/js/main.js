@@ -51,12 +51,46 @@ $(document).ready(function(){
         }
     });
 
+    //Admin Game Script
+
     $('.admin .clickable').click(function (){
-        $(this).next().toggle("fast");
-        $(this).toggleClass('active-row-title');
-        $(this).next().toggleClass('active-row');
+        var isNonactive = true;
+        //Check if its already active
+        if($(this).hasClass('active-row-title') ) {
+            var isNonactive = false;
+        }
+
+        // Set All rows to default
+        $('.admin .detail:visible').toggle();
+        $('.admin .active-row-title').removeClass('active-row-title');
+
+        //Only when item isn't already active
+        if (isNonactive) {
+            // Set new active class.
+            $(this).next().toggle("fast");
+            $(this).toggleClass('active-row-title');
+        }
+
     });
 
+    $('.admin input').click(function(){
+        var btnLocation = $(this).closest('.detail').prev()
+        btnLocation.find('.btn-save').show();
+        btnLocation.find('.btn-delete').hide();
+    });
+
+    $('.admin .btn-save').click(function(){
+        var formLocation = $(this).closest('tr').next();
+        var id = formLocation.attr('id');
+        var gameObject = {
+            'id' : id
+        };
+        $('#' + id + ' input').each(function(){
+            gameObject[$(this).attr('class')] = $(this).val();
+        });
+        gameJson = JSON.stringify(gameObject);
+        console.log(gameJson);
+    });
 
 
 });
