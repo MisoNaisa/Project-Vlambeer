@@ -95,7 +95,7 @@ $font-stack: 'Open Sans', sans-serif;
 .header {
   color: white;
   background: black;
-  z-index: 10;
+  z-index: 99999;
   position: fixed;
   top: 0;
   width: 100%;
@@ -345,14 +345,14 @@ $font-stack: 'Open Sans', sans-serif;
   }
 
   .shop-header {
-    z-index: 10;
+    z-index: 99999;
     background: black;
     float: right;
     width: 300px;
 
     .posfixed {
       position: fixed;
-      z-index: 10;
+      z-index: 99999;
       background: black;
       border-bottom-left-radius: 50px;
       border-bottom-right-radius: 50px;

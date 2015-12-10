@@ -38,7 +38,7 @@ $(window).load(function() {
 
     // Game-info page - Full screen bg video
 
-    $('.video-enable .info-game .section').css('margin-top', window.innerHeight + 'px');
+    $('.video-enable .section').css('margin-top', window.innerHeight + 'px');
 
 
 
