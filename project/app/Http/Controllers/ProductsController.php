@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class Shopcontroller extends Controller
+class ProductsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class Shopcontroller extends Controller
      */
     public function index()
     {
-        return view('pages.shop');
+        //
     }
 
     /**
@@ -59,7 +59,7 @@ class Shopcontroller extends Controller
      */
     public function edit($id)
     {
-
+        //
     }
 
     /**

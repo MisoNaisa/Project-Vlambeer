@@ -66,6 +66,16 @@ class PagesController extends Controller
         return view('pages.shop', compact( 'tweetV', 'tweetR', 'tweetJ', 'gameInfo'));
     }
 
+    public function edit() {
+        $tweetV = \App\Tweet::getStatusVlambeer();
+        $tweetR = \App\Tweet::getStatusRami();
+        $tweetJ = \App\Tweet::getStatusJan();
+
+
+        $item = '';
+        return view('shop.edit', compact( 'tweetV', 'tweetR', 'tweetJ', 'item'));
+    }
+
     public function test() {
         $games = new GiantBombApi();
         $gamesArray = $games->getAllGameInfoById(34402);
