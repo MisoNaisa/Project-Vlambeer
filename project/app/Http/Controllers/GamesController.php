@@ -100,12 +100,22 @@ class GamesController extends Controller
 
         $this->validate($request,[
             'game_background_video' => 'string',
-            'game_background_img' => 'required|string'
+            'game_background_img' => 'required|string',
+            'custom_payment_link' => 'string',
+            'steam_payment_link' => 'string',
+            'ios_payment_link' => 'string',
+            'psn_payment_link' => 'string',
+            'android_payment_link' => 'string'
         ]);
 
         $game = \App\Game::find($request['game_id']);
         $game->game_background_img = $request['game_background_img'];
         $game->game_background_video = $request['game_background_video'];
+        $game->custom_payment_link = $request['custom_payment_link'];
+        $game->steam_payment_link = $request['steam_payment_link'];
+        $game->ios_payment_link = $request['ios_payment_link'];
+        $game->psn_payment_link = $request['psn_payment_link'];
+        $game->android_payment_link = $request['android_payment_link'];
         $game->save();
         return redirect('/');
     }
