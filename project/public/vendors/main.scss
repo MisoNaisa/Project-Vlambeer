@@ -407,63 +407,63 @@ $font-stack: 'Open Sans', sans-serif;
     }
   }
 
+.products-overview {
+  margin-top: 30px;
+  .row {
+    padding: 10px 0px;
+    margin-left: 0px;
 
-
-  .products-overview {
-
-    .row {
-      padding: 0px;
-      margin: 20px 0px 20px 53px;
-
-      .product-box {
-        position: relative;
-        background: white;
-        padding: 0px;
-        margin: 0px;
-        border-radius: 20px;
-        width: 70%;
-
-        a {
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-        }
-
-        img {
-          width: 100%;
-          border-top-left-radius: 20px;
-          border-top-right-radius: 20px;
-        }
+    .product-box {
+      position: relative;
+      border-radius: 20px;
+      background: whitesmoke;
+      color: black;
 
         #sale {
           position: absolute;
           top: 0;
           right: 0;
           border-top-right-radius: 20px;
-          background: rgba(255,13,13, 0.8);
+          border-bottom-left-radius: 20px;
+          background: rgba(255, 13, 13, 0.8);
           color: white;
-          padding: 10px;
+          padding: 20px 15px 20px 15px;
           display: inline-table;
         }
 
-        .product-info {
-          padding: 10px;
-          color: black;
+      a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
 
-          h3 {
-            margin: 0px;
-          }
+      .product-photo {
+        height: 200px;
+        background-size: 100% 100% !important;
+        background-repeat: no-repeat !important;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+      }
+
+      .product-info {
+        padding: 8px;
+
+        h3 {
+
+        }
+
+        .price {
 
           p {
-            margin-bottom: 0px;
+
           }
         }
       }
-
     }
   }
+}
   //shop css eind
 
   //css game-overview begin

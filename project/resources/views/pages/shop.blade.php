@@ -30,10 +30,10 @@
 
         <div class="products-overview">
             <div class="row col-md-12">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="product-box">
                         <a href="#"></a>
-                        <img src="http://lorempixel.com/200/200" alt="product">
+                        <div class="product-photo" style="background: url('http://lorempixel.com/200/200');"></div>
                         <div class="product-info">
                             <h3>Product</h3>
                             <div class="price">
@@ -43,10 +43,11 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="product-box">
+                        <div id="sale">Sale</div>
                         <a href="#"></a>
-                        <img src="http://lorempixel.com/200/200" alt="product">
+                        <div class="product-photo" style="background: url('http://lorempixel.com/200/200');"></div>
                         <div class="product-info">
                             <h3>Product</h3>
                             <div class="price">
@@ -56,10 +57,23 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="product-box">
                         <a href="#"></a>
-                        <img src="http://lorempixel.com/200/200" alt="product">
+                        <div class="product-photo" style="background: url('http://lorempixel.com/200/200');"></div>
+                        <div class="product-info">
+                            <h3>Product</h3>
+                            <div class="price">
+                                <p>$67,95</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="product-box">
+                        <a href="#"></a>
+                        <div class="product-photo" style="background: url('http://lorempixel.com/200/200');"></div>
                         <div class="product-info">
                             <h3>Product</h3>
                             <div class="price">
@@ -69,15 +83,13 @@
                     </div>
                 </div>
             </div>
-
+        </div>
+        <div class="products-overview">
             <div class="row col-md-12">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="product-box">
                         <a href="#"></a>
-                        <div id="sale">
-                            <h3>Sale</h3>
-                        </div>
-                        <img src="http://lorempixel.com/200/200" alt="product">
+                        <div class="product-photo" style="background: url('http://lorempixel.com/200/200');"></div>
                         <div class="product-info">
                             <h3>Product</h3>
                             <div class="price">
@@ -87,10 +99,10 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="product-box">
                         <a href="#"></a>
-                        <img src="http://lorempixel.com/200/200" alt="product">
+                        <div class="product-photo" style="background: url('http://lorempixel.com/200/200');"></div>
                         <div class="product-info">
                             <h3>Product</h3>
                             <div class="price">
@@ -100,13 +112,24 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-3">
+                    <div class="product-box">
+                        <div id="sale">Sale</div>
+                        <a href="#"></a>
+                        <div class="product-photo" style="background: url('http://lorempixel.com/200/200');"></div>
+                        <div class="product-info">
+                            <h3>Product</h3>
+                            <div class="price">
+                                <p>$67,95</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
                     <div class="product-box">
                         <a href="#"></a>
-                        <div id="sale">
-                            <h3>Sale</h3>
-                        </div>
-                        <img src="http://lorempixel.com/200/200" alt="product">
+                        <div class="product-photo" style="background: url('http://lorempixel.com/200/200');"></div>
                         <div class="product-info">
                             <h3>Product</h3>
                             <div class="price">
