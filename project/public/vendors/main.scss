@@ -369,17 +369,28 @@ $font-stack: 'Open Sans', sans-serif;
   }
 }
 
-  #sale {
-    position: absolute;
-    top: 0;
-    right: 15px;
-    //border-top-right-radius: 15px;
-    //border-bottom-left-radius: 15px;
-    background: rgba(255, 13, 13, 0.8);
-    color: white;
-    padding: 20px 15px 20px 15px;
-    display: inline-table;
+  .thumbnail {
+    position: relative;
+    a {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
   }
+
+  #sale {
+    //content: '  ';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: url("../img/sale.png") no-repeat;
+    background-size: contain;
+    height: 80px;
+    width: 80px;
+  }
+
 
 .products-overview {
   margin-top: 30px;
