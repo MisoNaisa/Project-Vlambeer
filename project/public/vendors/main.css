@@ -260,15 +260,6 @@ a {
     .section .products-overview .row {
       padding: 10px 0px;
       margin-left: 44px; }
-      .section .products-overview .row .thumbnail {
-        position: relative;
-        border-radius: 15px; }
-        .section .products-overview .row .thumbnail a {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0; }
   .section .game-overview {
     overflow: hidden;
     padding-top: 30px; }
