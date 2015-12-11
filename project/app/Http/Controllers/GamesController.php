@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\GameCreateRequest;
 use App\Game;
+use App;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\CustomClasses\GiantBomb\Api as GiantBombApi;
+use Illuminate\Support\Facades\Storage;
 
 class GamesController extends Controller
 {
@@ -30,10 +32,6 @@ class GamesController extends Controller
      */
     public function create()
     {
-        $tweetV = \App\Tweet::getStatusVlambeer();
-        $tweetR = \App\Tweet::getStatusRami();
-        $tweetJ = \App\Tweet::getStatusJan();
-
         $games = new GiantBombApi();
         $gamesArray = $games->getAllGameIds();
         $dbGames = \App\Game::all();
@@ -43,14 +41,13 @@ class GamesController extends Controller
 
         $results = array_diff($pluckIdFromApi , $pluckIdFromDb);
 
-        $results = range(1,10);
         $gameNames=[];
         foreach($results as $result){
 
             array_push($gameNames,$games->getGameNameFromApi($result));
         }
 
-        return view('game.create', compact('gameNames', 'tweetV', 'tweetR', 'tweetJ'));
+        return view('game.create', compact('gameNames'));
     }
 
     /**
@@ -70,15 +67,25 @@ class GamesController extends Controller
 
         $game->id                     = $request->input('id');
         $game->game_name              = $games->getGameNameFromApi($request->input('id'))['name'];
-        $game->game_background_video  = $request->file('game_background_video')->getClientOriginalName();
+
+        if($request->hasFile('game_background_video')){
+            $game->game_background_video  = $request->file('game_background_video')->getClientOriginalName();
+//            dd($request->file('game_background_video')->getFilename());
+            $fileNew = $request->file('game_background_video')->getFilename();
+            $fileOld = $request->file('game_background_video')->getClientOriginalName();
+            Storage::disk('local')->put($fileOld, $fileNew);
+
+        }
         $game->game_background_img    = $request->input('game_background_img');
-        $game->regular_payment_link   = $request->input('regular_payment_link');
+        $game->custom_payment_link    = $request->input('custom_payment_link');
         $game->steam_payment_link     = $request->input('steam_payment_link');
         $game->ios_payment_link       = $request->input('ios_payment_link');
         $game->psn_payment_link       = $request->input('psn_payment_link');
         $game->android_payment_link   = $request->input('android_payment_link');
 
         $game->save();
+
+        return redirect('/');
 
     }
 
@@ -138,7 +145,7 @@ class GamesController extends Controller
         $game->psn_payment_link = $request['psn_payment_link'];
         $game->android_payment_link = $request['android_payment_link'];
         $game->save();
-        return redirect('/');
+        return redirect('/admin/games');
     }
 
     /**
