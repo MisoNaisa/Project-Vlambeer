@@ -64,13 +64,7 @@ class ProductsController extends Controller
         $product->save();
 =======
 
-        if($request['sale'] == 'on'){
-            $request['sale'] = true;
-        }else{
-            $request['sale'] = false;
-        }
-
-        $this->validate($request,[
+                $this->validate($request,[
             'name' => 'required|max:50|string',
             'description' => 'required|string',
             'price' => 'numeric',

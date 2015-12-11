@@ -35,7 +35,6 @@
     text-align: center;
 }
 
-.btn_sale{
-    width: 50px;
-    float: right;
+textarea{
+    resize: none;
 }
