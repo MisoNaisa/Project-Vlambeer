@@ -88,8 +88,21 @@ $(document).ready(function(){
         $('#' + id + ' input').each(function(){
             gameObject[$(this).attr('class')] = $(this).val();
         });
-        gameJson = JSON.stringify(gameObject);
-        console.log(gameJson);
+
+        var data = {};
+        data['input'] = JSON.stringify(gameObject);
+        data['_method'] = 'PUT';
+        data['_token'] = $('.csrf input').val();
+
+        $.ajax({
+            type: "POST",
+            url: 'games/edit.php',
+            data: data,
+            success: function(result) {
+                $('.debug').html(result);
+            },
+            error:function(exception){alert('Exeption:'+exception);}
+        });
     });
 
 
