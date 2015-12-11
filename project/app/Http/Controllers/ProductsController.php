@@ -48,8 +48,19 @@ class ProductsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductCreateRequest $request, Product $product)
     {
+//        $product->product_id                = $request->input('product_id');
+//        $product->product_name              = $request->input('product_name');
+//        $product->product_description       = $request->input('product_description');
+//        $product->product_price             = $request->input('product_price');
+//        $product->product_sale              = $request->input('product_sale');
+//        $product->product_sale_percentage   = $request->input('product_sale_percentage');
+//        $product->stock                     = $request->input('stock');
+//        $product->product_img               = $request->file('product_img');
+//        $product->created_at                = $request->input('created_at');
+//
+//        $product->save();
 
                 $this->validate($request,[
             'name' => 'required|max:50|string',
@@ -64,6 +75,7 @@ class ProductsController extends Controller
         \App\Product::create($request->except('_token'));
 
         return redirect('/shop')->with('message', 'Product created succesfully');
+
 
     }
 

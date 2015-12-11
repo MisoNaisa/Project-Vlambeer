@@ -3,10 +3,10 @@
 @section('section')
     <div class="container">
 
-        <h3>Add Item</h3>
 
-        <form class="col-md-4" action="{{action('ProductsController@store')}}" method="POST">
 
+        <form class="col-md-4 col-md-push-4" action="{{action('ProductsController@store')}}" method="POST">
+            <h1>Add Item</h1>
             {{csrf_field()}}
 
             <div class="form-group">

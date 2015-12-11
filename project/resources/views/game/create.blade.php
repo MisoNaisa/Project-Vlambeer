@@ -18,7 +18,7 @@
 
         <form action="{{ action('GamesController@store') }}" method="post" enctype="multipart/form-data">
 
-            {{ csrf_field() }}
+            <input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 
             <div class="form-group">
                 <label for="game_name">Game</label>

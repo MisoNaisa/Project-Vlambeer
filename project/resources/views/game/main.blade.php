@@ -12,7 +12,7 @@
                 <thead>
                 <tr>
                     <th>Name</th>
-                    <th class="button">add</th>
+                    <th class="button"><a href="games/create">add</a></th>
                 </tr>
                 </thead>
                 <tbody>
