@@ -13,38 +13,38 @@
 
             <div class="form-group">
 
-                <label for="product_name">Product name</label>
-                <input class="form-control" type="text" name="product_name" value="{{$product['name']}}" readonly>
+                <label for="name">Product name</label>
+                <input class="form-control" type="text" name="name" value="{{$product['name']}}" readonly>
             </div>
 
             <div class="form-group">
-                <label for="product_description">Description</label>
-                <input class="form-control" type="text" name="product_description" value="{{$product['product_description']}}">
+                <label for="description">Description</label>
+                <input class="form-control" type="text" name="description" value="{{$product['description']}}">
             </div>
 
             <div class="form-group">
-                <label for="product_price">Price</label>
-                <input class="form-control" type="text" name="product_price" value="{{$product['product_price']}}">
+                <label for="price">Price</label>
+                <input class="form-control" type="text" name="price" value="{{$product['price']}}">
             </div>
 
             <div class="form-group">
-                <label for="product_sale">Sale</label>
-                <input class="form-control btn_sale" type="checkbox" name="product_sale" value="{{$product['product_sale']}}">
+                <label for="sale">Sale</label>
+                <input class="form-control btn_sale" type="checkbox" name="sale" value="{{$product['sale']}}">
             </div>
 
             <div class="form-group">
-                <label for="product_sale_percentage">Sale Percentage</label>
-                <input class="form-control" type="number" name="product_sale_percentage" value="{{$product['product_sale_percentage']}}">
+                <label for="sale_percentage">Sale Percentage</label>
+                <input class="form-control" type="number" name="sale_percentage" value="{{$product['sale_percentage']}}">
             </div>
 
             <div class="form-group">
-                <label for="product_stock">Stock</label>
-                <input class="form-control" type="number" name="product_stock" value="{{$product['product_stock']}}">
+                <label for="stock">Stock</label>
+                <input class="form-control" type="number" name="stock" value="{{$product['stock']}}">
             </div>
 
             <div class="form-group">
-                <label for="product_img">Image</label>
-                <input class="form-control" type="file" name="product_img" value="{{$product['product_img']}}">
+                <label for="img">Image</label>
+                <input class="form-control" type="file" name="img" value="{{$product['img']}}">
             </div>
 
 
