@@ -14,12 +14,12 @@
             <div class="form-group">
 
                 <label for="name">Product name</label>
-                <input class="form-control" type="text" name="name" value="{{$product['name']}}" readonly>
+                <input class="form-control" type="text" name="name" value="{{$product['name']}}">
             </div>
 
             <div class="form-group">
                 <label for="description">Description</label>
-                <input class="form-control" type="text" name="description" value="{{$product['description']}}">
+                <textarea class="form-control" name="description" cols="30" rows="10">{{$product['description']}}</textarea>
             </div>
 
             <div class="form-group">
@@ -29,13 +29,10 @@
 
             <div class="form-group">
                 <label for="sale">Sale</label>
-                {{--<input class="form-control btn_sale" type="checkbox" name="sale" value="{{$product['sale']}}">--}}
-
-
-            <select name="sale" class="form-control"  >
-                <option value="1" @if($product['sale'] == 1) selected="selected" @endif>Yes</option>
-                <option value="0" @if($product['sale'] == 0) selected="selected" @endif>No</option>
-            </select>
+                <select name="sale" class="form-control"  >
+                    <option value="1" @if($product['sale'] == 1) selected="selected" @endif>Yes</option>
+                    <option value="0" @if($product['sale'] == 0) selected="selected" @endif>No</option>
+                </select>
             </div>
 
             <div class="form-group">
@@ -50,7 +47,7 @@
 
             <div class="form-group">
                 <label for="img">Image</label>
-                <input class="form-control" type="file" name="img" value="{{$product['img']}}">
+                <input class="form-control" type="text" name="img" value="{{$product['img']}}">
             </div>
 
 
