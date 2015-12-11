@@ -100,8 +100,7 @@ $(document).ready(function(){
             data: data,
             success: function(result) {
                 $('.debug').html(result);
-            },
-            error:function(exception){alert('Exeption:'+exception);}
+            }
         });
     });
 
