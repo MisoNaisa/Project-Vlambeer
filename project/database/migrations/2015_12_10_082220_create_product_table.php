@@ -13,14 +13,14 @@ class CreateProductTable extends Migration
     public function up()
     {
         Schema::create('product', function (Blueprint $table) {
-            $table->increments('product_id')->length(10)->unsigned();
-            $table->string('product_name',50);
-            $table->longText('product_description');
-            $table->decimal('product_price',10,2);
-            $table->tinyInteger('product_sale')->nullable();
-            $table->integer('product_sale_percentage')->length(20)->nullable();
+            $table->increments('id')->length(10)->unsigned();
+            $table->string('name',50);
+            $table->longText('description');
+            $table->decimal('price',10,2);
+            $table->tinyInteger('sale')->nullable();
+            $table->integer('sale_percentage')->length(20)->nullable();
             $table->integer('stock')->length(20);
-            $table->text('product_img');
+            $table->text('img');
             $table->timestamps();
         });
     }

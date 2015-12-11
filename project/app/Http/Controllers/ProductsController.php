@@ -95,7 +95,7 @@ class ProductsController extends Controller
             'product_img' => 'string'
         ]);
 
-        $product = \App\Product::find($request['product_id']);
+        $product = \App\Product::find($request['id']);
         $product->name = $request['product_name'];
         $product->description = $request['product_description'];
         $product->price = $request['product_price'];
