@@ -16,7 +16,7 @@
 
             <div class="form-group">
                 <label for="description">Description</label>
-                <input class="form-control" type="text" name="description">
+                <textarea class="form-control" name="description" cols="30" rows="10"></textarea>
             </div>
 
             <div class="form-group">
@@ -26,7 +26,11 @@
 
             <div class="form-group">
                 <label for="sale">Sale</label>
-                <input class="form-control" type="checkbox" name="sale">
+                <select name="sale" class="form-control"  >
+                    <option value="" style="display:none"></option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
             </div>
 
             <div class="form-group">
