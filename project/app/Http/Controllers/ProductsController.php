@@ -34,7 +34,12 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        return view('shop.create');
+        $tweetV = \App\Tweet::getStatusVlambeer();
+        $tweetR = \App\Tweet::getStatusRami();
+        $tweetJ = \App\Tweet::getStatusJan();
+
+        $product = \App\Product::all();
+        return view('shop.create', compact('product','tweetV', 'tweetR', 'tweetJ'));
     }
 
     /**
@@ -45,7 +50,26 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        
+
+        if($request['sale'] == 'on'){
+            $request['sale'] = true;
+        }else{
+            $request['sale'] = false;
+        }
+
+        $this->validate($request,[
+            'name' => 'required|max:50|string',
+            'description' => 'required|string',
+            'price' => 'numeric',
+            'sale' => 'boolean',
+            'sale_percentage' => 'numeric',
+            'stock' => 'numeric',
+            'img' => 'string'
+        ]);
+
+        \App\Product::create($request->except('_token'));
+
+        return redirect('/shop')->with('message', 'Product created succesfully');
 
     }
 
