@@ -1,15 +1,18 @@
 @extends('layout.master_admin')
 
 @section('section')
+    <span class="csrf">
+        {{csrf_field()}}
+    </span>
     <div class="container">
-        <h1>Game's beheren</h1>
-
+        <h1>Game's management</h1>
+        <div class="debug">
         <form action="">
             <table class="table">
                 <thead>
                 <tr>
                     <th>Name</th>
-                    <th class="button">toevoegen</th>
+                    <th class="button">add</th>
                 </tr>
                 </thead>
                 <tbody>
