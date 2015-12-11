@@ -2,7 +2,7 @@
 
 @section('section')
 <div class="container">
-    <div class="col-md-4 col-md-push-4">
+    <div class="col-md-6 col-md-push-3">
 
         <h3>Add Game</h3>
 
@@ -23,7 +23,7 @@
             <div class="form-group">
                 <label for="game_name">Game</label>
 
-                <select name="id" style="color:black">
+                <select name="id" style="color:black" class="form-control">
                     <option value=""></option>
 
                     @foreach($gameNames as $gameName)
