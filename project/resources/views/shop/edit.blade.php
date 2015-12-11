@@ -29,7 +29,13 @@
 
             <div class="form-group">
                 <label for="sale">Sale</label>
-                <input class="form-control btn_sale" type="checkbox" name="sale" value="{{$product['sale']}}">
+                {{--<input class="form-control btn_sale" type="checkbox" name="sale" value="{{$product['sale']}}">--}}
+
+
+            <select name="sale" class="form-control"  >
+                <option value="1" @if($product['sale'] == 1) selected="selected" @endif>Yes</option>
+                <option value="0" @if($product['sale'] == 0) selected="selected" @endif>No</option>
+            </select>
             </div>
 
             <div class="form-group">
