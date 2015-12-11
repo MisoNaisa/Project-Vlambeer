@@ -53,11 +53,37 @@ $(document).ready(function(){
 
     //Admin Game Script
 
+    var recentlyDeleted = false;
+    $('.btn-delete').click(function(){
+        if (confirm('Are you sure?')) {
+            var _this = $(this);
+            var data = {};
+            var id = _this.parent('tr').next().attr('id');
+            data['_method'] = 'DELETE';
+            data['_token'] = $('.csrf input').val();
+            $.ajax({
+                type: "POST",
+                url: 'games/' + id + '/destroy',
+                data: data,
+                success: function() {
+                    _this.parent('tr').hide('slow');
+                    _this.parent('tr').next().hide('slow');
+                }
+            });
+            recentlyDeleted = true;
+        }
+    });
+
     $('.admin .clickable').click(function (){
         var isNonactive = true;
         //Check if its already active
         if($(this).hasClass('active-row-title') ) {
-            var isNonactive = false;
+            isNonactive = false;
+        }
+
+        //Check if its deleted
+        if (recentlyDeleted == true) {
+            isNonactive = false;
         }
 
         // Set All rows to default
@@ -70,7 +96,7 @@ $(document).ready(function(){
             $(this).next().toggle("fast");
             $(this).toggleClass('active-row-title');
         }
-
+        recentlyDeleted = false;
     });
 
     $('.admin input').click(function(){
@@ -79,6 +105,7 @@ $(document).ready(function(){
         btnLocation.find('.btn-delete').hide();
     });
 
+    // Save
     $('.admin .btn-save').click(function(){
         var formLocation = $(this).closest('tr').next();
         var id = formLocation.attr('id');
@@ -103,6 +130,8 @@ $(document).ready(function(){
             }
         });
     });
+
+
 
 
 });
