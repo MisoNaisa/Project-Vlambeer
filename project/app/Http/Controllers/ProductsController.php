@@ -34,7 +34,12 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        return view('shop.create');
+        $tweetV = \App\Tweet::getStatusVlambeer();
+        $tweetR = \App\Tweet::getStatusRami();
+        $tweetJ = \App\Tweet::getStatusJan();
+
+        $product = \App\Product::all();
+        return view('shop.create', compact('product','tweetV', 'tweetR', 'tweetJ'));
     }
 
     /**
@@ -45,6 +50,7 @@ class ProductsController extends Controller
      */
     public function store(ProductCreateRequest $request, Product $product)
     {
+<<<<<<< HEAD
         $product->product_id                = $request->input('product_id');
         $product->product_name              = $request->input('product_name');
         $product->product_description       = $request->input('product_description');
@@ -56,6 +62,28 @@ class ProductsController extends Controller
         $product->created_at                = $request->input('created_at');
 
         $product->save();
+=======
+
+        if($request['sale'] == 'on'){
+            $request['sale'] = true;
+        }else{
+            $request['sale'] = false;
+        }
+
+        $this->validate($request,[
+            'name' => 'required|max:50|string',
+            'description' => 'required|string',
+            'price' => 'numeric',
+            'sale' => 'boolean',
+            'sale_percentage' => 'numeric',
+            'stock' => 'numeric',
+            'img' => 'string'
+        ]);
+
+        \App\Product::create($request->except('_token'));
+
+        return redirect('/shop')->with('message', 'Product created succesfully');
+>>>>>>> origin/master
 
     }
 
@@ -81,7 +109,7 @@ class ProductsController extends Controller
         $tweetV = \App\Tweet::getStatusVlambeer();
         $tweetR = \App\Tweet::getStatusRami();
         $tweetJ = \App\Tweet::getStatusJan();
-        $product = \App\Product::where('product_id', $id)->first();
+        $product = \App\Product::where('id', $id)->first();
 
         return view('shop.edit', compact('product','tweetV', 'tweetR', 'tweetJ'));
     }
@@ -96,25 +124,25 @@ class ProductsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'product_name' => 'string',
-            'product_description' => 'string',
-            'product_price' => 'numeric',
-            'product_sale' => 'numeric',
-            'product_sale_percentage' => 'numeric',
-            'product_stock' => 'numeric',
-            'product_img' => 'string'
+            'name' => 'string',
+            'description' => 'string',
+            'price' => 'numeric',
+            'sale' => 'numeric',
+            'sale_percentage' => 'numeric',
+            'stock' => 'numeric',
+            'img' => 'string'
         ]);
 
-        $product = \App\Product::find($request['product_id']);
-        $product->name = $request['product_name'];
-        $product->description = $request['product_description'];
-        $product->price = $request['product_price'];
-        $product->sale = $request['product_sale'];
-        $product->sale_percentage = $request['product_sale_percentage'];
-        $product->stock = $request['product_stock'];
-        $product->img = $request['product_img'];
+        $product = \App\Product::find($request['id']);
+        $product->name = $request['name'];
+        $product->description = $request['description'];
+        $product->price = $request['price'];
+        $product->sale = $request['sale'];
+        $product->sale_percentage = $request['sale_percentage'];
+        $product->stock = $request['stock'];
+        $product->img = $request['img'];
         $product->save();
-        return redirect('/');
+        return redirect('/shop/' . $request['id'] . '/edit');
     }
 
     /**
@@ -125,7 +153,7 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        $product = \App\Product::where('product_id', $id)->first();
+        $product = \App\Product::where('id', $id)->first();
         $product->delete();
     }
 }

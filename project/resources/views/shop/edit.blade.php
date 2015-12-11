@@ -5,46 +5,52 @@
 
 
 
-        <form class="col-md-4 col-md-push-4" action="{{--{{action('ProductsController@edit')}}--}}" method="POST">
+        <form class="col-md-4 col-md-push-4" action="{{action('ProductsController@update')}}" method="POST">
             <h1>Edit Item</h1>
             <input name="_method" type="hidden" value="PUT">
-            <input name="product_id" type="hidden" value="{{--{{$item['product_id']}}--}}">
+            <input name="id" type="hidden" value="{{$product['id']}}">
             {{csrf_field()}}
 
             <div class="form-group">
 
-                <label for="product_name">Product name</label>
-                <input class="form-control" type="text" name="product_name" value="{{--{{$item['product_name']}}--}}" readonly>
+                <label for="name">Product name</label>
+                <input class="form-control" type="text" name="name" value="{{$product['name']}}" readonly>
             </div>
 
             <div class="form-group">
-                <label for="product_description">Description</label>
-                <input class="form-control" type="text" name="product_description" value="{{--{{$item['product_description']}}--}}">
+                <label for="description">Description</label>
+                <input class="form-control" type="text" name="description" value="{{$product['description']}}">
             </div>
 
             <div class="form-group">
-                <label for="product_price">Price</label>
-                <input class="form-control" type="text" name="product_price" value="{{--{{$item['product_price']}}--}}">
+                <label for="price">Price</label>
+                <input class="form-control" type="text" name="price" value="{{$product['price']}}">
             </div>
 
             <div class="form-group">
-                <label for="product_sale">Sale</label>
-                <input class="form-control btn_sale" type="checkbox" name="product_sale" value="{{--{{$item['product_sale']}}--}}">
+                <label for="sale">Sale</label>
+                {{--<input class="form-control btn_sale" type="checkbox" name="sale" value="{{$product['sale']}}">--}}
+
+
+            <select name="sale" class="form-control"  >
+                <option value="1" @if($product['sale'] == 1) selected="selected" @endif>Yes</option>
+                <option value="0" @if($product['sale'] == 0) selected="selected" @endif>No</option>
+            </select>
             </div>
 
             <div class="form-group">
-                <label for="product_sale_percentage">Sale Percentage</label>
-                <input class="form-control" type="number" name="product_sale_percentage" value="{{--{{$item['product_sale_percentage']}}--}}">
+                <label for="sale_percentage">Sale Percentage</label>
+                <input class="form-control" type="number" name="sale_percentage" value="{{$product['sale_percentage']}}">
             </div>
 
             <div class="form-group">
-                <label for="product_stock">Stock</label>
-                <input class="form-control" type="number" name="product_stock" value="{{--{{$item['product_stock']}}--}}">
+                <label for="stock">Stock</label>
+                <input class="form-control" type="number" name="stock" value="{{$product['stock']}}">
             </div>
 
             <div class="form-group">
-                <label for="product_img">Image</label>
-                <input class="form-control" type="file" name="product_img" value="{{--{{$item['product_img']}}--}}">
+                <label for="img">Image</label>
+                <input class="form-control" type="file" name="img" value="{{$product['img']}}">
             </div>
 
 

@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layout.master_admin')
 
 @section('section')
 <div class="container">
@@ -48,8 +48,8 @@
         </div>
 
         <div class="form-group">
-            <label for="regular_payment_link">Regular Payment Link</label>
-            <input class="form-control" type="text" name="regular_payment_link">
+            <label for="custom_payment_link">Custom Payment Link</label>
+            <input class="form-control" type="text" name="custom_payment_link">
         </div>
 
         <div class="form-group">

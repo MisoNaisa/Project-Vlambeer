@@ -123,11 +123,15 @@
                 </div>
             </div>
 
-                <div class="footer-bottom">
-                <div class="contact-info">
-                    <p><a href="mailto:info@vlambeer.com">info@vlambeer.com</a> | Neude 5, 3512 AD, Utrecht, the Netherlands | +31621206363</p>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="contact-info col-md-9">
+                        <p><a href="mailto:info@vlambeer.com">info@vlambeer.com</a> | Neude 5, 3512 AD, Utrecht, the Netherlands | +31621206363</p>
+                    </div>
+                    <div class="terror col-md-2">
+                        <p>Made by TerrorTeddies</p>
+                    </div>
                 </div>
-
             </div>
     </div>
     <!-- End Footer-->

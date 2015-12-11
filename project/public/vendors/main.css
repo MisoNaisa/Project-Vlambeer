@@ -73,7 +73,8 @@ p {
 
 a {
   font-family: "Open Sans", sans-serif;
-  font-weight: 600; }
+  font-weight: 600;
+  text-decoration: none !important; }
 
 .header {
   color: white;
@@ -435,15 +436,14 @@ a {
     padding-right: 78px;
     padding-left: 0px; }
     .footer .footer-right .contact-default-styling {
-      background-color: black;
+      background-color: rgba(1, 1, 1, 0.6);
       border: 1px solid grey;
       border-radius: 5px;
       margin-bottom: 10px;
       padding-bottom: 10px; }
       .footer .footer-right .contact-default-styling a {
         display: block;
-        text-align: center;
-        text-decoration: none; }
+        text-align: center; }
       .footer .footer-right .contact-default-styling p {
         text-align: center;
         margin-bottom: 5px; }
@@ -451,17 +451,28 @@ a {
         font-style: italic;
         margin-top: 5px; }
   .footer .contact-fb {
-    margin-top: 30px; }
+    margin-top: 30px;
+    font-size: 15px;
+    background: #2c4075;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center; }
     .footer .contact-fb a {
-      color: #2c4075; }
+      color: white; }
   .footer .footer-bottom {
     background-color: black;
     float: left;
     width: 100%; }
-    .footer .footer-bottom .contact-info {
-      width: 19%;
-      margin-left: 35px; }
-      .footer .footer-bottom .contact-info p {
+    .footer .footer-bottom .row .terror p {
+      font-size: 10px;
+      float: right;
+      padding-top: 30px; }
+    .footer .footer-bottom .row .contact-info {
+      margin-left: 35px;
+      width: 80%; }
+      .footer .footer-bottom .row .contact-info p {
+        width: 19%;
         font-size: 10px; }
 
 @media screen and (min-width: 1500px) {

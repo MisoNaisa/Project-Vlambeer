@@ -22,7 +22,7 @@ class CreateOrderProductTable extends Migration
 
         Schema::table('order_product', function($table) {
             $table->foreign('order_id')->references('order_id')->on('order');
-            $table->foreign('product_id')->references('product_id')->on('product');
+            $table->foreign('product_id')->references('id')->on('product');
         });
     }
 

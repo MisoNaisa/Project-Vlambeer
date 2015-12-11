@@ -2,14 +2,14 @@
 
 @section('section')
     <div class="container">
-        <h1>Game's beheren</h1>
+        <h1>Game's management</h1>
 
         <form action="">
             <table class="table">
                 <thead>
                 <tr>
                     <th>Name</th>
-                    <th class="button">toevoegen</th>
+                    <th class="button">add</th>
                 </tr>
                 </thead>
                 <tbody>
