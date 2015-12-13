@@ -280,9 +280,9 @@ class Api
     }
 
     public function getAllGameIds() {
-        $this->fetch(array( 'company', '3010-7731' ), array('published_games', 'description'));
+        $this->fetch(array( 'company', '3010-7731' ), array('developed_games'));
         $games = $this->__toObject();
-        return $games['results']['published_games'];
+        return $games['results']['developed_games'];
     }
 
     public function getAllGameInfoById($id) {
