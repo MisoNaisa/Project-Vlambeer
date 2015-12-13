@@ -54,6 +54,7 @@ $(document).ready(function(){
     //Admin Game Script
 
     var recentlyDeleted = false;
+    //Delete
     $('.btn-delete').click(function(){
         if (confirm('Are you sure?')) {
             var _this = $(this);
@@ -74,6 +75,7 @@ $(document).ready(function(){
         }
     });
 
+    //Row toggling
     $('.admin .clickable').click(function (){
         var isNonactive = true;
         //Check if its already active
@@ -99,6 +101,7 @@ $(document).ready(function(){
         recentlyDeleted = false;
     });
 
+    //Show save after change
     $('.admin input').click(function(){
         var btnLocation = $(this).closest('.detail').prev()
         btnLocation.find('.btn-save').show();

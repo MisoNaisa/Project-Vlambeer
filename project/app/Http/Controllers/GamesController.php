@@ -125,6 +125,7 @@ class GamesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        var_dump ($request);
 
         $this->validate($request,[
             'game_background_video' => 'string',
