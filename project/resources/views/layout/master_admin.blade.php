@@ -46,6 +46,23 @@
 <!-- End of header-->
 
 <div class="section">
+    @if (session('message'))
+
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-success">
+                {{ session('message') }}
+
+            </li>
+        </ul>
+    @endif
+    @if($errors->has())
+        <ul class="list-group">
+            @foreach($errors->all()as $error)
+                <li class="list-group-item list-group-item-danger">{{ $error }}</li>
+
+            @endforeach
+        </ul>
+    @endif
     @yield('section')
 </div>
 

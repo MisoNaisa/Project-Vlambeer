@@ -21,6 +21,7 @@ Route::get('/test', 'GamesController@test');
 Route::resource('/shop', 'ProductsController');
 
 Route::resource('admin/games', 'GamesController');
+//Route::group('admin/games', 'GamesController');
 Route::delete('admin/games/{id}/destroy', 'GamesController@destroy');
 
-Route::resource('/testgiant', 'PagesController@test');
+//Route::resource('/testgiant', 'PagesController@test');

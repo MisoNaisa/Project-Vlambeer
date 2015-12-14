@@ -27,9 +27,9 @@ class GameCreateRequest extends Request
         return [
             'id'                        => 'required|max:32|string',
             'game_name'                 => 'max:100|string',
-            'game_background_video'     => 'max:200000|mimes:mp4',
+            'game_background_video'     => 'string',
             'game_background_img'       => 'string',
-            'custom_payment_link'      => 'max:32|string',
+            'custom_payment_link'       => 'max:32|string',
             'steam_payment_link'        => 'max:32|string',
             'ios_payment_link'          => 'string',
             'psn_payment_link'          => 'string',

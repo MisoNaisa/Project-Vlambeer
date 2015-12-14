@@ -34,7 +34,7 @@
 
         <div class="form-group">
             <label for="game_background_video">Game Background Video</label>
-            <input type="file" name="game_background_video" accept="video/*">
+            <input class="form-control" type="text" name="game_background_video">
         </div>
 
         <div class="form-group">

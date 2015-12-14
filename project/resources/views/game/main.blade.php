@@ -27,31 +27,31 @@
                             <table class="table">
                                 <tr>
                                     <td>background image:</td>
-                                    <td><input class="bg_image" type="text" value="{{$game['attributes']['game_background_img']}}"></td>
+                                    <td><input class="game_background_img" type="text" value="{{$game['attributes']['game_background_img']}}"></td>
                                 </tr>
                                 <tr>
                                     <td>background video:</td>
-                                    <td><input class="bg_video" type="text" value="{{$game['attributes']['game_background_video']}}"></td>
+                                    <td><input class="game_background_video" type="text" value="{{$game['attributes']['game_background_video']}}"></td>
                                 </tr>
                                 <tr>
                                     <td>custom payment link</td>
-                                    <td><input class="custom_pay" type="text" value="{{$game['attributes']['custom_payment_link']}}"></td>
+                                    <td><input class="custom_payment_link" type="text" value="{{$game['attributes']['custom_payment_link']}}"></td>
                                 </tr>
                                 <tr>
                                     <td>steam payment link</td>
-                                    <td><input class="steam_pay" type="text" value="{{$game['attributes']['steam_payment_link']}}"></td>
+                                    <td><input class="steam_payment_link" type="text" value="{{$game['attributes']['steam_payment_link']}}"></td>
                                 </tr>
                                 <tr>
                                     <td>ios payment link</td>
-                                    <td><input class="ios_pay" type="text" value="{{$game['attributes']['ios_payment_link']}}"></td>
+                                    <td><input class="ios_payment_link" type="text" value="{{$game['attributes']['ios_payment_link']}}"></td>
                                 </tr>
                                 <tr>
                                     <td>psn payment link</td>
-                                    <td><input class="psn_pay" type="text" value="{{$game['attributes']['psn_payment_link']}}"></td>
+                                    <td><input class="psn_payment_link" type="text" value="{{$game['attributes']['psn_payment_link']}}"></td>
                                 </tr>
                                 <tr>
                                     <td>android payment link</td>
-                                    <td><input class="android_pay" type="text" value="{{$game['attributes']['android_payment_link']}}"></td>
+                                    <td><input class="android_payment_link" type="text" value="{{$game['attributes']['android_payment_link']}}"></td>
                                 </tr>
                             </table>
                         </td>

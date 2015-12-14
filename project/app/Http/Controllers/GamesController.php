@@ -40,6 +40,7 @@ class GamesController extends Controller
         $pluckIdFromDb  = array_pluck($dbGames, 'id');
 
         $results = array_diff($pluckIdFromApi , $pluckIdFromDb);
+        $results = range(1,10);
 
         $gameNames=[];
         foreach($results as $result){
@@ -67,15 +68,16 @@ class GamesController extends Controller
 
         $game->id                     = $request->input('id');
         $game->game_name              = $games->getGameNameFromApi($request->input('id'))['name'];
-
-        if($request->hasFile('game_background_video')){
-            $game->game_background_video  = $request->file('game_background_video')->getClientOriginalName();
-//            dd($request->file('game_background_video')->getFilename());
-            $fileNew = $request->file('game_background_video')->getFilename();
-            $fileOld = $request->file('game_background_video')->getClientOriginalName();
-            Storage::disk('local')->put($fileOld, $fileNew);
-
-        }
+//        if($request->hasFile('game_background_video')){
+//            $game->game_background_video  = $request->file('game_background_video')->getClientOriginalName();
+////            dd($request->file('game_background_video')->getFilename());
+//            $fileNew = $request->file('game_background_video')->getFilename();
+//            $fileOld = $request->file('game_background_video')->getClientOriginalName();
+//            Storage::disk('local')->put($fileOld, $fileNew);
+//
+//        }
+        $game->game_background_video  = $request->input('game_background_video');
+//        dd($game->game_background_video);
         $game->game_background_img    = $request->input('game_background_img');
         $game->custom_payment_link    = $request->input('custom_payment_link');
         $game->steam_payment_link     = $request->input('steam_payment_link');
@@ -85,7 +87,7 @@ class GamesController extends Controller
 
         $game->save();
 
-        return redirect('/');
+        return redirect('/admin/games')->with('message', 'Successfully created a new game');
 
     }
 
@@ -125,18 +127,20 @@ class GamesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        var_dump ($request);
+//        var_dump($request);
+        $request = json_decode($request->input, true);
 
-        $this->validate($request,[
-            'game_background_video' => 'string',
-            'game_background_img' => 'required|string',
-            'custom_payment_link' => 'string',
-            'steam_payment_link' => 'string',
-            'ios_payment_link' => 'string',
-            'psn_payment_link' => 'string',
-            'android_payment_link' => 'string'
-        ]);
+//        $this->validate($request,[
+//            'game_background_video' => 'string',
+//            'game_background_img' => 'required|string',
+//            'custom_payment_link' => 'string',
+//            'steam_payment_link' => 'string',
+//            'ios_payment_link' => 'string',
+//            'psn_payment_link' => 'string',
+//            'android_payment_link' => 'string'
+//        ]);
 
+//        dd($request['game_id']);
         $game = \App\Game::find($request['game_id']);
         $game->game_background_img = $request['game_background_img'];
         $game->game_background_video = $request['game_background_video'];
@@ -146,7 +150,8 @@ class GamesController extends Controller
         $game->psn_payment_link = $request['psn_payment_link'];
         $game->android_payment_link = $request['android_payment_link'];
         $game->save();
-        return redirect('/admin/games');
+//        return redirect('/admin/games')->with('message', 'Successfully edited new game');
+        return true;
     }
 
     /**

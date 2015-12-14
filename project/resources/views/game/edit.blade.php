@@ -25,10 +25,10 @@
                     <input class="form-control" type="text" name="game_background_img" value="{{$game['game_background_img']}}">
                 </div>
 
-                <div class="form-group">
+                <d3iv class="form-group">
                     <label for="custom_payment_link">Game custom payment link</label>
                     <input class="form-control" type="text" name="custom_payment_link" value="{{$game['custom_payment_link']}}">
-                </div>
+                </d3iv>
 
                 <div class="form-group">
                     <label for="steam_payment_link">Game steam payment link</label>

@@ -113,7 +113,7 @@ $(document).ready(function(){
         var formLocation = $(this).closest('tr').next();
         var id = formLocation.attr('id');
         var gameObject = {
-            'id' : id
+            'game_id' : id
         };
         $('#' + id + ' input').each(function(){
             gameObject[$(this).attr('class')] = $(this).val();
