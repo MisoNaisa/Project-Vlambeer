@@ -16,6 +16,7 @@ class CreateOrderTable extends Migration
             $table->increments('order_id')->length(10)->unsigned();
             $table->integer('user_id')->unsigned();
             $table->dateTime('order_date');
+            $table->string('status', 60);
             $table->timestamps();
         });
 
