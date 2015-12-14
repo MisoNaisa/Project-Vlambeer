@@ -104,14 +104,21 @@ $(document).ready(function(){
     //Show save after change
     $('.admin input').click(function(){
         var btnLocation = $(this).closest('.detail').prev()
-        btnLocation.find('.btn-save').show();
-        btnLocation.find('.btn-delete').hide();
+        showAndHide(btnLocation, '.btn-save', '.btn-delete')
     });
+
+    function showAndHide(btnLocation, show, hide) {
+        btnLocation.find(show).show();
+        btnLocation.find(hide).hide();
+    }
 
     // Save
     $('.admin .btn-save').click(function(){
-        var formLocation = $(this).closest('tr').next();
+        var _this = $(this);
+        var formLocation = _this.closest('tr').next();
+        var btnLocation = _this.closest('.clickable');
         var id = formLocation.attr('id');
+        btnLocation.addClass('loading');
         var gameObject = {
             'game_id' : id
         };
@@ -129,7 +136,12 @@ $(document).ready(function(){
             url: 'games/edit.php',
             data: data,
             success: function(result) {
-                $('.debug').html(result);
+                if (result = true) {
+                    setTimeout(function(){
+                        btnLocation.removeClass('loading')
+                    }, 1000);
+                    showAndHide(btnLocation, '.btn-delete', '.btn-save')
+                }
             }
         });
     });

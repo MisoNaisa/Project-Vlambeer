@@ -12,6 +12,14 @@
     border-top: 2px solid #fff;
 }
 
+.admin table .clickable {
+    transition: 1s all ease;
+}
+
+.admin table .clickable.loading {
+    background: green;
+}
+
 .admin table .detail input {
     width: 100%;
     height: 100%;

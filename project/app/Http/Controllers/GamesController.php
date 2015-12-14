@@ -151,7 +151,7 @@ class GamesController extends Controller
         $game->android_payment_link = $request['android_payment_link'];
         $game->save();
 //        return redirect('/admin/games')->with('message', 'Successfully edited new game');
-        return true;
+        echo true;
     }
 
     /**
