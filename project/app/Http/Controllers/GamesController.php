@@ -40,7 +40,7 @@ class GamesController extends Controller
         $pluckIdFromDb  = array_pluck($dbGames, 'id');
 
         $results = array_diff($pluckIdFromApi , $pluckIdFromDb);
-        $results = range(1,10);
+//        $results = range(1,10);
 
         $gameNames=[];
         foreach($results as $result){
