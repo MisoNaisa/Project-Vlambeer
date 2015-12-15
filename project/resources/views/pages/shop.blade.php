@@ -35,106 +35,22 @@
                     </div>
 
                     <div class="row">
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <a href="#"></a>
-                                <div id="sale"></div>
-                                <img src="http://lorempixel.com/320/150" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$94.99</h4>
-                                    <h4><a href="#">Product</a>
-                                    </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        @foreach($productArray as $product)
+                            <div class="col-sm-4 col-lg-4 col-md-4">
+                                <div class="thumbnail">
+                                    <a href="#"></a>
+                                    <div id="sale"></div>
+                                    <img src="{{$product['img']}}" alt="product-img">
+                                    <div class="caption">
+                                        <h4 class="pull-right">{{$product['price']}}</h4>
+                                        <h4>{{$product['name']}}</h4>
+                                        <p>{{$product['description']}}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <a href="#"></a>
-                                <img src="http://lorempixel.com/320/150" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$94.99</h4>
-                                    <h4><a href="#">Product</a>
-                                    </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <a href="#"></a>
-                                <img src="http://lorempixel.com/320/150" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$94.99</h4>
-                                    <h4><a href="#">Product</a>
-                                    </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <a href="#"></a>
-                                <div id="sale"></div>
-                                <img src="http://lorempixel.com/320/150" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$94.99</h4>
-                                    <h4><a href="#">Product</a>
-                                    </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <a href="#"></a>
-                                <div id="sale"></div>
-                                <img src="http://lorempixel.com/320/150" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$94.99</h4>
-                                    <h4><a href="#">Product</a>
-                                    </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <a href="#"></a>
-                                <img src="http://lorempixel.com/320/150" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$94.99</h4>
-                                    <h4><a href="#">Product</a>
-                                    </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <a href="#"></a>
-                                <img src="http://lorempixel.com/320/150" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$94.99</h4>
-                                    <h4><a href="#">Product</a>
-                                    </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                            </div>
-                        </div>
-
+                        @endforeach
                     </div>
-
                 </div>
-
             </div>
-
         </div>
 @endsection
