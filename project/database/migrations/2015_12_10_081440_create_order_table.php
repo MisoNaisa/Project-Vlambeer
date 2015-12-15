@@ -21,7 +21,7 @@ class CreateOrderTable extends Migration
         });
 
         Schema::table('order', function($table) {
-            $table->foreign('user_id')->references('user_id')->on('user');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

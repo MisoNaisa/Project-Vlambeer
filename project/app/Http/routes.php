@@ -25,3 +25,12 @@ Route::resource('admin/games', 'GamesController');
 Route::delete('admin/games/{id}/destroy', 'GamesController@destroy');
 
 //Route::resource('/testgiant', 'PagesController@test');
+
+// Registration routes...
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+Route::controllers([
+    'password' => 'Auth\PasswordController',
+]);

@@ -22,6 +22,7 @@ class AuthController extends Controller
     */
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+    private $redirectTo = '/';
 
     /**
      * Create a new authentication controller instance.
@@ -42,9 +43,19 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|confirmed|min:6',
+            'email' => 'required|email|max:60|unique:users|min:6',
+            'password' => 'required|confirmed|min:6|max:255',
+            'first_name' => 'required|max:60|string',
+            'last_name' => 'required|max:60|string',
+            'insertion' => 'max:60|string',
+            'address' => 'required|max:60|string',
+            'housenumber' => 'required|max:60|string',
+            'zipcode' => 'required|max:60|string',
+            'city' => 'required|max:60|string',
+            'phonenumber' => 'required|max:60|string',
+            'date_of_birth' => 'required|date',
+            'country' => 'required|max:60|string',
+            'newsletter' => 'required|boolean',
         ]);
     }
 
@@ -57,9 +68,19 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'first_name' => $data['first_name'],
+            'last_name' =>$data['last_name'],
+            'insertion' => $data['insertion'],
+            'address' => $data['address'],
+            'housenumber' => $data['housenumber'],
+            'zipcode' => $data['zipcode'],
+            'city' => $data['city'],
+            'phonenumber' => $data['phonenumber'],
+            'date_of_birth' => $data['date_of_birth'],
+            'country' => $data['country'],
+            'newsletter' => $data['newsletter'],
         ]);
     }
 }
