@@ -12,11 +12,11 @@ class CreateUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('user', function (Blueprint $table) {
-            $table->increments('user_id')->length(10)->unsigned();
+        Schema::create('users', function (Blueprint $table) {
+            $table->increments('id')->length(10)->unsigned();
             $table->string('email', 60)->unique();
-            $table->string('password', 60);
-            $table->string('role', 60);
+            $table->string('password', 255);
+            $table->string('role', 60)->nullable();
             $table->string('first_name', 60);
             $table->string('last_name', 60);
             $table->string('insertion', 60)->nullable();
