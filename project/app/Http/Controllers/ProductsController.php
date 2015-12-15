@@ -48,7 +48,7 @@ class ProductsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ProductCreateRequest $request, Product $product)
+    public function store(Request $request)
     {
 //        $product->product_id                = $request->input('product_id');
 //        $product->product_name              = $request->input('product_name');
@@ -62,7 +62,7 @@ class ProductsController extends Controller
 //
 //        $product->save();
 
-                $this->validate($request,[
+        $this->validate($request,[
             'name' => 'required|max:50|string',
             'description' => 'required|string',
             'price' => 'numeric',
