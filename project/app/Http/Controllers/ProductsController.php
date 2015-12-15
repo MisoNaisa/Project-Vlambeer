@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\CustomClasses\GiantBomb\Api as GiantBombApi;
+use Illuminate\Support\Facades\App;
 
 class ProductsController extends Controller
 {
@@ -20,11 +21,11 @@ class ProductsController extends Controller
         $tweetV = \App\Tweet::getStatusVlambeer();
         $tweetR = \App\Tweet::getStatusRami();
         $tweetJ = \App\Tweet::getStatusJan();
-
+        $productArray = \App\Product::all();
         $games = new GiantBombApi();
         $gameInfo = $games->getAllGameInfoById(34402);
 
-        return view('pages.shop', compact( 'tweetV', 'tweetR', 'tweetJ', 'gameInfo'));
+        return view('pages.shop', compact( 'tweetV', 'tweetR', 'tweetJ', 'gameInfo', 'productArray'));
     }
 
     /**
