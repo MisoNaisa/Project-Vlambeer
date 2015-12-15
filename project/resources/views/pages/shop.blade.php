@@ -42,9 +42,10 @@
                                     <div id="sale"></div>
                                     <img src="{{$product['img']}}" alt="product-img">
                                     <div class="caption">
-                                        <h4 class="pull-right">{{$product['price']}}</h4>
+                                        <h4 class="pull-right">&#x24;{{$product['price']}}</h4>
                                         <h4>{{$product['name']}}</h4>
-                                        <p>{{$product['description']}}</p>
+{{--                                        <h4>{{ substr($product['name'], 0, 20) . '...' }}</h4>--}}
+                                        <p> {{ substr($product['description'], 0, 100) . '...' }}</p>
                                     </div>
                                 </div>
                             </div>
