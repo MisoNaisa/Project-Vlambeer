@@ -25,7 +25,7 @@ class ProductsController extends Controller
         $games = new GiantBombApi();
         $gameInfo = $games->getAllGameInfoById(34402);
 
-        return view('pages.shop', compact( 'tweetV', 'tweetR', 'tweetJ', 'gameInfo', 'productArray'));
+        return view('shop.index', compact( 'tweetV', 'tweetR', 'tweetJ', 'gameInfo', 'productArray'));
     }
 
     /**

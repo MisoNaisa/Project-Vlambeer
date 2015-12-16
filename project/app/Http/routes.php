@@ -22,7 +22,7 @@ Route::resource('/shop', 'ProductsController');
 
 Route::resource('admin/games', 'GamesController');
 //Route::group('admin/games', 'GamesController');
-Route::delete('admin/games/{id}/destroy', 'GamesController@destroy');
+Route::delete('admin/games/{id}/destroy', 'GamesController@destroy'); // to work with ajax
 
 //Route::resource('/testgiant', 'PagesController@test');
 
