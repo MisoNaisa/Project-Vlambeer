@@ -16,7 +16,10 @@ trait RegistersUsers
      */
     public function getRegister()
     {
-        return view('auth.register');
+        $tweetV = \App\Tweet::getStatusVlambeer();
+        $tweetR = \App\Tweet::getStatusRami();
+        $tweetJ = \App\Tweet::getStatusJan();
+        return view('auth.register', compact( 'tweetV', 'tweetR', 'tweetJ'));
     }
 
     /**
