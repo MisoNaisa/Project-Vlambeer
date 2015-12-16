@@ -60,17 +60,19 @@ class PagesController extends Controller
 
     //SHOP
    public function overview_products(){
+       $productArray = \App\Product::all();
        $tweetV = \App\Tweet::getStatusVlambeer();
        $tweetR = \App\Tweet::getStatusRami();
        $tweetJ = \App\Tweet::getStatusJan();
-       return view('pages.overview_products', compact('tweetV', 'tweetR', 'tweetJ'));
+       return view('pages.overview_products', compact('tweetV', 'tweetR', 'tweetJ', 'productArray'));
    }
 
-    public function info_products(){
+    public function info_products($id){
+        $product = \App\Product::find($id);
         $tweetV = \App\Tweet::getStatusVlambeer();
         $tweetR = \App\Tweet::getStatusRami();
         $tweetJ = \App\Tweet::getStatusJan();
-        return view('pages.info_products', compact('tweetV', 'tweetR', 'tweetJ'));
+        return view('pages.info_product', compact('tweetV', 'tweetR', 'tweetJ', 'product'));
     }
 
     public function test() {

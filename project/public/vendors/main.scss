@@ -400,6 +400,25 @@ $font-stack: 'Open Sans', sans-serif;
     margin-left: 44px;
   }
 }
+
+  .product {
+    margin: 30px;
+
+    .productimg {
+      float: left;
+
+      img {
+        height: 400px;
+        width: 400px;
+      }
+    }
+
+    .productinfo {
+      float: left;
+      width: 350px;
+      margin-left: 185px;
+    }
+  }
   //shop css eind
 
   //css game-overview begin
