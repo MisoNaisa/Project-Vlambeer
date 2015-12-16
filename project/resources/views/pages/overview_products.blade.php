@@ -1,7 +1,7 @@
 @extends('layout.master_shop')
 
 @section('bodyAttributes')
-    class="shop"
+    class="overview_products"
 @endsection
 
 @section('content')
