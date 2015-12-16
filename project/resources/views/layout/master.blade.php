@@ -37,7 +37,7 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/overview_games">Games</a></li>
-                <li><a href="/shop">Shop</a></li>
+                <li><a href="/overview_products">Shop</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>
         </div>
