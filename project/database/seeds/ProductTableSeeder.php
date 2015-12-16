@@ -109,12 +109,12 @@ class ProductTableSeeder extends Seeder
     }
 }
 
-    //DB::table('product')->insert([
-    //    'name'              =>'',
-    //    'description'       =>'',
-    //    'price'             =>'',
-    //    'sale'              =>'http://venuspatrol.com/subscribe/#subscriptionform',
-    //    'sale_percentage'   =>'',
-    //    'stock'             =>'',
-    //    'img'               =>'',
-    //]);
+//DB::table('product')->insert([
+//    'name'              =>'',
+//    'description'       =>'',
+//    'price'             =>'',
+//    'sale'              =>'http://venuspatrol.com/subscribe/#subscriptionform',
+//    'sale_percentage'   =>'',
+//    'stock'             =>'',
+//    'img'               =>'',
+//]);

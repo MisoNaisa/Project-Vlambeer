@@ -19,7 +19,7 @@
 
                     <div class="login list-group">
                         <a href="#" class="list-group-item">Login</a>
-                        <a href="#" class="list-group-item">Register</a>
+                        <a href="/auth/register" class="list-group-item">Register</a>
                         <p class="list-group-item"><i class="fa fa-shopping-cart"></i></p>
                     </div>
                 </div>
