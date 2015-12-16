@@ -75,7 +75,7 @@ class ProductsController extends Controller
 
         \App\Product::create($request->except('_token'));
 
-        return redirect('/shop.create')->with('message', 'Product created succesfully');
+        return redirect('/admin/shop')->with('message', 'Product created succesfully');
 
 
     }
@@ -135,7 +135,7 @@ class ProductsController extends Controller
         $product->stock = $request['stock'];
         $product->img = $request['img'];
         $product->save();
-        return redirect('/shop/' . $request['id'] . '/edit');
+        return redirect('/admin/shop' . $request['id'] . '/edit');
     }
 
     /**
