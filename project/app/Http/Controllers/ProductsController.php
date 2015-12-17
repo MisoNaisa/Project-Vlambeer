@@ -116,6 +116,7 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
+//        dd($request['name']);
         $this->validate($request,[
             'name' => 'string',
             'description' => 'string',
@@ -135,7 +136,8 @@ class ProductsController extends Controller
         $product->stock = $request['stock'];
         $product->img = $request['img'];
         $product->save();
-        return redirect('/admin/shop' . $request['id'] . '/edit');
+//        return redirect('/admin/shop' . $request['id'] . '/edit');
+        return redirect('/overview_products');
     }
 
     /**
@@ -144,6 +146,7 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function destroy($id)
     {
         $product = \App\Product::where('id', $id)->first();

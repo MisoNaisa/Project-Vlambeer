@@ -21,6 +21,7 @@ class CreateProductTable extends Migration
             $table->integer('sale_percentage')->length(20)->nullable();
             $table->integer('stock')->length(20);
             $table->text('img');
+            $table->integer('btw');
             $table->timestamps();
         });
     }

@@ -10,7 +10,7 @@ $font-stack: 'Open Sans', sans-serif;
 }
 
 .noDisplay {
-  display: none;
+  display: none !important;
 }
 
   body {
@@ -347,6 +347,7 @@ $font-stack: 'Open Sans', sans-serif;
 // game_info css eind
 
   //shop css begin
+
   .shop-hotfix {
     margin-top: 50px;
   }
@@ -371,13 +372,13 @@ $font-stack: 'Open Sans', sans-serif;
 
   .thumbnail {
     position: relative;
-    a {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-    }
+    //a {
+    //  position: absolute;
+    //  top: 0;
+    //  bottom: 0;
+    //  left: 0;
+    //  right: 0;
+    //}
   }
 
   #sale {

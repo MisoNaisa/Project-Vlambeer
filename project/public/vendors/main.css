@@ -7,7 +7,7 @@
   user-select: none; }
 
 .noDisplay {
-  display: none; }
+  display: none !important; }
 
 body {
   background: url("../img/background.jpg");
@@ -249,12 +249,6 @@ a {
       font-size: 25px; }
   .section .thumbnail {
     position: relative; }
-    .section .thumbnail a {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0; }
   .section #sale {
     position: absolute;
     top: -5px;
