@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\CustomClasses\GiantBomb\Api as GiantBombApi;
 use Illuminate\Support\Facades\App;
+use App\Http\Requests\ProductCreateRequest;
 
 class ProductsController extends Controller
 {
@@ -22,6 +23,7 @@ class ProductsController extends Controller
         $tweetR = \App\Tweet::getStatusRami();
         $tweetJ = \App\Tweet::getStatusJan();
         $productArray = \App\Product::all();
+
         $games = new GiantBombApi();
         $gameInfo = $games->getAllGameInfoById(34402);
 
@@ -114,20 +116,25 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductCreateRequest $request, $id)
     {
 //        dd($request['name']);
-        $this->validate($request,[
-            'name' => 'string',
-            'description' => 'string',
-            'price' => 'numeric',
-            'sale' => 'numeric',
-            'sale_percentage' => 'numeric',
-            'stock' => 'numeric',
-            'img' => 'string'
-        ]);
+//        $this->validate($request,[
+//            'name' => 'string',
+//            'description' => 'string',
+//            'price' => 'numeric',
+//            'sale' => 'numeric',
+//            'sale_percentage' => 'numeric',
+//            'stock' => 'numeric',
+//            'img' => 'string'
+//        ]);
 
         $product = \App\Product::find($request['id']);
+
+        if($product->stock < 0) {
+            return redirect('/overview_products')->with('message'. 'Voorraad kan niet lager worden ingevoerd dan 0');
+        }
+
         $product->name = $request['name'];
         $product->description = $request['description'];
         $product->price = $request['price'];

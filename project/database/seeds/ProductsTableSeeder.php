@@ -23,6 +23,7 @@ class ProductsTableSeeder extends Seeder
             'sale_percentage'   =>'0',
             'stock'             =>'10',
             'img'               =>'http://www.levelupstudios.com/lvlup-products/levelupstudios-vlambeer-vlambeerlogo-750.jpg',
+            'btw'               =>'21',
         ]);
 
         DB::table('product')->insert([
@@ -78,6 +79,7 @@ class ProductsTableSeeder extends Seeder
             'sale_percentage'   =>'0',
             'stock'             =>'10',
             'img'               =>'http://www.levelupstudios.com/lvlup-products/levelupstudios-vlambeer-vlambeerost-2-750.jpg',
+            'btw'               =>'21',
         ]);
 
         DB::table('product')->insert([
@@ -104,6 +106,7 @@ class ProductsTableSeeder extends Seeder
             'sale_percentage'   =>'0',
             'stock'             =>'5',
             'img'               =>'http://www.levelupstudios.com/lvlup-products/levelupstudios-vlambeer-supercratebundle-photo-750.jpg',
+            'btw'               =>'21',
         ]);
 
 
@@ -118,4 +121,5 @@ class ProductsTableSeeder extends Seeder
 //    'sale_percentage'   =>'',
 //    'stock'             =>'',
 //    'img'               =>'',
+//'btw'               =>'21',
 //]);
