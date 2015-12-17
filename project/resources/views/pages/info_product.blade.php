@@ -11,7 +11,21 @@
                 <h4>{{ $product->name }}</h4>
                 <p>{{ $product->description }}</p>
             </div>
+
+            {{--Real payment link: https://www.paypal.com/cgi-bin/webscr--}}
+            <form name="_xclick" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+                <input type="hidden" name="cmd" value="_xclick">
+                <input type="hidden" name="business" value="sjoerd3008-facilitator@hotmail.com">
+                <input type="hidden" name="currency_code" value="EUR">
+                <input type="hidden" name="return" value="vlambeer.dev/info_product/{{$product->id}}">
+
+                <input type="hidden" name="item_name" value="{{$product->name}}">
+                <input type="hidden" name="amount" value="{{$product->price}}">
+                <input type="image" src="http://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+            </form>
+
         </div>
     </div>
+
 
 @endsection

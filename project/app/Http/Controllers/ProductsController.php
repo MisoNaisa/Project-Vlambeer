@@ -149,4 +149,14 @@ class ProductsController extends Controller
         $product = \App\Product::where('id', $id)->first();
         $product->delete();
     }
+
+    public function paid()
+    {
+        $tweetV = \App\Tweet::getStatusVlambeer();
+        $tweetR = \App\Tweet::getStatusRami();
+        $tweetJ = \App\Tweet::getStatusJan();
+
+
+        return view('shop.paid', compact('tweetV', 'tweetR', 'tweetJ'));
+    }
 }
