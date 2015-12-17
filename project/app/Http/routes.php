@@ -21,7 +21,7 @@ Route::get('/test', 'GamesController@test');
 
 Route::get('/overview_products', 'PagesController@overview_products');
 Route::get('/info_product/{id}', 'PagesController@info_products');
-
+Route::resource('/shop', 'ProductsController');
 
 Route::resource('admin/games', 'GamesController');
 //Route::group('admin/games', 'GamesController');
