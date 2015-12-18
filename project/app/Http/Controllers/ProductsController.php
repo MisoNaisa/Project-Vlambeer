@@ -88,7 +88,10 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        //
+        $tweetV = \App\Tweet::getStatusVlambeer();
+        $tweetR = \App\Tweet::getStatusRami();
+        $tweetJ = \App\Tweet::getStatusJan();
+        return view('shop.info_products', compact('tweetV', 'tweetR', 'tweetJ'));
     }
 
     /**

@@ -57,6 +57,7 @@ class PagesController extends Controller
 
     public function edit() {
 
+
     }
 
     public function create() {
@@ -67,7 +68,8 @@ class PagesController extends Controller
 
         $item = '';
         return view('shop.create', compact( 'tweetV', 'tweetR', 'tweetJ', 'item'));
-    }
+
+    //SHOP
 
     public function test() {
         $games = new GiantBombApi();
