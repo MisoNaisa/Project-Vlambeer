@@ -25,7 +25,7 @@ class ProductsController extends Controller
         $games = new GiantBombApi();
         $gameInfo = $games->getAllGameInfoById(34402);
 
-        return view('shop.main', compact( 'tweetV', 'tweetR', 'tweetJ', 'gameInfo', 'productArray'));
+        return view('shop.index', compact( 'tweetV', 'tweetR', 'tweetJ', 'gameInfo', 'productArray'));
     }
 
     /**
@@ -75,7 +75,7 @@ class ProductsController extends Controller
 
         \App\Product::create($request->except('_token'));
 
-        return redirect('/shop.create')->with('message', 'Product created succesfully');
+        return redirect('/shop')->with('message', 'Product created succesfully');
 
 
     }
