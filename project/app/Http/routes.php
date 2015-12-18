@@ -15,7 +15,7 @@
 Route::get('/', 'PagesController@index');
 Route::get('/contact', 'PagesController@contact');
 Route::get('/test', 'GamesController@test');
-
+Route::get('/paid', 'ProductsController@paid');
 
 Route::resource('/shop', 'ProductsController');
 
