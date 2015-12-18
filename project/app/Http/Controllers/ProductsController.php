@@ -91,7 +91,8 @@ class ProductsController extends Controller
         $tweetV = \App\Tweet::getStatusVlambeer();
         $tweetR = \App\Tweet::getStatusRami();
         $tweetJ = \App\Tweet::getStatusJan();
-        return view('shop.info_products', compact('tweetV', 'tweetR', 'tweetJ'));
+        $product = \App\Product::where('id', $id)->first();
+        return view('shop.show', compact('tweetV', 'tweetR', 'tweetJ', 'product'));
     }
 
     /**
@@ -161,5 +162,15 @@ class ProductsController extends Controller
 
 
         return view('shop.paid', compact('tweetV', 'tweetR', 'tweetJ'));
+    }
+
+    public function payment_failed()
+    {
+        $tweetV = \App\Tweet::getStatusVlambeer();
+        $tweetR = \App\Tweet::getStatusRami();
+        $tweetJ = \App\Tweet::getStatusJan();
+
+
+        return view('shop.payment_failed', compact('tweetV', 'tweetR', 'tweetJ'));
     }
 }

@@ -17,7 +17,7 @@
         @foreach($productArray as $product)
             <div class="col-sm-4 col-lg-4 col-md-4">
                 <div class="thumbnail">
-                    <a href="#"></a>
+                    <a href="shop/product/{{$product->id}}"></a>
                     <div id="sale"></div>
                     <img src="{{$product['img']}}" alt="product-img">
                     <div class="caption">

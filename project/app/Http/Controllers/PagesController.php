@@ -50,7 +50,7 @@ class PagesController extends Controller
         $games = new GiantBombApi();
 
         $gameInfo = $games->getAllGameInfoById($id);
-      $gameDesc = preg_replace("/<img[^>]+\>/i", "",str_replace('href="','target="_blank" href="http://giantbomb.com',$gameInfo['description']));
+        $gameDesc = preg_replace("/<img[^>]+\>/i", "",str_replace('href="','target="_blank" href="http://giantbomb.com',$gameInfo['description']));
 //
         return view('pages.info_game', compact('tweetV', 'tweetR', 'tweetJ', 'gameInfo','gameDesc'));
     }
@@ -61,14 +61,15 @@ class PagesController extends Controller
     }
 
     public function create() {
+
         $tweetV = \App\Tweet::getStatusVlambeer();
         $tweetR = \App\Tweet::getStatusRami();
         $tweetJ = \App\Tweet::getStatusJan();
 
 
         $item = '';
-        return view('shop.create', compact( 'tweetV', 'tweetR', 'tweetJ', 'item'));
-
+        return view('shop.create', compact('tweetV', 'tweetR', 'tweetJ', 'item'));
+    }
     //SHOP
 
     public function test() {
