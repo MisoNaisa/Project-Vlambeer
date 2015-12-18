@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     $("div").find(".game-post").hover(function() {
         $(this).addClass('transition');
 
@@ -103,8 +104,8 @@ $(document).ready(function(){
 
     //Show save after change
     $('.admin input').click(function(){
-        var btnLocation = $(this).closest('.detail').prev()
-        showAndHide(btnLocation, '.btn-save', '.btn-delete')
+        var btnLocation = $(this).closest('.detail').prev();
+        showAndHide(btnLocation, '.btn-save', '.btn-delete');
     });
 
     function showAndHide(btnLocation, show, hide) {
@@ -138,15 +139,17 @@ $(document).ready(function(){
             success: function(result) {
                 if (result = true) {
                     setTimeout(function(){
-                        btnLocation.removeClass('loading')
+                        btnLocation.removeClass('loading');
                     }, 1000);
-                    showAndHide(btnLocation, '.btn-delete', '.btn-save')
+                    showAndHide(btnLocation, '.btn-delete', '.btn-save');
                 }
             }
         });
     });
 
+    //    Cookie test
+    $.cookie('winkelwagen', '"json"', { expires: 7 });
 
-
+    //console.log('winkelwagen');
 
 });
