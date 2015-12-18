@@ -31,8 +31,6 @@ class PagesController extends Controller
         return view('pages.contact', compact( 'tweetV', 'tweetR', 'tweetJ'));
     }
 
-
-    // GAMES
     public function overview_games() {
         $gamesFromApi = new GiantBombApi();
         $gamesArray = $gamesFromApi->getAllGames();
@@ -57,20 +55,18 @@ class PagesController extends Controller
         return view('pages.info_game', compact('tweetV', 'tweetR', 'tweetJ', 'gameInfo','gameDesc'));
     }
 
+    public function edit() {
 
-    //SHOP
-   public function overview_products(){
-       $tweetV = \App\Tweet::getStatusVlambeer();
-       $tweetR = \App\Tweet::getStatusRami();
-       $tweetJ = \App\Tweet::getStatusJan();
-       return view('pages.overview_products', compact('tweetV', 'tweetR', 'tweetJ'));
-   }
+    }
 
-    public function info_products(){
+    public function create() {
         $tweetV = \App\Tweet::getStatusVlambeer();
         $tweetR = \App\Tweet::getStatusRami();
         $tweetJ = \App\Tweet::getStatusJan();
-        return view('pages.info_products', compact('tweetV', 'tweetR', 'tweetJ'));
+
+
+        $item = '';
+        return view('shop.create', compact( 'tweetV', 'tweetR', 'tweetJ', 'item'));
     }
 
     public function test() {
