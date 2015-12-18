@@ -5,6 +5,8 @@
 @endsection
 
 @section('section')
+
+
     <div class="container">
         <div class="row shop-hotfix">
             <div class="col-md-2 aside">
@@ -18,8 +20,15 @@
                 </div>
 
                 <div class="login list-group">
-                    <a href="#" class="list-group-item">Login</a>
-                    <a href="/auth/register" class="list-group-item">Register</a>
+                    @if(Auth::user())
+
+                        {{ Auth::user()->email }}
+                        <a href="/logout" class="list-group-item">Logout</a>
+
+                    @else
+                        <a href="/login" class="list-group-item">Login</a>
+                        <a href="/register" class="list-group-item">Register</a>
+                    @endif()
                     <p class="list-group-item"><i class="fa fa-shopping-cart"></i></p>
                 </div>
             </div>
