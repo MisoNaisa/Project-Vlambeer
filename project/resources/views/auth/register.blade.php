@@ -15,7 +15,7 @@
         @endif
 
 
-        <form class="col-md-4 col-md-push-4" method="POST" action="/auth/register">
+        <form class="col-md-4 col-md-push-4" method="POST" action="register">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <h1>Register</h1>
 

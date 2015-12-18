@@ -27,6 +27,7 @@ class CreateUserTable extends Migration
             $table->string('phonenumber', 60);
             $table->date('date_of_birth');
             $table->string('country', 60);
+            $table->string('remember_token', 100);
             $table->tinyInteger('newsletter');
             $table->timestamps();
         });

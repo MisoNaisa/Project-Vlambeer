@@ -40,6 +40,6 @@ trait RegistersUsers
 
         Auth::login($this->create($request->all()));
 
-        return redirect($this->redirectPath());
+        return redirect($this->redirectPath())->with('message', 'You have successfully created a new user');
     }
 }
