@@ -15,38 +15,31 @@ class PagesController extends Controller
 {
 
     public function index() {
-        $tweetV = \App\Tweet::getStatusVlambeer();
-        $tweetR = \App\Tweet::getStatusRami();
-        $tweetJ = \App\Tweet::getStatusJan();
+
         $games = \App\Game::all();
 
 //        dd($games);
-        return view('pages.index', compact('games', 'tweetV', 'tweetR', 'tweetJ'));
+        return view('pages.index', compact('games'));
     }
 
     public function contact() {
-        $tweetV = \App\Tweet::getStatusVlambeer();
-        $tweetR = \App\Tweet::getStatusRami();
-        $tweetJ = \App\Tweet::getStatusJan();
-        return view('pages.contact', compact( 'tweetV', 'tweetR', 'tweetJ'));
+
+        return view('pages.contact');
     }
 
     public function overview_games() {
+
         $gamesFromApi = new GiantBombApi();
+
         $gamesArray = $gamesFromApi->getAllGames();
 
 //        dd($gamesArray);
-        $tweetV = \App\Tweet::getStatusVlambeer();
-        $tweetR = \App\Tweet::getStatusRami();
-        $tweetJ = \App\Tweet::getStatusJan();
-        return view('pages.overview_games', compact('tweetV', 'tweetR', 'tweetJ', 'gamesArray'));
+
+        return view('pages.overview_games', compact('gamesArray'));
     }
 
     public function info_game($id) {
 
-        $tweetV = \App\Tweet::getStatusVlambeer();
-        $tweetR = \App\Tweet::getStatusRami();
-        $tweetJ = \App\Tweet::getStatusJan();
         $games = new GiantBombApi();
 
         $gameInfo = $games->getAllGameInfoById($id);
@@ -57,23 +50,19 @@ class PagesController extends Controller
 
     public function edit() {
 
-
     }
 
     public function create() {
 
-        $tweetV = \App\Tweet::getStatusVlambeer();
-        $tweetR = \App\Tweet::getStatusRami();
-        $tweetJ = \App\Tweet::getStatusJan();
-
-
         $item = '';
-        return view('shop.create', compact('tweetV', 'tweetR', 'tweetJ', 'item'));
+        return view('shop.create', compact('item'));
     }
     //SHOP
 
     public function test() {
+
         $games = new GiantBombApi();
+
         $gamesArray = $games->getAllGameInfoById(34402);
         dd($gamesArray);
     }

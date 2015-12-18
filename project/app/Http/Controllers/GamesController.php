@@ -19,9 +19,9 @@ class GamesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         $allGames = \App\Game::all();
+
         return view('game.main', compact('allGames') );
     }
 
@@ -30,9 +30,10 @@ class GamesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
+
         $games = new GiantBombApi();
+
         $gamesArray = $games->getAllGameIds();
         $dbGames = \App\Game::all();
 
@@ -40,9 +41,9 @@ class GamesController extends Controller
         $pluckIdFromDb  = array_pluck($dbGames, 'id');
 
         $results = array_diff($pluckIdFromApi , $pluckIdFromDb);
-//        $results = range(1,10);
 
         $gameNames=[];
+
         foreach($results as $result){
 
             array_push($gameNames,$games->getGameNameFromApi($result));
@@ -62,8 +63,8 @@ class GamesController extends Controller
      *
      * Usage of GiantBombApi to get the name
      */
-    public function store(GameCreateRequest $request, Game $game)
-    {
+    public function store(GameCreateRequest $request, Game $game) {
+
         $games = new GiantBombApi();
 
         $game->id                     = $request->input('id');
@@ -97,8 +98,7 @@ class GamesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         //
     }
 
@@ -108,14 +108,11 @@ class GamesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        $tweetV = \App\Tweet::getStatusVlambeer();
-        $tweetR = \App\Tweet::getStatusRami();
-        $tweetJ = \App\Tweet::getStatusJan();
+    public function edit($id) {
+
         $game = \App\Game::where('id', $id)->first();
 
-        return view('game.edit', compact('game','tweetV', 'tweetR', 'tweetJ'));
+        return view('game.edit', compact('game'));
     }
 
     /**
@@ -125,22 +122,10 @@ class GamesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-//        var_dump($request);
+    public function update(Request $request, $id) {
+
         $request = json_decode($request->input, true);
 
-//        $this->validate($request,[
-//            'game_background_video' => 'string',
-//            'game_background_img' => 'required|string',
-//            'custom_payment_link' => 'string',
-//            'steam_payment_link' => 'string',
-//            'ios_payment_link' => 'string',
-//            'psn_payment_link' => 'string',
-//            'android_payment_link' => 'string'
-//        ]);
-
-//        dd($request['game_id']);
         $game = \App\Game::find($request['game_id']);
         $game->game_background_img = $request['game_background_img'];
         $game->game_background_video = $request['game_background_video'];
@@ -150,7 +135,7 @@ class GamesController extends Controller
         $game->psn_payment_link = $request['psn_payment_link'];
         $game->android_payment_link = $request['android_payment_link'];
         $game->save();
-//        return redirect('/admin/games')->with('message', 'Successfully edited new game');
+
         echo true;
     }
 
@@ -160,14 +145,17 @@ class GamesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
+
         $game = \App\Game::where('id', $id)->first();
+
         $game->delete();
     }
 
     public function test() {
+
         $games = new GiantBombApi();
+
         $gamesArray = $games->getAllGameIds();
         $dbGames = \App\Game::all();
 

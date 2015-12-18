@@ -16,16 +16,15 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $tweetV = \App\Tweet::getStatusVlambeer();
-        $tweetR = \App\Tweet::getStatusRami();
-        $tweetJ = \App\Tweet::getStatusJan();
+    public function index() {
+
         $productArray = \App\Product::all();
+
         $games = new GiantBombApi();
+
         $gameInfo = $games->getAllGameInfoById(34402);
 
-        return view('shop.index', compact( 'tweetV', 'tweetR', 'tweetJ', 'gameInfo', 'productArray'));
+        return view('shop.index', compact('gameInfo', 'productArray'));
     }
 
     /**
@@ -33,14 +32,11 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        $tweetV = \App\Tweet::getStatusVlambeer();
-        $tweetR = \App\Tweet::getStatusRami();
-        $tweetJ = \App\Tweet::getStatusJan();
+    public function create() {
 
         $product = \App\Product::all();
-        return view('shop.create', compact('product','tweetV', 'tweetR', 'tweetJ'));
+
+        return view('shop.create', compact('product'));
     }
 
     /**
@@ -49,8 +45,8 @@ class ProductsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
+
 //        $product->product_id                = $request->input('product_id');
 //        $product->product_name              = $request->input('product_name');
 //        $product->product_description       = $request->input('product_description');
@@ -76,8 +72,6 @@ class ProductsController extends Controller
         \App\Product::create($request->except('_token'));
 
         return redirect('/shop')->with('message', 'Product created succesfully');
-
-
     }
 
     /**
@@ -86,13 +80,11 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $tweetV = \App\Tweet::getStatusVlambeer();
-        $tweetR = \App\Tweet::getStatusRami();
-        $tweetJ = \App\Tweet::getStatusJan();
+    public function show($id) {
+
         $product = \App\Product::where('id', $id)->first();
-        return view('shop.show', compact('tweetV', 'tweetR', 'tweetJ', 'product'));
+
+        return view('shop.show', compact('product'));
     }
 
     /**
@@ -101,14 +93,11 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        $tweetV = \App\Tweet::getStatusVlambeer();
-        $tweetR = \App\Tweet::getStatusRami();
-        $tweetJ = \App\Tweet::getStatusJan();
+    public function edit($id) {
+
         $product = \App\Product::where('id', $id)->first();
 
-        return view('shop.edit', compact('product','tweetV', 'tweetR', 'tweetJ'));
+        return view('shop.edit', compact('product'));
     }
 
     /**
@@ -118,8 +107,8 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
+
         $this->validate($request,[
             'name' => 'string',
             'description' => 'string',
@@ -138,7 +127,9 @@ class ProductsController extends Controller
         $product->sale_percentage = $request['sale_percentage'];
         $product->stock = $request['stock'];
         $product->img = $request['img'];
+
         $product->save();
+
         return redirect('/shop/' . $request['id'] . '/edit');
     }
 
@@ -148,29 +139,20 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
+
         $product = \App\Product::where('id', $id)->first();
+
         $product->delete();
     }
 
-    public function paid()
-    {
-        $tweetV = \App\Tweet::getStatusVlambeer();
-        $tweetR = \App\Tweet::getStatusRami();
-        $tweetJ = \App\Tweet::getStatusJan();
+    public function paid() {
 
-
-        return view('shop.paid', compact('tweetV', 'tweetR', 'tweetJ'));
+        return view('shop.paid');
     }
 
-    public function payment_failed()
-    {
-        $tweetV = \App\Tweet::getStatusVlambeer();
-        $tweetR = \App\Tweet::getStatusRami();
-        $tweetJ = \App\Tweet::getStatusJan();
+    public function payment_failed() {
 
-
-        return view('shop.payment_failed', compact('tweetV', 'tweetR', 'tweetJ'));
+        return view('shop.payment_failed');
     }
 }

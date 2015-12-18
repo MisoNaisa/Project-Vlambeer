@@ -46,6 +46,15 @@
 <!-- End of header-->
 
     <div class="section">
+        @if (session('message'))
+
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-success">
+                    {{ session('message') }}
+
+                </li>
+            </ul>
+        @endif
         @yield('section')
     </div>
 
@@ -65,31 +74,31 @@
                     <h3>Tweets <i class="fa fa-twitter"></i></h3>
                     <div class="tweet">
                         <div class="row">
-                        <img src="{{$tweetV->profile_image_url}}" class="col-md-2">
+                        <img src="{{$twitter['tweetV']->profile_image_url}}" class="col-md-2">
                         <div class="tweet-content col-md-10">
-                            <h3><a href="https://twitter.com/{{$tweetV->screen_name}}">
-                                     {{$tweetV->screen_name}}</a></h3>
-                            <p>{{$tweetV->status->text}}</p>
+                            <h3><a href="https://twitter.com/{{$twitter['tweetV']->screen_name}}">
+                                     {{$twitter['tweetV']->screen_name}}</a></h3>
+                            <p>{{$twitter['tweetV']->status->text}}</p>
                         </div>
                         </div>
                     </div>
                     <div class="tweet">
                         <div class="row">
-                        <img src="{{$tweetR->profile_image_url}}" class="col-md-2">
+                        <img src="{{$twitter['tweetR']->profile_image_url}}" class="col-md-2">
                             <div class="tweet-content col-md-10">
-                            <h3><a href="https://twitter.com/{{$tweetR->screen_name}}">
-                                    {{$tweetR->screen_name}}</a></h3>
-                            <p>{{$tweetR->status->text}}</p>
+                            <h3><a href="https://twitter.com/{{$twitter['tweetR']->screen_name}}">
+                                    {{$twitter['tweetR']->screen_name}}</a></h3>
+                            <p>{{$twitter['tweetR']->status->text}}</p>
                         </div>
                         </div>
                     </div>
                     <div class="tweet">
                         <div class="row">
-                        <img src="{{$tweetJ->profile_image_url}}" class="col-md-2">
+                        <img src="{{$twitter['tweetJ']->profile_image_url}}" class="col-md-2">
                             <div class="tweet-content col-md-10">
-                                <h3><a href="https://twitter.com/{{$tweetJ->screen_name}}">
-                                    {{$tweetJ->screen_name}}</a></h3>
-                                <p>{{$tweetJ->status->text}}</p>
+                                <h3><a href="https://twitter.com/{{$twitter['tweetJ']->screen_name}}">
+                                    {{$twitter['tweetJ']->screen_name}}</a></h3>
+                                <p>{{$twitter['tweetJ']->status->text}}</p>
                             </div>
                         </div>
                     </div>
