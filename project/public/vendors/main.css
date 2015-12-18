@@ -262,17 +262,6 @@ a {
     .section .products-overview .row {
       padding: 10px 0px;
       margin-left: 44px; }
-  .section .product {
-    margin: 30px; }
-    .section .product .productimg {
-      float: left; }
-      .section .product .productimg img {
-        height: 400px;
-        width: 400px; }
-    .section .product .productinfo {
-      float: left;
-      width: 350px;
-      margin-left: 185px; }
   .section .game-overview {
     overflow: hidden;
     padding-top: 30px; }

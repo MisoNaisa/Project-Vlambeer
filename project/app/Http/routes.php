@@ -19,12 +19,12 @@ Route::get('/info_game/{id}', 'PagesController@info_game');
 Route::get('/test', 'GamesController@test');
 
 
-
 Route::resource('/shop', 'ProductsController');
-Route::get('/overview_products', 'PagesController@overview_products');
+
 Route::get('/info_product/{id}', 'PagesController@info_products');
+
+
 Route::resource('admin/games', 'GamesController');
-//Route::group('admin/games', 'GamesController');
 Route::delete('admin/games/{id}/destroy', 'GamesController@destroy'); // to work with ajax
 
 //Route::resource('/testgiant', 'PagesController@test');
