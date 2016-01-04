@@ -23,7 +23,7 @@
 
                             <div class="formgroup">
                                 <select class="form-control" name="color" id="color">
-                                    <option value="color">size</option>
+                                    <option value="color">color</option>
                                 </select>
                             </div>
                         </form>
