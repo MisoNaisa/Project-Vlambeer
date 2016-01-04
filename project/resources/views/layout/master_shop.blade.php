@@ -20,16 +20,25 @@
                 </div>
 
                 <div class="login list-group">
+
                     @if(Auth::user())
 
-                        {{ Auth::user()->email }}
+                        @if(Auth::user()->insertion)
+                            {{Auth::user()->first_name . ' ' . Auth::user()->insertion . ' ' . Auth::user()->last_name}}
+                        @else
+                            {{Auth::user()->first_name . ' ' . Auth::user()->last_name}}
+                        @endif
+
+                        <p class="list-group-item"><i class="fa fa-shopping-cart"></i></p>
+                        <a href="/user/show/{{Auth::user()->id}}" class="list-group-item">User Page</a>
                         <a href="/logout" class="list-group-item">Logout</a>
 
                     @else
+                        <p class="list-group-item"><i class="fa fa-shopping-cart"></i></p>
                         <a href="/login" class="list-group-item">Login</a>
                         <a href="/register" class="list-group-item">Register</a>
                     @endif()
-                    <p class="list-group-item"><i class="fa fa-shopping-cart"></i></p>
+
                 </div>
             </div>
 
