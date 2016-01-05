@@ -1,3 +1,4 @@
+@@ -1,120 +1 @@
 <?php
 
 use Illuminate\Database\Seeder;
@@ -12,11 +13,11 @@ class ProductTableSeeder extends Seeder
     public function run()
     {
         DB::table('product')->insert([
-            'name'              =>'Vlambeer Logo” Mens & Ladies T-Shirt',
+            'name'              =>'Vlambeer Logo? Mens & Ladies T-Shirt',
             'description'       =>'Are you a fan of simple, fun, and addictive classic games?
                 Games like Super Crate Box, LUFTRAUSERS, Ridiculous Fishing, Nuclear Throne and GUN GODZ?
                 Well the fine folks at Vlambeer are too, and they plan to keep bringing us some of the best titles in indie gaming for years to come!
-                So if you’re a Vlambeer fan, why not proudly wear their iconic logo on your chest? Tell the world, you’re a fan of indie gaming!',
+                So if you?re a Vlambeer fan, why not proudly wear their iconic logo on your chest? Tell the world, you?re a fan of indie gaming!',
             'price'             =>'17.99',
             'sale'              =>'http://venuspatrol.com/subscribe/#subscriptionform',
             'sale_percentage'   =>'0',
@@ -26,7 +27,7 @@ class ProductTableSeeder extends Seeder
 
         DB::table('product')->insert([
             'name'              =>'The Vlambeer Original Soundtrack',
-            'description'       =>'Few Indie Game Devs get their paws wet with as many composers and artists as Vlambeer does, and the logical conclusion is this, the Vlambeer Original Soundtrack. Comprised of compositions from a variety of artists across a multitude of games, it’s the perfect collection for any gaming, music, or Vlambeer fan.
+            'description'       =>'Few Indie Game Devs get their paws wet with as many composers and artists as Vlambeer does, and the logical conclusion is this, the Vlambeer Original Soundtrack. Comprised of compositions from a variety of artists across a multitude of games, it?s the perfect collection for any gaming, music, or Vlambeer fan.
                 1. GG Main Theme
                 2. RF Theme
                 3. DZK Calm Seas
@@ -64,12 +65,12 @@ class ProductTableSeeder extends Seeder
                 36. GG Phonecall
 
                 Features:
-                • 36 Tracks
-                • Tracks featuring Phlogiston,
+                ? 36 Tracks
+                ? Tracks featuring Phlogiston,
                    KOZILEK, Doseone, Alex
                    Mauer, and Brother Android
-                • Limited Edition Art
-                • Unique Die-Cut Design
+                ? Limited Edition Art
+                ? Unique Die-Cut Design
                    featuring the Vlambeer
                    Logo',
             'price'             =>'12.99',
@@ -81,23 +82,23 @@ class ProductTableSeeder extends Seeder
 
         DB::table('product')->insert([
             'name'              =>'The Super Crate Bundle',
-            'description'       =>'Do you like video games? Do you like crates? Do you like video games about crates? Well I’m about to blow your mind.
+            'description'       =>'Do you like video games? Do you like crates? Do you like video games about crates? Well I?m about to blow your mind.
                 Enter: the Super Crate Bundle. 10 DRM Free Games, a cd full of music from a variety of Vlambeer Games, a T-Shirt, six awesome pins, and a key redeemable for a Steam game.
                 Only 250 of these bad boys are in circulation, so get yours today.
 
                 Features:
-                • Vlambeer Original
+                ? Vlambeer Original
                   Soundtrack
-                • USB Drive with 10 games,
+                ? USB Drive with 10 games,
                   including the Venus Patrol
                   Kickstarter Exclusive
                   GUN GODZ
-                • Vlambeer Logo T-Shirt
-                • Six Pins
-                • GUN GODZ Print
-                • Steam Key for Serious
+                ? Vlambeer Logo T-Shirt
+                ? Six Pins
+                ? GUN GODZ Print
+                ? Steam Key for Serious
                   Sam: The Random Encounter
-                • All in a Super Crate Box',
+                ? All in a Super Crate Box',
             'price'             =>'49.99',
             'sale'              =>'',
             'sale_percentage'   =>'0',

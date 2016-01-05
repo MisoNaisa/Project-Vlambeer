@@ -32,6 +32,7 @@ class InvoiceController extends Controller
         $html = file_get_contents('file_html.php');
         pdf_create($html,$filename,'A4','portrait');
 
+        return view('');
     }
 
     /**
