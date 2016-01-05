@@ -17,6 +17,8 @@ Route::get('/test', 'GamesController@test');
 Route::get('shop/paid', 'ProductsController@paid');
 Route::get('/shop/product/{id}', 'ProductsController@show');
 Route::get('/shop/payment_failed', 'ProductsController@payment_failed');
+Route::get('/overview_games', 'PagesController@overview_games');
+Route::get('/info_game/{id}', 'PagesController@info_game');
 
 Route::resource('/shop', 'ProductsController');
 
