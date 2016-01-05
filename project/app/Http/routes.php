@@ -11,7 +11,6 @@
 |
 */
 
-
 Route::get('/', 'PagesController@index');
 Route::get('/contact', 'PagesController@contact');
 Route::get('/test', 'GamesController@test');
@@ -23,6 +22,9 @@ Route::resource('/shop', 'ProductsController');
 
 Route::resource('admin/games', 'GamesController');
 Route::delete('admin/games/{id}/destroy', 'GamesController@destroy'); // to work with ajax
+
+//User
+Route::get('/user/show/{id}', 'UsersController@show');
 
 //Route::resource('/testgiant', 'PagesController@test');
 
