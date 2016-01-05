@@ -9,10 +9,7 @@
           <h2>{{'Hello ' . $user->first_name . ' ' . $user->last_name . '!'}}</h2>
       @endif
 
-          <form action="{{action('InvoiceController@index')}}" method="post">
-              {{csrf_field()}}
-              <input type="submit" value="PDF" class="btn btn-warning">
-          </form>
+          <a href="{{action('UsersController@pdf')}}" class="btn btn-warning">PDF</a>
 
         <div class="user col-md-4 col-md-offset-2">
             <div class="btn btn-success">Edit</div>

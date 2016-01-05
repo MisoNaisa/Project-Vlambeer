@@ -27,6 +27,7 @@ Route::delete('admin/games/{id}/destroy', 'GamesController@destroy'); // to work
 
 //User
 Route::get('/user/show/{id}', 'UsersController@show');
+Route::get('/user/show/{id}/pdf', 'UsersController@pdf');
 
 //Route::resource('/testgiant', 'PagesController@test');
 
