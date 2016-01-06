@@ -6,11 +6,28 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 </head>
 <body>
-    <?php
-    $hola = '38974';
-    echo $hola;
-    ?>
-    <h1>ola senor</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi architecto blanditiis debitis dolor eaque eos, esse eveniet id ipsa itaque iusto laudantium, modi nesciunt officiis rem repellat, saepe sapiente.</p>
+<div class="pdf">
+   <div class="row">
+       <div class="company-info">
+           <div class="title">
+               <img src="/img/vlambeer-logo.png" alt="logo">
+               <h1>Vlambeer</h1>
+           </div>
+           <ul>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+           </ul>
+       </div>
+       <div class="user-info">
+           <ul>
+               <li></li>
+               <li></li>
+               <li></li>
+           </ul>
+       </div>
+   </div>
+</div>
 </body>
 </html>

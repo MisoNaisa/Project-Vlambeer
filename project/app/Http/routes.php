@@ -22,6 +22,7 @@ Route::get('/info_game/{id}', 'PagesController@info_game');
 
 Route::resource('/shop', 'ProductsController');
 
+Route::resource('admin/orders', 'OrdersController');
 Route::resource('admin/games', 'GamesController');
 Route::delete('admin/games/{id}/destroy', 'GamesController@destroy'); // to work with ajax
 

@@ -15,7 +15,7 @@
 
     <div class="row">
         @foreach($productArray as $product)
-            <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="col-sm-4 col-lg-4 col-md-4 product-item">
                 <div class="thumbnail">
                     <a href="shop/product/{{$product->id}}"></a>
                     <div id="sale"></div>
@@ -26,6 +26,10 @@
                         {{--                                        <h4>{{ substr($product['name'], 0, 20) . '...' }}</h4>--}}
                         <p> {{ substr($product['description'], 0, 100) . '...' }}</p>
                     </div>
+                </div>
+                <div class="buy-now">
+                    <input class="quantity" type="number">
+                    <div class="btn btn-primary" id="{{$product->id}}">KOOP DIT!!</div>
                 </div>
             </div>
         @endforeach
