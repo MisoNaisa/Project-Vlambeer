@@ -20,7 +20,7 @@
                 </div>
 
                 <div class="login list-group">
-
+                    <p class="list-group-item"><i class="fa fa-shopping-cart"></i><span class="item-count">0</span></p>
                     @if(Auth::user())
 
                         @if(Auth::user()->insertion)
@@ -29,14 +29,14 @@
                             {{Auth::user()->first_name . ' ' . Auth::user()->last_name}}
                         @endif
 
-                        <p class="list-group-item"><i class="fa fa-shopping-cart"></i></p>
                         <a href="/user/show/{{Auth::user()->id}}" class="list-group-item">User Page</a>
                         <a href="/logout" class="list-group-item">Logout</a>
 
                     @else
-                        <p class="list-group-item"><i class="fa fa-shopping-cart"></i></p>
+
                         <a href="/login" class="list-group-item">Login</a>
                         <a href="/register" class="list-group-item">Register</a>
+
                     @endif()
 
                 </div>

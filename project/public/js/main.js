@@ -147,9 +147,46 @@ $(document).ready(function(){
         });
     });
 
-    //    Cookie test
-    $.cookie('winkelwagen', '"json"', { expires: 7 });
+    // COOKIE ADD / CHANGE PRODUCT SCRIPT
 
-    //console.log('winkelwagen');
+    $('.product-item .buy-now .btn').click(function(){
+        var newQt = parseInt( $(this).parent().find('.quantity').val() );
+        var newProductId = parseInt( $(this).attr('id') );
+        var firstProduct = false;
+
+        // Previous Cart / standard empty Cart
+        var prevCart = JSON.parse( $.cookie('cart') );
+
+
+        var alreadyExists = false;
+        $.each(prevCart, function( index, value ) {
+            var oldProductId =  value[0];
+            var oldQt = value[1];
+
+            // IF NEW PRODUCT ID == OLD PRODUCT ID
+            if (oldProductId == newProductId && alreadyExists == false) {
+                value[1] = oldQt + newQt;
+                alreadyExists = true;
+            }
+
+        });
+
+        // ADD / SAVE NEW PRODUCT ITEM
+        if (alreadyExists == false) {
+            prevCart.push([
+                newProductId,
+                newQt
+            ]);
+            $.cookie('cart', JSON.stringify(prevCart), { expires: 7 });
+        } else {
+            $.cookie('cart', JSON.stringify(prevCart), { expires: 7 });
+        }
+
+        console.log( $.cookie('cart') );
+
+    });
+
+
+
 
 });
