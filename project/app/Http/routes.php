@@ -1,3 +1,4 @@
+
 <?php
 
 /*
@@ -29,9 +30,10 @@ Route::delete('admin/games/{id}/destroy', 'GamesController@destroy'); // to work
 Route::get('/user/show/{id}', 'UsersController@show');
 
 //Pdf
-Route::get('/invoices','InvoiceController@invoice');
-//Route::get('user/show/{id}/pdf','InvoiceController@show');
-Route::get('user/show/pdf', 'InvoiceController@index');
+//Route::resource('/invoices/{id}', 'InvoiceController');
+Route::get('/invoices/{id}','InvoicesController@show');
+//Route::get('/invoices', 'InvoicesController@invoice');
+
 //Test
 //Route::resource('/testgiant', 'PagesController@test');
 
