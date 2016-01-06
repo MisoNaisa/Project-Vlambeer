@@ -27,8 +27,12 @@ Route::delete('admin/games/{id}/destroy', 'GamesController@destroy'); // to work
 
 //User
 Route::get('/user/show/{id}', 'UsersController@show');
-Route::get('/user/show/{id}/pdf', 'UsersController@pdf');
 
+//Pdf
+Route::get('/invoices', 'InvoiceController@invoice');
+//Route::get('user/show/{id}/pdf','InvoiceController@show');
+
+//Test
 //Route::resource('/testgiant', 'PagesController@test');
 
 // Registration routes...

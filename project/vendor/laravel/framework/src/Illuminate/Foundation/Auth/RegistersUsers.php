@@ -16,10 +16,7 @@ trait RegistersUsers
      */
     public function getRegister()
     {
-        $tweetV = \App\Tweet::getStatusVlambeer();
-        $tweetR = \App\Tweet::getStatusRami();
-        $tweetJ = \App\Tweet::getStatusJan();
-        return view('auth.register', compact( 'tweetV', 'tweetR', 'tweetJ'));
+        return view('auth.register');
     }
 
     /**
@@ -40,6 +37,6 @@ trait RegistersUsers
 
         Auth::login($this->create($request->all()));
 
-        return redirect($this->redirectPath())->with('message', 'You have successfully created a new user');
+        return redirect($this->redirectPath());
     }
 }

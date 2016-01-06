@@ -17,11 +17,9 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
+    public function index()
+    {
 
-
-        $user =  \App\User::where('id', $id)->first();
-        return view('user.show', compact('user'));
     }
 
     /**
@@ -29,7 +27,8 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create() {
+    public function create()
+    {
 
         $product = \App\Product::all();
 
@@ -39,10 +38,11 @@ class UsersController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
 
 //        $product->product_id                = $request->input('product_id');
 //        $product->product_name              = $request->input('product_name');
@@ -56,7 +56,7 @@ class UsersController extends Controller
 //
 //        $product->save();
 
-        $this->validate($request,[
+        $this->validate($request, [
             'name' => 'required|max:50|string',
             'description' => 'required|string',
             'price' => 'numeric',
@@ -74,22 +74,24 @@ class UsersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id) {
+    public function show($id)
+    {
 
-        $user =  \App\User::where('id', $id)->first();
-        return view('user.show', compact('user'));
+            $user = \App\User::where('id', $id)->first();
+            return view('user.show', compact('user'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id) {
+    public function edit($id)
+    {
 
         $product = \App\Product::where('id', $id)->first();
 
@@ -99,13 +101,14 @@ class UsersController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id) {
+    public function update(Request $request, $id)
+    {
 
-        $this->validate($request,[
+        $this->validate($request, [
             'name' => 'string',
             'description' => 'string',
             'price' => 'numeric',
@@ -132,42 +135,27 @@ class UsersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id) {
+    public function destroy($id)
+    {
 
         $product = \App\Product::where('id', $id)->first();
 
         $product->delete();
     }
 
-    public function paid() {
+    public function paid()
+    {
 
         return view('shop.paid');
     }
 
-    public function payment_failed() {
+    public function payment_failed()
+    {
 
         return view('shop.payment_failed');
     }
 
-    public function pdf() {
-        require_once('../../../../dompdf/dompdf_config.inc.php');
-//        spl_autoload_register('DOMPDF_autoload');
-//        function pdf_create($html, $filename, $paper, $orientation, $stream=TRUE)
-//        {
-//            $dompdf = new DOMPDF();
-//            $dompdf->set_paper($paper,$orientation);
-//            $dompdf->load_html($html);
-//            $dompdf->render();
-//            $dompdf->stream($filename.".pdf");
-//        }
-//        $filename = 'nama_file';
-//        $dompdf = new DOMPDF();
-//        $html = file_get_contents('file_html.php');
-//        pdf_create($html,$filename,'A4','portrait');
-
-        return view('user.show', compact('user'));
-    }
 }

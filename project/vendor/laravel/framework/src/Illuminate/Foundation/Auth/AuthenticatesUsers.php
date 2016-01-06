@@ -74,7 +74,6 @@ trait AuthenticatesUsers
      */
     protected function handleUserWasAuthenticated(Request $request, $throttles)
     {
-//        {{  }}
         if ($throttles) {
             $this->clearLoginAttempts($request);
         }
@@ -83,7 +82,7 @@ trait AuthenticatesUsers
             return $this->authenticated($request, Auth::user());
         }
 
-        return redirect()->intended($this->redirectPath())->with('message', 'Login successful');
+        return redirect()->intended($this->redirectPath());
     }
 
     /**
@@ -118,7 +117,7 @@ trait AuthenticatesUsers
     {
         Auth::logout();
 
-        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/shop')->with('message', 'Succesfully logged out');
+        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
     }
 
     /**
@@ -128,7 +127,7 @@ trait AuthenticatesUsers
      */
     public function loginPath()
     {
-        return property_exists($this, 'loginPath') ? $this->loginPath : '/login';
+        return property_exists($this, 'loginPath') ? $this->loginPath : '/auth/login';
     }
 
     /**

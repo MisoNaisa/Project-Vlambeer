@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
     <link rel="stylesheet" href="/vendors/bootstrap.css">
     <link rel="stylesheet" href="/vendors/main.css">
@@ -138,7 +139,7 @@
                         <p><a href="mailto:info@vlambeer.com">info@vlambeer.com</a> | Neude 5, 3512 AD, Utrecht, the Netherlands | +31621206363</p>
                     </div>
                     <div class="terror col-md-2">
-                        <p>Made by TerrorTeddies</p>
+                        <p>Made by &#169; TerrorTeddies</p>
                     </div>
                 </div>
             </div>

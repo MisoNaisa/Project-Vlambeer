@@ -9,7 +9,7 @@
           <h2>{{'Hello ' . $user->first_name . ' ' . $user->last_name . '!'}}</h2>
       @endif
 
-          <a href="{{action('UsersController@pdf')}}" class="btn btn-warning">PDF</a>
+          <a href="/invoices" class="btn btn-warning">PDF</a>
 
         <div class="user col-md-4 col-md-offset-2">
             <div class="btn btn-success">Edit</div>
