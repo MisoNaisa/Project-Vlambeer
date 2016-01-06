@@ -10,6 +10,7 @@
       @endif
 
           <a href="/invoices" class="btn btn-warning">PDF</a>
+{{--          <a href="{{ route('welcome_index', [4, 5]) }}">test</a>--}}
 
         <div class="user col-md-4 col-md-offset-2">
             <div class="btn btn-success">Edit</div>

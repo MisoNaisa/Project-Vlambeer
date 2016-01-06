@@ -22,7 +22,6 @@ Route::get('/info_game/{id}', 'PagesController@info_game');
 
 Route::resource('/shop', 'ProductsController');
 
-Route::resource('admin/orders', 'OrdersController');
 Route::resource('admin/games', 'GamesController');
 Route::delete('admin/games/{id}/destroy', 'GamesController@destroy'); // to work with ajax
 
@@ -30,9 +29,9 @@ Route::delete('admin/games/{id}/destroy', 'GamesController@destroy'); // to work
 Route::get('/user/show/{id}', 'UsersController@show');
 
 //Pdf
-Route::get('/invoices', 'InvoiceController@invoice');
+Route::get('/invoices','InvoiceController@invoice');
 //Route::get('user/show/{id}/pdf','InvoiceController@show');
-
+Route::get('user/show/pdf', 'InvoiceController@index');
 //Test
 //Route::resource('/testgiant', 'PagesController@test');
 
