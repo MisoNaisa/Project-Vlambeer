@@ -71,9 +71,10 @@
                     <li>BIC: INGBNZ9C</li>
                 </ul>
             </div>
+
             <div class="user-info">
                 <ul>
-                    <li><?php echo $user['first_name'] ?></li>
+                    <li><?php ?></li>
                     <li><?php ?></li>
                     <li><?php ?></li>
                     <li><?php ?></li>

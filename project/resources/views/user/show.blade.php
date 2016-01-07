@@ -10,7 +10,7 @@
         @endif
 
         {{--<a href="/invoices/{{$user->id}}" class="btn btn-warning">PDF</a>--}}
-        <a href="/invoices" class="btn btn-warning">PDF</a>
+        <a href="/invoices/{{$user->id}}" class="btn btn-warning">PDF</a>
 
         <div class="user col-md-4 col-md-offset-2">
             <div class="btn btn-success">Edit</div>

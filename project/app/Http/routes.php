@@ -33,9 +33,7 @@ Route::resource('cart', 'CartsController');
 Route::get('/user/show/{id}', 'UsersController@show');
 
 //Pdf
-//Route::resource('/invoices/{id}', 'InvoiceController');
-Route::get('/invoices/{id}','InvoicesController@show');
-//Route::get('/invoices', 'InvoicesController@invoice');
+Route::get('/invoices/{id}', 'InvoicesController@invoice');
 
 // Registration routes...
 Route::get('register', 'Auth\AuthController@getRegister');

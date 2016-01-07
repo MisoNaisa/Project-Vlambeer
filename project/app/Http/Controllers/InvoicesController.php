@@ -87,11 +87,13 @@ class InvoicesController extends Controller
         //
     }
 
-    public function invoice()
+    public function invoice($id)
     {
+        $user = \App\User::where('id', $id)->first();
+
         $data = view('user.invoice');
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadHTML($data);
-        return $pdf->stream();
+        return $pdf->stream(with($user));
     }
 }
