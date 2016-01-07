@@ -93,6 +93,10 @@ $font-stack: 'Open Sans', sans-serif;
     text-decoration: none !important;
   }
 
+  .transparent {
+    background-color: transparent;
+  }
+
 .header {
   color: white;
   background: black;
@@ -347,6 +351,7 @@ $font-stack: 'Open Sans', sans-serif;
 // game_info css eind
 
   //shop css begin
+
   .shop-hotfix {
     margin-top: 50px;
   }
@@ -371,14 +376,22 @@ $font-stack: 'Open Sans', sans-serif;
 
   .thumbnail {
     position: relative;
-    min-height: 450px;
+    min-height: 480px;
 
     a {
       position: absolute;
       top: 0;
-      bottom: 0;
+      bottom: 75px;
       left: 0;
       right: 0;
+    }
+
+    .buy-now {
+      position: absolute;
+      bottom: 10px;
+      .quantity {
+        width: 50%;
+      }
     }
   }
 
@@ -405,11 +418,13 @@ $font-stack: 'Open Sans', sans-serif;
 
   //shop infopage
   .product {
-    padding: 30px 0px;
+    //padding: 30px 0px;
 
     .productimg {
+      margin-top: 11px;
       img {
         width: 100%;
+        border: 4px solid white;
       }
     }
 
@@ -429,7 +444,11 @@ $font-stack: 'Open Sans', sans-serif;
     }
   }
 
-
+  .relevant {
+    h2 {
+      padding-left: 15px;
+    }
+  }
   //shop css eind
 
 

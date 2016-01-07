@@ -26,11 +26,12 @@
                         {{--                                        <h4>{{ substr($product['name'], 0, 20) . '...' }}</h4>--}}
                         <p> {{ substr($product['description'], 0, 100) . '...' }}</p>
                     </div>
+                    <div class="buy-now">
+                        <input class="quantity" type="number">
+                        <div class="btn btn-primary" id="{{$product->id}}">KOOP DIT!!</div>
+                    </div>
                 </div>
-                <div class="buy-now">
-                    <input class="quantity" type="number">
-                    <div class="btn btn-primary" id="{{$product->id}}">KOOP DIT!!</div>
-                </div>
+
             </div>
         @endforeach
     </div>
