@@ -26,11 +26,6 @@
                 <p>Date of birth: {{ $user->date_of_birth }}</p>
             </div>
 
-            <div class="test">
-                <h1>hoi</h1>
-                <h2>eyo</h2>
-            </div>
-
         </div>
     </div>
 
