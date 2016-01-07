@@ -14,7 +14,6 @@
 
 Route::get('/', 'PagesController@index');
 Route::get('/contact', 'PagesController@contact');
-Route::get('/test', 'GamesController@test');
 Route::get('shop/paid', 'ProductsController@paid');
 Route::get('/shop/product/{id}', 'ProductsController@show');
 Route::get('/shop/payment_failed', 'ProductsController@payment_failed');
@@ -23,8 +22,12 @@ Route::get('/info_game/{id}', 'PagesController@info_game');
 
 Route::resource('/shop', 'ProductsController');
 
+Route::resource('admin/orders', 'OrdersController');
+
 Route::resource('admin/games', 'GamesController');
 Route::delete('admin/games/{id}/destroy', 'GamesController@destroy'); // to work with ajax
+
+Route::resource('cart', 'CartsController');
 
 //User
 Route::get('/user/show/{id}', 'UsersController@show');
@@ -33,9 +36,6 @@ Route::get('/user/show/{id}', 'UsersController@show');
 //Route::resource('/invoices/{id}', 'InvoiceController');
 Route::get('/invoices/{id}','InvoicesController@show');
 //Route::get('/invoices', 'InvoicesController@invoice');
-
-//Test
-//Route::resource('/testgiant', 'PagesController@test');
 
 // Registration routes...
 Route::get('register', 'Auth\AuthController@getRegister');

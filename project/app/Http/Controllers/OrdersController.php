@@ -19,6 +19,7 @@ class OrdersController extends Controller
         $orders = \App\Order::query()
             ->join('users', 'order.user_id', '=', 'users.id')
             ->select('users.*', 'order.*')
+            ->orderBy('order.order_date','desc')
             ->get();
 
         return view('order.index', compact('orders'));
@@ -64,13 +65,14 @@ class OrdersController extends Controller
      */
     public function edit($id)
     {
-        $orders = \App\Order_Product::query()
+        $products = \App\Order_Product::query()
             ->join('product', 'order_product.product_id', '=', 'product.id')
             ->select('order_product.*', 'product.*')
             ->where('order_product.order_id', $id)->get();
 
+        $order = \App\Order::where('order_id',$id)->first();
 
-        return view('order.edit', compact('orders'));
+        return view('order.edit', compact('products', 'order'));
     }
 
     /**
@@ -82,7 +84,16 @@ class OrdersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'status' => 'required:string'
+        ]);
+        \App\Order::query()
+            ->where('order_id',$request['order_id'])
+            ->update(array(
+                'status' =>  $request['status']
+            ));
+        return redirect('admin/orders');
+
     }
 
     /**
