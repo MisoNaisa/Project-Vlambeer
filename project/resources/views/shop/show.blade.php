@@ -1,7 +1,6 @@
 @extends('layout.master')
 
 @section('section')
-
     <div class="container">
         <div class="product">
             <div class="row">
@@ -46,6 +45,25 @@
                 </div>
             </div>
         </div>
+        <h2>Items you als may like:</h2>
+        @foreach($randproducts as $randproduct)
+            <div class="col-sm-4 col-lg-4 col-md-4 product-item">
+                <div class="thumbnail">
+                    <a href="{{$randproduct->id}}"></a>
+                    <img src="{{$randproduct->img}}" alt="product-img">
+                    <div class="caption">
+                        <h4 class="pull-right">&#x24;{{$product['price']}}</h4>
+                        <h4>{{$randproduct['name']}}</h4>
+                        {{--                                        <h4>{{ substr($product['name'], 0, 20) . '...' }}</h4>--}}
+                        <p> {{ substr($randproduct['description'], 0, 100) . '...' }}</p>
+                    </div>
+                </div>
+                <div class="buy-now">
+                    <input class="quantity" type="number">
+                    <div class="btn btn-primary" id="{{$randproduct->id}}">KOOP NU!!</div>
+                </div>
+            </div>
+        @endforeach
     </div>
 
 @endsection
