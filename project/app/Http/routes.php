@@ -30,7 +30,7 @@ Route::delete('admin/games/{id}/destroy', 'GamesController@destroy'); // to work
 Route::resource('cart', 'CartsController');
 
 //User
-Route::get('/user/show/{id}', 'UsersController@show');
+Route::resource('/user', 'UsersController');
 
 //Pdf
 Route::get('/invoices/{id}', 'InvoicesController@invoice');
