@@ -17,17 +17,25 @@
                 </div>
 
                 @if($product->category == 'clothes')
+
                 <div class="productoption ">
                     <form action="">
                         <div class="formgroup">
                             <select class="form-control" name="size" id="size">
-                                <option value="size">size</option>
+
+                                <option value="">Select size</option>
+                                @foreach($sizes as $size)
+                                    <option value="{{$size}}">{{$size}}</option>
+                                @endforeach
                             </select>
                         </div>
 
                         <div class="formgroup">
                             <select class="form-control" name="color" id="color">
-                                <option value="color">color</option>
+                                <option value="">Select color</option>
+                                @foreach($colors as $color)
+                                <option value="{{$color}}">{{$color}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </form>
