@@ -256,6 +256,8 @@ a {
   .section .thumbnail {
     position: relative;
     min-height: 480px; }
+    .section .thumbnail img {
+      min-height: 259px; }
     .section .thumbnail a {
       position: absolute;
       top: 0;

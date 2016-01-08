@@ -17,8 +17,13 @@
         @foreach($productArray as $product)
             <div class="col-sm-4 col-lg-4 col-md-4 product-item">
                 <div class="thumbnail">
-                    <a href="shop/product/{{$product->id}}"></a>
-                    <div id="sale"></div>
+                    <a href="shop/product/{{$product->id}}" ></a>
+                    @if($product['sale'] === 1)
+                        <div id="sale"></div>
+                    @else
+                        <div id="sale hide"></div>
+                    @endif
+
                     <img src="{{$product['img']}}" alt="product-img">
                     <div class="caption">
                         <h4 class="pull-right">&#x24;{{$product['price']}}</h4>
