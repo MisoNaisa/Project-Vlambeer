@@ -51,3 +51,27 @@ textarea{
 input {
     color: #000;
 }
+
+.table-bg {
+    border: 1px solid white;
+    background: rgba(1,1,1, 0.5);
+}
+
+.user-info {
+    margin-left: 34px;
+    margin-right: 60px;
+}
+
+.user-info .title h2 {
+    padding-left: 0px;
+}
+
+.user-info .title a {
+    margin-top: 21px;
+}
+
+.user .row {
+    margin-bottom: 30px;
+    padding:0;
+}
+

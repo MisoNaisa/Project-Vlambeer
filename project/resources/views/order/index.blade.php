@@ -32,7 +32,8 @@
                 <td>@if($order['status'] == 0)Besteld @elseif($order['status'] == 1)Betaald @elseif($order['status'] == 2)Vertraagd @elseif($order['status'] == 3)Verzonden @elseif($order['status'] == 4)Geleverd @endif</td>
                 <td><a href="{{ action('OrdersController@edit', ['id' => $order->order_id]) }}">Bekijken</a></td>
             </tr>
-        </table>
+
         @endforeach
+        </table>
     </div>
 @endsection

@@ -15,6 +15,8 @@
                     <h4>{{ $product->name }}</h4>
                     <p>{{ $product->description }}</p>
                 </div>
+
+                @if($product->category == 'clothes')
                 <div class="productoption ">
                     <form action="">
                         <div class="formgroup">
@@ -30,7 +32,7 @@
                         </div>
                     </form>
                 </div>
-
+                @endif
                 {{--Real payment link: https://www.paypal.com/cgi-bin/webscr--}}
                 <div class="paypal pull-right">
                     <form name="_xclick" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
