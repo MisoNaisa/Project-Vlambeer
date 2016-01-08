@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
         ];
 
         view()->share('twitter', $twitter);
-
+/*
 //        Cookie cart set
         if ( empty($_COOKIE['cart']) ) {
             setcookie("cart", '[]');
@@ -53,8 +53,9 @@ class AppServiceProvider extends ServiceProvider
             $_SESSION['cart_cache_id'] = $id;
         }
 
-
+*/
     }
+
 
     /**
      * Register any application services.
