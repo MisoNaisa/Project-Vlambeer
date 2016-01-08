@@ -16,9 +16,8 @@
                 <td>Order Date</td>
                 <td>Status</td>
             </tr>
-        </table>
+
     @foreach($orders as $order)
-        <table class="table">
             <tr>
                 <td>{{$order['first_name']}}</td>
                 <td>{{$order['insertion']}}</td>
