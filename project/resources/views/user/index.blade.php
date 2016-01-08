@@ -55,7 +55,7 @@
                     <ul class="list-group">
                         <li>Status: {{$status}}</li>
                         <li>Order Date: {{$order['order_date']}}</li>
-                        <a href="/order" class="btn btn-warning">View Order</a>
+                        <a href="/order/{{$order['order_id']}}" class="btn btn-warning">View Order</a>
                     </ul>
                 @endforeach
 
