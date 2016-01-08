@@ -29,9 +29,7 @@ class AppServiceProvider extends ServiceProvider
             setcookie("cart", '[]');
         }
 
-        if ( empty()) {
-            #)
-        }
+
     }
 
     /**
