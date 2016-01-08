@@ -16,6 +16,8 @@ class CreateOrderProductTable extends Migration
             $table->increments('order_product_id')->length(10);
             $table->integer('order_id')->unsigned();
             $table->integer('product_id')->unsigned();
+            $table->string('size', 20);
+            $table->string('color', 20);
             $table->integer('quantity')->length(20);
             $table->timestamps();
         });
