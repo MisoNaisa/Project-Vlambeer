@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        
+
         $twitter = [
             'tweetV' => \App\Tweet::getStatusVlambeer(),
             'tweetR' => \App\Tweet::getStatusRami(),
@@ -29,6 +29,12 @@ class AppServiceProvider extends ServiceProvider
             setcookie("cart", '[]');
         }
 
+//        GET IP
+        if (!empty ($_SERVER['REMOTE_ADDR'])) {
+            $ip = $_SERVER['REMOTE_ADDR'];
+        } else {
+            $ip = 0;
+        }
 
 //        SESSION CART CACHE
         session_start();
@@ -40,7 +46,7 @@ class AppServiceProvider extends ServiceProvider
         } else {
             $id = DB::table('cart_cache')->insertGetId(
                 [
-                    'ip_address' => $_SERVER['REMOTE_ADDR'],
+                    'ip_address' => $ip,
                     'created_at' => date('Y-m-d-H:i:s')
                 ]
             );
