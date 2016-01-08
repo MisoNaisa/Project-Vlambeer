@@ -262,6 +262,9 @@ a {
     .section .thumbnail .buy-now {
       position: absolute;
       bottom: 10px; }
+      .section .thumbnail .buy-now .btn {
+        margin-bottom: 3px;
+        padding: 2px 10px; }
       .section .thumbnail .buy-now .quantity {
         width: 50%; }
   .section #sale {

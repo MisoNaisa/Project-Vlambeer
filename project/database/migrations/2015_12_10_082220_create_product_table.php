@@ -17,6 +17,7 @@ class CreateProductTable extends Migration
             $table->string('name',50);
             $table->longText('description');
             $table->decimal('price',10,2);
+            $table->string('category', 50);
             $table->tinyInteger('sale')->nullable();
             $table->integer('sale_percentage')->length(20)->nullable();
             $table->integer('stock')->length(20);

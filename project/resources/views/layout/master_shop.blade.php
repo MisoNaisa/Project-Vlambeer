@@ -24,9 +24,9 @@
                     @if(Auth::user())
 
                         @if(Auth::user()->insertion)
-                            {{Auth::user()->first_name . ' ' . Auth::user()->insertion . ' ' . Auth::user()->last_name}}
+                            <p class="list-group-item">{{Auth::user()->first_name . ' ' . Auth::user()->insertion . ' ' . Auth::user()->last_name}}</p>
                         @else
-                            {{Auth::user()->first_name . ' ' . Auth::user()->last_name}}
+                            <p class="list-group-item">{{Auth::user()->first_name . ' ' . Auth::user()->last_name}}</p>
                         @endif
                         <p class="list-group-item"><i class="fa fa-shopping-cart"></i><span class="item-count"></span></p>
                         <a href="/user/{{Auth::user()->id}}" class="list-group-item">User Page</a>
