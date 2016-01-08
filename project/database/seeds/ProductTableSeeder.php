@@ -18,6 +18,7 @@ class ProductTableSeeder extends Seeder
                 Well the fine folks at Vlambeer are too, and they plan to keep bringing us some of the best titles in indie gaming for years to come!
                 So if you?re a Vlambeer fan, why not proudly wear their iconic logo on your chest? Tell the world, you?re a fan of indie gaming!',
             'price'             =>'17.99',
+            'category'          =>'clothes',
             'sale'              =>'http://venuspatrol.com/subscribe/#subscriptionform',
             'sale_percentage'   =>'0',
             'stock'             =>'10',
@@ -73,6 +74,7 @@ class ProductTableSeeder extends Seeder
                    featuring the Vlambeer
                    Logo',
             'price'             =>'12.99',
+            'category'          =>'music',
             'sale'              =>'http://venuspatrol.com/subscribe/#subscriptionform',
             'sale_percentage'   =>'0',
             'stock'             =>'10',
@@ -99,6 +101,7 @@ class ProductTableSeeder extends Seeder
                   Sam: The Random Encounter
                 ? All in a Super Crate Box',
             'price'             =>'49.99',
+            'category'          =>'bundle',
             'sale'              =>'',
             'sale_percentage'   =>'0',
             'stock'             =>'5',
