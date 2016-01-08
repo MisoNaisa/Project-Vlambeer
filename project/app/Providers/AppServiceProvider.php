@@ -15,15 +15,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $tweetV = \App\Tweet::getStatusVlambeer();
-        $tweetR = \App\Tweet::getStatusRami();
-        $tweetJ = \App\Tweet::getStatusJan();
-
+        
         $twitter = [
-            'tweetV' => $tweetV,
-            'tweetR' => $tweetR,
-            'tweetJ' => $tweetJ
+            'tweetV' => \App\Tweet::getStatusVlambeer(),
+            'tweetR' => \App\Tweet::getStatusRami(),
+            'tweetJ' => \App\Tweet::getStatusJan()
         ];
+
         view()->share('twitter', $twitter);
 
 //        Cookie cart set
