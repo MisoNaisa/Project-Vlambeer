@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
          $this->call(GamesTableSeeder::class);
-         $this->call(ProductsTableSeeder::class);
+         $this->call(ProductTableSeeder::class);
 
         Model::reguard();
     }

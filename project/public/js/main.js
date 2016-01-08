@@ -12,8 +12,6 @@ $(document).ready(function(){
     });
 
 
-
-
     //  Home  - image background
 
     $(".game-post").hover(function(){
@@ -148,44 +146,70 @@ $(document).ready(function(){
     });
 
     // COOKIE ADD / CHANGE PRODUCT SCRIPT
+    var prevCart = JSON.parse( $.cookie('cart') ); // GET PREVIOUS OR STANDARD CART ON LOAD.
+    countProducts(); // SET CART COUNTER ON LOAD
 
     $('.product-item .buy-now .btn').click(function(){
-        var newQt = parseInt( $(this).parent().find('.quantity').val() );
+        var input = $(this).parent().find('.quantity');
+        var newQt = parseInt( input.val() );
         var newProductId = parseInt( $(this).attr('id') );
-        var firstProduct = false;
 
-        // Previous Cart / standard empty Cart
-        var prevCart = JSON.parse( $.cookie('cart') );
+        // IF QUANTITY IS ABOVE 0
+        if (input.val() > 0) {
 
+            // SET PREVIOUS OR STANDARD
+            prevCart = JSON.parse( $.cookie('cart') );
 
-        var alreadyExists = false;
-        $.each(prevCart, function( index, value ) {
-            var oldProductId =  value[0];
-            var oldQt = value[1];
+            // CLEAR INPUT
+            input.val('');
 
-            // IF NEW PRODUCT ID == OLD PRODUCT ID
-            if (oldProductId == newProductId && alreadyExists == false) {
-                value[1] = oldQt + newQt;
-                alreadyExists = true;
+            var alreadyExists = false;
+            $.each(prevCart, function( index, value ) {
+                var oldProductId =  value[0];
+                var oldQt = value[1];
+
+                // IF NEW PRODUCT ID == OLD PRODUCT ID
+                if (oldProductId == newProductId && alreadyExists == false) {
+                    value[1] = oldQt + newQt;
+                    alreadyExists = true;
+                }
+
+            });
+
+            // ADD / SAVE NEW PRODUCT ITEM
+            if (alreadyExists == false) {
+                prevCart.push([
+                    newProductId,
+                    newQt
+                ]);
             }
 
-        });
+            // SET CART COUNTER
+            countProducts();
 
-        // ADD / SAVE NEW PRODUCT ITEM
-        if (alreadyExists == false) {
-            prevCart.push([
-                newProductId,
-                newQt
-            ]);
+            // SET COOKIE
             $.cookie('cart', JSON.stringify(prevCart), { expires: 7 });
-        } else {
-            $.cookie('cart', JSON.stringify(prevCart), { expires: 7 });
+
+            // ADD ALERT
+            $.smkAlert({
+                text: 'product toegevoegd',
+                type: 'success',
+                time: 5,
+                position: 'top-left'
+            });
+
+            console.log( $.cookie('cart') );
         }
-
-        console.log( $.cookie('cart') );
-
     });
 
+    // PRODUCT COUNTER
+    function countProducts() {
+        var i = 0;
+        $.each(prevCart, function( index, value) {
+            i += value[1];
+        });
+        $('.list-group-item .item-count').text( i );
+    }
 
 
 

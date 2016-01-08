@@ -82,27 +82,30 @@ a {
 .header {
   color: white;
   background: black;
-  z-index: 9999;
+  z-index: 10;
   position: fixed;
   top: 0;
   width: 100%; }
   .header .container {
     background: black; }
-  .header .title a {
-    color: white; }
-  .header .title .logo {
-    float: left; }
-    .header .title .logo img {
-      float: left;
-      width: 58px; }
-    .header .title .logo h1 {
-      float: left;
-      margin: 10px 0px 0px 5px; }
-  .header .title .slogan {
-    float: left; }
-    .header .title .slogan h3 {
-      margin: 22px 15px 0px 20px; }
+  .header .title {
+    z-index: 9999; }
+    .header .title a {
+      color: white; }
+    .header .title .logo {
+      float: left; }
+      .header .title .logo img {
+        float: left;
+        width: 58px; }
+      .header .title .logo h1 {
+        float: left;
+        margin: 10px 0px 0px 5px; }
+    .header .title .slogan {
+      float: left; }
+      .header .title .slogan h3 {
+        margin: 22px 15px 0px 20px; }
   .header .nav {
+    z-index: 9999;
     float: right; }
     .header .nav ul {
       margin: 20px 0px 0px 0px;

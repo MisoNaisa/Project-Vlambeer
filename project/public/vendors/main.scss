@@ -100,7 +100,7 @@ $font-stack: 'Open Sans', sans-serif;
 .header {
   color: white;
   background: black;
-  z-index: 9999;
+  z-index: 10;
   position: fixed;
   top: 0;
   width: 100%;
@@ -110,6 +110,7 @@ $font-stack: 'Open Sans', sans-serif;
   }
 
   .title {
+    z-index: 9999;
     a {
       color: white;
     }
@@ -138,6 +139,7 @@ $font-stack: 'Open Sans', sans-serif;
   }
 
   .nav {
+    z-index: 9999;
     float: right;
     ul {
       margin: 20px 0px 0px 0px;

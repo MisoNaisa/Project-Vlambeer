@@ -25,6 +25,7 @@
     height: 100%;
     background: rgba(0, 0, 0, 0);
     border: 0;
+    color: #fff;
 }
 
 .admin table .detail tr td:last-of-type {

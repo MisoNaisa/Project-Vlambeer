@@ -24,10 +24,13 @@ class AppServiceProvider extends ServiceProvider
         ];
         view()->share('twitter', $twitter);
 
-
 //        Cookie cart set
         if ( empty($_COOKIE['cart']) ) {
             setcookie("cart", '[]');
+        }
+
+        if ( empty()) {
+            #)
         }
     }
 

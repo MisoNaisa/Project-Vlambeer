@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/vendors/main.css">
     <link rel="stylesheet" href="/vendors/flexslider.css">
     <link rel="stylesheet" href="/css/alex.css">
+    <link rel="stylesheet" href="/vendors/smoke.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <title>Vlambeer</title>
@@ -67,7 +68,9 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="/js/requirejs.js"></script>
 <script src="/js/jquery.vide.js"></script>
+<script src="/js/jquery.smoke.js"></script>
 <script src="/js/main.js"></script>
 <!-- SSlider Javascript file -->
 <script src="/js/jquery.flexslider.js"></script>

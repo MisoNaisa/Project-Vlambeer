@@ -1,4 +1,3 @@
-@@ -1,120 +1 @@
 <?php
 
 use Illuminate\Database\Seeder;
@@ -107,6 +106,7 @@ class ProductTableSeeder extends Seeder
         ]);
 
 
+        //
     }
 }
 
