@@ -89,9 +89,18 @@ class InvoicesController extends Controller
 
     public function invoice($id)
     {
-        $user = \App\User::where('id', $id)->first();
+        $user = \App\Order::query()
+            ->join('users', 'order.user_id', '=', 'users.id')
+            ->where('order.order_id', $id)->first()->toArray();
+dd($user);
+        
 
-        $data = view('user.invoice');
+//        $la = $user['first_name'];
+//
+//        $parameter = array();
+//        $parameter['first_name'] = $la;
+
+        $data = view('user.invoice', $user);
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadHTML($data);
         return $pdf->stream(with($user));
