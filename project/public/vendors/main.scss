@@ -379,7 +379,9 @@ $font-stack: 'Open Sans', sans-serif;
   .thumbnail {
     position: relative;
     min-height: 480px;
-
+    img {
+      min-height: 259px;
+    }
     a {
       position: absolute;
       top: 0;

@@ -25,6 +25,17 @@
             </div>
 
             <div class="form-group">
+                <label for="category">Category</label>
+                <select name="category" class="form-control"  >
+                    <option value="" style="display:none"></option>
+                    <option value="1">Clothes</option>
+                    <option value="2">Music</option>
+                    <option value="3">Bundles</option>
+                    <option value="4">Miscellaneous</option>
+                </select>
+            </div>
+
+            <div class="form-group">
                 <label for="sale">Sale</label>
                 <select name="sale" class="form-control"  >
                     <option value="" style="display:none"></option>

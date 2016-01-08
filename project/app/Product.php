@@ -9,5 +9,5 @@ class Product extends Model
     protected $table = 'product';
     public $timestamp = false;
 
-    protected $fillable = ['name', 'description', 'price', 'sale', 'sale_percentage', 'stock', 'img'];
+    protected $fillable = ['name', 'description', 'price', 'category', 'sale', 'sale_percentage', 'stock', 'img'];
 }

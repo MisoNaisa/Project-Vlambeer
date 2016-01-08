@@ -63,6 +63,7 @@ class ProductsController extends Controller
             'name' => 'required|max:50|string',
             'description' => 'required|string',
             'price' => 'numeric',
+            'category' => 'boolean',
             'sale' => 'boolean',
             'sale_percentage' => 'numeric',
             'stock' => 'numeric',
