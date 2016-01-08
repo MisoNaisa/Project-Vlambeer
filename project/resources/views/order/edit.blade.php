@@ -28,7 +28,7 @@
                 <td>Sale</td>
                 <td>Sale Percentage</td>
                 <td>Stock</td>
-                <td>Quantuty</td>
+                <td>Quantity</td>
             </tr>
         @foreach($products as $product)
 
