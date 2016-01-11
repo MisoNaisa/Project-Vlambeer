@@ -425,6 +425,12 @@ $font-stack: 'Open Sans', sans-serif;
 }
 
   //shop infopage
+  .buy {
+    margin-left: 50px;
+    #quantity {
+      width: 10%;
+    }
+  }
   .product {
     //padding: 30px 0px;
 

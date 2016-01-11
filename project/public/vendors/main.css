@@ -285,6 +285,10 @@ a {
     .section .products-overview .row {
       padding: 10px 0px;
       margin-left: 44px; }
+  .section .buy {
+    margin-left: 50px; }
+    .section .buy #quantity {
+      width: 10%; }
   .section .product .productimg {
     margin-top: 11px; }
     .section .product .productimg img {

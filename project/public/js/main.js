@@ -211,6 +211,18 @@ $(document).ready(function(){
         $('.list-group-item .item-count').text( i );
     }
 
+    //Shop quantity
+    $("#add").click(function(){
+        var newQty = +($("#quantity").val()) + 1;
+        $("#quantity").val(newQty);
+    });
+
+    $("#minus").click(function(){
+        var newQty = +($("#quantity").val()) - 1;
+        if(newQty < 1)newQty = 1;
+        $("#quantity").val(newQty);
+    });
+
 
 
 });
