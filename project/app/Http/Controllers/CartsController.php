@@ -11,11 +11,52 @@ class CartsController extends Controller
 {
     public function index() {
 
-        $cart = json_decode($_COOKIE['cart'], true);
+//        dd($_COOKIE);
+        $cookieCart = json_decode($_COOKIE['cart'], true);
 
-        $items = \App\Product::all();
+        $cart = [];
+
+        $sum = 0;
+
+        $i = 0;
+
+        foreach($cookieCart as $cartItem){
+
+            $cart[] = \App\Product::where('id', $cartItem[0])->first()->toArray();
+
+            $cart[$i]['quantity'] = $cookieCart[$i][1];
+            $cart[$i]['total'] = $cookieCart[$i][1] * $cart[$i]['price'];
+
+            $i++;
+
+        }
+        foreach($cart as $num){
+
+            $sum += $num['quantity'] * $num['price'];
+        }
+
+        return view('cart.index', compact('cart', 'sum'));
+    }
+
+    public function destroy($id){
+
+        $cookieCart = json_decode($_COOKIE['cart'], true);
+
+        foreach($cookieCart as $key => $value) {
 
 
-        return view('cart.index', compact('cart'));
+            if($value[0] == $id) {
+                unset($cookieCart[$key]);
+            }
+
+        }
+
+
+        $cookieCart = array_values($cookieCart);
+        $cookieCart = json_encode($cookieCart, false);
+
+        setcookie('cart', $cookieCart);
+
+        return back()->with('message', 'Product removed from cart');
     }
 }
