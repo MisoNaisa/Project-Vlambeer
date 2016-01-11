@@ -18,8 +18,6 @@ class CreateProductTable extends Migration
             $table->longText('description');
             $table->decimal('price',10,2);
             $table->string('category', 50);
-            $table->string('size', 20);
-            $table->string('color', 20);
             $table->tinyInteger('sale')->nullable();
             $table->integer('sale_percentage')->length(20)->nullable();
             $table->integer('stock')->length(20);

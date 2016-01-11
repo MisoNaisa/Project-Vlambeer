@@ -84,15 +84,13 @@ class ProductsController extends Controller
     public function show($id) {
 
         $product = \App\Product::where('id', $id)->first();
-        $colors = Explode(",", $product->color);
-        $sizes = Explode(",", $product->size);
         $randproducts = \App\Product::query()
             ->where('id', '!=', $id)
             ->orderByRaw("RAND()")
             ->limit(3)
             ->get();
 
-        return view('shop.show', compact('product','randproducts','colors', 'sizes'));
+        return view('shop.show', compact('product','randproducts'));
     }
 
     /**

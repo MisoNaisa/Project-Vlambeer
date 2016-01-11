@@ -23,13 +23,11 @@ class AppServiceProvider extends ServiceProvider
         ];
 
         view()->share('twitter', $twitter);
-
-        //        Cookie cart set
+/*
+//        Cookie cart set
         if ( empty($_COOKIE['cart']) ) {
             setcookie("cart", '[]');
         }
-
-/*
 
 //        GET IP
         if (!empty ($_SERVER['REMOTE_ADDR'])) {

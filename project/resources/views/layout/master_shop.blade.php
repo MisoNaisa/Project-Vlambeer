@@ -28,18 +28,12 @@
                         @else
                             <p class="list-group-item">{{Auth::user()->first_name . ' ' . Auth::user()->last_name}}</p>
                         @endif
-                        <a href="/cart" class="list-group-item">
-                            <i class="fa fa-shopping-cart"></i>
-                            <span class="item-count"></span>
-                        </a>
+                        <p class="list-group-item"><i class="fa fa-shopping-cart"></i><span class="item-count"></span></p>
                         <a href="/user/{{Auth::user()->id}}" class="list-group-item">User Page</a>
                         <a href="/logout" class="list-group-item">Logout</a>
 
                     @else
-                        <a href="/cart" class="list-group-item">
-                            <i class="fa fa-shopping-cart"></i>
-                            <span class="item-count"></span>
-                        </a>
+                        <p class="list-group-item"><i class="fa fa-shopping-cart"></i><span class="item-count"></span></p>
                         <a href="/login" class="list-group-item">Login</a>
                         <a href="/register" class="list-group-item">Register</a>
 
