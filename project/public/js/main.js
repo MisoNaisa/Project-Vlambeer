@@ -160,8 +160,8 @@ $(document).ready(function(){
             // SET PREVIOUS OR STANDARD
             prevCart = JSON.parse( $.cookie('cart') );
 
-            // CLEAR INPUT
-            input.val('');
+            // SET INPUT TO 1 AFTER ADDING TO CART
+            input.val(1);
 
             var alreadyExists = false;
             $.each(prevCart, function( index, value ) {
@@ -211,16 +211,15 @@ $(document).ready(function(){
         $('.list-group-item .item-count').text( i );
     }
 
-    //Shop quantity
-    $("#add").click(function(){
-        var newQty = +($("#quantity").val()) + 1;
-        $("#quantity").val(newQty);
+    $(this).find('.add').click(function(){
+        var newQty = +$(this).parent().find(".quantity").val() + 1;
+        $(this).parent().find('.quantity').val(newQty);
     });
 
-    $("#minus").click(function(){
-        var newQty = +($("#quantity").val()) - 1;
+    $(this).find('.minus').click(function(){
+        var newQty = +$(this).parent().find(".quantity").val() - 1;
         if(newQty < 1)newQty = 1;
-        $("#quantity").val(newQty);
+        $(this).parent().find('.quantity').val(newQty);
     });
 
 

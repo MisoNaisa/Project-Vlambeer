@@ -33,13 +33,12 @@
                     </form>
                 </div>
                 @endif
-                <div class="buy">
-                    <form action="">
-                        <i id="minus" class="btn fa fa-minus"></i>
-                        <input min="1" type="number" id="quantity" name="quantity" value="1" />
-                        <i id="add" class="btn fa fa-plus"></i>
-                        <input type="submit" value="Add to cart" class="btn btn-primary">
-                    </form>
+
+                <div class="buy-now">
+                    <i class="minus fa fa-minus "></i>
+                    <input min="1" type="number" class="quantity" name="quantity" value="1" />
+                    <i class="add fa fa-plus"></i>
+                    <div class="btn btn-primary pull-right" id="{{$product['id']}}">Add to cart</div>
                 </div>
                 {{--Real payment link: https://www.paypal.com/cgi-bin/webscr--}}
                 {{--<div class="paypal pull-right">--}}

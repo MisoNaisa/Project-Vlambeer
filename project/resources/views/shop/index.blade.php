@@ -28,12 +28,15 @@
                     <div class="caption">
                         <h4 class="pull-right">&#x24;{{$product['price']}}</h4>
                         <h4>{{$product['name']}}</h4>
-                        {{--                                        <h4>{{ substr($product['name'], 0, 20) . '...' }}</h4>--}}
                         <p> {{ substr($product['description'], 0, 100) . '...' }}</p>
-                    </div>
-                    <div class="buy-now">
-                        <input class="quantity" type="number">
-                        <div class="btn btn-primary" id="{{$product['id']}}">KOOP DIT!!</div>
+
+
+                        <div class="buy-now">
+                            <i class="minus fa fa-minus "></i>
+                            <input min="1" type="number" class="quantity" name="quantity" value="1" />
+                            <i class="add fa fa-plus"></i>
+                            <div class="btn btn-primary pull-right" id="{{$product['id']}}">Add to cart</div>
+                        </div>
                     </div>
                 </div>
 
