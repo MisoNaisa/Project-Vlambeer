@@ -301,6 +301,10 @@ a {
     margin: 25px 0px 0px 50px; }
   .section .relevant h2 {
     padding-left: 15px; }
+  .section .adminpanel .row .nav {
+    background-color: red; }
+  .section .adminpanel .row .section {
+    background-color: green; }
   .section .game-overview {
     overflow: hidden;
     padding-top: 30px; }

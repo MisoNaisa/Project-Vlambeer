@@ -17,7 +17,7 @@
 
 <!-- Begin header -->
 <div class="header">
-    <div class="container">
+    <div class="container adminpanel">
         <div class="title">
             <a href="/">
                 <div class="logo">
@@ -34,37 +34,46 @@
                 </h3>
             </div>
         </div>
-        <div class="nav">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/overview_games">Games</a></li>
-                <li><a href="/shop">Shop</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-        </div>
     </div>
 </div>
 <!-- End of header-->
-
-<div class="section">
-    @if (session('message'))
-
-        <ul class="list-group">
-            <li class="list-group-item list-group-item-success">
-                {{ session('message') }}
-
+<div class="row col-md-12">
+    <div class="nav col-md-2">
+        <ul>
+            <li>Go to site</li>
+            <li>Games</li>
+            <li>Shop
+                <ul>
+                    <li>Products</li>
+                    <li>Orders</li>
+                </ul>
             </li>
+            <li>Users</li>
         </ul>
-    @endif
-    @if($errors->has())
-        <ul class="list-group">
-            @foreach($errors->all()as $error)
-                <li class="list-group-item list-group-item-danger">{{ $error }}</li>
+    </div>
+    <div class="section col-md-10">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur beatae consectetur dicta dolor ea ex iure labore necessitatibus nihil, nisi perferendis quam quasi ratione sit tempora ullam, unde velit voluptatibus.</p>
+    </div>
+    {{--<div class="section col-md-10">--}}
+        {{--@if (session('message'))--}}
 
-            @endforeach
-        </ul>
-    @endif
-    @yield('section')
+            {{--<ul class="list-group">--}}
+                {{--<li class="list-group-item list-group-item-success">--}}
+                    {{--{{ session('message') }}--}}
+
+                {{--</li>--}}
+            {{--</ul>--}}
+        {{--@endif--}}
+        {{--@if($errors->has())--}}
+            {{--<ul class="list-group">--}}
+                {{--@foreach($errors->all()as $error)--}}
+                    {{--<li class="list-group-item list-group-item-danger">{{ $error }}</li>--}}
+
+                {{--@endforeach--}}
+            {{--</ul>--}}
+        {{--@endif--}}
+        {{--@yield('section')--}}
+    {{--</div>--}}
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -72,7 +81,7 @@
 <script src="/js/jquery.vide.js"></script>
 <script src="/js/jquery.smoke.js"></script>
 <script src="/js/main.js"></script>
-<!-- SSlider Javascript file -->
+<!-- Slider Javascript file -->
 <script src="/js/jquery.flexslider.js"></script>
 </body>
 

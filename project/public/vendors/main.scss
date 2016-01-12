@@ -465,6 +465,18 @@ $font-stack: 'Open Sans', sans-serif;
   }
   //shop css eind
 
+  //admin css begin
+  .adminpanel {
+    .row {
+      .nav {
+        background-color: red;
+      }
+      .section {
+        background-color: green;
+      }
+    }
+  }
+  //admin css eind
 
   //css game-overview begin
   .game-overview {
