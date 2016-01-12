@@ -21,8 +21,9 @@ Route::get('/overview_games', 'PagesController@overview_games');
 Route::get('/info_game/{id}', 'PagesController@info_game');
 
 Route::resource('/shop', 'ProductsController');
-
+Route::get('/shop/cat/{cat}', 'ProductsController@category' );
 Route::resource('admin/orders', 'OrdersController');
+
 
 Route::resource('admin/games', 'GamesController');
 Route::delete('admin/games/{id}/destroy', 'GamesController@destroy'); // to work with ajax
@@ -31,6 +32,9 @@ Route::resource('cart', 'CartsController');
 
 //User
 Route::resource('/user', 'UsersController');
+
+//Admin
+Route::resource('/admin', 'AdminController');
 
 //Pdf
 Route::get('/invoices/{id}', 'InvoicesController@invoice');
