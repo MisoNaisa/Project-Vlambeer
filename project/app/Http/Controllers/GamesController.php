@@ -31,25 +31,32 @@ class GamesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create() {
+        if(Auth::user()->role == 'admin'){
 
-        $games = new GiantBombApi();
+            $games = new GiantBombApi();
 
-        $gamesArray = $games->getAllGameIds();
-        $dbGames = \App\Game::all();
+            $gamesArray = $games->getAllGameIds();
+            $dbGames = \App\Game::all();
 
-        $pluckIdFromApi = array_pluck($gamesArray, 'id');
-        $pluckIdFromDb  = array_pluck($dbGames, 'id');
+            $pluckIdFromApi = array_pluck($gamesArray, 'id');
+            $pluckIdFromDb  = array_pluck($dbGames, 'id');
 
-        $results = array_diff($pluckIdFromApi , $pluckIdFromDb);
+            $results = array_diff($pluckIdFromApi , $pluckIdFromDb);
 
-        $gameNames=[];
+            $gameNames=[];
 
-        foreach($results as $result){
+            foreach($results as $result){
 
-            array_push($gameNames,$games->getGameNameFromApi($result));
+                array_push($gameNames,$games->getGameNameFromApi($result));
+            }
+
+            return view('game.create', compact('gameNames'));
         }
 
-        return view('game.create', compact('gameNames'));
+    else{
+            return view('errors.unauthorized');
+        }
+
     }
 
     /**
@@ -110,9 +117,13 @@ class GamesController extends Controller
      */
     public function edit($id) {
 
-        $game = \App\Game::where('id', $id)->first();
+        if(Auth::user()->role == 'admin'){
 
-        return view('game.edit', compact('game'));
+        }
+
+        else{
+            return view('errors.unauthorized');
+        }
     }
 
     /**

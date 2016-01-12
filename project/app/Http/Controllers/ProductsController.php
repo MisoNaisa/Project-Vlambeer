@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\CustomClasses\GiantBomb\Api as GiantBombApi;
 use Illuminate\Support\Facades\App;
+use Auth;
 
 class ProductsController extends Controller
 {
@@ -34,9 +35,16 @@ class ProductsController extends Controller
      */
     public function create() {
 
-        $product = \App\Product::all();
+        if(Auth::user()->role == 'admin'){
 
-        return view('shop.create', compact('product'));
+            $product = \App\Product::all();
+            return view('shop.create', compact('product'));
+        }
+
+        else{
+            return view('errors.unauthorized');
+        }
+
     }
 
     /**
@@ -83,8 +91,6 @@ class ProductsController extends Controller
      */
     public function show($id) {
 
-
-
         $product = \App\Product::where('id', $id)->first();
         $randproducts = \App\Product::query()
             ->where('id', '!=', $id)
@@ -103,9 +109,16 @@ class ProductsController extends Controller
      */
     public function edit($id) {
 
-        $product = \App\Product::where('id', $id)->first();
+        if(Auth::user()->role == 'admin'){
 
-        return view('shop.edit', compact('product'));
+            $product = \App\Product::where('id', $id)->first();
+
+            return view('shop.edit', compact('product'));
+        }
+        else{
+            return view('errors.unauthorized');
+        }
+
     }
 
     /**
