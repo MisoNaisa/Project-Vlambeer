@@ -17,7 +17,7 @@
         @foreach($productArray as $product)
             <div class="col-sm-4 col-lg-4 col-md-4 product-item">
                 <div class="thumbnail">
-                    <a href="shop/product/{{$product->id}}" ></a>
+                    <a href="shop/product/{{$product['id']}}" ></a>
                     @if($product['sale'] === 1)
                         <div id="sale"></div>
                     @else
@@ -33,7 +33,7 @@
                     </div>
                     <div class="buy-now">
                         <input class="quantity" type="number">
-                        <div class="btn btn-primary" id="{{$product->id}}">KOOP DIT!!</div>
+                        <div class="btn btn-primary" id="{{$product['id']}}">KOOP DIT!!</div>
                     </div>
                 </div>
 

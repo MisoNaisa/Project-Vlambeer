@@ -13,10 +13,10 @@
                 <p class="title">Vlambeer Shop</p>
 
                 <div class="list-group">
-                    <a href="#" class="list-group-item">Clothes</a>
-                    <a href="#" class="list-group-item">Music</a>
-                    <a href="#" class="list-group-item">Bundles</a>
-                    <a href="#" class="list-group-item">Miscellaneous</a>
+                    <a href="/shop/cat/clothes" class="list-group-item">Clothes</a>
+                    <a href="/shop/cat/Music" class="list-group-item">Music</a>
+                    <a href="/shop/cat/bundles" class="list-group-item">Bundles</a>
+                    <a href="/shop/cat/misc" class="list-group-item">Miscellaneous</a>
                 </div>
 
                 <div class="login list-group">

@@ -83,6 +83,8 @@ class ProductsController extends Controller
      */
     public function show($id) {
 
+
+
         $product = \App\Product::where('id', $id)->first();
         $randproducts = \App\Product::query()
             ->where('id', '!=', $id)
@@ -160,5 +162,17 @@ class ProductsController extends Controller
     public function payment_failed() {
 
         return view('shop.payment_failed');
+    }
+
+    public function category($cat){
+
+
+        $productArray = \App\Product::where('category' , $cat)->get();
+
+        $games = new GiantBombApi();
+
+        $gameInfo = $games->getAllGameInfoById(34402);
+
+        return view('shop.index', compact('gameInfo', 'productArray'));
     }
 }
