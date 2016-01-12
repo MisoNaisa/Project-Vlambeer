@@ -22,7 +22,7 @@
                         Business and Development <br>
                         <a href="mailto:rami@vlambeer.com" class="link">rami@vlambeer.com</a>
                          <br>
-                        <a href="https://twitter.com/search?q=tha_rami&src=typd" class="link">@tha_rami <i class="fa fa-twitter" style="color: #4099FF;"></i></a> <br>
+                        <a href="https://twitter.com/tha_rami" class="link">@tha_rami <i class="fa fa-twitter" style="color: #4099FF;"></i></a> <br>
                     </p>
                 </div>
                 <div class="col-xs-2 jan picture">
