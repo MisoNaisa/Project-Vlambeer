@@ -20,6 +20,7 @@ Route::get('/shop/payment_failed', 'ProductsController@payment_failed');
 Route::get('/overview_games', 'PagesController@overview_games');
 Route::get('/info_game/{id}', 'PagesController@info_game');
 Route::get('/unsub/{id}', 'PagesController@unsub');
+Route::get('/unsub/{id}/unsubConfirmed', 'PagesController@unsubConfirm');
 
 Route::resource('/shop', 'ProductsController');
 Route::get('/shop/cat/{cat}', 'ProductsController@category' );

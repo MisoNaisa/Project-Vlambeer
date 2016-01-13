@@ -75,4 +75,14 @@ class PagesController extends Controller
 
         return view('pages.unsub', compact('user'));
     }
+
+    public function unsubConfirm($id){
+
+        $user = \App\User::find( $id );
+        $user->newsletter = 0;
+        $user->save();
+
+        \Session::flash('flash_message', 'You are no longer recieving newletters from Vlambeer.');
+        return redirect('/');
+    }
 }

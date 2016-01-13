@@ -94,8 +94,11 @@ input {
     color: #676767;
 }
     
-button {
-    color: black;
+.unsub .btn {
+    background-color: grey;
+    border-radius: 3px;
+    border-color: grey;
+    margin-right: 10px;
 }
 
 

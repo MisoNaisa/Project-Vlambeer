@@ -10,6 +10,7 @@
                     Adipisci aliquid autem dignissimos eum ex explicabo illo ipsum laboriosam laborum,
                     maxime minus molestias natus odio porro quibusdam tenetur voluptas voluptate voluptatibus.
                 </p>
+                <p><a href="/subs" style="color: white;">Newsletter</a></p>
             </div>
 
             <div class="col-xs-6">
@@ -37,10 +38,13 @@
                         <a href="https://twitter.com/jwaaaap" class="link">@jwaaaap <i class="fa fa-twitter" style="color: #4099FF;"></i></a> <br>
                     </p>
                 </div>
+                <div class="fb col-xs-6">
+                    <a href="https://www.facebook.com/Vlambeer/?fref=ts" class="link">Like us on Facebook!
+                        <i class="fa fa-facebook-square" style="color: #3b5998; margin-top: 20px;"></i></a><br><br>
+                </div>
             </div>
             <div class="companyLocation col-xs-12">
                 <p>
-                    <a href="https://www.facebook.com/Vlambeer/?fref=ts" class="link">Like us on Facebook! <i class="fa fa-facebook-square" style="color: #3b5998;"></i></a><br><br>
                     <a href="mailto:info@vlambeer.com" class="link">info@vlambeer.com</a> | Neude 5, 3512 AD<br>
                     Utrecht, The Netherlands | +316 21 20 63 63
                 </p>
