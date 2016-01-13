@@ -54,7 +54,7 @@ $(document).ready(function(){
 
     var recentlyDeleted = false;
     //Delete
-    $('.btn-delete').click(function(){
+    $('.admin .btn-delete').click(function(){
         if (confirm('Are you sure?')) {
             var _this = $(this);
             var data = {};
@@ -160,6 +160,24 @@ $(document).ready(function(){
             // SET PREVIOUS OR STANDARD
             prevCart = JSON.parse( $.cookie('cart') );
 
+            // ADD ALERT
+            if (input.val() == 1) {
+                $.smkAlert({
+                    text: 'product toegevoegd',
+                    type: 'success',
+                    time: 5,
+                    position: 'top-left'
+                });
+            } else {
+                $.smkAlert({
+                    text: 'producten toegevoegd',
+                    type: 'success',
+                    time: 5,
+                    position: 'top-left'
+                });
+            }
+
+
             // SET INPUT TO 1 AFTER ADDING TO CART
             input.val(1);
 
@@ -189,14 +207,6 @@ $(document).ready(function(){
 
             // SET COOKIE
             $.cookie('cart', JSON.stringify(prevCart), { expires: 7 });
-
-            // ADD ALERT
-            $.smkAlert({
-                text: 'product toegevoegd',
-                type: 'success',
-                time: 5,
-                position: 'top-left'
-            });
 
             console.log( $.cookie('cart') );
         }
