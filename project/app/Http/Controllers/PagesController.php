@@ -67,4 +67,12 @@ class PagesController extends Controller
         dd($gamesArray);
     }
 
+    //UNSUB
+
+    public function unsub($id) {
+
+        $user =  \App\User::where('id', $id)->first();
+
+        return view('pages.unsub', compact('user'));
+    }
 }
