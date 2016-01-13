@@ -73,11 +73,11 @@
             </div>
             <div class="user-info">
                 <ul>
-                    <li><?php echo $first_name ?></li>
-                    <li><?php ?></li>
-                    <li><?php ?></li>
-                    <li><?php ?></li>
-                    <li><?php ?></li>
+                    <li><?php echo $first_name . ' ' . $last_name ?></li>
+                    <li><?php echo $address . ' ' . $housenumber?></li>
+                    <li><?php echo $zipcode . ' ' . $city ?></li>
+                    <li><?php echo $country ?></li>
+                    <li><?php echo $phonenumber ?></li>
                 </ul>
             </div>
         </div>

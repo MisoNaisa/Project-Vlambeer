@@ -91,16 +91,13 @@ class InvoicesController extends Controller
     {
         $user = \App\Order::query()
             ->join('users', 'order.user_id', '=', 'users.id')
-            ->where('order.order_id', $id)->first()->toArray();
-dd($user);
-        
+            ->where('order.order_id', $id)->first();
 
-//        $la = $user['first_name'];
-//
-//        $parameter = array();
-//        $parameter['first_name'] = $la;
+        $users = \App\Order::query()
+            ->join('users', 'order.user_id', '=', 'users.id')
+            ->where('order.order_id', $id)->first()->ToArray();
 
-        $data = view('user.invoice', $user);
+        $data = view('user.invoice', $users);
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadHTML($data);
         return $pdf->stream(with($user));
