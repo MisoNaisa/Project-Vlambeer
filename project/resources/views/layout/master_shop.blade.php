@@ -7,7 +7,7 @@
 @section('section')
 
 
-    <div class="container">
+    <div class="container cookie_cart_on">
         <div class="row shop-hotfix">
             <div class="col-md-2 aside">
                 <p class="title">Vlambeer Shop</p>

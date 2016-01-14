@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('section')
-    <div class="container">
+    <div class="container ">
 
 
 

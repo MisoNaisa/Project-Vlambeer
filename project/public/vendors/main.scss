@@ -212,7 +212,6 @@ html {
       left: 0;
       z-index: -1;
       height: 100vh;
-      padding-top: 50px;
       text-align: center;
       color: white;
       padding: 50px 0 0 0;
@@ -225,16 +224,26 @@ html {
           .fa {
             font-size: 30px;
           }
+          ul {
+            li:hover {
+              background: #008cba;
+
+            }
+
+          }
         }
         :hover {
           background: #008cba;
         }
       }
+
     }//end nav
 
     .section {
       margin-top: 0;
       padding: 0;
+      position: absolute;
+      right: 0;
       .container {
         margin: 0;
         width: 100%;

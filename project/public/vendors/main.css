@@ -155,7 +155,6 @@ a {
     left: 0;
     z-index: -1;
     height: 100vh;
-    padding-top: 50px;
     text-align: center;
     color: white;
     padding: 50px 0 0 0; }
@@ -167,11 +166,15 @@ a {
         cursor: pointer; }
         .admin .nav ul li .fa {
           font-size: 30px; }
+        .admin .nav ul li ul li:hover {
+          background: #008cba; }
       .admin .nav ul :hover {
         background: #008cba; }
   .admin .section {
     margin-top: 0;
-    padding: 0; }
+    padding: 0;
+    position: absolute;
+    right: 0; }
     .admin .section .container {
       margin: 0;
       width: 100%; }
