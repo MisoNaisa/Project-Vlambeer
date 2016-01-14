@@ -30,12 +30,11 @@
                         <h4>{{$product['name']}}</h4>
                         <p> {{ substr($product['description'], 0, 100) . '...' }}</p>
 
-
                         <div class="buy-now">
                             <i class="minus fa fa-minus "></i>
-                            <input min="1" type="number" class="quantity" name="quantity" value="1" />
+                            <input min="1" type="number" class="quantity" value="1" />
                             <i class="add fa fa-plus"></i>
-                            <div class="btn btn-primary pull-right" id="{{$product['id']}}">Add to cart</div>
+                            <div class="btn btn-primary pull-right add_to_cookie" id="{{$product['id']}}">Add to cart</div>
                         </div>
                     </div>
                 </div>

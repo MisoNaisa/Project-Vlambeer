@@ -149,7 +149,7 @@ $(document).ready(function(){
     var prevCart = JSON.parse( $.cookie('cart') ); // GET PREVIOUS OR STANDARD CART ON LOAD.
     countProducts(); // SET CART COUNTER ON LOAD
 
-    $('.product-item .buy-now .btn').click(function(){
+    $('.buy-now .add_to_cookie').click(function(){
         var input = $(this).parent().find('.quantity');
         var newQt = parseInt( input.val() );
         var newProductId = parseInt( $(this).attr('id') );
@@ -221,15 +221,17 @@ $(document).ready(function(){
         $('.list-group-item .item-count').text( i );
     }
 
-    $(this).find('.add').click(function(){
-        var newQty = +$(this).parent().find(".quantity").val() + 1;
-        $(this).parent().find('.quantity').val(newQty);
+    // Buttons Add / minus by product
+    $('.buy-now .add').click(function(){
+        var input = $(this).parent().find('.quantity');
+        var i = parseInt(input.val());
+        input.val(i + 1);
     });
 
-    $(this).find('.minus').click(function(){
-        var newQty = +$(this).parent().find(".quantity").val() - 1;
-        if(newQty < 1)newQty = 1;
-        $(this).parent().find('.quantity').val(newQty);
+    $('.buy-now .minus').click(function(){
+        var input = $(this).parent().find('.quantity');
+        var i = parseInt(input.val());
+        if (i > 1) { input.val(i - 1) }
     });
 
 
