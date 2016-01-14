@@ -81,8 +81,9 @@
             </div>
         @else
             <div class="register">
-                <p>Create an account to place an order</p>
-                <a href="/register" class="btn"><button class="btn">register</button></a>
+                <p>Create an account or log in to place an order</p>
+                <a href="/register" class="btn"><button class="btn">Register</button></a>
+                <a href="/login" class="btn"><button class="btn">Login</button></a>
 
             </div>
         @endif
