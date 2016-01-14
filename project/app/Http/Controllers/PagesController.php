@@ -52,19 +52,18 @@ class PagesController extends Controller
 
     }
 
+    //SHOP
     public function create() {
 
-        $item = '';
-        return view('shop.create', compact('item'));
-    }
-    //SHOP
+        if(Auth::user()->role == 'admin'){
 
-    public function test() {
+            $item = '';
+            return view('shop.create', compact('item'));
+        }
 
-        $games = new GiantBombApi();
-
-        $gamesArray = $games->getAllGameInfoById(34402);
-        dd($gamesArray);
+    else{
+            return view('errors.unauthorized');
+        }
     }
 
     //UNSUB
