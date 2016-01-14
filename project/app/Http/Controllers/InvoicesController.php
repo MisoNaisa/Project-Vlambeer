@@ -49,8 +49,16 @@ class InvoicesController extends Controller
      */
     public function show($id)
     {
-        $user = \App\User::where('id', $id)->first();
-        return view('user.invoice', compact('user'));
+        if(Auth::user()->id == $id){
+
+            $user = \App\User::where('id', $id)->first();
+
+            return view('user.invoice', compact('user'));
+        }
+
+    else{
+            return view('errors.unauthorized');
+        }
     }
 
     /**
