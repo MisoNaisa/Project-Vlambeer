@@ -156,7 +156,6 @@ $(document).ready(function(){
         if (clothes.length > 0) {
             var clothesSize = clothes.find('.size').val();
             var clothesColor = clothes.find('.color').val();
-            clothes = true;
         }
 
         // IF QUANTITY IS ABOVE 0
@@ -215,12 +214,41 @@ $(document).ready(function(){
             countProducts();
 
             // SET COOKIE
-            $.cookie('cart', JSON.stringify(prevCart), { expires: 7 });
+            $.cookie('cart', JSON.stringify(prevCart), { expires: 7, path: '/'});
 
             console.log($.cookie('cart') );
         }
     });
 
+    // Destroy Product in cart
+    $('.shopping-cart .destroy_this').click(function(){
+        var cart = JSON.parse( $.cookie('cart') );
+        var cart_id = $(this).data('id');
+        var array_index = 0;
+        // Find array by id and get index
+        $.each(cart, function( index, value) {
+            if (value[0] == cart_id) {
+                array_index = index;
+            }
+        });
+        // Delete Array by index
+        cart.splice(array_index, 1);
+
+        //Set cookie
+        $.cookie('cart', JSON.stringify(cart), { expires: 7, path: '/'});
+
+        // Delete table row also
+        $(this).closest('tr').remove();
+
+        // Alert
+        $.smkAlert({
+            text: 'successvol verwijderd',
+            type: 'success',
+            time: 5,
+            position: 'top-left'
+        });
+
+    });
     // PRODUCT COUNTER
     function countProducts() {
         var i = 0;

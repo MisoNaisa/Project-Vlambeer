@@ -2,7 +2,7 @@
 
 @section('section')
 
-    <div class="container">
+    <div class="container shopping-cart">
 
         <div class="title">
             <h1>Shopping cart</h1>
@@ -11,6 +11,7 @@
             <tr>
                 <td>Product ID</td>
                 <td>Name</td>
+                <td>Description</td>
                 <td>Quantity</td>
                 <td>Price</td>
                 <td>Total</td>
@@ -20,14 +21,10 @@
                 <tr>
                     <td>{{ $item['id'] }}</td>
                     <td>{{ $item['name'] }}</td>
+                    <td></td>
                     <td>
                         {{ $item['quantity'] }}
-                        <form action="/cart/{{ $item['id'] }}" method="post">
-                            {{ csrf_field() }}
-                            <input type="hidden" name="_method" value="delete">
-                            {{--<input class="btn btn-danger fa fa-times" type="submit" value="X">--}}
-                            <button class="btn-danger fa fa-times"></button>
-                        </form>
+                        <div data-id="{{ $item['id'] }}" class="btn btn-default destroy_this">Delete</div>
                     </td>
                     <td>{{ $item['price'] }}</td>
                     <td>{{ $item['total'] }}</td>

@@ -12,7 +12,7 @@ class CartsController extends Controller
 {
     public function index() {
 
-//        dd($_COOKIE);
+
         $cookieCart = json_decode($_COOKIE['cart'], true);
 
         $cart = [];
@@ -36,36 +36,8 @@ class CartsController extends Controller
             $sum += $num['quantity'] * $num['price'];
         }
 
-//        if(Auth::check()){
-//           echo "someone is logged in";
-//        }
-//        else {
-//            echo "someone is not logged in";
-//        }
-//dd();
         return view('cart.index', compact('cart', 'sum'));
     }
 
-    public function destroy($id){
-
-        $cookieCart = json_decode($_COOKIE['cart']);
-        unset ($_COOKIE['cart']);
-        foreach($cookieCart as $key => $value) {
-
-            if($value[0] == $id) {
-                unset($cookieCart[$key]);
-            }
-
-        }
-
-
-        $cookieCart = array_values($cookieCart);
-        $cookieCart = json_encode($cookieCart, false);
-
-//        dd($cookieCart);
-        setcookie('cart', $cookieCart);
-
-        return back()->with('message', 'Product removed from cart');
-    }
 }
 
