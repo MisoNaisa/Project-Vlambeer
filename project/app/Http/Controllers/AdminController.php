@@ -16,7 +16,18 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('layout.master_admin');
+
+
+      if(Auth::user()->role == 'admin'){
+
+            //code if user is admin
+          return view('layout.master_admin');
+        }
+
+        else{
+            return view('errors.unauthorized');
+        }
+
     }
 
     /**
@@ -26,7 +37,15 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        if(Auth::user()->role == 'admin'){
+
+            //code if user is admin
+
+        }
+
+        else{
+            return view('errors.unauthorized');
+        }
     }
 
     /**
@@ -48,7 +67,15 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        //
+        if(Auth::user()->role == 'admin'){
+
+            //code if user is admin
+
+        }
+
+        else{
+            return view('errors.unauthorized');
+        }
     }
 
     /**
@@ -59,7 +86,15 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        //
+        if(Auth::user()->role == 'admin'){
+
+            //code if user is admin
+
+        }
+
+        else{
+            return view('errors.unauthorized');
+        }
     }
 
     /**

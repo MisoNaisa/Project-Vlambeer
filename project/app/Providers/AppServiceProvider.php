@@ -28,7 +28,6 @@ class AppServiceProvider extends ServiceProvider
             unlink( $path );
         }
 
-
         // if file doesn't exists, search in twitter api and create temp file and twitter file
         if ( !file_exists( $path ) )
         {
@@ -39,12 +38,11 @@ class AppServiceProvider extends ServiceProvider
             ];
 
             // create temp file file.
-            file_put_contents( $tmp_path,  serialize($twitter)  );
-            chmod( $tmp_path, 0666 );
+            file_put_contents( $path,  serialize($twitter)  );
+            //give temp file read rights
+            chmod( $path, 0666 );
 
-            touch( $path );
-            //copy temp to twitter file
-            copy( $tmp_path, $path );
+
         }
 
         //get the info out of the file
@@ -53,14 +51,17 @@ class AppServiceProvider extends ServiceProvider
         //if file isn't empty, use file
         if ( !empty( $twitter ) )
         {
+
             $twitter = unserialize($twitter);
+            //select file
+            touch( $tmp_path );
+            //copy twitter file to temp
+            copy( $path, $tmp_path );
         }   else {
-            //if file is empty use internet
-            $twitter = [
-                'tweetV' => \App\Tweet::getStatusVlambeer(),
-                'tweetR' => \App\Tweet::getStatusRami(),
-                'tweetJ' => \App\Tweet::getStatusJan()
-            ];
+            //if file is empty use temp file
+         
+            $twitter = file_get_contents( $tmp_path );
+            $twitter = unserialize($twitter);
         }
 
         view()->share('twitter', $twitter);

@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('section')
-    <div class="container">
+    <div class="container contact">
         <div class="contact">
             <div class="col-xs-6">
                 <h3>Contact</h3>

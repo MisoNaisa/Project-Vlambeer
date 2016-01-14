@@ -103,8 +103,8 @@ trait AuthenticatesUsers
      */
     protected function getFailedLoginMessage()
     {
-        return Lang::has('auth.failed')
-                ? Lang::get('auth.failed')
+        return Lang::has('auth.login')
+                ? Lang::get('auth.login')
                 : 'These credentials do not match our records.';
     }
 
@@ -117,7 +117,7 @@ trait AuthenticatesUsers
     {
         Auth::logout();
 
-        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
+        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/shop');
     }
 
     /**
@@ -127,7 +127,7 @@ trait AuthenticatesUsers
      */
     public function loginPath()
     {
-        return property_exists($this, 'loginPath') ? $this->loginPath : '/auth/login';
+        return property_exists($this, 'loginPath') ? $this->loginPath : '/login';
     }
 
     /**

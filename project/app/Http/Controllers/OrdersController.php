@@ -16,13 +16,20 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        $orders = \App\Order::query()
-            ->join('users', 'order.user_id', '=', 'users.id')
-            ->select('users.*', 'order.*')
-            ->orderBy('order.order_date','desc')
-            ->get();
+        if(Auth::user()->role == 'admin'){
 
-        return view('order.index', compact('orders'));
+            $orders = \App\Order::query()
+                ->join('users', 'order.user_id', '=', 'users.id')
+                ->select('users.*', 'order.*')
+                ->orderBy('order.order_date','desc')
+                ->get();
+
+            return view('order.index', compact('orders'));
+        }
+
+    else{
+            return view('errors.unauthorized');
+        }
     }
 
     /**
@@ -65,14 +72,22 @@ class OrdersController extends Controller
      */
     public function edit($id)
     {
-        $products = \App\Order_Product::query()
-            ->join('product', 'order_product.product_id', '=', 'product.id')
-            ->select('order_product.*', 'product.*')
-            ->where('order_product.order_id', $id)->get();
+        if(Auth::user()->role == 'admin'){
 
-        $order = \App\Order::where('order_id',$id)->first();
+            $products = \App\Order_Product::query()
+                ->join('product', 'order_product.product_id', '=', 'product.id')
+                ->select('order_product.*', 'product.*')
+                ->where('order_product.order_id', $id)->get();
 
-        return view('order.edit', compact('products', 'order'));
+            $order = \App\Order::where('order_id',$id)->first();
+
+            return view('order.edit', compact('products', 'order'));
+        }
+
+        else{
+            return view('errors.unauthorized');
+        }
+
     }
 
     /**
