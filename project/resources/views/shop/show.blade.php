@@ -16,29 +16,31 @@
                     <p>{{ $product->description }}</p>
                 </div>
 
-                @if($product->category == 'clothes')
-                <div class="productoption ">
-                    <form action="">
-                        <div class="form-group">
-                            <select class="form-control" name="size" id="size">
-                                <option value="size">size</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <select class="form-control" name="color" id="color">
-                                <option value="color">color</option>
-                            </select>
-                        </div>
-                    </form>
-                </div>
-                @endif
-
                 <div class="buy-now">
+                    @if($product->category == 'clothes')
+                        <div class="productoption ">
+                            <div class="form-group">
+                                <select class="form-control size" name="size">
+                                    <option value="">size</option>
+                                    <option value="m">M</option>
+                                    <option value="l">L</option>
+
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <select class="form-control color" name="color">
+                                    <option>color</option>
+                                    <option value="black">black</option>
+                                    <option value="green">green</option>
+                                </select>
+                            </div>
+                        </div>
+                    @endif
                     <i class="minus fa fa-minus "></i>
-                    <input min="1" type="number" class="quantity" name="quantity" value="1" />
+                    <input min="1" type="number" class="quantity" value="1" />
                     <i class="add fa fa-plus"></i>
-                    <div class="btn btn-primary pull-right" id="{{$product['id']}}">Add to cart</div>
+                    <div class="btn btn-primary pull-right add_to_cookie" id="{{$product['id']}}">Add to cart</div>
                 </div>
                 {{--Real payment link: https://www.paypal.com/cgi-bin/webscr--}}
                 {{--<div class="paypal pull-right">--}}
