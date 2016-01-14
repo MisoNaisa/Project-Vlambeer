@@ -20,11 +20,48 @@ class AppServiceProvider extends ServiceProvider
     {
         session_start();
 
-        $twitter = [
-            'tweetV' => \App\Tweet::getStatusVlambeer(),
-            'tweetR' => \App\Tweet::getStatusRami(),
-            'tweetJ' => \App\Tweet::getStatusJan()
-        ];
+        $tmp_path = "tmp.bkp";
+        $path = "twitter.bkp";
+
+        //if file is older then 15min, delete it
+        if( time() > filectime($path)+900){
+            unlink( $path );
+        }
+
+
+        // if file doesn't exists, search in twitter api and create temp file and twitter file
+        if ( !file_exists( $path ) )
+        {
+            $twitter = [
+                'tweetV' => \App\Tweet::getStatusVlambeer(),
+                'tweetR' => \App\Tweet::getStatusRami(),
+                'tweetJ' => \App\Tweet::getStatusJan()
+            ];
+
+            // create temp file file.
+            file_put_contents( $tmp_path,  serialize($twitter)  );
+            chmod( $tmp_path, 0666 );
+
+            touch( $path );
+            //copy temp to twitter file
+            copy( $tmp_path, $path );
+        }
+
+        //get the info out of the file
+        $twitter = file_get_contents( $path );
+
+        //if file isn't empty, use file
+        if ( !empty( $twitter ) )
+        {
+            $twitter = unserialize($twitter);
+        }   else {
+            //if file is empty use internet
+            $twitter = [
+                'tweetV' => \App\Tweet::getStatusVlambeer(),
+                'tweetR' => \App\Tweet::getStatusRami(),
+                'tweetJ' => \App\Tweet::getStatusJan()
+            ];
+        }
 
         view()->share('twitter', $twitter);
 
