@@ -12,6 +12,10 @@ $font-stack: 'Open Sans', sans-serif;
 .noDisplay {
   display: none;
 }
+html {
+  height: 100%;
+  min-height: 100%;
+}
 
   body {
     background: url("../img/background.jpg");
@@ -162,6 +166,83 @@ $font-stack: 'Open Sans', sans-serif;
     }
   }
 }
+
+//admin css begin
+  .admin {
+    background: #f9f9f9;
+    .admin-header {
+      height: 50px;
+      background: #23282d;
+      color: white;
+
+      .title {
+        .logo {
+          float: left;
+
+          img {
+            float: left;
+            width: 50px;
+          }
+          h1 {
+            float: left;
+            margin: 10px 0px 0px 5px;
+          }
+
+        }
+        .login {
+          vertical-align: middle;
+          line-height: 50px;
+          height: 50px;
+
+          img {
+            margin: 10px 10px 0px 0px;
+            float: left;
+            height: 30px;
+            border-radius: 30px;
+          }
+
+        }
+      }
+    } // end header
+
+    .nav {
+      background: #23282d;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      height: 100vh;
+      padding-top: 50px;
+      text-align: center;
+      color: white;
+      padding: 50px 0 0 0;
+      ul {
+        padding: 0;
+        list-style-type: none;
+        li {
+          padding: 10px;
+          cursor: pointer;
+          .fa {
+            font-size: 30px;
+          }
+        }
+        :hover {
+          background: #008cba;
+        }
+      }
+    }//end nav
+
+    .section {
+      margin-top: 0;
+      padding: 0;
+      .container {
+        margin: 0;
+        width: 100%;
+      }
+    }//end section
+
+  }//end admin
+//admin css eind
 
 .section {
   margin-top: 55px;
@@ -464,19 +545,6 @@ $font-stack: 'Open Sans', sans-serif;
     }
   }
   //shop css eind
-
-  //admin css begin
-  .adminpanel {
-    .row {
-      .nav {
-        background-color: red;
-      }
-      .section {
-        background-color: green;
-      }
-    }
-  }
-  //admin css eind
 
   //css game-overview begin
   .game-overview {
