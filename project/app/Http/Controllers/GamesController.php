@@ -11,6 +11,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\CustomClasses\GiantBomb\Api as GiantBombApi;
 use Illuminate\Support\Facades\Storage;
+use Auth;
 
 class GamesController extends Controller
 {
@@ -20,9 +21,18 @@ class GamesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $allGames = \App\Game::all();
 
-        return view('game.main', compact('allGames') );
+        if(Auth::user()->role == 'admin'){
+
+            $allGames = \App\Game::all();
+
+            return view('game.main', compact('allGames'));
+        }
+
+        else{
+                return view('errors.unauthorized');
+            }
+
     }
 
     /**
@@ -72,10 +82,10 @@ class GamesController extends Controller
      */
     public function store(GameCreateRequest $request, Game $game) {
 
-        $games = new GiantBombApi();
+            $games = new GiantBombApi();
 
-        $game->id                     = $request->input('id');
-        $game->game_name              = $games->getGameNameFromApi($request->input('id'))['name'];
+            $game->id                     = $request->input('id');
+            $game->game_name              = $games->getGameNameFromApi($request->input('id'))['name'];
 //        if($request->hasFile('game_background_video')){
 //            $game->game_background_video  = $request->file('game_background_video')->getClientOriginalName();
 ////            dd($request->file('game_background_video')->getFilename());
@@ -84,19 +94,18 @@ class GamesController extends Controller
 //            Storage::disk('local')->put($fileOld, $fileNew);
 //
 //        }
-        $game->game_background_video  = $request->input('game_background_video');
+            $game->game_background_video  = $request->input('game_background_video');
 //        dd($game->game_background_video);
-        $game->game_background_img    = $request->input('game_background_img');
-        $game->custom_payment_link    = $request->input('custom_payment_link');
-        $game->steam_payment_link     = $request->input('steam_payment_link');
-        $game->ios_payment_link       = $request->input('ios_payment_link');
-        $game->psn_payment_link       = $request->input('psn_payment_link');
-        $game->android_payment_link   = $request->input('android_payment_link');
+            $game->game_background_img    = $request->input('game_background_img');
+            $game->custom_payment_link    = $request->input('custom_payment_link');
+            $game->steam_payment_link     = $request->input('steam_payment_link');
+            $game->ios_payment_link       = $request->input('ios_payment_link');
+            $game->psn_payment_link       = $request->input('psn_payment_link');
+            $game->android_payment_link   = $request->input('android_payment_link');
 
-        $game->save();
+            $game->save();
 
-        return redirect('/admin/games')->with('message', 'Successfully created a new game');
-
+            return redirect('/admin/games')->with('message', 'Successfully created a new game');
     }
 
     /**
@@ -119,6 +128,8 @@ class GamesController extends Controller
 
         if(Auth::user()->role == 'admin'){
 
+            $game = \App\Game::where('id', $id)->first();
+            return view('game.edit', compact('game'));
         }
 
         else{
@@ -138,6 +149,7 @@ class GamesController extends Controller
         $request = json_decode($request->input, true);
 
         $game = \App\Game::find($request['game_id']);
+
         $game->game_background_img = $request['game_background_img'];
         $game->game_background_video = $request['game_background_video'];
         $game->custom_payment_link = $request['custom_payment_link'];
@@ -145,6 +157,7 @@ class GamesController extends Controller
         $game->ios_payment_link = $request['ios_payment_link'];
         $game->psn_payment_link = $request['psn_payment_link'];
         $game->android_payment_link = $request['android_payment_link'];
+
         $game->save();
 
         echo true;
@@ -161,22 +174,5 @@ class GamesController extends Controller
         $game = \App\Game::where('id', $id)->first();
 
         $game->delete();
-    }
-
-    public function test() {
-
-        $games = new GiantBombApi();
-
-        $gamesArray = $games->getAllGameIds();
-        $dbGames = \App\Game::all();
-
-        $pluckIdFromApi = array_pluck($gamesArray, 'name');
-        $pluckIdFromDb  = array_pluck($dbGames, 'game_name');
-
-        $result = array_diff($pluckIdFromApi , $pluckIdFromDb);
-
-        dd($pluckIdFromApi,$pluckIdFromDb, $result);
-
-        return view('pages.giantbomb_api', compact('gamesArray'));
     }
 }
