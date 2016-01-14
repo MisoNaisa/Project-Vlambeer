@@ -16,7 +16,6 @@ $(document).ready(function(){
 
     $(".game-post").hover(function(){
         var background = $(this).find('.img').css('background-image').replace('url(', '').replace(')', '');
-        console.log(background);
         $("body").addClass('backgroundTransition');
         setTimeout(function(){
             $('body').css("background",'url(' + background + ')')
@@ -153,6 +152,12 @@ $(document).ready(function(){
         var input = $(this).parent().find('.quantity');
         var newQt = parseInt( input.val() );
         var newProductId = parseInt( $(this).attr('id') );
+        var clothes = $(this).parent().find('.productoption');
+        if (clothes.length > 0) {
+            var clothesSize = clothes.find('.size').val();
+            var clothesColor = clothes.find('.color').val();
+            clothes = true;
+        }
 
         // IF QUANTITY IS ABOVE 0
         if (input.val() > 0) {
@@ -185,9 +190,11 @@ $(document).ready(function(){
             $.each(prevCart, function( index, value ) {
                 var oldProductId =  value[0];
                 var oldQt = value[1];
+                var oldColor = value[2];
+                var oldSize = value[3];
 
-                // IF NEW PRODUCT ID == OLD PRODUCT ID
-                if (oldProductId == newProductId && alreadyExists == false) {
+                // IF item already exists
+                if (oldProductId == newProductId && alreadyExists == false && oldColor == clothesColor && oldSize == clothesSize) {
                     value[1] = oldQt + newQt;
                     alreadyExists = true;
                 }
@@ -198,7 +205,9 @@ $(document).ready(function(){
             if (alreadyExists == false) {
                 prevCart.push([
                     newProductId,
-                    newQt
+                    newQt,
+                    clothesColor,
+                    clothesSize
                 ]);
             }
 
@@ -208,7 +217,7 @@ $(document).ready(function(){
             // SET COOKIE
             $.cookie('cart', JSON.stringify(prevCart), { expires: 7 });
 
-            console.log( $.cookie('cart') );
+            console.log($.cookie('cart') );
         }
     });
 
