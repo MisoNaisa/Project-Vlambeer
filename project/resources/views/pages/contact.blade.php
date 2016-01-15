@@ -10,7 +10,6 @@
                     Adipisci aliquid autem dignissimos eum ex explicabo illo ipsum laboriosam laborum,
                     maxime minus molestias natus odio porro quibusdam tenetur voluptas voluptate voluptatibus.
                 </p>
-                <p><a href="/subs" style="color: white;">Newsletter</a></p>
             </div>
 
             <div class="col-xs-6">

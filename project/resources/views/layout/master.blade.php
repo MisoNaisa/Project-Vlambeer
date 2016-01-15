@@ -131,6 +131,12 @@
 
                 </div>
 
+                <div class="newsletter">
+                    <div class="btn btn-primary">
+                        Newsletter
+                    </div>
+                </div>
+
                 </div>
             </div>
 
@@ -148,6 +154,10 @@
     <!-- End Footer-->
 </div>
 
+<div class="csrf">
+    {{csrf_field()}}
+</div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="/js/jquery.vide.js"></script>
 <script src="/js/jquery.cookie.js"></script>
@@ -155,6 +165,7 @@
 <script src="/js/main.js"></script>
 <!-- SSlider Javascript file -->
 <script src="/js/jquery.flexslider.js"></script>
+<script src="/js/kim.js"></script>
 </body>
 
 </html>

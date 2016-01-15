@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use App\CustomClasses\GiantBomb\Api as GiantBombApi;
 use Illuminate\Support\Facades\DB;
 use Auth;
+use App\Newsletter;
 
 class PagesController extends Controller
 {
@@ -84,5 +85,22 @@ class PagesController extends Controller
 
         \Session::flash('flash_message', 'You are no longer recieving newletters from Vlambeer.');
         return redirect('/');
+    }
+
+    public function subscribe($email){
+
+        if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $alreadyExists = count(Newsletter::where('email', $email)->first());
+            if ($alreadyExists > 0) {
+                echo 0;
+            } else {
+                DB::table('newsletter')->insert(['email' => $email]);
+                echo 1;
+            }
+        } else {
+            echo 2;
+        }
+
+
     }
 }
