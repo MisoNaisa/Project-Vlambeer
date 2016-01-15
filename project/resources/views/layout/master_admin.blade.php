@@ -33,11 +33,13 @@
         <ul>
             <li class="home">
                 <i class="fa fa-home"></i>
-                <h4>Home</h4>
+                <h4>Vlambeer website</h4>
             </li>
             <li class="headnav">
+                {{--<a href="/admin/games"></a>--}}
                 <i class="fa fa-user"></i>
                 <h4>Users</h4>
+            </li>
                 <ul class="subnav hide">
                     <li>
                         <i class="fa fa-user-plus"></i>
@@ -52,10 +54,10 @@
                         <h4>Remove</h4>
                     </li>
                 </ul>
-            </li>
             <li class="headnav">
                 <i class="fa fa-shopping-cart"></i>
                 <h4>Shop</h4>
+            </li>
                 <ul class="subnav hide">
                     <li>
                         <i class="fa fa-plus"></i>
@@ -70,25 +72,42 @@
                         <h4>Remove</h4>
                     </li>
                 </ul>
-            </li>
-            <li class="headnav">
-                <i class="fa fa-gamepad"></i>
+            <li class="headnav" href="/admin/games">
+                <i class="fa fa-gamepad" ></i>
                 <h4>Games</h4>
-                <ul class="subnav hide">
-                    <li a href="/games">
-                        <i class="fa fa-plus"></i>
-                        <h4>Add</h4>
-                    </li>
-                    <li>
-                        <i class="fa fa-pencil"></i>
-                        <h4>Edit</h4>
-                    </li>
-                    <li>
-                        <i class="fa fa-times"></i>
-                        <h4>Remove</h4>
-                    </li>
-                </ul>
             </li>
+            <ul class="subnav hide">
+                <li>
+                    <i class="fa fa-plus"></i>
+                    <h4>Add</h4>
+                </li>
+                <li>
+                    <i class="fa fa-pencil"></i>
+                    <h4>Edit</h4>
+                </li>
+                <li>
+                    <i class="fa fa-times"></i>
+                    <h4>Remove</h4>
+                </li>
+            </ul>
+            <li class="headnav">
+                <i class="fa fa-envelope"></i>
+                <h4>Newsletter</h4>
+            </li>
+            <ul class="subnav hide">
+                <li a href="/">
+                    <i class="fa fa-plus"></i>
+                    <h4>Add</h4>
+                </li>
+                <li>
+                    <i class="fa fa-pencil"></i>
+                    <h4>Edit</h4>
+                </li>
+                <li>
+                    <i class="fa fa-times"></i>
+                    <h4>Remove</h4>
+                </li>
+            </ul>
         </ul>
     </div>
 
