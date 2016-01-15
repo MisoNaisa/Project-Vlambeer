@@ -72,39 +72,39 @@
                 echo "bringing back arcade since ". $vlambeer_year
                 ?>
 
-                <div class="tweets">
-                    <h3>Tweets <i class="fa fa-twitter"></i></h3>
-                    <div class="tweet">
-                        <div class="row">
-                        <img src="{{$twitter['tweetV']->profile_image_url}}" class="col-md-2">
-                        <div class="tweet-content col-md-10">
-                            <h3><a href="https://twitter.com/{{$twitter['tweetV']->screen_name}}">
-                                     {{$twitter['tweetV']->screen_name}}</a></h3>
-                            <p>{{$twitter['tweetV']->status->text}}</p>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="tweet">
-                        <div class="row">
-                        <img src="{{$twitter['tweetR']->profile_image_url}}" class="col-md-2">
-                            <div class="tweet-content col-md-10">
-                            <h3><a href="https://twitter.com/{{$twitter['tweetR']->screen_name}}">
-                                    {{$twitter['tweetR']->screen_name}}</a></h3>
-                            <p>{{$twitter['tweetR']->status->text}}</p>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="tweet">
-                        <div class="row">
-                        <img src="{{$twitter['tweetJ']->profile_image_url}}" class="col-md-2">
-                            <div class="tweet-content col-md-10">
-                                <h3><a href="https://twitter.com/{{$twitter['tweetJ']->screen_name}}">
-                                    {{$twitter['tweetJ']->screen_name}}</a></h3>
-                                <p>{{$twitter['tweetJ']->status->text}}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {{--<div class="tweets">--}}
+                    {{--<h3>Tweets <i class="fa fa-twitter"></i></h3>--}}
+                    {{--<div class="tweet">--}}
+                        {{--<div class="row">--}}
+                        {{--<img src="{{$twitter['tweetV']->profile_image_url}}" class="col-md-2">--}}
+                        {{--<div class="tweet-content col-md-10">--}}
+                            {{--<h3><a href="https://twitter.com/{{$twitter['tweetV']->screen_name}}">--}}
+                                     {{--{{$twitter['tweetV']->screen_name}}</a></h3>--}}
+                            {{--<p>{{$twitter['tweetV']->status->text}}</p>--}}
+                        {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="tweet">--}}
+                        {{--<div class="row">--}}
+                        {{--<img src="{{$twitter['tweetR']->profile_image_url}}" class="col-md-2">--}}
+                            {{--<div class="tweet-content col-md-10">--}}
+                            {{--<h3><a href="https://twitter.com/{{$twitter['tweetR']->screen_name}}">--}}
+                                    {{--{{$twitter['tweetR']->screen_name}}</a></h3>--}}
+                            {{--<p>{{$twitter['tweetR']->status->text}}</p>--}}
+                        {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="tweet">--}}
+                        {{--<div class="row">--}}
+                        {{--<img src="{{$twitter['tweetJ']->profile_image_url}}" class="col-md-2">--}}
+                            {{--<div class="tweet-content col-md-10">--}}
+                                {{--<h3><a href="https://twitter.com/{{$twitter['tweetJ']->screen_name}}">--}}
+                                    {{--{{$twitter['tweetJ']->screen_name}}</a></h3>--}}
+                                {{--<p>{{$twitter['tweetJ']->status->text}}</p>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
             </div>
 
             <div class="footer-right col-xs-3">
