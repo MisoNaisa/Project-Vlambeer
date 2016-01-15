@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
 
 use App;
 use Auth;
@@ -43,6 +44,7 @@ class InvoicesController extends Controller
      */
     public function store(Request $request)
     {
+
         $order = new Order;
         $order->user_id = Auth::user()->id;
         $order->order_date = date( 'Y-m-d H:i:s' );
@@ -64,7 +66,7 @@ class InvoicesController extends Controller
 
         }
 
-        return "https://www.sandbox.paypal.com/cgi-bin/webscr" ;
+        return Redirect('https://www.sandbox.paypal.com/cgi-bin/webscr');
 
     }
 
@@ -144,6 +146,7 @@ class InvoicesController extends Controller
                 'amount' => $order_product['quantity'],
                 'subtotal' => ((($product['price'] * 100)  * $order_product['quantity']) / 100),2,
                 'exbtw' => $sum += $order_product['quantity'] * $product['price'],2,
+                'product_id' => $order_product['product_id'],
             );
 
         }
