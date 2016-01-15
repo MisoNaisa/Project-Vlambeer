@@ -9,7 +9,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\CustomClasses\GiantBomb\Api as GiantBombApi;
 use Illuminate\Support\Facades\DB;
-
+use Auth;
 
 class PagesController extends Controller
 {
@@ -54,13 +54,14 @@ class PagesController extends Controller
 
     //SHOP
     public function create() {
+        if(Auth::check()) {
 
-        if(Auth::user()->role == 'admin'){
+            if (Auth::user()->role == 'admin') {
 
-            $item = '';
-            return view('shop.create', compact('item'));
+                $item = '';
+                return view('shop.create', compact('item'));
+            }
         }
-
     else{
             return view('errors.unauthorized');
         }

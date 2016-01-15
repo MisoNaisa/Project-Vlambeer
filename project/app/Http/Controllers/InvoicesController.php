@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Auth;
 
 class InvoicesController extends Controller
 {

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Auth;
 
 class AdminController extends Controller
 {
@@ -17,14 +18,16 @@ class AdminController extends Controller
     public function index()
     {
 
+        if(Auth::check()){
 
-      if(Auth::user()->role == 'admin'){
+            if(Auth::user()->role == 'admin'){
 
-            //code if user is admin
-          return view('layout.master_admin');
+                //code if user is admin
+                return view('layout.master_admin');
+            }
         }
-
         else{
+
             return view('errors.unauthorized');
         }
 
@@ -37,12 +40,14 @@ class AdminController extends Controller
      */
     public function create()
     {
-        if(Auth::user()->role == 'admin'){
+        if(Auth::check()) {
 
-            //code if user is admin
+            if (Auth::user()->role == 'admin') {
 
+                //code if user is admin
+
+            }
         }
-
         else{
             return view('errors.unauthorized');
         }
@@ -67,9 +72,11 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        if(Auth::user()->role == 'admin'){
+        if(Auth::check()){
 
-            //code if user is admin
+            if(Auth::user()->role == 'admin') {
+                //code if user is admin
+            }
 
         }
 
@@ -86,12 +93,14 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        if(Auth::user()->role == 'admin'){
+        if(Auth::check()) {
 
-            //code if user is admin
+            if (Auth::user()->role == 'admin') {
 
+                //code if user is admin
+
+            }
         }
-
         else{
             return view('errors.unauthorized');
         }
