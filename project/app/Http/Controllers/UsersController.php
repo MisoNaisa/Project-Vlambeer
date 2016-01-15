@@ -38,19 +38,20 @@ class UsersController extends Controller
 
     public function show($id)
     {
-        if(Auth::user()->id == $id){
+        if(Auth::check()) {
 
-            $user =  \App\User::where('id', $id)->first();
-            $orders = \App\Order::where('user_id', $id)->get();
+            if (Auth::user()->id == $id) {
 
-            foreach($orders as $order) {
+                $user = \App\User::where('id', $id)->first();
+                $orders = \App\Order::where('user_id', $id)->get();
 
-
-                $order_id = $order->order_id;
-
+                foreach ($orders as $order) {
 
 
-            }
+                    $order_id = $order->order_id;
+
+
+                }
 //            $order_pr = \App\Order_Product::where('order_id', $order_id)->get();
 //
 //
@@ -85,14 +86,14 @@ class UsersController extends Controller
 //        }
 
 
-
 //        dd( $names[0]->all()[0]->getAttribute( 'name' ) );
 //        dd( new \ReflectionObject( $names[0]->all()[0] ) );
 //
 //        dd($names[0]->toArray()[0]->attributes[0]->name);
 
 
-            return view('user.index', compact('user', 'orders'));
+                return view('user.index', compact('user', 'orders'));
+            }
         }
 
     else{
@@ -104,14 +105,15 @@ class UsersController extends Controller
 
     public function edit($id)
     {
+        if(Auth::check()) {
 
-        if(Auth::user()->id == $id){
+            if (Auth::user()->id == $id) {
 
-            $user =  \App\User::where('id', $id)->first();
+                $user = \App\User::where('id', $id)->first();
 
-            return view('user.edit', compact('user'));
+                return view('user.edit', compact('user'));
+            }
         }
-
         else{
             return view('errors.unauthorized');
         }
