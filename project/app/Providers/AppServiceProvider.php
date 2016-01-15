@@ -20,51 +20,51 @@ class AppServiceProvider extends ServiceProvider
     {
         session_start();
 
-        $tmp_path = "tmp.bkp";
-        $path = "twitter.bkp";
-
-        //if file is older then 15min, delete it
-        if( time() > filectime($path)+900){
-            unlink( $path );
-        }
-
-        // if file doesn't exists, search in twitter api and create temp file and twitter file
-        if ( !file_exists( $path ) )
-        {
-            $twitter = [
-                'tweetV' => \App\Tweet::getStatusVlambeer(),
-                'tweetR' => \App\Tweet::getStatusRami(),
-                'tweetJ' => \App\Tweet::getStatusJan()
-            ];
-
-            // create temp file file.
-            file_put_contents( $path,  serialize($twitter)  );
-            //give temp file read rights
-            chmod( $path, 0666 );
-
-
-        }
-
-        //get the info out of the file
-        $twitter = file_get_contents( $path );
-
-        //if file isn't empty, use file
-        if ( !empty( $twitter ) )
-        {
-
-            $twitter = unserialize($twitter);
-            //select file
-            touch( $tmp_path );
-            //copy twitter file to temp
-            copy( $path, $tmp_path );
-        }   else {
-            //if file is empty use temp file
-         
-            $twitter = file_get_contents( $tmp_path );
-            $twitter = unserialize($twitter);
-        }
-
-        view()->share('twitter', $twitter);
+//        $tmp_path = "tmp.bkp";
+//        $path = "twitter.bkp";
+//
+//        //if file is older then 15min, delete it
+//        if( time() > filectime($path)+900){
+//            unlink( $path );
+//        }
+//
+//        // if file doesn't exists, search in twitter api and create temp file and twitter file
+//        if ( !file_exists( $path ) )
+//        {
+//            $twitter = [
+//                'tweetV' => \App\Tweet::getStatusVlambeer(),
+//                'tweetR' => \App\Tweet::getStatusRami(),
+//                'tweetJ' => \App\Tweet::getStatusJan()
+//            ];
+//
+//            // create temp file file.
+//            file_put_contents( $path,  serialize($twitter)  );
+//            //give temp file read rights
+//            chmod( $path, 0666 );
+//
+//
+//        }
+//
+//        //get the info out of the file
+//        $twitter = file_get_contents( $path );
+//
+//        //if file isn't empty, use file
+//        if ( !empty( $twitter ) )
+//        {
+//
+//            $twitter = unserialize($twitter);
+//            //select file
+//            touch( $tmp_path );
+//            //copy twitter file to temp
+//            copy( $path, $tmp_path );
+//        }   else {
+//            //if file is empty use temp file
+//
+//            $twitter = file_get_contents( $tmp_path );
+//            $twitter = unserialize($twitter);
+//        }
+//
+//        view()->share('twitter', $twitter);
 
 //        Cookie cart set
         if ( empty($_COOKIE['cart']) ) {

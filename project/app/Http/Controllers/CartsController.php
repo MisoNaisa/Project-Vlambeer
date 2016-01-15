@@ -25,9 +25,10 @@ class CartsController extends Controller
 
             $cart[] = \App\Product::where('id', $cartItem[0])->first()->toArray();
 
-            $cart[$i]['quantity'] = $cookieCart[$i][1];
-            $cart[$i]['total'] = $cookieCart[$i][1] * $cart[$i]['price'];
-
+            $cart[$i]['quantity'] = $cartItem[1];
+            $cart[$i]['total'] = $cartItem[1] * $cart[$i]['price'];
+            $cart[$i]['color'] = $cartItem[2];
+            $cart[$i]['size'] = $cartItem[3];
             $i++;
 
         }

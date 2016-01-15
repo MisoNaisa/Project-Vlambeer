@@ -34,13 +34,14 @@ class ProductsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create() {
+        if(Auth::check()) {
 
-        if(Auth::user()->role == 'admin'){
+            if (Auth::user()->role == 'admin') {
 
-            $product = \App\Product::all();
-            return view('shop.create', compact('product'));
+                $product = \App\Product::all();
+                return view('shop.create', compact('product'));
+            }
         }
-
         else{
             return view('errors.unauthorized');
         }
@@ -108,12 +109,14 @@ class ProductsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
+        if(Auth::check()) {
 
-        if(Auth::user()->role == 'admin'){
+            if (Auth::user()->role == 'admin') {
 
-            $product = \App\Product::where('id', $id)->first();
+                $product = \App\Product::where('id', $id)->first();
 
-            return view('shop.edit', compact('product'));
+                return view('shop.edit', compact('product'));
+            }
         }
         else{
             return view('errors.unauthorized');

@@ -16,12 +16,15 @@
                 <td>Price</td>
                 <td>Total</td>
             </tr>
-
             @foreach($cart as $item)
                 <tr>
                     <td>{{ $item['id'] }}</td>
                     <td>{{ $item['name'] }}</td>
-                    <td></td>
+                    <td>
+                        @if (!empty($item['color']) || !empty($item['size']))
+                            {{$item['color']}} - {{$item['size']}}
+                        @endif
+                    </td>
                     <td>
                         {{ $item['quantity'] }}
                         <div data-id="{{ $item['id'] }}" class="btn btn-default destroy_this">Delete</div>
