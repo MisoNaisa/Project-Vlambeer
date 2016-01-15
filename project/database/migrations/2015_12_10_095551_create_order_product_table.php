@@ -19,6 +19,7 @@ class CreateOrderProductTable extends Migration
             $table->string('size', 20);
             $table->string('color', 20);
             $table->integer('quantity')->length(20);
+            $table->decimal('price')->length(5,2);
             $table->timestamps();
         });
 

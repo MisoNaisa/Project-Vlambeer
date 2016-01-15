@@ -73,11 +73,20 @@
             </div>
             <div class="user-info">
                 <ul>
-                    <li><?php echo $first_name . ' ' . $last_name ?></li>
-                    <li><?php echo $address . ' ' . $housenumber?></li>
-                    <li><?php echo $zipcode . ' ' . $city ?></li>
-                    <li><?php echo $country ?></li>
-                    <li><?php echo $phonenumber ?></li>
+                    <li>{{$first_name . ' ' . $last_name}}</li>
+                    <li>{{$address . ' ' . $housenumber}}</li>
+                    <li>{{$zipcode . ' ' . $city }}</li>
+                    <li>{{$country}}</li>
+                    <li>{{$phonenumber}}</li>
+                    @foreach($items as $item)
+                        <li>{{$item['name']}}</li>
+                        <li>{{$item['unitprice']}}</li>
+                        <li>{{$item['amount']}}</li>
+                        <li>{{$item['subtotal']}}</li>
+                        <li>{{ round($item['exbtw']*0.21, 2) }}</li>
+                        <li>{{ round($item['exbtw']*0.79, 2) }}</li>
+                        <li>{{ $item['exbtw'] }}</li>
+                    @endforeach
                 </ul>
             </div>
         </div>

@@ -55,7 +55,7 @@
         </table>
         @if(Auth::check())
             <div class="paypal pull-right">
-                <form name="_xclick" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+                <form name="_xclick" action="{{action('InvoicesController@store')}}" method="post">
                     <input type="hidden" name="cmd" value="_cart">
                     <input type="hidden" name="upload" value="1">
 
@@ -68,11 +68,12 @@
                     $i = 1;
                     ?>
                     @foreach($cart as $item)
-                        <input type="hidden" name="item_name_{{ $i }}" value="{{$item['name']}}" />
-                        <input type="hidden" name="amount_{{ $i }}" value="{{$item['price']}}" />
-                        <input type="hidden" name="quantity_{{ $i }}" value="{{$item['quantity']}}" />
+                        <input type="hidden" name="cart[products][{{$item['id']}}][amount]" value="{{$item['quantity']}}" />
                         <?php $i++; ?>
                     @endforeach
+                    <div class="form-group">
+                        <input class="btn btn-primary" type="submit">
+                    </div>
                     <input type="image" src="http://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
                 </form>
             </div>
