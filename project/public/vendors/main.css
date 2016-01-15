@@ -155,10 +155,10 @@ a {
     left: 0;
     z-index: -1;
     height: 100vh;
-    padding-top: 50px;
     text-align: center;
     color: white;
-    padding: 50px 0 0 0; }
+    padding: 50px 0 0 0;
+    width: 8.3333333%; }
     .admin .nav ul {
       padding: 0;
       list-style-type: none; }
@@ -167,11 +167,32 @@ a {
         cursor: pointer; }
         .admin .nav ul li .fa {
           font-size: 30px; }
-      .admin .nav ul :hover {
-        background: #008cba; }
+        .admin .nav ul li:hover {
+          background: #008cba; }
+    .admin .nav .headnav {
+      position: relative;
+      padding: 10px 0; }
+      .admin .nav .headnav a {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0; }
+    .admin .nav .subnav {
+      position: relative; }
+      .admin .nav .subnav a {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0; }
+    .admin .nav .navSelected {
+      background: #008C76  !important; }
   .admin .section {
     margin-top: 0;
-    padding: 0; }
+    padding: 0;
+    position: absolute;
+    right: 0; }
     .admin .section .container {
       margin: 0;
       width: 100%; }

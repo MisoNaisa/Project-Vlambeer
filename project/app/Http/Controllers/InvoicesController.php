@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App;
+use Auth;
+use App\Order;
+use App\Order_Product;
+use App\User;
+use App\Product;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -38,7 +43,29 @@ class InvoicesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $order = new Order;
+        $order->user_id = Auth::user()->id;
+        $order->order_date = date( 'Y-m-d H:i:s' );
+        $order->status = 0;
+        $order->save();
+
+        $products = $request['cart']['products'];
+
+        foreach($products as $id => $value){
+
+            $product = Product::find($id);
+
+            $order_product = new Order_Product();
+            $order_product->order_id = $order->id;
+            $order_product->product_id = $product->id;
+            $order_product->quantity = $value['amount'];
+            $order_product->price = $product->price;
+            $order_product->save();
+
+        }
+
+        return "https://www.sandbox.paypal.com/cgi-bin/webscr" ;
+
     }
 
     /**
@@ -97,17 +124,36 @@ class InvoicesController extends Controller
 
     public function invoice($id)
     {
-        $user = \App\Order::query()
-            ->join('users', 'order.user_id', '=', 'users.id')
-            ->where('order.order_id', $id)->first();
+        $order = Order::where('order_id',$id)->first();
 
-        $users = \App\Order::query()
-            ->join('users', 'order.user_id', '=', 'users.id')
-            ->where('order.order_id', $id)->first()->ToArray();
+        $users = User::find($order->user_id);
+        $user = User::find($order->user_id)->ToArray();
 
-        $data = view('user.invoice', $users);
+        $order_products = App\Order_Product::where('order_id', $id)->get()->ToArray();
+
+        $sum = 0;
+
+        $products = array();
+
+        foreach($order_products as $order_product){
+
+            $product = Product::find($order_product['product_id']);
+            $products[$product->id] = array(
+                'name' => $product['name'],
+                'unitprice' => $product['price'],
+                'amount' => $order_product['quantity'],
+                'subtotal' => ((($product['price'] * 100)  * $order_product['quantity']) / 100),2,
+                'exbtw' => $sum += $order_product['quantity'] * $product['price'],2,
+            );
+
+        }
+
+        $products['items'] = $products;
+        $order_products['items'] = $order_products;
+
+        $data = view('user.invoice', $user, $products, $order_products);
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadHTML($data);
-        return $pdf->stream(with($user));
+        return $pdf->stream(with($users));
     }
 }

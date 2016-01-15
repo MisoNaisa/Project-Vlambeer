@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('section')
-    <div class="container">
+    <div class="container admin">
         <div class="col-md-6 col-md-push-3">
             <h3>Edit Game</h3>
 
