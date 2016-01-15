@@ -8,3 +8,6 @@ project/Homestead.json
 
 project/vendor/composer/autoload_classmap.php
 .idea/workspace.xml
+project/public/tmp.bkp
+*.bkp
+project/public/twitter.bkp
