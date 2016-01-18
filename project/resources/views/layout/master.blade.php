@@ -41,6 +41,11 @@
                 <li><a href="/overview_games">Games</a></li>
                 <li><a href="/shop">Shop</a></li>
                 <li><a href="/contact">Contact</a></li>
+                @if(Auth::check())
+                    @if(Auth::user()->role == 'admin')
+                        <li><a href="/admin">Adminpanel</a></li>
+                    @endif
+                @endif
             </ul>
         </div>
     </div>

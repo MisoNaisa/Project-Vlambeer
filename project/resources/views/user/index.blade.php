@@ -1,10 +1,10 @@
 @extends('layout.master_admin')
 
 @section('section')
-    <span class="csrf user">
+    <span class="csrf">
         {{csrf_field()}}
     </span>
-    <div class="container user">
+    <div class="container">
         <h1>Users management</h1>
         <div class="debug">
             <form action="">
