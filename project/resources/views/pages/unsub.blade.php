@@ -18,7 +18,7 @@
                         Dolores error fugit illo minus mollitia possimus temporibus veniam voluptatibus?</p>
 
                         <a href="/" class="btn btn-primary">No</a>
-                        <a href="/unsub/1/unsubConfirmed" class="btn btn-primary">Yes</a>
+                        <a href="/unsub/{{ $user->id }}/unsubConfirmed" class="btn btn-primary">Yes</a>
 
                 </div>
         </div>
