@@ -103,7 +103,7 @@
 
                 </div>
 
-<<<<<<< HEAD
+
                 <div class="newsletter">
                     <div class="btn btn-primary">
                         Newsletter
@@ -111,8 +111,7 @@
                 </div>
 
                 </div>
-=======
->>>>>>> origin/master
+
             </div>
         </div>
 
