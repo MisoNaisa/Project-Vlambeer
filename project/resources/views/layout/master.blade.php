@@ -102,7 +102,7 @@
                     <a href="https://www.facebook.com/Vlambeer/?fref=ts">Like us on Facebook! <i class="fa fa-facebook-square"></i></a>
 
                 </div>
-                
+
                 <div class="newsletter">
                     <div class="btn btn-primary">
                         Newsletter

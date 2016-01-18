@@ -247,6 +247,10 @@ a {
       background: url("../img/superbreadbox.png"); }
     .section .game-post #gowebsite {
       background: url("../img/gowebsite.png"); }
+  .section .container .contact {
+    margin-top: 20px; }
+  .section .col-xs-6:nth-child(2) {
+    margin-top: 13px; }
   .section .picture {
     height: 75px;
     margin-top: 20px;
@@ -505,6 +509,10 @@ a {
     text-align: center; }
     .footer .contact-fb a {
       color: white; }
+  .footer .newsletter .btn-primary {
+    padding: 6px 13px;
+    margin-top: 10px;
+    border-radius: 5px; }
   .footer .footer-bottom {
     background-color: black;
     float: left;
