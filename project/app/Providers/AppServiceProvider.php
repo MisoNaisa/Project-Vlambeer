@@ -31,12 +31,20 @@ class AppServiceProvider extends ServiceProvider
 //        // if file doesn't exists, search in twitter api and create temp file and twitter file
 //        if ( !file_exists( $path ) )
 //        {
+
             $twitter = [
                 'tweetV' => \App\Tweet::getStatusVlambeer(),
                 'tweetR' => \App\Tweet::getStatusRami(),
                 'tweetJ' => \App\Tweet::getStatusJan()
             ];
 
+
+//            $twitter = [
+//                'tweetV' => \App\Tweet::getStatusVlambeer(),
+//                'tweetR' => \App\Tweet::gsetStatusRami(),
+//                'tweetJ' => \App\Tweet::getStatusJan()
+//            ];
+//
 //            // create temp file file.
 //            file_put_contents( $path,  serialize($twitter)  );
 //            //give temp file read rights
@@ -65,6 +73,7 @@ class AppServiceProvider extends ServiceProvider
 //        }
 //
         view()->share('twitter', $twitter);
+//        view()->share('twitter', $twitter);
 
 //        Cookie cart set
         if ( empty($_COOKIE['cart']) ) {

@@ -144,116 +144,111 @@ $(document).ready(function(){
         });
     });
 
-    if ($('.container').hasClass('cookie_cart_on')) {
-        // COOKIE ADD / CHANGE PRODUCT SCRIPT
-        var prevCart = JSON.parse($.cookie('cart')); // GET PREVIOUS OR STANDARD CART ON LOAD.
-        countProducts(); // SET CART COUNTER ON LOAD
+    // COOKIE ADD / CHANGE PRODUCT SCRIPT
+    var prevCart = JSON.parse( $.cookie('cart') ); // GET PREVIOUS OR STANDARD CART ON LOAD.
+    countProducts(); // SET CART COUNTER ON LOAD
 
+    $('.buy-now .add_to_cookie').click(function(){
+        var input = $(this).parent().find('.quantity');
+        var newQt = parseInt( input.val() );
+        var newProductId = parseInt( $(this).attr('id') );
+        var clothes = $(this).parent().find('.productoption');
+        if (clothes.length > 0) {
+            var clothesSize = clothes.find('.size').val();
+            var clothesColor = clothes.find('.color').val();
+        }
 
-        $('.buy-now .add_to_cookie').click(function () {
-            var input = $(this).parent().find('.quantity');
-            var newQt = parseInt(input.val());
-            var newProductId = parseInt($(this).attr('id'));
-            var clothes = $(this).parent().find('.productoption');
-            if (clothes.length > 0) {
-                var clothesSize = clothes.find('.size').val();
-                var clothesColor = clothes.find('.color').val();
-            }
+        // IF QUANTITY IS ABOVE 0
+        if (input.val() > 0) {
 
-            // IF QUANTITY IS ABOVE 0
-            if (input.val() > 0) {
+            // SET PREVIOUS OR STANDARD
+            prevCart = JSON.parse( $.cookie('cart') );
 
-                // SET PREVIOUS OR STANDARD
-                prevCart = JSON.parse($.cookie('cart'));
-
-                // ADD ALERT
-                if (input.val() == 1) {
-                    $.smkAlert({
-                        text: 'product toegevoegd',
-                        type: 'success',
-                        time: 5,
-                        position: 'top-left'
-                    });
-                } else {
-                    $.smkAlert({
-                        text: 'producten toegevoegd',
-                        type: 'success',
-                        time: 5,
-                        position: 'top-left'
-                    });
-                }
-
-
-                // SET INPUT TO 1 AFTER ADDING TO CART
-                input.val(1);
-
-                var alreadyExists = false;
-                $.each(prevCart, function (index, value) {
-                    var oldProductId = value[0];
-                    var oldQt = value[1];
-                    var oldColor = value[2];
-                    var oldSize = value[3];
-
-                    // IF item already exists
-                    if (oldProductId == newProductId && alreadyExists == false && oldColor == clothesColor && oldSize == clothesSize) {
-                        value[1] = oldQt + newQt;
-                        alreadyExists = true;
-                    }
-
+            // ADD ALERT
+            if (input.val() == 1) {
+                $.smkAlert({
+                    text: 'product toegevoegd',
+                    type: 'success',
+                    time: 5,
+                    position: 'top-left'
                 });
+            } else {
+                $.smkAlert({
+                    text: 'producten toegevoegd',
+                    type: 'success',
+                    time: 5,
+                    position: 'top-left'
+                });
+            }
 
-                // ADD / SAVE NEW PRODUCT ITEM
-                if (alreadyExists == false) {
-                    prevCart.push([
-                        newProductId,
-                        newQt,
-                        clothesColor,
-                        clothesSize
-                    ]);
+
+            // SET INPUT TO 1 AFTER ADDING TO CART
+            input.val(1);
+
+            var alreadyExists = false;
+            $.each(prevCart, function( index, value ) {
+                var oldProductId =  value[0];
+                var oldQt = value[1];
+                var oldColor = value[2];
+                var oldSize = value[3];
+
+                // IF item already exists
+                if (oldProductId == newProductId && alreadyExists == false && oldColor == clothesColor && oldSize == clothesSize) {
+                    value[1] = oldQt + newQt;
+                    alreadyExists = true;
                 }
 
-                // SET CART COUNTER
-                countProducts();
+            });
 
-                // SET COOKIE
-                $.cookie('cart', JSON.stringify(prevCart), {expires: 7, path: '/'});
+            // ADD / SAVE NEW PRODUCT ITEM
+            if (alreadyExists == false) {
+                prevCart.push([
+                    newProductId,
+                    newQt,
+                    clothesColor,
+                    clothesSize
+                ]);
+            }
 
-                console.log($.cookie('cart'));
+            // SET CART COUNTER
+            countProducts();
+
+            // SET COOKIE
+            $.cookie('cart', JSON.stringify(prevCart), { expires: 7, path: '/'});
+
+            console.log($.cookie('cart') );
+        }
+    });
+
+    // Destroy Product in cart
+    $('.shopping-cart .destroy_this').click(function(){
+        var cart = JSON.parse( $.cookie('cart') );
+        var cart_id = $(this).data('id');
+        var array_index = 0;
+        // Find array by id and get index
+        $.each(cart, function( index, value) {
+            if (value[0] == cart_id) {
+                array_index = index;
             }
         });
+        // Delete Array by index
+        cart.splice(array_index, 1);
 
-        // Destroy Product in cart
-        $('.shopping-cart .destroy_this').click(function () {
-            var cart = JSON.parse($.cookie('cart'));
-            var cart_id = $(this).data('id');
-            var array_index = 0;
-            // Find array by id and get index
-            $.each(cart, function (index, value) {
-                if (value[0] == cart_id) {
-                    array_index = index;
-                }
-            });
-            // Delete Array by index
-            cart.splice(array_index, 1);
+        //Set cookie
+        $.cookie('cart', JSON.stringify(cart), { expires: 7, path: '/'});
 
-            //Set cookie
-            $.cookie('cart', JSON.stringify(cart), {expires: 7, path: '/'});
+        // Delete table row also
+        $(this).closest('tr').remove();
 
-            // Delete table row also
-            $(this).closest('tr').remove();
-
-            // Alert
-            $.smkAlert({
-                text: 'successvol verwijderd',
-                type: 'success',
-                time: 5,
-                position: 'top-left'
-            });
-
+        // Alert
+        $.smkAlert({
+            text: 'successvol verwijderd',
+            type: 'success',
+            time: 5,
+            position: 'top-left'
         });
 
-    }
-
+    });
     // PRODUCT COUNTER
     function countProducts() {
         var i = 0;
@@ -276,135 +271,6 @@ $(document).ready(function(){
         if (i > 1) { input.val(i - 1) }
     });
 
-
-    //ADMINPANEL NAV
-        ClearSelected();
-
-    //IF SELECTED DONT CHANGE BACKGROUND
-    $('.admin').hover(function(){
-        if($('.admin').hasClass('navSelected')) {
-            $(this).css('background', '#008C76');
-            $(this).css('background', '');
-        }
-    });
-
-    //HEADNAV AND SUBNAV - REMOVE EXISTING "SELECTED" CLASS
-    function ClearSelected() {
-        $('.admin .headnav, .admin .headnav li, .admin .subnav, .admin .subnav li, .admin .home').removeClass('navSelected');
-    }
-
-    //HOME - REMOVE EXISTING "SELECTED" CLASS
-    function ClearSelectedHome() {
-        $('.admin .home').removeClass('navSelected');
-    }
-
-    //GIVE SELECTED BUTTON "SELECTED" BACKGROUND
-    function NavSelected(){
-        //RESET FUNCTION
-        if($('.admin .headnav').hasClass('navSelected')) {
-            ClearSelectedHome();
-        } else {
-            $('.admin .headnav').addClass('navSelected');
-            ClearSelectedHome();
-        }
-
-        //IF CLICKED GIVE "SELECTED" CLASS AND REMOVE EXISTING ONE
-        $('.admin .headnav li, .admin .subnav li').click(function(){
-            ClearSelected();
-            $(this).addClass('navSelected');
-        });
-    }
-
-    //NAV - HOME BUTTON
-    $('.admin .home').click(function () {
-        ClearSelected();
-
-        var homeOptionOne = "Vlambeer website";
-        var homeOptionTwo = "Home";
-
-        //CHANGE HOME BUTTON TO REDIRECT (VLAMBEER SITE OR ADMINPANEL HOME)
-        if($('.admin .home h4').html() === homeOptionOne) {
-            //wanneer gelijk staat aan vlambeer website
-            window.location.href = "http://vlambeer.dev";
-        }else {
-            //wanneer gelijk staat aan home
-            if($('.admin .headnav').hasClass('OneTimeOnly')) {
-                $('.admin .headnav').removeClass('OneTimeOnly');
-            }
-
-            if($('.admin .headnav').hasClass('hide')) {
-                $('.admin .headnav').removeClass('hide');
-                $('.admin .headnav').fadeToggle('2000', 'linear').delay('200');
-                $('.admin .subnav').addClass('hide');
-                $('.admin .headnav').fadeToggle('2000', 'linear');
-            }
-        }
-        //HIERDOOR KOMT DE FADE TOGGLE ALS JE NAAR VLAMBEER GAAT    ============================
-        if($('.admin .home h4').html(homeOptionOne)) {
-            $('.admin .home h4').html(homeOptionOne);
-        }
-        else {
-            $('.admin .home').fadeToggle('2000', 'linear').delay('200');
-            $('.admin .home h4').html(homeOptionOne);
-            $('.admin .home').fadeToggle('2000', 'linear');
-        }
-        console.log('check regel 351');
-        //DIT STUK DUS NOG FIXEN!
-    });
-
-    //NAV - CHANGE CATEGORY
-    $('.admin .headnav').click(function () {
-        //CHANGE HOME BUTTON TO OPTION 2
-
-        //NAV IF ALREADY SELECTED DO NOTHING
-        if($('.admin .headnav').hasClass('OneTimeOnly')) {
-            return false;
-        }
-        else {
-            var homeOptionTwo = "Home";
-            $('.admin .home').fadeToggle('2000', 'linear').delay('200');
-            $('.admin .home h4').html(homeOptionTwo);
-            $('.admin .home').fadeToggle('2000', 'linear');
-        }
-
-        //CATEGORY CHANGE WITH FADE
-        $('.admin .headnav').fadeToggle('2000', 'linear').delay('200');
-        $('.admin .headnav').addClass('hide');
-        $(this).addClass('OneTimeOnly');
-        $(this).removeClass('hide')
-            .queue(function(){
-                $(this).closest('li').next().removeClass('hide');
-                NavSelected();
-                $(this).dequeue();
-            });
-        $('.admin .headnav').fadeToggle('2000', 'linear');
-
-        //LOCATE THE ADMIN PAGES
-       var location = $(this).find('h4').html();
-
-        $('.admin li[href="location"]').click(function(){
-            alert('Sign new href executed.');
-        });
-
-        switch(location){
-            case 'Users':
-                window.location.href = "/admin/users";
-                console.log('user');
-                break;
-            case 'Shop':
-                window.location.href = "admin/shop";
-                console.log('shop');
-                break;
-            case 'Products':
-                window.location.href = "/products";
-                console.log('product');
-                break;
-            case 'Games':
-                window.location.href = "/games";
-                console.log('game');
-                break;
-        }
-    });
 
 
 });

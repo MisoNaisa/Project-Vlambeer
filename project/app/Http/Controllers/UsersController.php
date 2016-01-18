@@ -14,9 +14,29 @@ class UsersController extends Controller
 {
 
 
-    public function index($id)
+    public function index()
     {
 
+        if(Auth::check()) {
+
+            if (Auth::user()->role == 'admin') {
+
+                $users =  \App\User::all();
+
+                return view('user.index', compact('users'));
+
+            }
+            else{
+
+                return view('errors.unauthorized');
+            }
+        }
+
+        else{
+            return view('errors.unauthorized');
+
+
+        }
 
 
     }
@@ -92,12 +112,16 @@ class UsersController extends Controller
 //        dd($names[0]->toArray()[0]->attributes[0]->name);
 
 
-                return view('user.index', compact('user', 'orders'));
+                return view('user.show', compact('user', 'orders'));
+            }
+            else{
+
+                return view('errors.unauthorized');
             }
         }
 
     else{
-            return view('errors.unauthorized');
+        return view('errors.unauthorized');
         }
 
     }

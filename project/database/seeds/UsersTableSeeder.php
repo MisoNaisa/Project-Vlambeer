@@ -27,6 +27,4 @@ class UsersTableSeeder extends Seeder
             'country'           => 'Netherlands'
         ]);
     }
-
-
 }

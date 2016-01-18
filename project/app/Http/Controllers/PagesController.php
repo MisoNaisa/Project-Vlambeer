@@ -19,7 +19,6 @@ class PagesController extends Controller
 
         $games = \App\Game::all();
 
-//        dd($games);
         return view('pages.index', compact('games'));
     }
 

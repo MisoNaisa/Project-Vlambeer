@@ -79,13 +79,16 @@
                     <li>{{$country}}</li>
                     <li>{{$phonenumber}}</li>
                     @foreach($items as $item)
+                        <li>{{$item['product_id']}}</li>
                         <li>{{$item['name']}}</li>
                         <li>{{$item['unitprice']}}</li>
                         <li>{{$item['amount']}}</li>
                         <li>{{$item['subtotal']}}</li>
+                    @if($item === end($items))
                         <li>{{ round($item['exbtw']*0.21, 2) }}</li>
                         <li>{{ round($item['exbtw']*0.79, 2) }}</li>
                         <li>{{ $item['exbtw'] }}</li>
+                        @endif
                     @endforeach
                 </ul>
             </div>

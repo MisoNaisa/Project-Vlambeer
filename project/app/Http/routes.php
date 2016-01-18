@@ -32,7 +32,7 @@ Route::resource('admin/games', 'GamesController');
 Route::delete('admin/games/{id}/destroy', 'GamesController@destroy'); // to work with ajax
 
 Route::resource('cart', 'CartsController');
-Route::get('invoices', 'InvoicesController@store');
+Route::post('invoices', 'InvoicesController@store');
 
 //User
 Route::resource('/user', 'UsersController');
