@@ -17,6 +17,8 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function index() {
 
         $productArray = \App\Product::all();
@@ -25,7 +27,9 @@ class ProductsController extends Controller
 
         $gameInfo = $games->getAllGameInfoById(34402);
 
+//        return view('shop.main', compact('gameInfo', 'productArray'));
         return view('shop.index', compact('gameInfo', 'productArray'));
+
     }
 
     /**

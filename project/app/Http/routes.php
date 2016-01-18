@@ -24,6 +24,7 @@ Route::get('/unsub/{id}/unsubConfirmed', 'PagesController@unsubConfirm');
 Route::put('/subscribe/{email}', 'PagesController@subscribe');
 
 Route::resource('/shop', 'ProductsController');
+Route::resource('admin/shop', 'ProductsController');
 Route::get('/shop/cat/{cat}', 'ProductsController@category' );
 Route::resource('admin/orders', 'OrdersController');
 
@@ -34,8 +35,10 @@ Route::delete('admin/games/{id}/destroy', 'GamesController@destroy'); // to work
 Route::resource('cart', 'CartsController');
 Route::post('invoices', 'InvoicesController@store');
 
+
 //User
 Route::resource('/user', 'UsersController');
+Route::resource('admin/user', 'UsersController');
 
 //Admin
 Route::resource('/admin', 'AdminController');
