@@ -20,6 +20,7 @@ class AppServiceProvider extends ServiceProvider
     {
         session_start();
 
+<<<<<<< HEAD
 //        $tmp_path = "tmp.bkp";
 //        $path = "twitter.bkp";
 //
@@ -74,6 +75,8 @@ class AppServiceProvider extends ServiceProvider
 //
         view()->share('twitter', $twitter);
 //        view()->share('twitter', $twitter);
+=======
+>>>>>>> origin/master
 
 //        Cookie cart set
         if ( empty($_COOKIE['cart']) ) {

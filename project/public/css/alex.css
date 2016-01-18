@@ -101,5 +101,8 @@ input {
     margin-right: 10px;
 }
 
+.twitter, .footer-right {
+    margin: 10px 0;
+}
 
 
