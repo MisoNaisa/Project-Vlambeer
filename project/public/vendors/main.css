@@ -126,7 +126,7 @@ a {
           color: gainsboro; }
 
 .admin {
-  background: #f9f9f9; }
+  background: rgba(0, 0, 0, 0.8); }
   .admin .admin-header {
     height: 50px;
     background: #23282d;
@@ -163,13 +163,27 @@ a {
       list-style-type: none; }
       .admin .nav ul li {
         padding: 10px;
-        cursor: pointer; }
+        cursor: pointer;
+        position: relative; }
         .admin .nav ul li .fa {
           font-size: 30px; }
-        .admin .nav ul li ul li:hover {
-          background: #008cba; }
-      .admin .nav ul :hover {
+        .admin .nav ul li a {
+          color: white;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0; }
+      .admin .nav ul li:hover {
         background: #008cba; }
+    .admin .nav .headnav {
+      opacity: 0; }
+    .admin .nav .navSelected {
+      background: #00494B; }
+    .admin .nav .home {
+      opacity: 0; }
+    .admin .nav .subnav {
+      opacity: 0; }
   .admin .section {
     margin-top: 0;
     padding: 0;
