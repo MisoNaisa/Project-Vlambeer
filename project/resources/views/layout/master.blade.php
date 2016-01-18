@@ -62,52 +62,24 @@
 
 <!-- Begin Footer -->
     <div class="container">
-    <div class="footer">
-        <div class="row">
-            <div class="footer-left col-xs-8">
-                <p>VLAMBEER IS A DUTCH INDEPENDENT GAME STUDIO</p>
-                <p>made up of Rami Ismail and Jan Willem Nijman,
-                <?php
-                $vlambeer_year = '1' . rand(7,9) . rand(2,8) . rand(1,9);
-                echo "bringing back arcade since ". $vlambeer_year
-                ?>
+        <div class="footer">
+            <div class="row">
+                <div class="footer-left col-xs-8">
+                    <p>VLAMBEER IS A DUTCH INDEPENDENT GAME STUDIO</p>
+                    <p>made up of Rami Ismail and Jan Willem Nijman,
+                    <?php
+                    $vlambeer_year = '1' . rand(7,9) . rand(2,8) . rand(1,9);
+                    echo "bringing back arcade since ". $vlambeer_year
+                    ?>
 
-                {{--<div class="tweets">--}}
-                    {{--<h3>Tweets <i class="fa fa-twitter"></i></h3>--}}
-                    {{--<div class="tweet">--}}
-                        {{--<div class="row">--}}
-                        {{--<img src="{{$twitter['tweetV']->profile_image_url}}" class="col-md-2">--}}
-                        {{--<div class="tweet-content col-md-10">--}}
-                            {{--<h3><a href="https://twitter.com/{{$twitter['tweetV']->screen_name}}">--}}
-                                     {{--{{$twitter['tweetV']->screen_name}}</a></h3>--}}
-                            {{--<p>{{$twitter['tweetV']->status->text}}</p>--}}
-                        {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="tweet">--}}
-                        {{--<div class="row">--}}
-                        {{--<img src="{{$twitter['tweetR']->profile_image_url}}" class="col-md-2">--}}
-                            {{--<div class="tweet-content col-md-10">--}}
-                            {{--<h3><a href="https://twitter.com/{{$twitter['tweetR']->screen_name}}">--}}
-                                    {{--{{$twitter['tweetR']->screen_name}}</a></h3>--}}
-                            {{--<p>{{$twitter['tweetR']->status->text}}</p>--}}
-                        {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="tweet">--}}
-                        {{--<div class="row">--}}
-                        {{--<img src="{{$twitter['tweetJ']->profile_image_url}}" class="col-md-2">--}}
-                            {{--<div class="tweet-content col-md-10">--}}
-                                {{--<h3><a href="https://twitter.com/{{$twitter['tweetJ']->screen_name}}">--}}
-                                    {{--{{$twitter['tweetJ']->screen_name}}</a></h3>--}}
-                                {{--<p>{{$twitter['tweetJ']->status->text}}</p>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            </div>
 
-            <div class="footer-right col-xs-3">
+                    <div class="twitter">
+                        <a class="twitter-timeline" width="100%" height="300" data-dnt="true" href="https://twitter.com/SGvdBosch/lists/vlambeer" data-widget-id="687944200990670848" data-chrome="noheader"></a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    </div>
+
+                </div>
+            <div class="footer-right col-xs-4">
                 <h3>Contact</h3>
                 <div class="contact-default-styling contact-rami">
                     <p>Rami Ismail</p>
@@ -131,19 +103,19 @@
 
                 </div>
 
-                </div>
             </div>
+        </div>
 
-            <div class="footer-bottom">
-                <div class="row">
-                    <div class="contact-info col-md-9">
-                        <p><a href="mailto:info@vlambeer.com">info@vlambeer.com</a> | Neude 5, 3512 AD, Utrecht, the Netherlands | +31621206363</p>
-                    </div>
-                    <div class="terror col-md-2">
-                        <p>Made by &#169; TerrorTeddies</p>
-                    </div>
+        <div class="footer-bottom">
+            <div class="row">
+                <div class="contact-info col-md-9">
+                    <p><a href="mailto:info@vlambeer.com">info@vlambeer.com</a> | Neude 5, 3512 AD, Utrecht, the Netherlands | +31621206363</p>
+                </div>
+                <div class="terror col-md-2">
+                    <p>Made by &#169; TerrorTeddies</p>
                 </div>
             </div>
+        </div>
     </div>
     <!-- End Footer-->
 </div>
