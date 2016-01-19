@@ -58,15 +58,8 @@
         </table>
         @if(Auth::check())
             <div class="paypal pull-right">
-                <form name="_xclick" action="{{action('InvoicesController@store')}}" method="post">
-                    <input type="hidden" name="cmd" value="_cart">
-                    <input type="hidden" name="upload" value="1">
-
-                    {{--<input type="hidden" name="cmd" value="_xclick">--}}
-                    <input type="hidden" name="business" value="sjoerd3008-facilitator@hotmail.com">
-                    <input type="hidden" name="currency_code" value="EUR">
-                    <input type="hidden" name="return" value="http://vlambeer.dev/shop/paid">
-                    <input type="hidden" name="cancel_return" value="http://vlambeer.dev/shop/payment_failed">
+                <form action="{{action('InvoicesController@store')}}" method="post">
+                    {{csrf_field()}}
                     <?php
                     $i = 1;
                     ?>
@@ -77,7 +70,6 @@
                     <div class="form-group">
                         <input class="btn btn-primary" type="submit">
                     </div>
-                    <input type="image" src="http://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
                 </form>
             </div>
         @else

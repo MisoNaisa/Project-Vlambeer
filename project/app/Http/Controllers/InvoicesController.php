@@ -13,6 +13,7 @@ use App\User;
 use App\Product;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\CustomClasses\Paypal\paypal as Paypal;
 
 class InvoicesController extends Controller
 {
@@ -45,10 +46,57 @@ class InvoicesController extends Controller
     public function store(Request $request)
     {
 
+
+        $products = $request['cart']['products'];
+
+
+
+        //Paypal check out
+        //Our request parameters
+        $requestParams = array(
+            'RETURNURL' => 'http://vlambeer.dev/shop/paid',
+            'CANCELURL' => 'http://vlambeer.dev/shop/payment_failed'
+        );
+
+        $items = array();
+        $i=0;
+        foreach($products as $id => $value){
+
+            $product = Product::find($id);
+
+
+
+
+
+            $temp = array(
+                'L_PAYMENTREQUEST_0_NAME' . $i => $product['name'],
+                'L_PAYMENTREQUEST_0_AMT' . $i => $product['price'],
+                'L_PAYMENTREQUEST_0_QTY' . $i => $value['amount']
+            );
+
+
+            $items = array_merge($items, $temp);
+            $i = $i + 1;
+            $total[] =  $product['price'];
+
+        }
+
+        $orderParams = array(
+            'PAYMENTREQUEST_0_AMT' => array_sum($total),
+
+            'PAYMENTREQUEST_0_CURRENCYCODE' => 'EUR',
+            'PAYMENTREQUEST_0_ITEMAMT' => array_sum($total)
+        );
+
+        $paypal = new Paypal();
+        $response = $paypal -> request('SetExpressCheckout',$requestParams + $orderParams + $items);
+
+
         $order = new Order;
         $order->user_id = Auth::user()->id;
         $order->order_date = date( 'Y-m-d H:i:s' );
         $order->status = 0;
+        $order->paypal_token = $response['TOKEN'];
         $order->save();
 
         $products = $request['cart']['products'];
@@ -66,7 +114,14 @@ class InvoicesController extends Controller
 
         }
 
-        return Redirect('https://www.sandbox.paypal.com/cgi-bin/webscr');
+        if(is_array($response) && $response['ACK'] == 'Success') { //Request successful
+
+            $token = $response['TOKEN'];
+
+            return redirect('https://www.sandbox.paypal.com/webscr?cmd=_express-checkout&token=' . urlencode($token));
+
+        }
+
 
     }
 

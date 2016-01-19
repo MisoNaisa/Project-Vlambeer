@@ -13,11 +13,12 @@
         </ul>
     </div>
 
+
     <div class="row">
         @foreach($productArray as $product)
             <div class="col-sm-4 col-lg-4 col-md-4 product-item">
                 <div class="thumbnail">
-                    <a href="shop/product/{{$product['id']}}" ></a>
+                    <a href="/shop/product/{{$product['id']}}" ></a>
                     @if($product['sale'] === 1)
                         <div id="sale"></div>
                     @else
