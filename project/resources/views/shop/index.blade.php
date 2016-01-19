@@ -7,8 +7,8 @@
 @section('content')
     <div class="flexslider">
         <ul class="slides">
-            @foreach($gameInfo['images'] as $img)
-                <li><img src="{{ $img['medium_url'] }}" /></li>
+            @foreach($productimg as $img)
+                <li><img src="{{ $img['img'] }}" /></li>
             @endforeach
         </ul>
     </div>

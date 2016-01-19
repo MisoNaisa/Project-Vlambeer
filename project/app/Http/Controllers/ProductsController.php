@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\CustomClasses\GiantBomb\Api as GiantBombApi;
 use Illuminate\Support\Facades\App;
 use Auth;
+use App\Product;
 
 class ProductsController extends Controller
 {
@@ -27,8 +28,10 @@ class ProductsController extends Controller
 
         $gameInfo = $games->getAllGameInfoById(34402);
 
+        $productimg = Product::where('sale', 1)->get();
+
 //        return view('shop.main', compact('gameInfo', 'productArray'));
-        return view('shop.index', compact('gameInfo', 'productArray'));
+        return view('shop.index', compact('gameInfo', 'productArray', 'productimg'));
 
     }
 
