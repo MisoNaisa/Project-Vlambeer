@@ -45,9 +45,10 @@ class InvoicesController extends Controller
      */
     public function store(Request $request)
     {
-
-
-        $products = $request['cart']['products'];
+        $products = [];
+        for($i=0; $i<count($request['cart']['products']); $i++){
+            $products = array_merge($products ,$request['cart']['products'][$i]);
+        }
 
 
 
@@ -60,16 +61,22 @@ class InvoicesController extends Controller
 
         $items = array();
         $i=0;
+
         foreach($products as $id => $value){
 
-            $product = Product::find($id);
+            $product = Product::find($value['id']);
 
 
+            if(!(Empty($value['color'])) || !(Empty($value['size']))){
+                $product_name = $product['name']. ' ' .  $value['color'] . ' / ' . $value['size'];
+            }   else {
+                $product_name = $product['name'];
 
+            }
 
 
             $temp = array(
-                'L_PAYMENTREQUEST_0_NAME' . $i => $product['name'],
+                'L_PAYMENTREQUEST_0_NAME' . $i => $product_name,
                 'L_PAYMENTREQUEST_0_AMT' . $i => $product['price'],
                 'L_PAYMENTREQUEST_0_QTY' . $i => $value['amount']
             );
@@ -77,13 +84,12 @@ class InvoicesController extends Controller
 
             $items = array_merge($items, $temp);
             $i = $i + 1;
-            $total[] =  $product['price'];
+            $total[] =  $product['price'] * $value['amount'];
 
         }
 
         $orderParams = array(
             'PAYMENTREQUEST_0_AMT' => array_sum($total),
-
             'PAYMENTREQUEST_0_CURRENCYCODE' => 'EUR',
             'PAYMENTREQUEST_0_ITEMAMT' => array_sum($total)
         );
@@ -91,28 +97,38 @@ class InvoicesController extends Controller
         $paypal = new Paypal();
         $response = $paypal -> request('SetExpressCheckout',$requestParams + $orderParams + $items);
 
-
         $order = new Order;
         $order->user_id = Auth::user()->id;
         $order->order_date = date( 'Y-m-d H:i:s' );
         $order->status = 0;
-        $order->paypal_token = $response['TOKEN'];
+      /*  $order->paypal_token = $response['TOKEN'];*/
         $order->save();
 
-        $products = $request['cart']['products'];
+
 
         foreach($products as $id => $value){
 
-            $product = Product::find($id);
 
-            $order_product = new Order_Product();
-            $order_product->order_id = $order->id;
-            $order_product->product_id = $product->id;
-            $order_product->quantity = $value['amount'];
-            $order_product->price = $product->price;
-            $order_product->save();
 
-        }
+                $product = Product::find($value['id']);
+
+                $order_product = new Order_Product();
+                $order_product->order_id = $order->id;
+                $order_product->product_id = $value['id'];
+                $order_product->quantity = $value['amount'];
+
+                if (!(Empty($value['color']))) {
+                    $order_product->color = $value['color'];
+                }
+                if (!(Empty($value['size']))) {
+                    $order_product->size = $value['size'];
+                }
+
+
+                $order_product->price = $product->price;
+                $order_product->save();
+            }
+
 
         if(is_array($response) && $response['ACK'] == 'Success') { //Request successful
 

@@ -5,7 +5,6 @@
 
 
     $token = $_GET['token'];
-
     $order = \App\Order::where('paypal_token', $token)->first();
     $id = $order->order_id;
     dd($order = \App\Order::find( $id));

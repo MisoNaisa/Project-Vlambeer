@@ -60,12 +60,12 @@
             <div class="paypal pull-right">
                 <form action="{{action('InvoicesController@store')}}" method="post">
                     {{csrf_field()}}
-                    <?php
-                    $i = 1;
-                    ?>
-                    @foreach($cart as $item)
-                        <input type="hidden" name="cart[products][{{$item['id']}}][amount]" value="{{$item['quantity']}}" />
-                        <?php $i++; ?>
+
+                    @foreach($cart as $id => $item)
+                        <input type="hidden" name="cart[products][{{$id}}][{{$item['id']}}][amount]" value="{{$item['quantity']}}" />
+                        <input type="hidden" name="cart[products][{{$id}}][{{$item['id']}}][size]" value="{{$item['size']}}" />
+                        <input type="hidden" name="cart[products][{{$id}}][{{$item['id']}}][color]" value="{{$item['color']}}" />
+                        <input type="hidden" name="cart[products][{{$id}}][{{$item['id']}}][id]" value="{{$item['id']}}" />
                     @endforeach
                     <div class="form-group">
                         <input class="btn btn-primary" type="submit">
