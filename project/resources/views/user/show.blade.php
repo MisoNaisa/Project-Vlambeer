@@ -72,10 +72,10 @@
                             ?>
 
                             <tr>
-                                <td>{{ $order['order_id'] }}</td>
+                                <td>{{ $order['id'] }}</td>
                                 <td>{{$order['order_date']}}</td>
                                 <td>{{$status}}</td>
-                                <td><a href="/invoices/{{$order['order_id']}}" class="btn btn-warning">PDF</a></td>
+                                <td><a href="/invoices/{{$order['id']}}" class="btn btn-warning">PDF</a></td>
                             </tr>
 
                         @endforeach

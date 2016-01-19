@@ -178,6 +178,13 @@ class ProductsController extends Controller
     }
 
     public function paid() {
+        $token = $_GET['token'];
+        $order = \App\Order::where('paypal_token', $token)->first();
+        $id = $order['order_id'];
+//        $order = \App\Order::where('order_id', $id)->first();
+//        $order = \App\Order::find($id)->first();
+        $order->status = 1;
+        $order->save();
 
         return view('shop.paid');
     }

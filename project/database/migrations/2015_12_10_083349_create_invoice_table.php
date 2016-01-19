@@ -22,7 +22,7 @@ class CreateInvoiceTable extends Migration
         });
 
         Schema::table('invoice', function($table) {
-            $table->foreign('order_id')->references('order_id')->on('order');
+            $table->foreign('order_id')->references('id')->on('order');
         });
     }
 

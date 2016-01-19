@@ -13,9 +13,10 @@ class CreateOrderTable extends Migration
     public function up()
     {
         Schema::create('order', function (Blueprint $table) {
-            $table->increments('order_id')->length(10)->unsigned();
+            $table->increments('id')->length(10)->unsigned();
             $table->integer('user_id')->unsigned();
             $table->dateTime('order_date');
+            $table->text('paypal_token');
             $table->string('status', 60);
             $table->timestamps();
         });

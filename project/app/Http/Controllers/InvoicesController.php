@@ -101,8 +101,7 @@ class InvoicesController extends Controller
         $order->user_id = Auth::user()->id;
         $order->order_date = date( 'Y-m-d H:i:s' );
         $order->status = 0;
-
-      /*  $order->paypal_token = $response['TOKEN'];*/
+        $order->paypal_token = $response['TOKEN'];
 
         $order->save();
 
@@ -199,7 +198,7 @@ class InvoicesController extends Controller
 
     public function invoice($id)
     {
-        $order = Order::where('order_id',$id)->first();
+        $order = Order::where('id',$id)->first();
 
         $users = User::find($order->user_id);
         $user = User::find($order->user_id)->ToArray();
