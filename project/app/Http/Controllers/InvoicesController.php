@@ -101,7 +101,9 @@ class InvoicesController extends Controller
         $order->user_id = Auth::user()->id;
         $order->order_date = date( 'Y-m-d H:i:s' );
         $order->status = 0;
+
       /*  $order->paypal_token = $response['TOKEN'];*/
+
         $order->save();
 
 
