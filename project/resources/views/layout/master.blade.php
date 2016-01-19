@@ -109,9 +109,9 @@
                 </div>
 
                 <div class="newsletter">
-                    <div class="btn btn-primary">
+                    <a href="http://eepurl.com/bNkBpP" class="btn btn-primary" >
                         Newsletter
-                    </div>
+                    </a>
                 </div>
 
                 </div>

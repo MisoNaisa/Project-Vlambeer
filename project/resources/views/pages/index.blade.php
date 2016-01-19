@@ -2,9 +2,9 @@
 
 @section('section')
     <div class="container">
-        @if (Session::has('flash_message'))
-            <div class="alert alert-success">{{Session::get('flash_message')}}</div>
-        @endif
+        {{--@if (Session::has('flash_message'))--}}
+            {{--<div class="alert alert-success">{{Session::get('flash_message')}}</div>--}}
+        {{--@endif--}}
         @foreach($games as $game)
             <div class="game-post clickable" onclick="javascript:location.href='info_game/{{$game['id']}}'">
                 <div class="img" style="background: url({{$game['game_background_img']}})"> </div>
