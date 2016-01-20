@@ -106,7 +106,7 @@
                             <td>{{$item['subtotal']}}</td>
                         </tr>
                     @if($item === end($items))
-                        <tr style="margin-top: 10px;">
+                        <tr>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -141,10 +141,4 @@
         </div>
     </div>
 </body>
-</html>
-
-{{--//ADMINPANEL--}}
-
-{{--//FADES IN THE HEADNAV ON PAFE LOAD--}}
-{{--$('.admin .headnav, .admin .home, .admin .subnav, .admin .section').css('opacity', 0);--}}
-{{--$('.admin .headnav, .admin .home, .admin .subnav, .admin .section').fadeTo(1000, 1);--}}
+</html>#
