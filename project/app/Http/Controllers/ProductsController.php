@@ -178,20 +178,35 @@ class ProductsController extends Controller
     }
 
     public function paid() {
+
+        //set status on payed
         $token = $_GET['token'];
         $order = \App\Order::where('paypal_token', $token)->first();
-        $id = $order['order_id'];
-//        $order = \App\Order::where('order_id', $id)->first();
-//        $order = \App\Order::find($id)->first();
         $order->status = 1;
         $order->save();
+        $status = true;
 
-        return view('shop.paid');
+        //refresh cookie
+        setcookie("cart", '[]', time() + (86400 * 5) , '/'); // 86400 = 1 day
+
+
+        //get user and order info
+        $user_id = $order->user_id;
+        $user = \App\User::where('id', $user_id)->first();
+        $orders = \App\Order::where('user_id', $user_id)->get();
+
+
+        return view('user.show', compact('status','user', 'orders'));
     }
 
     public function payment_failed() {
+        $status = false;
 
-        return view('shop.payment_failed');
+        //get user and order info
+        $user_id = $order->user_id;
+        $user = \App\User::where('id', $user_id)->first();
+        $orders = \App\Order::where('user_id', $user_id)->get();
+        return view('user.show', compact('status','user', 'orders'));
     }
 
     public function category($cat){

@@ -2,7 +2,8 @@
 
 @section('section')
 
-    <h1>Payed</h1>
-    <p>Paymend went succesfull</p>
-
+    <div class="container">
+        <h1>Payed</h1>
+        <p>Paymend went succesfull</p>
+    </div>
 @stop

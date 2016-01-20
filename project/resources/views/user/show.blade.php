@@ -1,6 +1,12 @@
 @extends('layout.master')
 
 @section('section')
+
+    @if(!(empty($status)))
+        <script>
+            messageOrder({{$status}});
+        </script>
+    @endif
     <div class="container">
         <div style="padding-left: 19px;" class="col-md-12">
             @if($user->insertion)

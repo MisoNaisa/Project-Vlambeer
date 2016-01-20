@@ -64,14 +64,14 @@ class UsersController extends Controller
 
                 $user = \App\User::where('id', $id)->first();
                 $orders = \App\Order::where('user_id', $id)->get();
-
-                foreach ($orders as $order) {
-
-
-                    $order_id = $order->order_id;
-
-
-                }
+//
+//                foreach ($orders as $order) {
+//
+//
+//                    $order_id = $order->order_id;
+//
+//
+//                }
 //            $order_pr = \App\Order_Product::where('order_id', $order_id)->get();
 //
 //
