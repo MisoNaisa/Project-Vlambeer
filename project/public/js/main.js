@@ -145,8 +145,10 @@ $(document).ready(function(){
     });
 
     // COOKIE ADD / CHANGE PRODUCT SCRIPT
-    var prevCart = JSON.parse( $.cookie('cart') ); // GET PREVIOUS OR STANDARD CART ON LOAD.
-    countProducts(); // SET CART COUNTER ON LOAD
+    if (!$('body').hasClass('admin')) {
+        var prevCart = JSON.parse( $.cookie('cart') ); // GET PREVIOUS OR STANDARD CART ON LOAD.
+        countProducts(); // SET CART COUNTER ON LOAD
+    }
 
     $('.buy-now .add_to_cookie').click(function(){
         var input = $(this).parent().find('.quantity');
@@ -273,7 +275,7 @@ $(document).ready(function(){
 
     // message order
     if ($('.container').hasClass('.message_user')) {
-        if ($(this).hasClass('0')) {
+        if ($(this).hasClass('success')) {
             $.smkAlert({
                 text: 'Your payment went successful',
                 type: 'success',
