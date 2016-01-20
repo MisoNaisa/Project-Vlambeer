@@ -15,6 +15,7 @@
                 <td>Quantity</td>
                 <td>Price</td>
                 <td>Total</td>
+                <td></td>
             </tr>
             @foreach($cart as $item)
                 <tr>
@@ -27,7 +28,6 @@
                     </td>
                     <td>
                         {{ $item['quantity'] }}
-                        <div data-id="{{ $item['id'] }}" class="btn btn-default destroy_this">Delete</div>
                     </td>
                     @if($item['sale'] === 1)
                         <td>{{ $item['sale_price'] }}</td>
@@ -35,6 +35,7 @@
                         <td>{{ $item['price'] }}</td>
                     @endif
                     <td>{{ $item['total'] }}</td>
+                    <td style="width: 8%;"><div data-id="{{ $item['id'] }}" class="btn btn-danger destroy_this">Remove</div></td>
 
                 </tr>
             @endforeach
@@ -42,22 +43,28 @@
                 <td></td>
                 <td></td>
                 <td></td>
+                <td></td>
                 <td>VAT</td>
                 <td>{{ round($sum*0.21, 2) }} </td>
+                <td></td>
             </tr>
             <tr>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td>Ex. VAT</td>
                 <td>{{ round($sum*0.79, 2) }} </td>
+                <td></td>
             </tr>
             <tr>
                 <td></td>
                 <td></td>
                 <td></td>
+                <td></td>
                 <td>Total</td>
                 <td>{{ $sum }} </td>
+                <td></td>
             </tr>
         </table>
         @if(Auth::check())
@@ -85,7 +92,4 @@
             </div>
         @endif
     </div>
-
-
-
 @endsection
