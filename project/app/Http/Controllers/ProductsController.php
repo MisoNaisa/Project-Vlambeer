@@ -28,7 +28,7 @@ class ProductsController extends Controller
 
         $gameInfo = $games->getAllGameInfoById(34402);
 
-        $productimg = Product::where('sale', 1)->get();
+        $productimg = \App\Product::where('sale', 1)->get();
 
 //        return view('shop.main', compact('gameInfo', 'productArray'));
         return view('shop.index', compact('gameInfo', 'productArray', 'productimg'));
@@ -227,6 +227,8 @@ class ProductsController extends Controller
 
         $gameInfo = $games->getAllGameInfoById(34402);
 
-        return view('shop.index', compact('gameInfo', 'productArray'));
+        $productimg = \App\Product::where('sale', 1)->get();
+
+        return view('shop.index', compact('gameInfo', 'productArray', 'productimg'));
     }
 }
