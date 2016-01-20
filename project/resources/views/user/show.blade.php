@@ -12,7 +12,14 @@
             @endif
         </div>
 
-        {{--          <a href="{{ route('welcome_index', [4, 5]) }}">test</a>--}}
+        @if(!(empty($status)) && $status == 'succes' )
+            <div class="newsletter">
+                <a href="http://eepurl.com/bNkBpP" class="btn btn-primary" >
+                    Newsletter
+                </a>
+            </div>
+        @endif
+
 
         <?php
         switch($user['newsletter']){

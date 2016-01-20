@@ -131,7 +131,7 @@
         </div>
     </div>
     <!-- End Footer-->
-</div>
+
 
 <div class="csrf">
     {{csrf_field()}}
