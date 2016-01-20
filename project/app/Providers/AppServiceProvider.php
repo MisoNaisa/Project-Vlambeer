@@ -23,6 +23,8 @@ class AppServiceProvider extends ServiceProvider
 //        Cookie cart set
         if ( empty($_COOKIE['cart']) ) {
             setcookie("cart", '[]');
+        } else {
+            redirect('shop/index');
         }
 
 //      GET IP
