@@ -2,12 +2,8 @@
 
 @section('section')
 
-    @if(!(empty($status)))
-        <script>
-            messageOrder({{$status}});
-        </script>
-    @endif
-    <div class="container">
+
+    <div class="container @if(!(empty($status))) message_user {{$status}} @endif">
         <div style="padding-left: 19px;" class="col-md-12">
             @if($user->insertion)
                 <h2>{{'Hello ' . $user->first_name . ' ' . $user->insertion . ' ' . $user->last_name . '!'}}</h2>
