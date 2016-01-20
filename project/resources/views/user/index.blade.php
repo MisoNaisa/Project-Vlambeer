@@ -26,8 +26,8 @@
                             <td>{{$user['attributes']['zipcode']}}</td>
                             <td>{{$user['attributes']['city']}}</td>
                             <td>{{$user['attributes']['phonenumber']}}</td>
-                            <td class="button btn-delete">delete</td>
-                            <td style="display: none" class="button btn-save">save</td>
+                            <td class="button btn-delete btn-danger">delete</td>
+                            <td style="display: none" class="button btn-save btn-success">save</td>
                         </tr>
                         <tr class="detail" id="{{ $user['attributes']['id'] }}">
                             <td colspan="100%">

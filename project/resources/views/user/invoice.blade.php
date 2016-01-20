@@ -5,10 +5,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
     <style>
-
         .pdf {
             position: relative;
             width: 100%;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .pdf .bold {
+            font-weight: 600;
         }
 
         .pdf ul {
@@ -18,11 +22,11 @@
         .pdf li {
             list-style-type: none;
         }
-        /*eind globla pdf css*/
+        /*eind global pdf css*/
 
         .pdf .title {
             height: 60px;
-            width: 100%;
+            margin: 0 0 10px -10px;
         }
 
         .pdf .title img {
@@ -36,63 +40,111 @@
         /*eind title css*/
 
         .pdf .company-info {
-            width: 50%;
+            width: 70%;
             display: inline-block;
         }
         /*eind company info css*/
 
         .pdf .user-info {
-            margin-top: 60px;
-            width: 50%;
             display: inline-block;
         }
         /*eind user info css*/
-
+        /*begin product info*/
+        .pdf table .bold td {
+            font-weight: 600;
+        }
+        /*eind product info*/
     </style>
 
-    {{--AANGEZIEN PDF GEEN REFERENTIE NAAR EEN CSS STYLESHEET PAKT IS HET HIER GESCHREVEN--}}
-
 </head>
-
 <body>
-    <div class="container">
-        <div class="pdf">
-            <div class="title">
-                <img src="img/vlambeer-logo.png" alt="logo">
-                <h1>Vlambeer</h1>
-            </div>
-            <div class="company-info">
-                <ul>
-                    <li>Vlambeer</li>
-                    <li>Neude 5, 3512 AD Utrecht, The Netherlands</li>
-                    <li>KvK Utrecht: 50851314</li>
-                    <li>BTW nr. NL: 4292.28.999.B.01</li>
-                    <li>IBAN: NL26INGB0220026800</li>
-                    <li>BIC: INGBNZ9C</li>
-                </ul>
-            </div>
-            <div class="user-info">
-                <ul>
-                    <li>{{$first_name . ' ' . $last_name}}</li>
-                    <li>{{$address . ' ' . $housenumber}}</li>
-                    <li>{{$zipcode . ' ' . $city }}</li>
-                    <li>{{$country}}</li>
-                    <li>{{$phonenumber}}</li>
+    <div class="pdf">
+        <div class="title">
+            <img src="img/vlambeer-logo.png" alt="logo">
+            <h1>Vlambeer</h1>
+        </div>
+        <div class="company-info">
+            <ul>
+                <li>Vlambeer</li>
+                <li>Neude 5, 3512 AD Utrecht, The Netherlands</li>
+                <li>KvK Utrecht: 50851314</li>
+                <li>BTW nr: NL: 4292.28.999.B.01</li>
+                <li>IBAN: NL26INGB0220026800</li>
+                <li>BIC: INGBNZ9C</li>
+            </ul>
+        </div>
+
+        <div class="user-info">
+            <ul>
+                @if(isset($user['insertion']))
+                    <li>{{$first_name . ' ' . $insertion . ' ' . $last_name}}</li>
+                    @else
+                    <li>{{$first_name . ' ' . $insertion . ' ' . $last_name}}</li>
+                @endif
+                <li>{{$address . ' ' . $housenumber}}</li>
+                <li>{{$zipcode . ' ' . $city }}</li>
+                <li>{{$country}}</li>
+                <li>{{$phonenumber}}</li>
+           </ul>
+        </div>
+
+        <div class="product-info">
+                <table style="width: 100%" class="table">
+                    <tr class="bold">
+                        <td>Product id</td>
+                        <td>Name</td>
+                        <td>Price</td>
+                        <td>Amount</td>
+                        <td>Subtotal in euro</td>
+                    </tr>
                     @foreach($items as $item)
-                        <li>{{$item['product_id']}}</li>
-                        <li>{{$item['name']}}</li>
-                        <li>{{$item['unitprice']}}</li>
-                        <li>{{$item['amount']}}</li>
-                        <li>{{$item['subtotal']}}</li>
+                        <tr>
+                            <td>{{$item['product_id']}}</td>
+                            <td>{{$item['name']}}</td>
+                            <td>{{$item['unitprice']}}</td>
+                            <td>{{$item['amount']}}</td>
+                            <td>{{$item['subtotal']}}</td>
+                        </tr>
                     @if($item === end($items))
-                        <li>{{ round($item['exbtw']*0.21, 2) }}</li>
-                        <li>{{ round($item['exbtw']*0.79, 2) }}</li>
-                        <li>{{ $item['exbtw'] }}</li>
+                        <tr style="margin-top: 10px;">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="bold">Ex. BTW</td>
+                            <td>{{ round($item['exbtw']*0.79, 2) }}</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="bold">BTW</td>
+                            <td>{{ round($item['exbtw']*0.21, 2) }}</td>
+                        </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="bold">BTW percentage</td>
+                                <td>21%</td>
+                            </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="bold">Total</td>
+                            <td>{{ $item['exbtw'] }}</td>
+                        </tr>
                         @endif
                     @endforeach
-                </ul>
-            </div>
+                </table>
+            </ul>
         </div>
     </div>
 </body>
 </html>
+
+{{--//ADMINPANEL--}}
+
+{{--//FADES IN THE HEADNAV ON PAFE LOAD--}}
+{{--$('.admin .headnav, .admin .home, .admin .subnav, .admin .section').css('opacity', 0);--}}
+{{--$('.admin .headnav, .admin .home, .admin .subnav, .admin .section').fadeTo(1000, 1);--}}

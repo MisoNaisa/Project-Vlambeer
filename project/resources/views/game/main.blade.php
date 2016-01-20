@@ -19,8 +19,8 @@
                 @foreach($allGames as $game)
                     <tr class="clickable">
                         <td>{{$game['attributes']['game_name']}}</td>
-                        <td class="button btn-delete">delete</td>
-                        <td style="display: none" class="button btn-save">save</td>
+                        <td class="button btn-delete btn-danger">delete</td>
+                        <td style="display: none" class="button btn-save btn-success">save</td>
                     </tr>
                     <tr class="detail" id="{{ $game['attributes']['id'] }}">
                         <td colspan="100%">
