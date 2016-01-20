@@ -184,7 +184,7 @@ class ProductsController extends Controller
         $order = \App\Order::where('paypal_token', $token)->first();
         $order->status = 1;
         $order->save();
-        $status = true;
+        $status = 'success';
 
         //refresh cookie
         setcookie("cart", '[]', time() + (86400 * 5) , '/'); // 86400 = 1 day
@@ -200,13 +200,13 @@ class ProductsController extends Controller
     }
 
     public function payment_failed() {
-        $status = false;
+
 
         //get user and order info
         $user_id = $order->user_id;
         $user = \App\User::where('id', $user_id)->first();
         $orders = \App\Order::where('user_id', $user_id)->get();
-        return view('user.show', compact('status','user', 'orders'));
+        return view('user.show', compact('user', 'orders'));
     }
 
     public function category($cat){
