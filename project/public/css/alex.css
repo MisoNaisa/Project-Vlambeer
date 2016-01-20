@@ -2,9 +2,9 @@
     cursor: pointer;
 }
 
-.admin .container {
-    background: rgba(0,0,0,0.8);
-}
+/*.admin .container {*/
+    /*background: rgba(0,0,0,0.8);*/
+/*}*/
 
 .admin table .detail {
     display: none;
