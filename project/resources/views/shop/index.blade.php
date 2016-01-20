@@ -27,7 +27,12 @@
 
                     <img src="{{$product['img']}}" alt="product-img">
                     <div class="caption">
-                        <h4 class="pull-right">&#x24;{{$product['price']}}</h4>
+                        @if($product['sale'] === 1)
+                            <h4 class="pull-right">&#x24;{{$product['sale_price']}}</h4>
+                        @else
+                            <h4 class="pull-right">&#x24;{{$product['price']}}</h4>
+                        @endif
+
                         <h4>{{$product['name']}}</h4>
                         <p> {{ substr($product['description'], 0, 100) . '...' }}</p>
 

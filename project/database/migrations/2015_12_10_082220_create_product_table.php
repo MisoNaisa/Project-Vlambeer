@@ -20,6 +20,7 @@ class CreateProductTable extends Migration
             $table->string('category', 50);
             $table->tinyInteger('sale')->nullable();
             $table->integer('sale_percentage')->length(20)->nullable();
+            $table->decimal('sale_price',10,2)->nullable();
             $table->integer('stock')->length(20);
             $table->text('img');
             $table->timestamps();

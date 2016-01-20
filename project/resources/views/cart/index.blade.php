@@ -29,7 +29,11 @@
                         {{ $item['quantity'] }}
                         <div data-id="{{ $item['id'] }}" class="btn btn-default destroy_this">Delete</div>
                     </td>
-                    <td>{{ $item['price'] }}</td>
+                    @if($item['sale'] === 1)
+                        <td>{{ $item['sale_price'] }}</td>
+                    @else
+                        <td>{{ $item['price'] }}</td>
+                    @endif
                     <td>{{ $item['total'] }}</td>
 
                 </tr>

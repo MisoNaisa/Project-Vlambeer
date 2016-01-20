@@ -26,15 +26,22 @@ class CartsController extends Controller
             $cart[] = \App\Product::where('id', $cartItem[0])->first()->toArray();
 
             $cart[$i]['quantity'] = $cartItem[1];
-            $cart[$i]['total'] = $cartItem[1] * $cart[$i]['price'];
+            if($cart[$i]['sale'] == 1){
+                $cart[$i]['total'] = $cartItem[1] * $cart[$i]['sale_price'];
+            }else{
+                $cart[$i]['total'] = $cartItem[1] * $cart[$i]['price'];
+            }
             $cart[$i]['color'] = $cartItem[2];
             $cart[$i]['size'] = $cartItem[3];
             $i++;
 
         }
         foreach($cart as $num){
-
-            $sum += $num['quantity'] * $num['price'];
+            if($num['sale'] == 1){
+                $sum += $num['quantity'] * $num['sale_price'];
+            }else{
+                $sum += $num['quantity'] * $num['price'];
+            }
         }
 
         return view('cart.index', compact('cart', 'sum'));

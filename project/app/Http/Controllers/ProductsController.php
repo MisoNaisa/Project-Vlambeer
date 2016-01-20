@@ -140,6 +140,11 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id) {
 
+        if($request['sale'] == 1){
+            $sale_price = ((100 - $request['sale_percentage']) * $request['price']);
+        }
+
+
         $this->validate($request,[
             'name' => 'string',
             'description' => 'string',
@@ -156,6 +161,7 @@ class ProductsController extends Controller
         $product->price = $request['price'];
         $product->sale = $request['sale'];
         $product->sale_percentage = $request['sale_percentage'];
+        $product->sale_price = $sale_price;
         $product->stock = $request['stock'];
         $product->img = $request['img'];
 

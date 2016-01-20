@@ -66,7 +66,6 @@ class InvoicesController extends Controller
 
             $product = Product::find($value['id']);
 
-
             if(!(Empty($value['color'])) || !(Empty($value['size']))){
                 $product_name = $product['name']. ' ' .  $value['color'] . ' / ' . $value['size'];
             }   else {
@@ -74,17 +73,28 @@ class InvoicesController extends Controller
 
             }
 
-
-            $temp = array(
-                'L_PAYMENTREQUEST_0_NAME' . $i => $product_name,
-                'L_PAYMENTREQUEST_0_AMT' . $i => $product['price'],
-                'L_PAYMENTREQUEST_0_QTY' . $i => $value['amount']
-            );
-
+            if($product['sale'] == 1){
+                $temp = array(
+                    'L_PAYMENTREQUEST_0_NAME' . $i => $product_name,
+                    'L_PAYMENTREQUEST_0_AMT' . $i => $product['sale_price'],
+                    'L_PAYMENTREQUEST_0_QTY' . $i => $value['amount']
+                );
+            }else{
+                $temp = array(
+                    'L_PAYMENTREQUEST_0_NAME' . $i => $product_name,
+                    'L_PAYMENTREQUEST_0_AMT' . $i => $product['price'],
+                    'L_PAYMENTREQUEST_0_QTY' . $i => $value['amount']
+                );
+            }
 
             $items = array_merge($items, $temp);
             $i = $i + 1;
-            $total[] =  $product['price'] * $value['amount'];
+            if($product['sale'] == 1){
+                $total[] =  $product['sale_price'] * $value['amount'];
+            }else{
+                $total[] =  $product['price'] * $value['amount'];
+            }
+
 
         }
 
@@ -125,8 +135,11 @@ class InvoicesController extends Controller
                     $order_product->size = $value['size'];
                 }
 
-
-                $order_product->price = $product->price;
+                if($product['sale'] == 1){
+                    $order_product->price = $product->sale_price;
+                }else{
+                    $order_product->price = $product->price;
+                }
                 $order_product->save();
             }
 
