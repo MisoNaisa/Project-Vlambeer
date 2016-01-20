@@ -115,11 +115,13 @@ $(document).ready(function(){
         btnLocation.find(hide).hide();
     }
 
-    // Save
+    // All Save Methods
     $('.admin .btn-save').click(function(){
-        saveAdmin($(this));
+        saveAdmin($(this), 'games/edit.php');
     });
-    function saveAdmin(_this) {
+
+
+    function saveAdmin(_this, url) {
         var formLocation = _this.closest('tr').next();
         var btnLocation = _this.closest('.clickable');
         var id = formLocation.attr('id');
@@ -138,7 +140,7 @@ $(document).ready(function(){
 
         $.ajax({
             type: "POST",
-            url: 'games/edit.php',
+            url: url,
             data: data,
             success: function(result) {
                 if (result = true) {
