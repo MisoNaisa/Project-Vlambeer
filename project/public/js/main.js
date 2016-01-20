@@ -49,6 +49,11 @@ $(document).ready(function(){
         }
     });
 
+    //ADMINPANEL
+    //FADES IN THE HEADNAV ON PAGE LOAD
+    $('.admin .headnav, .admin .subnav, .admin .home, .admin .section').css('opacity', 0);
+    $('.admin .headnav, .admin .subnav, .admin .home, .admin .section').fadeTo(1000, 1)
+
     //Admin Game Script
 
     var recentlyDeleted = false;
@@ -112,7 +117,9 @@ $(document).ready(function(){
 
     // Save
     $('.admin .btn-save').click(function(){
-        var _this = $(this);
+        saveAdmin($(this));
+    });
+    function saveAdmin(_this) {
         var formLocation = _this.closest('tr').next();
         var btnLocation = _this.closest('.clickable');
         var id = formLocation.attr('id');
@@ -142,7 +149,7 @@ $(document).ready(function(){
                 }
             }
         });
-    });
+    }
 
     // COOKIE ADD / CHANGE PRODUCT SCRIPT
     if (!$('body').hasClass('admin')) {
@@ -274,8 +281,10 @@ $(document).ready(function(){
     });
 
     // message order
-    if ($('.container').hasClass('.message_user')) {
-        if ($(this).hasClass('success')) {
+    if ($('.container').hasClass('message_user')) {
+        console.log('detected');
+        if ($('.container').hasClass('success')) {
+            console.log('success');
             $.smkAlert({
                 text: 'Your payment went successful',
                 type: 'success',
@@ -283,6 +292,7 @@ $(document).ready(function(){
                 position: 'top-left'
             });
         } else {
+            console.log('Failed {}');
             $.smkAlert({
                 text: 'Your payment failed',
                 type: 'danger',
