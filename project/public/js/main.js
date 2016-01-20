@@ -271,27 +271,23 @@ $(document).ready(function(){
         if (i > 1) { input.val(i - 1) }
     });
 
-
-
-});
-
-// message order
-function messageOrder(status) {
-    if (status == true) {
-        $.smkAlert({
-            text: 'Your payment went successful',
-            type: 'success',
-            time: 5,
-            position: 'top-left'
-        });
-    } else {
-        $.smkAlert({
-            text: 'Your payment failed',
-            type: 'danger',
-            time: 5,
-            position: 'top-left'
-        });
+    // message order
+    if ($('.container').hasClass('.message_user')) {
+        if ($(this).hasClass('0')) {
+            $.smkAlert({
+                text: 'Your payment went successful',
+                type: 'success',
+                time: 5,
+                position: 'top-left'
+            });
+        } else {
+            $.smkAlert({
+                text: 'Your payment failed',
+                type: 'danger',
+                time: 5,
+                position: 'top-left'
+            });
+        }
     }
 
-
-}
+});
