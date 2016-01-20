@@ -19,6 +19,8 @@ class ProductTableSeeder extends Seeder
                 So if you?re a Vlambeer fan, why not proudly wear their iconic logo on your chest? Tell the world, you?re a fan of indie gaming!',
             'price'             =>'17.99',
             'category'          =>'clothes',
+            'color'             =>'Green,Blue,Red,Yellow',
+            'size'              =>'S,M,L',
             'sale'              =>'http://venuspatrol.com/subscribe/#subscriptionform',
             'sale_percentage'   =>'0',
             'stock'             =>'10',

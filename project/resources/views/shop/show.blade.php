@@ -21,18 +21,19 @@
                         <div class="productoption ">
                             <div class="form-group">
                                 <select class="form-control size" name="size">
-                                    <option value="">size</option>
-                                    <option value="m">M</option>
-                                    <option value="l">L</option>
+                                    @foreach($sizes as $size)
 
+                                        <option value="{{$size}}">{{$size}}</option>
+                                    @endforeach
                                 </select>
                             </div>
 
                             <div class="form-group">
                                 <select class="form-control color" name="color">
-                                    <option>color</option>
-                                    <option value="black">black</option>
-                                    <option value="green">green</option>
+                                    @foreach($colors as $color)
+
+                                        <option value="{{$color}}">{{$color}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -42,20 +43,7 @@
                     <i class="add fa fa-plus"></i>
                     <div class="btn btn-primary pull-right add_to_cookie" id="{{$product['id']}}">Add to cart</div>
                 </div>
-                {{--Real payment link: https://www.paypal.com/cgi-bin/webscr--}}
-                {{--<div class="paypal pull-right">--}}
-                    {{--<form name="_xclick" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">--}}
-                        {{--<input type="hidden" name="cmd" value="_xclick">--}}
-                        {{--<input type="hidden" name="business" value="sjoerd3008-facilitator@hotmail.com">--}}
-                        {{--<input type="hidden" name="currency_code" value="EUR">--}}
-                        {{--<input type="hidden" name="return" value="http://vlambeer.dev/shop/paid">--}}
-                        {{--<input type="hidden" name="cancel_return" value="http://vlambeer.dev/shop/payment_failed">--}}
 
-                        {{--<input type="hidden" name="item_name" value="{{$product->name}}">--}}
-                        {{--<input type="hidden" name="amount" value="{{$product->price}}">--}}
-                        {{--<input type="image" src="http://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">--}}
-                    {{--</form>--}}
-                {{--</div>--}}
             </div>
         </div>
     </div>

@@ -106,7 +106,10 @@ class ProductsController extends Controller
             ->limit(3)
             ->get();
 
-        return view('shop.show', compact('product','randproducts'));
+        $colors = explode(',', $product['color']);
+        $sizes = explode(',', $product['size']);
+
+        return view('shop.show', compact('product','randproducts', 'colors', 'sizes'));
     }
 
     /**
