@@ -105,4 +105,47 @@ input {
     margin: 10px 0;
 }
 
+.price{
+    position: absolute;
+    right:10px;
+    bottom: 10px;
+    border-bottom: 1px solid dimgray;
+}
 
+.sale{
+    position: absolute;
+    right:10px;
+    bottom: 30px;
+    color: red;
+    text-decoration: line-through;
+}
+
+.product_show{
+    font-size: 23px;
+    text-shadow: 2px 2px black;
+
+}
+
+.product_show_sale{
+    font-size: 30px;
+    bottom:2px;
+    text-shadow: 2px 2px black;
+    border-bottom: none;
+}
+
+.addto{
+    margin-left: 50px;
+}
+
+.quantity{
+    width: 50px;
+}
+
+.section #sale1 {
+    position: absolute;
+    top: -5px;
+    right: 10px;
+    background: url("../img/sale.png") no-repeat;
+    background-size: contain;
+    height: 80px;
+    width: 80px; }

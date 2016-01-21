@@ -27,21 +27,15 @@
 
                     <img src="{{$product['img']}}" alt="product-img">
                     <div class="caption">
-                        @if($product['sale'] === 1)
-                            <h4 class="pull-right">&#x24;{{$product['sale_price']}}</h4>
-                        @else
-                            <h4 class="pull-right">&#x24;{{$product['price']}}</h4>
-                        @endif
 
                         <h4>{{$product['name']}}</h4>
                         <p> {{ substr($product['description'], 0, 100) . '...' }}</p>
 
-                        <div class="buy-now">
-                            <i class="minus fa fa-minus "></i>
-                            <input min="1" type="number" class="quantity" value="1" />
-                            <i class="add fa fa-plus"></i>
-                            <div class="btn btn-primary pull-right add_to_cookie" id="{{$product['id']}}">Add to cart</div>
-                        </div>
+                        @if($product['sale'] === 1)
+                            <h5 class="sale">&#x24;{{$product['price']}}</h5><h3 class="price" style="color: green;">&#x24;{{$product['sale_price']}}</h3>
+                        @else
+                            <h4 class="price">&#x24;{{$product['price']}}</h4>
+                        @endif
                     </div>
                 </div>
 
