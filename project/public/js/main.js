@@ -116,8 +116,12 @@ $(document).ready(function(){
     }
 
     // All Save Methods
-    $('.admin .btn-save').click(function(){
-        saveAdmin($(this), 'games/edit.php');
+    $('.admin-game .btn-save').click(function(){
+        saveAdmin($(this), 'ajax/games/edit');
+    });
+
+    $('.admin-user .btn-save').click(function(){
+        saveAdmin($(this), 'ajax/user/edit');
     });
 
 
@@ -135,7 +139,6 @@ $(document).ready(function(){
 
         var data = {};
         data['input'] = JSON.stringify(gameObject);
-        data['_method'] = 'PUT';
         data['_token'] = $('.csrf input').val();
 
         $.ajax({
@@ -143,6 +146,8 @@ $(document).ready(function(){
             url: url,
             data: data,
             success: function(result) {
+                $('.debug').html(result);
+                console.log(result);
                 if (result = true) {
                     setTimeout(function(){
                         btnLocation.removeClass('loading');

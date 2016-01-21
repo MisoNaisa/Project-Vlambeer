@@ -26,12 +26,11 @@ class ProductsController extends Controller
 
         $games = new GiantBombApi();
 
-        $gameInfo = $games->getAllGameInfoById(34402);
-
         $productimg = \App\Product::where('sale', 1)->get();
 
-        return view('shop.main', compact('gameInfo', 'productArray'));
-//        return view('shop.index', compact('gameInfo', 'productArray', 'productimg'));
+//        return view('shop.main', compact('gameInfo', 'productArray'));
+        return view('shop.index', compact('productArray', 'productimg'));
+
 
     }
 
