@@ -63,7 +63,7 @@ class ProductsController extends Controller
     public function store(Request $request) {
         $sale_price=null;
         if($request['sale'] == 1){
-            $sale_price = ((100 - $request['sale_percentage']) * $request['price']);
+            $sale_price = ((100 - $request['sale_percentage']) / 100 * $request['price']);
         }
 
         $this->validate($request,[
@@ -151,7 +151,7 @@ class ProductsController extends Controller
     public function update(Request $request, $id) {
 
         if($request['sale'] == 1){
-            $sale_price = ((100 - $request['sale_percentage']) * $request['price']);
+            $sale_price = ((100 - $request['sale_percentage']) / 100 * $request['price']);
         }
 
 
