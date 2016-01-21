@@ -12,7 +12,7 @@
                     <thead>
                     <tr>
                         <th>Name</th>
-                        <th class="button"><a href="games/create">add</a></th>
+                        <th class="button"><a href="shop/create">add</a></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -40,6 +40,14 @@
                                     <tr>
                                         <td>Category</td>
                                         <td><input class="category" type="text" value="{{$product['attributes']['category']}}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Color</td>
+                                        <td><input class="color" type="text" value="{{$product['attributes']['color']}}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Size</td>
+                                        <td><input class="size" type="text" value="{{$product['attributes']['size']}}"></td>
                                     </tr>
                                     <tr>
                                         <td>Sale</td>
