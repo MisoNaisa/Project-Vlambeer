@@ -87,19 +87,57 @@ class AdminController extends Controller
         }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+
+    public function editUser(Request $request)
     {
         if(Auth::check()) {
 
             if (Auth::user()->role == 'admin') {
 
-                //code if user is admin
+                $request = json_decode($request->input, true);
+                var_dump($request);
+
+                $game = \App\Game::find($request['game_id']);
+
+                $game->user_first_name = $request['user_first_name'];
+                $game->game_background_video = $request['user_insertion'];
+                $game->custom_payment_link = $request['user_last_name'];
+                $game->steam_payment_link = $request['user_address'];
+                $game->ios_payment_link = $request['user_housenumber'];
+                $game->psn_payment_link = $request['user_zipcode'];
+                $game->android_payment_link = $request['user_city'];
+                $game->android_payment_link = $request['phonenumber'];
+
+                $game->save();
+            }
+        }
+        else{
+            return view('errors.unauthorized');
+        }
+    }
+
+    public function editGame(Request $request)
+    {
+
+        if(Auth::check()) {
+
+            if (Auth::user()->role == 'admin') {
+
+                $request = json_decode($request->input, true);
+
+                $game = \App\Game::find($request['game_id']);
+
+                $game->game_background_img = $request['game_background_img'];
+                $game->game_background_video = $request['game_background_video'];
+                $game->custom_payment_link = $request['custom_payment_link'];
+                $game->steam_payment_link = $request['steam_payment_link'];
+                $game->ios_payment_link = $request['ios_payment_link'];
+                $game->psn_payment_link = $request['psn_payment_link'];
+                $game->android_payment_link = $request['android_payment_link'];
+
+                $game->save();
+
+                echo true;
 
             }
         }
@@ -108,13 +146,7 @@ class AdminController extends Controller
         }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
         //

@@ -4,7 +4,7 @@
     <span class="csrf">
         {{csrf_field()}}
     </span>
-    <div class="container ">
+    <div class="container admin-game">
         <h1>Games management</h1>
         <div class="debug">
         <form action="">
