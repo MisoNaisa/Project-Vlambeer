@@ -41,6 +41,7 @@ Route::resource('/user', 'UsersController');
 Route::resource('admin/user', 'UsersController');
 
 //Admin
+Route::resource('/admin/mail', 'MailsController');
 Route::resource('/admin', 'AdminController');
 
 //Pdf

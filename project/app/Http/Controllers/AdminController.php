@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Game;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,6 +16,7 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
 
@@ -128,4 +130,26 @@ class AdminController extends Controller
     {
         //
     }
+
+    public function indexMailList(Newsletter $newsletter){
+        $mailList = $newsletter->all();
+
+        return view('mail.index', compact('mailList'));
+    }
+
+    public function deleteMailList(Newsletter $newsletter, $id){
+
+        $newsletter->destroy($id);
+
+        return back();
+    }
+
+    public function addMailList(GameCreateRequest $request, $id){
+
+
+
+        return back();
+    }
+
+
 }
