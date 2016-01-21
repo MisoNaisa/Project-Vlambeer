@@ -12,12 +12,15 @@
             @endif
         </div>
 
-        @if(!(empty($status)) && $status == 'succes' )
-            <div class="newsletter">
-                <a href="http://eepurl.com/bNkBpP" class="btn btn-primary" >
-                    Newsletter
-                </a>
-            </div>
+        @if(!(empty($status)) && $status == 'success' )
+                <div class="newsletter col-md-12" style="margin-bottom: 10px; margin-left: 4px;" >
+                    <div class="col-md-5 table-bg">
+                        <p>Do you want to subscribe to the newsletter?</p>
+                        <a style="margin-bottom: 10px" href="http://eepurl.com/bNkBpP" class="btn btn-primary" >
+                            Newsletter
+                        </a>
+                    </div>
+                </div>
         @endif
 
 
