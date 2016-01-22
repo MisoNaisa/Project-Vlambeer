@@ -18,13 +18,15 @@
 <!-- Begin header -->
 <div class="admin-header">
     <div class="title">
-        <div class="logo">
-            <img src="/img/vlambeer-logo.png" alt="logo">
-            <h1>Vlambeer</h1>
-        </div>
         <div class="login col-md-2 pull-right">
-            <img src="http://lorempixel.com/50/50" alt="login-img">
-            <p >dummy admin</p>
+            @if(Auth::user())
+
+                @if(Auth::user()->insertion)
+                    <p>{{Auth::user()->first_name . ' ' . Auth::user()->insertion . ' ' . Auth::user()->last_name}}</p>
+                @else
+                    <p>{{Auth::user()->first_name . ' ' . Auth::user()->last_name}}</p>
+                @endif
+            @endif
         </div>
     </div>
 </div>

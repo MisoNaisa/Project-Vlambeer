@@ -26,12 +26,16 @@ class ProductsController extends Controller
 
         $productimg = Product::query()
             ->orderByRaw("RAND()")
-            ->limit(3)
+            ->limit(5)
+            ->get();
+
+        $product_sale_img = Product::query()
+            ->where('sale', 1)
             ->get();
 
 //        return view('shop.main', compact('gameInfo', 'productArray'));
 //        return view('shop.index', compact('productArray', 'productimg'));
-        return view('shop.index', compact('productArray', 'productimg'));
+        return view('shop.index', compact('productArray', 'productimg', 'product_sale_img'));
 
 
     }

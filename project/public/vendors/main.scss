@@ -530,6 +530,18 @@ html {
     width: 80px;
   }
 
+  #saleslider {
+    //content: '  ';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: url("../img/sale.png") no-repeat;
+    background-size: contain;
+    height: 80px;
+    width: 80px;
+    z-index: 9;
+  }
+
 
 .products-overview {
   margin-top: 30px;

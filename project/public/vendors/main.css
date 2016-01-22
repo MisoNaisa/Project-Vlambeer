@@ -358,6 +358,15 @@ a {
     background-size: contain;
     height: 80px;
     width: 80px; }
+  .section #saleslider {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: url("../img/sale.png") no-repeat;
+    background-size: contain;
+    height: 80px;
+    width: 80px;
+    z-index: 9; }
   .section .products-overview {
     margin-top: 30px; }
     .section .products-overview .row {

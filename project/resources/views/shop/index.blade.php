@@ -6,9 +6,20 @@
 
 @section('content')
     <div class="flexslider">
+        <div id="saleslider"></div>
         <ul class="slides">
-            @foreach($productimg as $img)
+{{--            {{dd($product_sale_img)}}--}}
+            @foreach($product_sale_img as $img)
                 <li><img src="{{ $img['img'] }}" /></li>
+
+                @if(empty($img))
+
+                    @foreach($productimg as $img)
+                        <li><img src="{{ $img['img'] }}" /></li>
+                    @endforeach
+
+                @endif
+
             @endforeach
         </ul>
     </div>
@@ -44,6 +55,7 @@
                             {{--<div class="btn btn-primary pull-right add_to_cookie" id="{{$product['id']}}">Add to cart</div>--}}
                         {{--</div>--}}
                                 {{--@endif--}}
+
 
                     </div>
                 </div>
