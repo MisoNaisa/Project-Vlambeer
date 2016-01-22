@@ -30,7 +30,7 @@
             </div>
 
             <div class="form-group">
-                <label for="password_confirmation ">Password_confirmation</label>
+                <label for="password_confirmation ">Password confirmation</label>
                 <input class="form-control" type="password" name="password_confirmation">
             </div>
 
@@ -40,13 +40,13 @@
             </div>
 
             <div class="form-group">
-                <label for="last_name">Last name</label>
-                <input class="form-control" type="text" name="last_name" value="{{ old('last_name') }}">
+                <label for="insertion">Insertion</label>
+                <input class="form-control" type="text" name="insertion" value="{{ old('insertion') }}">
             </div>
 
             <div class="form-group">
-                <label for="insertion">Insertion</label>
-                <input class="form-control" type="text" name="insertion" value="{{ old('insertion') }}">
+                <label for="last_name">Last name</label>
+                <input class="form-control" type="text" name="last_name" value="{{ old('last_name') }}">
             </div>
 
             <div class="form-group">
@@ -82,15 +82,6 @@
             <div class="form-group">
                 <label for="country">Country</label>
                 <input class="form-control" type="text" name="country" value="{{ old('country') }}">
-            </div>
-
-            <div class="form-group">
-                <label for="newsletter">Newsletter</label>
-                <select name="newsletter" class="form-control" value="{{ old('newsletter') }}" >
-                    <option value="" style="display:none"></option>
-                    <option value="1">Yes</option>
-                    <option value="0">No</option>
-                </select>
             </div>
 
             <div class="form-group">

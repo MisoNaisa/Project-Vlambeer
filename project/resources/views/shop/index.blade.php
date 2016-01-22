@@ -44,6 +44,7 @@
                             {{--<div class="btn btn-primary pull-right add_to_cookie" id="{{$product['id']}}">Add to cart</div>--}}
                         {{--</div>--}}
                                 {{--@endif--}}
+
                     </div>
                 </div>
             </div>

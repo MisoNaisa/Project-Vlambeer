@@ -1,10 +1,9 @@
 @extends('layout.master')
 
 @section('section')
-    <div class="container admin">
+    <div class="container">
         <div class="col-md-6 col-md-push-3">
             <h3>Edit Game</h3>
-
             <form action="{{action('GamesController@update')}}" method="POST">
                 <input name="_method" type="hidden" value="PUT">
                 <input name="game_id" type="hidden" value="{{$game['id']}}">

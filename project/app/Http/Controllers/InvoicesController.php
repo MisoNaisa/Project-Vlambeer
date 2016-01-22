@@ -216,7 +216,7 @@ class InvoicesController extends Controller
         $users = User::find($order->user_id);
         $user = User::find($order->user_id)->ToArray();
 
-        $order_products = App\Order_Product::where('order_id', $id)->get()->ToArray();
+        $order_products = Order_Product::where('order_id', $id)->get()->ToArray();
 
         $sum = 0;
 
@@ -225,19 +225,25 @@ class InvoicesController extends Controller
         foreach($order_products as $order_product){
 
             $product = Product::find($order_product['product_id']);
-            $products[$product->id] = array(
+
+            $products[$order_product['order_product_id']] = array(
                 'name' => $product['name'],
-                'unitprice' => $product['price'],
+                'unitprice' => $order_product['price'],
                 'amount' => $order_product['quantity'],
-                'subtotal' => ((($product['price'] * 100)  * $order_product['quantity']) / 100),2,
+                'subtotal' => ((($order_product['price'] * 100)  * $order_product['quantity']) / 100),2,
                 'exbtw' => $sum += $order_product['quantity'] * $product['price'],2,
                 'product_id' => $order_product['product_id'],
+                'size' => $order_product['size'],
+                'color' => $order_product['color'],
             );
 
         }
+        //dd($order_products);
+        //dd($products);
 
         $products['items'] = $products;
-        $order_products['items'] = $order_products;
+        $order_products['keys'] = $order_products;
+        //dd($order_products);
 
         $data = view('user.invoice', $user, $products, $order_products);
         $pdf = App::make('dompdf.wrapper');
