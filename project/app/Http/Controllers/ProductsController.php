@@ -26,15 +26,9 @@ class ProductsController extends Controller
 
         $productimg = \App\Product::where('sale', 1)->get();
 
-<<<<<<< HEAD
-
 //        return view('shop.main', compact('gameInfo', 'productArray'));
-        return view('shop.index', compact('gameInfo', 'productArray', 'productimg'));
 //        return view('shop.index', compact('productArray', 'productimg'));
-=======
         return view('shop.index', compact('productArray', 'productimg'));
->>>>>>> origin/master
-
 
 
     }
