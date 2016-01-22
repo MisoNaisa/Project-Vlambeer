@@ -106,26 +106,35 @@ class AdminController extends Controller
             if (Auth::user()->role == 'admin') {
 
                 $request = json_decode($request->input, true);
-                var_dump($request);
 
-                $game = \App\Game::find($request['game_id']);
+                $user = \App\User::find($request['game_id']);
 
-                $game->user_first_name = $request['user_first_name'];
-                $game->game_background_video = $request['user_insertion'];
-                $game->custom_payment_link = $request['user_last_name'];
-                $game->steam_payment_link = $request['user_address'];
-                $game->ios_payment_link = $request['user_housenumber'];
-                $game->psn_payment_link = $request['user_zipcode'];
-                $game->android_payment_link = $request['user_city'];
-                $game->android_payment_link = $request['phonenumber'];
+                $user->email = $request['email'];
+                if(empty($request['password'])){
+                }
+                else{
+                    $user->password = bcrypt($request['password']);
+                }
 
-                $game->save();
+                $user->first_name = $request['user_first_name'];
+                $user->insertion = $request['user_insertion'];
+                $user->last_name = $request['user_last_name'];
+                $user->address = $request['user_address'];
+                $user->housenumber = $request['user_housenumber'];
+                $user->zipcode = $request['user_zipcode'];
+                $user->city = $request['user_city'];
+                $user->phonenumber = $request['phonenumber'];
+                $user->date_of_birth = $request['date_of_birth'];
+                $user->country = $request['country'];
+
+                $user->save();
+
+                echo true;
             }
         }
         else{
             return view('errors.unauthorized');
         }
-
     }
 
     public function editGame(Request $request)
