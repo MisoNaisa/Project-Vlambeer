@@ -1,10 +1,7 @@
 @extends('layout.master')
 
 @section('section')
-    <div class="container admin">
-
-
-
+    <div class="container">
         <form class="col-md-4 col-md-push-4" action="{{action('ProductsController@update')}}" method="POST">
             <h1>Edit Item</h1>
             <input name="_method" type="hidden" value="PUT">

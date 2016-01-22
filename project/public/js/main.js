@@ -105,7 +105,7 @@ $(document).ready(function(){
     });
 
     //Show save after change
-    $('.admin input').click(function(){
+    $('.admin input, .admin select, .admin textarea').click(function(){
         var btnLocation = $(this).closest('.detail').prev();
         showAndHide(btnLocation, '.btn-save', '.btn-delete');
     });
@@ -124,6 +124,11 @@ $(document).ready(function(){
         saveAdmin($(this), 'ajax/user/edit');
     });
 
+    $('.admin-shop .btn-save').click(function(){
+        saveAdmin($(this), 'ajax/shop/edit');
+    });
+
+
 
     function saveAdmin(_this, url) {
         var formLocation = _this.closest('tr').next();
@@ -133,7 +138,16 @@ $(document).ready(function(){
         var gameObject = {
             'game_id' : id
         };
+
         $('#' + id + ' input').each(function(){
+            gameObject[$(this).attr('class')] = $(this).val();
+        });
+
+        $('#' + id + ' textarea').each(function(){
+            gameObject[$(this).attr('class')] = $(this).val();
+        });
+
+        $('#' + id + ' select').each(function(){
             gameObject[$(this).attr('class')] = $(this).val();
         });
 

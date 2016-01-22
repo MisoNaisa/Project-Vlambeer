@@ -44,6 +44,10 @@
     text-align: center;
 }
 
+.admin select {
+    color: black;
+}
+
 textarea{
     resize: none;
 }
@@ -105,14 +109,14 @@ input {
     margin: 10px 0;
 }
 
-.price{
+.shop .price{
     position: absolute;
     right:10px;
     bottom: 10px;
     border-bottom: 1px solid dimgray;
 }
 
-.sale{
+.shop .sale{
     position: absolute;
     right:10px;
     bottom: 30px;
@@ -120,13 +124,13 @@ input {
     text-decoration: line-through;
 }
 
-.product_show{
+.shop .product_show{
     font-size: 23px;
     text-shadow: 2px 2px black;
 
 }
 
-.product_show_sale{
+.shop .product_show_sale{
     font-size: 30px;
     bottom:2px;
     text-shadow: 2px 2px black;
