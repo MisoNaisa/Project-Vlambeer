@@ -19,7 +19,7 @@
                     @foreach($productArray as $product)
                         <tr class="clickable">
                             <td>{{$product['attributes']['name']}}</td>
-                            <td class="button btn-delete btn-danger">delete</td>
+                            <td class="button btn-delete btn-danger" data-type="shop">delete</td>
                             <td style="display: none" class="button btn-save btn-success">save</td>
                         </tr>
                         <tr class="detail" id="{{ $product['attributes']['id'] }}">

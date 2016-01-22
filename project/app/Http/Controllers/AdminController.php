@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Game;
+use App\Product;
+use App\User;
+
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -120,6 +123,7 @@ class AdminController extends Controller
         else{
             return view('errors.unauthorized');
         }
+
     }
 
     public function editGame(Request $request)
@@ -207,21 +211,33 @@ class AdminController extends Controller
         }
     }
 
-    public function update(Request $request, $id)
-    {
-        //
+    public function remove(Request $request) {
+
+        if(Auth::check()) {
+
+            if (Auth::user()->role == 'admin') {
+                $request = json_decode($request->input);
+
+                if ($request->type == 'shop') {
+                    Product::where('id', $request->id)->delete();
+                }
+
+                if ($request->type == 'game') {
+                    Game::where('id', $request->id)->delete();
+                }
+
+                if ($request->type == 'user') {
+                    User::where('id', $request->id)->delete();
+                }
+            }
+        }
+        else{
+            return view('errors.unauthorized');
+        }
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+
 
     public function indexMailList(Newsletter $newsletter){
         $mailList = $newsletter->all();

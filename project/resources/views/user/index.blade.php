@@ -39,7 +39,7 @@
                             <td>{{$user['attributes']['phonenumber']}}</td>
                             <td>{{$user['attributes']['date_of_birth']}}</td>
                             <td>{{$user['attributes']['country']}}</td>
-                            <td class="button btn-delete btn-danger">delete</td>
+                            <td class="button btn-delete btn-danger" data-type="user">delete</td>
                             <td style="display: none" class="button btn-save btn-success">save</td>
                         </tr>
                         <tr class="detail" id="{{ $user['attributes']['id'] }}">

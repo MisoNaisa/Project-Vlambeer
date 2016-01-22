@@ -48,6 +48,7 @@ Route::resource('/admin', 'AdminController');
 route::post('/admin/ajax/games/edit', 'AdminController@editGame');
 route::post('/admin/ajax/user/edit', 'AdminController@editUser');
 route::post('/admin/ajax/shop/edit', 'AdminController@editProduct');
+route::post('/admin/ajax/remove', 'AdminController@remove');
 
 //Pdf
 Route::get('/invoices/{id}', 'InvoicesController@invoice');
