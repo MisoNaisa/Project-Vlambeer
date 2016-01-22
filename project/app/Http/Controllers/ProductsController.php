@@ -24,14 +24,16 @@ class ProductsController extends Controller
 
         $productArray = \App\Product::all();
 
-        $games = new GiantBombApi();
-
         $productimg = \App\Product::where('sale', 1)->get();
 
+<<<<<<< HEAD
 
 //        return view('shop.main', compact('gameInfo', 'productArray'));
         return view('shop.index', compact('gameInfo', 'productArray', 'productimg'));
 //        return view('shop.index', compact('productArray', 'productimg'));
+=======
+        return view('shop.index', compact('productArray', 'productimg'));
+>>>>>>> origin/master
 
 
 
@@ -64,41 +66,33 @@ class ProductsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        $sale_price=null;
-        if($request['sale'] == 1){
-            $sale_price = ((100 - $request['sale_percentage']) / 100 * $request['price']);
-        }
+
+//        $product->product_id                = $request->input('product_id');
+//        $product->product_name              = $request->input('product_name');
+//        $product->product_description       = $request->input('product_description');
+//        $product->product_price             = $request->input('product_price');
+//        $product->product_sale              = $request->input('product_sale');
+//        $product->product_sale_percentage   = $request->input('product_sale_percentage');
+//        $product->stock                     = $request->input('stock');
+//        $product->product_img               = $request->file('product_img');
+//        $product->created_at                = $request->input('created_at');
+//
+//        $product->save();
 
         $this->validate($request,[
             'name' => 'required|max:50|string',
             'description' => 'required|string',
             'price' => 'numeric',
-            'category' => 'string',
-            'color'    => 'string',
-            'size'     => 'string',
+            'category' => 'boolean',
             'sale' => 'boolean',
             'sale_percentage' => 'numeric',
-            'sale_price' => 'numeric',
             'stock' => 'numeric',
             'img' => 'string'
         ]);
 
-        $product = new Product;
-        $product->name = $request['name'];
-        $product->description = $request['description'];
-        $product->price = $request['price'];
-        $product->category = $request['category'];
-        $product->color = $request['color'];
-        $product->size = $request['size'];
-        $product->sale = $request['sale'];
-        $product->sale_percentage = $request['sale_percentage'];
-        $product->sale_price = $sale_price;
-        $product->stock = $request['stock'];
-        $product->img = $request['img'];
+        \App\Product::create($request->except('_token'));
 
-        $product->save();
-
-        return redirect('/admin/shop')->with('message', 'Product created succesfully');
+        return redirect('/shop')->with('message', 'Product created succesfully');
     }
 
     /**
@@ -154,18 +148,15 @@ class ProductsController extends Controller
     public function update(Request $request, $id) {
 
         if($request['sale'] == 1){
-            $sale_price = ((100 - $request['sale_percentage']) / 100 * $request['price']);
+            $sale_price = ((100 - $request['sale_percentage']) * $request['price']);
         }
 
 
         $this->validate($request,[
-            'name' => 'required|max:50|string',
-            'description' => 'required|string',
+            'name' => 'string',
+            'description' => 'string',
             'price' => 'numeric',
-            'category' => 'boolean',
-            'color'    => 'string',
-            'size'     => 'string',
-            'sale' => 'boolean',
+            'sale' => 'numeric',
             'sale_percentage' => 'numeric',
             'stock' => 'numeric',
             'img' => 'string'
@@ -175,9 +166,6 @@ class ProductsController extends Controller
         $product->name = $request['name'];
         $product->description = $request['description'];
         $product->price = $request['price'];
-        $product->category = $request['category'];
-        $product->color = $request['color'];
-        $product->size = $request['size'];
         $product->sale = $request['sale'];
         $product->sale_percentage = $request['sale_percentage'];
         $product->sale_price = $sale_price;
@@ -186,7 +174,7 @@ class ProductsController extends Controller
 
         $product->save();
 
-        return redirect('admin/shop/');
+        return redirect('/shop/' . $request['id'] . '/edit');
     }
 
     /**

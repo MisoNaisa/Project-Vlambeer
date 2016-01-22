@@ -24,7 +24,7 @@ Route::get('/info_game/{id}', 'PagesController@info_game');
 //Route::put('/subscribe/{email}', 'PagesController@subscribe');
 
 Route::resource('/shop', 'ProductsController');
-Route::resource('admin/shop', 'ProductsController');
+//Route::resource('admin/shop', 'ProductsController');
 Route::get('/shop/cat/{cat}', 'ProductsController@category' );
 Route::resource('admin/orders', 'OrdersController');
 
@@ -41,11 +41,13 @@ Route::resource('/user', 'UsersController');
 Route::resource('admin/user', 'UsersController');
 
 //Admin
+Route::get('/admin/shop', 'AdminController@showProduct');
 Route::resource('/admin/mail', 'MailsController');
 Route::resource('/admin', 'AdminController');
 
 route::post('/admin/ajax/games/edit', 'AdminController@editGame');
 route::post('/admin/ajax/user/edit', 'AdminController@editUser');
+route::post('/admin/ajax/shop/edit', 'AdminController@editProduct');
 
 //Pdf
 Route::get('/invoices/{id}', 'InvoicesController@invoice');

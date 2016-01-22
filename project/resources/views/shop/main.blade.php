@@ -4,7 +4,7 @@
     <span class="csrf">
         {{csrf_field()}}
     </span>
-    <div class="container">
+    <div class="container admin-shop">
         <h1>Products management</h1>
         <div class="debug">
             <form action="">
@@ -31,7 +31,7 @@
                                     </tr>
                                     <tr>
                                         <td>Description</td>
-                                        <td><textarea name="description" id="description" cols="30" rows="10"style="background: #75190A; width: 100%;">{{$product['attributes']['description']}}</textarea></td>
+                                        <td><textarea name="description" class="description" rows="10" style="background: #75190A; width: 100%;">{{$product['attributes']['description']}}</textarea></td>
                                     </tr>
                                     <tr>
                                         <td>Price</td>
@@ -51,7 +51,12 @@
                                     </tr>
                                     <tr>
                                         <td>Sale</td>
-                                        <td><input class="sale" type="text" value="{{$product['attributes']['sale']}}"></td>
+                                        <td>
+                                            <select class="sale">
+                                                <option value="1" @if($product['attributes']['sale'] == 1) selected="selected" @endif>Yes</option>
+                                                <option value="0" @if($product['attributes']['sale'] == 0) selected="selected" @endif>No</option>
+                                            </select>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Sale percentage</td>
