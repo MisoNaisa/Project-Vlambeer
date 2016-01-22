@@ -30,6 +30,7 @@ class ProductsController extends Controller
 
         $productimg = \App\Product::where('sale', 1)->get();
 
+
 //        return view('shop.main', compact('gameInfo', 'productArray'));
         return view('shop.index', compact('gameInfo', 'productArray', 'productimg'));
 
