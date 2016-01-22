@@ -13,6 +13,7 @@
                 <p class="title">Vlambeer Shop</p>
 
                 <div class="list-group">
+                    <a href="/shop/cat/sales" class="list-group-item">Sales</a>
                     <a href="/shop/cat/clothes" class="list-group-item">Clothes</a>
                     <a href="/shop/cat/music" class="list-group-item">Music</a>
                     <a href="/shop/cat/bundles" class="list-group-item">Bundles</a>

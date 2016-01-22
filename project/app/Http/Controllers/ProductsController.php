@@ -148,34 +148,6 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id) {
 
-        if($request['sale'] == 1){
-            $sale_price = ((100 - $request['sale_percentage']) * $request['price']);
-        }
-
-
-        $this->validate($request,[
-            'name' => 'string',
-            'description' => 'string',
-            'price' => 'numeric',
-            'sale' => 'numeric',
-            'sale_percentage' => 'numeric',
-            'stock' => 'numeric',
-            'img' => 'string'
-        ]);
-
-        $product = \App\Product::find($request['id']);
-        $product->name = $request['name'];
-        $product->description = $request['description'];
-        $product->price = $request['price'];
-        $product->sale = $request['sale'];
-        $product->sale_percentage = $request['sale_percentage'];
-        $product->sale_price = $sale_price;
-        $product->stock = $request['stock'];
-        $product->img = $request['img'];
-
-        $product->save();
-
-        return redirect('/shop/' . $request['id'] . '/edit');
     }
 
     /**
@@ -225,9 +197,11 @@ class ProductsController extends Controller
 
     public function category($cat){
 
-
-        $productArray = \App\Product::where('category' , $cat)->get();
-
+        if($cat == 'sales'){
+            $productArray = \App\Product::where('sale' , 1)->get();
+        } else {
+            $productArray = \App\Product::where('category', $cat)->get();
+        }
         $games = new GiantBombApi();
 
         $gameInfo = $games->getAllGameInfoById(34402);

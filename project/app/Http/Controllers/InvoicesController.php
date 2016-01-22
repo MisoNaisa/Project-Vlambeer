@@ -45,13 +45,52 @@ class InvoicesController extends Controller
      */
     public function store(Request $request)
     {
-        $products = [];
-        for($i=0; $i<count($request['cart']['products']); $i++){
-            $products = array_merge($products ,$request['cart']['products'][$i]);
+        $cookieCart = json_decode($_COOKIE['cart'], true);
+
+        $cart = [];
+
+        $sum = 0;
+
+        $i = 0;
+
+        foreach($cookieCart as $cartItem){
+
+            $cart[] = \App\Product::where('id', $cartItem[0])->first()->toArray();
+
+            $cart[$i]['quantity'] = $cartItem[1];
+            if($cart[$i]['sale'] == 1){
+                $cart[$i]['total'] = $cartItem[1] * $cart[$i]['sale_price'];
+            }else{
+                $cart[$i]['total'] = $cartItem[1] * $cart[$i]['price'];
+            }
+            $cart[$i]['color'] = $cartItem[2];
+            $cart[$i]['size'] = $cartItem[3];
+            $i++;
+
+        }
+        foreach($cart as $num){
+            if($num['sale'] == 1){
+                $sum += $num['quantity'] * $num['sale_price'];
+            }else{
+                $sum += $num['quantity'] * $num['price'];
+            }
         }
 
 
+//                        <input type="hidden" name="cart[products][{{$id}}][{{$item['id']}}][amount]" value="{{$item['quantity']}}" />
+//                        <input type="hidden" name="cart[products][{{$id}}][{{$item['id']}}][size]" value="{{$item['size']}}" />
+//                        <input type="hidden" name="cart[products][{{$id}}][{{$item['id']}}][color]" value="{{$item['color']}}" />
+//                        <input type="hidden" name="cart[products][{{$id}}][{{$item['id']}}][id]" value="{{$item['id']}}" />
+//
 
+
+//        $products = [];
+//        for($i=0; $i<count($request['cart']['products']); $i++){
+//            $products = array_merge($products ,$request['cart']['products'][$i]);
+//        }
+//
+//
+//
         //Paypal check out
         //Our request parameters
         $requestParams = array(
@@ -62,37 +101,40 @@ class InvoicesController extends Controller
         $items = array();
         $i=0;
 
-        foreach($products as $id => $value){
+        foreach($cart as $id => $value) {
 
             $product = Product::find($value['id']);
 
-            if(!(Empty($value['color'])) || !(Empty($value['size']))){
-                $product_name = $product['name']. ' ' .  $value['color'] . ' / ' . $value['size'];
-            }   else {
+            if (!(Empty($product['color'])) || !(Empty($product['size']))) {
+                $product_name = $product['name'] . ' ' . $product['color'] . ' / ' . $product['size'];
+            } else {
                 $product_name = $product['name'];
-
             }
+
 
             if($product['sale'] == 1){
                 $temp = array(
                     'L_PAYMENTREQUEST_0_NAME' . $i => $product_name,
                     'L_PAYMENTREQUEST_0_AMT' . $i => $product['sale_price'],
-                    'L_PAYMENTREQUEST_0_QTY' . $i => $value['amount']
+                    'L_PAYMENTREQUEST_0_QTY' . $i => $value['quantity']
                 );
             }else{
                 $temp = array(
                     'L_PAYMENTREQUEST_0_NAME' . $i => $product_name,
                     'L_PAYMENTREQUEST_0_AMT' . $i => $product['price'],
-                    'L_PAYMENTREQUEST_0_QTY' . $i => $value['amount']
+                    'L_PAYMENTREQUEST_0_QTY' . $i => $value['quantity']
                 );
             }
 
             $items = array_merge($items, $temp);
+
             $i = $i + 1;
+
             if($product['sale'] == 1){
-                $total[] =  $product['sale_price'] * $value['amount'];
+                $total[] =  $product['sale_price'] * $value['quantity'];
+
             }else{
-                $total[] =  $product['price'] * $value['amount'];
+                $total[] =  $product['price'] * $value['quantity'];
             }
 
 
@@ -117,16 +159,14 @@ class InvoicesController extends Controller
 
 
 
-        foreach($products as $id => $value){
-
-
+        foreach($cart as $id => $value){
 
                 $product = Product::find($value['id']);
 
                 $order_product = new Order_Product();
                 $order_product->order_id = $order->id;
                 $order_product->product_id = $value['id'];
-                $order_product->quantity = $value['amount'];
+                $order_product->quantity = $value['quantity'];
 
                 if (!(Empty($value['color']))) {
                     $order_product->color = $value['color'];
