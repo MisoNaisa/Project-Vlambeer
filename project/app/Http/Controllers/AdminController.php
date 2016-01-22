@@ -87,6 +87,12 @@ class AdminController extends Controller
         }
     }
 
+    public function showProduct() {
+        $productArray = \App\Product::all();
+
+        return view('shop.main', compact('productArray'));
+    }
+
 
     public function editUser(Request $request)
     {
@@ -146,6 +152,35 @@ class AdminController extends Controller
         }
     }
 
+    public function editProduct(Request $request) {
+        if(Auth::check()) {
+
+            if (Auth::user()->role == 'admin') {
+
+                $request = json_decode($request->input, true);
+                dd($request);
+
+
+                $game = \App\Game::find($request['game_id']);
+
+                $game->game_background_img = $request['game_background_img'];
+                $game->game_background_video = $request['game_background_video'];
+                $game->custom_payment_link = $request['custom_payment_link'];
+                $game->steam_payment_link = $request['steam_payment_link'];
+                $game->ios_payment_link = $request['ios_payment_link'];
+                $game->psn_payment_link = $request['psn_payment_link'];
+                $game->android_payment_link = $request['android_payment_link'];
+
+                $game->save();
+
+                echo true;
+
+            }
+        }
+        else{
+            return view('errors.unauthorized');
+        }
+    }
 
     public function update(Request $request, $id)
     {
