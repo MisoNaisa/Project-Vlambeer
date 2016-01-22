@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Game;
 use App\Product;
+use App\User;
+
+
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -122,6 +125,7 @@ class AdminController extends Controller
         else{
             return view('errors.unauthorized');
         }
+
     }
 
     public function editGame(Request $request)
@@ -213,18 +217,17 @@ class AdminController extends Controller
         }
     }
 
-    public function viewCreateProduct(){
-        if(Auth::check()) {
 
-            if (Auth::user()->role == 'admin') {
+    public function viewCreateProduct()
+    {
+            if (Auth::check()) {
 
-                $product = \App\Product::all();
-                return view('shop.create', compact('product'));
+                    if (Auth::user()->role == 'admin') {
+
+                            $product = \App\Product::all();
+                            return view('shop.create', compact('product'));
+                    }
             }
-        }
-        else{
-            return view('errors.unauthorized');
-        }
     }
 
     public function createProduct(Request $request){
@@ -242,9 +245,9 @@ class AdminController extends Controller
 
         if($request['sale'] == 1){
 
-            $sale_price = ((100 - $request['sale_percentage']) / 100 * $request['price']);
+                $sale_price = ((100 - $request['sale_percentage']) / 100 * $request['price']);
         } else {
-            $sale_price = '';
+                $sale_price = '';
         }
 
         $product = new Product;
@@ -265,22 +268,37 @@ class AdminController extends Controller
         return redirect('admin/shop')->with('message', 'Product created succesfully');
     }
 
+    public function remove(Request $request) {
+
+        if(Auth::check()) {
+
+            if (Auth::user()->role == 'admin') {
+                $request = json_decode($request->input);
+
+                if ($request->type == 'shop') {
+                    Product::where('id', $request->id)->delete();
+                }
+
+                if ($request->type == 'game') {
+                    Game::where('id', $request->id)->delete();
+                }
+
+                if ($request->type == 'user') {
+                    User::where('id', $request->id)->delete();
+                }
+            }
+        }
+        else{
+            return view('errors.unauthorized');
+        }
+    }
+
+
     public function update(Request $request, $id)
     {
         //
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
+    
     public function indexMailList(Newsletter $newsletter){
         $mailList = $newsletter->all();
 

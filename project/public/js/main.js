@@ -61,15 +61,16 @@ $(document).ready(function(){
     $('.admin .btn-delete').click(function(){
         if (confirm('Are you sure?')) {
             var _this = $(this);
+            var type = _this.data('type');
             var data = {};
             var id = _this.parent('tr').next().attr('id');
-            data['_method'] = 'DELETE';
             data['_token'] = $('.csrf input').val();
+            data['input'] = JSON.stringify({id : id, type: type});
             $.ajax({
                 type: "POST",
-                url: 'games/' + id + '/destroy',
+                url: 'ajax/remove',
                 data: data,
-                success: function() {
+                success: function(result) {
                     _this.parent('tr').hide('slow');
                     _this.parent('tr').next().hide('slow');
                 }
