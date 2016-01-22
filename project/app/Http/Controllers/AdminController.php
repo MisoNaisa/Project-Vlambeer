@@ -158,20 +158,44 @@ class AdminController extends Controller
             if (Auth::user()->role == 'admin') {
 
                 $request = json_decode($request->input, true);
-                dd($request);
 
+//                $this->validate($request,[
+//                    'name' => 'string',
+//                    'description' => 'string',
+//                    'price' => 'numeric',
+//                    'category' => 'string',
+//                    'color' => 'string',
+//                    'size'  => 'string',
+//                    'sale' => 'numeric',
+//                    'sale_percentage' => 'numeric',
+//                    'stock' => 'numeric',
+//                    'img' => 'string'
+//                ]);
 
-                $game = \App\Game::find($request['game_id']);
+                dd($this);
 
-                $game->game_background_img = $request['game_background_img'];
-                $game->game_background_video = $request['game_background_video'];
-                $game->custom_payment_link = $request['custom_payment_link'];
-                $game->steam_payment_link = $request['steam_payment_link'];
-                $game->ios_payment_link = $request['ios_payment_link'];
-                $game->psn_payment_link = $request['psn_payment_link'];
-                $game->android_payment_link = $request['android_payment_link'];
+                if($request['sale'] == 1){
 
-                $game->save();
+                    $sale_price = ((100 - $request['sale_percentage']) / 100 * $request['price']);
+                } else {
+                    $sale_price = '';
+                }
+
+                $product = \App\Product::find($request['game_id']);
+
+                $product->name = $request['name'];
+                $product->description = $request['description'];
+                $product->price = $request['price'];
+                $product->category = $request['category'];
+                $product->color = $request['color'];
+                $product->size = $request['size'];
+                $product->sale = $request['sale'];
+                $product->sale_percentage = $request['sale_percentage'];
+                $product->sale_price = $sale_price;
+                $product->stock = $request['stock'];
+                $product->img = $request['img'];
+
+                $product->save();
 
                 echo true;
 
