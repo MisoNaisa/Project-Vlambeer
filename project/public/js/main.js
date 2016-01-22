@@ -278,6 +278,25 @@ $(document).ready(function(){
             position: 'top-left'
         });
 
+        //UPDATE TOTAL PRICE ON PRODUCT REMOVE FROM CART
+        var total = 0;
+        $('.cartPrice').each(function(){
+            total += parseFloat($(this).html());
+        });
+        total = total.toFixed(2);
+        $('#total').html(total);
+
+        //UPDATE VAT PRICE ON PRODUCT REMOVE FROM CART
+        var vat = total/100*21;
+        vat = vat.toFixed(2);
+        $('#vat').html(vat);
+
+
+        //UPDATE EXVAT PRICE ON PRODUCT REMOVE FROM CART
+        var exvat = total - vat;
+        exvat = exvat.toFixed(2);
+        $('#exvat').html(exvat);
+
     });
     // PRODUCT COUNTER
     function countProducts() {
