@@ -8,7 +8,7 @@
 
     @if (!empty($gameInfo['game_background_video']))
     <div style="width: 100%";
-         data-vide-bg="mp4: ../video/{{$gameInfo['game_background_video']}}"
+         data-vide-bg="mp4: ../video/{{$gameInfo['game_background_video']}}, webm: {{$gameInfo['game_background_video']}}, poster: ../img/{{$gameInfo['game_background_video']}}"
          data-vide-options="posterType: jpg, loop: true, position: 0% 0%; ">
         <div class="video-table">
             <div class="table-holder"></div>

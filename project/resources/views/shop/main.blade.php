@@ -41,14 +41,16 @@
                                         <td>Category</td>
                                         <td><input class="category" type="text" value="{{$product['attributes']['category']}}"></td>
                                     </tr>
-                                    <tr>
-                                        <td>Color</td>
-                                        <td><input class="color" type="text" value="{{$product['attributes']['color']}}"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Size</td>
-                                        <td><input class="size" type="text" value="{{$product['attributes']['size']}}"></td>
-                                    </tr>
+                                    @if($product->category == 'clothes')
+                                        <tr>
+                                            <td>Color</td>
+                                            <td><input class="color" type="text" value="{{$product['attributes']['color']}}"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Size</td>
+                                            <td><input class="size" type="text" value="{{$product['attributes']['size']}}"></td>
+                                        </tr>
+                                    @endif
                                     <tr>
                                         <td>Sale</td>
                                         <td>
@@ -65,6 +67,10 @@
                                     <tr>
                                         <td>Stock</td>
                                         <td><input class="stock" type="text" value="{{$product['attributes']['stock']}}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Image</td>
+                                        <td><input class="img" type="text" value="{{$product['attributes']['img']}}"></td>
                                     </tr>
                                 </table>
                             </td>

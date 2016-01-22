@@ -172,7 +172,7 @@ class AdminController extends Controller
 //                    'img' => 'string'
 //                ]);
 
-                dd($this);
+
 
                 if($request['sale'] == 1){
 
@@ -180,6 +180,7 @@ class AdminController extends Controller
                 } else {
                     $sale_price = '';
                 }
+
 
                 $product = \App\Product::find($request['game_id']);
 
@@ -194,7 +195,7 @@ class AdminController extends Controller
                 $product->sale_price = $sale_price;
                 $product->stock = $request['stock'];
                 $product->img = $request['img'];
-
+                
                 $product->save();
 
                 echo true;

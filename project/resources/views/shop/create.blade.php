@@ -47,12 +47,12 @@
             </div>
 
             <div class="form-group">
-                <label for="color">Color</label>
+                <label for="color">Color     (clothes only)</label>
                 <input class="form-control" type="text" name="color" placeholder="Example: Red,Green,Blue" >
             </div>
 
             <div class="form-group">
-                <label for="size">Size</label>
+                <label for="size">Size     (clothes only)</label>
                 <input class="form-control" type="text" name="size" placeholder="Example: S,M,L" >
             </div>
 
