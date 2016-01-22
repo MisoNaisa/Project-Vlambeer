@@ -133,10 +133,10 @@ So if you?re a Vlambeer fan, why not proudly wear their iconic logo on your ches
     //klopt
         DB::table('product')->insert([
             'name'              =>'"Dancing Vlambeer" Mens T-Shirt',
-            'description'       =>'Why is he dancing? I don’t know!
-He is on fire. I’d imagine it hurts.
-Maybe he’s dancing because he’s on a shirt that represents the hard work and dedication of Vlambeer, the developer that loves to make hard indie games.
-Games so hard that sometimes you might feel like you’re on fire!',
+            'description'       =>'Why is he dancing? I donï¿½t know!
+He is on fire. Iï¿½d imagine it hurts.
+Maybe heï¿½s dancing because heï¿½s on a shirt that represents the hard work and dedication of Vlambeer, the developer that loves to make hard indie games.
+Games so hard that sometimes you might feel like youï¿½re on fire!',
             'price'             =>'18.00',
             'category'          =>'clothes',
             'color'             =>'Burnt Black',
@@ -150,7 +150,7 @@ Games so hard that sometimes you might feel like you’re on fire!',
     //klopt
         DB::table('product')->insert([
             'name'              =>'"GUN GODZ" Mens T-Shirt',
-            'description'       =>'Hey, man. If you’re gonna travel all the way to Venus to battle hip-hop gangsters with a golden revolver, you may as well do it in style!
+            'description'       =>'Hey, man. If youï¿½re gonna travel all the way to Venus to battle hip-hop gangsters with a golden revolver, you may as well do it in style!
 Why not try wearing this stylish
 double-sided (and limited edition) Venusian apparel, and display your love for Y.V., the demigod of guns!
 A limited run shirt design from the Vlambeer game GUN GODZ!',
@@ -168,8 +168,8 @@ A limited run shirt design from the Vlambeer game GUN GODZ!',
         DB::table('product')->insert([
             'name'              =>'"LUFTRAUSERS" Mens T-Shirt',
             'description'       =>'Stylish. Deadly. Beautiful. Strong.
-These are all words that not only describe the masterful airship that is a Luftrauser… but this shirt adorning the ships themselves!
-What’s that rookie? You’ve never piloted a Luftrauser before? Pick up LUFTRAUSERS today on PC, Mac, PlayStation 3, PSVita or Linux!',
+These are all words that not only describe the masterful airship that is a Luftrauserï¿½ but this shirt adorning the ships themselves!
+Whatï¿½s that rookie? Youï¿½ve never piloted a Luftrauser before? Pick up LUFTRAUSERS today on PC, Mac, PlayStation 3, PSVita or Linux!',
             'price'             =>'17.99',
             'category'          =>'clothes',
             'color'             =>'Battalion Beige',
@@ -184,8 +184,8 @@ What’s that rookie? You’ve never piloted a Luftrauser before? Pick up LUFTRAUSER
         DB::table('product')->insert([
             'name'              =>'"LUFTRAUSERS" Ladies T-Shirt',
             'description'       =>'Stylish. Deadly. Beautiful. Strong.
-                                    These are all words that not only describe the masterful airship that is a Luftrauser… but this shirt adorning the ships themselves!
-                                    What’s that rookie? You’ve never piloted a Luftrauser before? Pick up LUFTRAUSERS today on PC, Mac, PlayStation 3, PSVita or Linux!',
+                                    These are all words that not only describe the masterful airship that is a Luftrauserï¿½ but this shirt adorning the ships themselves!
+                                    Whatï¿½s that rookie? Youï¿½ve never piloted a Luftrauser before? Pick up LUFTRAUSERS today on PC, Mac, PlayStation 3, PSVita or Linux!',
             'price'             =>'19.99',
             'category'          =>'clothes',
             'color'             =>'Cloudy Skies Creme',
@@ -252,9 +252,9 @@ Support both Vlambeer and these struggling mutants by sporting a Nuclear Throne 
         DB::table('product')->insert([
             'name'              =>'"Billys Hat" Fishing Cap',
             'description'       =>'Any angler worth his salt will tell you that fishing in the high seas is a dangerous sport.
-From the torrential rains of the Stormy Seas to the icey winds of the Arctic Floes… there’s no shortage of hazards that Billy has faced in his quest for redemption.
+From the torrential rains of the Stormy Seas to the icey winds of the Arctic Floesï¿½ thereï¿½s no shortage of hazards that Billy has faced in his quest for redemption.
 How does he survive it all? With the help of proper headwear of course!
-And now you too can protect your delicate head from the elements with this stylish replica of Billy’s fishing hat!
+And now you too can protect your delicate head from the elements with this stylish replica of Billyï¿½s fishing hat!
 Also as an added bonus, every hat comes with a limited edition Ridiculous Fishing print!',
             'price'             =>'19.99',
             'category'          =>'clothes',
@@ -269,10 +269,10 @@ Also as an added bonus, every hat comes with a limited edition Ridiculous Fishin
     //klopt
         DB::table('product')->insert([
             'name'              =>'"Clone Jelly" Mens T-Shirt',
-            'description'       =>'Billy’s been fishing the high seas for a long time, and if there’s one piece of advice he could give to an amateur like yourself… it would be to NEVER catch a Clone Jelly.
+            'description'       =>'Billyï¿½s been fishing the high seas for a long time, and if thereï¿½s one piece of advice he could give to an amateur like yourselfï¿½ it would be to NEVER catch a Clone Jelly.
 And if for some reason you do catch one, DO NOT shoot it.
-Seriously, don’t.
-Then again, if you want your fishing trip to get truly ridiculous, just keep blasting one! They’ll infinitely multiply and ruin your day!
+Seriously, donï¿½t.
+Then again, if you want your fishing trip to get truly ridiculous, just keep blasting one! Theyï¿½ll infinitely multiply and ruin your day!
 A new design from the Vlambeer mobile game Ridiculous Fishing!',
             'price'             =>'14.99',
             'category'          =>'clothes',
@@ -287,10 +287,10 @@ A new design from the Vlambeer mobile game Ridiculous Fishing!',
     //klopt
         DB::table('product')->insert([
             'name'              =>'"Clone Jelly" Ladies T-Shirt',
-            'description'       =>'Billy’s been fishing the high seas for a long time, and if there’s one piece of advice he could give to an amateur like yourself… it would be to NEVER catch a Clone Jelly.
+            'description'       =>'Billyï¿½s been fishing the high seas for a long time, and if thereï¿½s one piece of advice he could give to an amateur like yourselfï¿½ it would be to NEVER catch a Clone Jelly.
 And if for some reason you do catch one, DO NOT shoot it.
-Seriously, don’t.
-Then again, if you want your fishing trip to get truly ridiculous, just keep blasting one! They’ll infinitely multiply and ruin your day!
+Seriously, donï¿½t.
+Then again, if you want your fishing trip to get truly ridiculous, just keep blasting one! Theyï¿½ll infinitely multiply and ruin your day!
 A new design from the Vlambeer mobile game Ridiculous Fishing!',
             'price'             =>'14.99',
             'category'          =>'clothes',
@@ -305,16 +305,16 @@ A new design from the Vlambeer mobile game Ridiculous Fishing!',
     //klopt
         DB::table('product')->insert([
             'name'              =>'Luftrausers Limited Edition',
-            'description'       =>'Many years ago, the Luftrausers were an elite group of fighter pilots who couldn’t be brought down.
+            'description'       =>'Many years ago, the Luftrausers were an elite group of fighter pilots who couldnï¿½t be brought down.
 Now is your chance to not only own a copy of the game, but also a piece of history itself; a carriage bolt taken from a decommissioned Luftrauser. Only 100 of these were salvaged, so get yours quick!
 
 Features:
-• Includes a key to unlock
+ï¿½ Includes a key to unlock
  Luftrausers in your Steam
  Library
-• Includes a real life salvaged
+ï¿½ Includes a real life salvaged
  piece of a Luftrauser
-• Each certificate is
+ï¿½ Each certificate is
  individually numbered, only
  100 in existence.',
             'price'             =>'29.99',
@@ -331,7 +331,7 @@ Features:
         DB::table('product')->insert([
             'name'              =>'"The Super Crate Network" Print',
             'description'       =>'There are a lot of crates out there, each filled with powerful weapons.
-You want to make it to the top of the leaderboards? Well let me tell you something, you’re gonna have to fight your way there.
+You want to make it to the top of the leaderboards? Well let me tell you something, youï¿½re gonna have to fight your way there.
 Pick up this The Social Network inspired Vlambeer print today, and let your friends know that when it comes to Super Crate Box, you mean business!',
             'price'             =>'5.99',
             'category'          =>'miscellaneous',
@@ -343,6 +343,19 @@ Pick up this The Social Network inspired Vlambeer print today, and let your frie
             'img'               =>'http://www.levelupstudios.com/lvlup-products/levelupstudios-indieprints-vlambeer-750.jpg',
         ]);
 
+        DB::table('product')->insert([
+            'name'              =>'L. ã‚¨ãƒ«ãƒ»ãƒ­ãƒ¼ãƒ©ã‚¤ãƒˆ, Eru RÅraito',
+            'description'       =>'Character from Death Note. Be careful with your sweets! He eats much of them!',
+            'price'             =>'1000',
+            'category'          =>'miscellaneous',
+            'color'             =>'',
+            'size'              =>'',
+            'sale'              =>'1',
+            'sale_percentage'   =>'10',
+            'sale_price'        =>'',
+            'stock'             =>'10',
+            'img'               =>'https://media.giphy.com/media/ztpMY1t5VYWlO/giphy-facebook_s.jpg',
+        ]);
 
 
         //

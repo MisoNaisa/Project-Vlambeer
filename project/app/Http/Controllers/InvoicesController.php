@@ -47,6 +47,43 @@ class InvoicesController extends Controller
     {
         $cookieCart = json_decode($_COOKIE['cart'], true);
 
+        if(empty($cookieCart)){
+            $cookieCart = json_decode($_COOKIE['cart'], true);
+
+            $cart = [];
+
+            $sum = 0;
+
+            $i = 0;
+
+            foreach($cookieCart as $cartItem){
+
+                $cart[] = \App\Product::where('id', $cartItem[0])->first()->toArray();
+
+                $cart[$i]['quantity'] = $cartItem[1];
+                if($cart[$i]['sale'] == 1){
+                    $cart[$i]['total'] = $cartItem[1] * $cart[$i]['sale_price'];
+                }else{
+                    $cart[$i]['total'] = $cartItem[1] * $cart[$i]['price'];
+                }
+                $cart[$i]['color'] = $cartItem[2];
+                $cart[$i]['size'] = $cartItem[3];
+                $i++;
+
+            }
+            foreach($cart as $num){
+                if($num['sale'] == 1){
+                    $sum += $num['quantity'] * $num['sale_price'];
+                }else{
+                    $sum += $num['quantity'] * $num['price'];
+                }
+            }
+
+            $error = true;
+            return view('cart.index', compact('cart', 'sum', 'error'));
+
+        }
+
         $cart = [];
 
         $sum = 0;
@@ -76,21 +113,6 @@ class InvoicesController extends Controller
             }
         }
 
-
-//                        <input type="hidden" name="cart[products][{{$id}}][{{$item['id']}}][amount]" value="{{$item['quantity']}}" />
-//                        <input type="hidden" name="cart[products][{{$id}}][{{$item['id']}}][size]" value="{{$item['size']}}" />
-//                        <input type="hidden" name="cart[products][{{$id}}][{{$item['id']}}][color]" value="{{$item['color']}}" />
-//                        <input type="hidden" name="cart[products][{{$id}}][{{$item['id']}}][id]" value="{{$item['id']}}" />
-//
-
-
-//        $products = [];
-//        for($i=0; $i<count($request['cart']['products']); $i++){
-//            $products = array_merge($products ,$request['cart']['products'][$i]);
-//        }
-//
-//
-//
         //Paypal check out
         //Our request parameters
         $requestParams = array(
@@ -140,57 +162,57 @@ class InvoicesController extends Controller
 
         }
 
-        $orderParams = array(
-            'PAYMENTREQUEST_0_AMT' => array_sum($total),
-            'PAYMENTREQUEST_0_CURRENCYCODE' => 'EUR',
-            'PAYMENTREQUEST_0_ITEMAMT' => array_sum($total)
-        );
-
-        $paypal = new Paypal();
-        $response = $paypal -> request('SetExpressCheckout',$requestParams + $orderParams + $items);
-
-        $order = new Order;
-        $order->user_id = Auth::user()->id;
-        $order->order_date = date( 'Y-m-d H:i:s' );
-        $order->status = 0;
-        $order->paypal_token = $response['TOKEN'];
-
-        $order->save();
-
-
-
-        foreach($cart as $id => $value){
-
-                $product = Product::find($value['id']);
-
-                $order_product = new Order_Product();
-                $order_product->order_id = $order->id;
-                $order_product->product_id = $value['id'];
-                $order_product->quantity = $value['quantity'];
-
-                if (!(Empty($value['color']))) {
-                    $order_product->color = $value['color'];
-                }
-                if (!(Empty($value['size']))) {
-                    $order_product->size = $value['size'];
-                }
-
-                if($product['sale'] == 1){
-                    $order_product->price = $product->sale_price;
-                }else{
-                    $order_product->price = $product->price;
-                }
-                $order_product->save();
-            }
-
-
-        if(is_array($response) && $response['ACK'] == 'Success') { //Request successful
-
-            $token = $response['TOKEN'];
-
-            return redirect('https://www.sandbox.paypal.com/webscr?cmd=_express-checkout&token=' . urlencode($token));
-
-        }
+//        $orderParams = array(
+//            'PAYMENTREQUEST_0_AMT' => array_sum($total),
+//            'PAYMENTREQUEST_0_CURRENCYCODE' => 'EUR',
+//            'PAYMENTREQUEST_0_ITEMAMT' => array_sum($total)
+//        );
+//
+//        $paypal = new Paypal();
+//        $response = $paypal -> request('SetExpressCheckout',$requestParams + $orderParams + $items);
+//
+//        $order = new Order;
+//        $order->user_id = Auth::user()->id;
+//        $order->order_date = date( 'Y-m-d H:i:s' );
+//        $order->status = 0;
+//        $order->paypal_token = $response['TOKEN'];
+//
+//        $order->save();
+//
+//
+//
+//        foreach($cart as $id => $value){
+//
+//                $product = Product::find($value['id']);
+//
+//                $order_product = new Order_Product();
+//                $order_product->order_id = $order->id;
+//                $order_product->product_id = $value['id'];
+//                $order_product->quantity = $value['quantity'];
+//
+//                if (!(Empty($value['color']))) {
+//                    $order_product->color = $value['color'];
+//                }
+//                if (!(Empty($value['size']))) {
+//                    $order_product->size = $value['size'];
+//                }
+//
+//                if($product['sale'] == 1){
+//                    $order_product->price = $product->sale_price;
+//                }else{
+//                    $order_product->price = $product->price;
+//                }
+//                $order_product->save();
+//            }
+//
+//
+//        if(is_array($response) && $response['ACK'] == 'Success') { //Request successful
+//
+//            $token = $response['TOKEN'];
+//
+//            return redirect('https://www.sandbox.paypal.com/webscr?cmd=_express-checkout&token=' . urlencode($token));
+//
+//        }
 
 
     }

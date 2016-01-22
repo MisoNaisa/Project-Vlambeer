@@ -16,7 +16,7 @@
 
 
 
-        <form class="col-md-4 col-md-push-4" action="{{action('ProductsController@store')}}" method="POST">
+        <form class="col-md-4 col-md-push-4" action="{{action('AdminController@createProduct')}}" method="POST">
             <h1>Add Item</h1>
             {{csrf_field()}}
 

@@ -2,7 +2,7 @@
 
 @section('section')
 
-    <div class="container shopping-cart">
+    <div class="container shopping-cart @if(isset($error)) message_user @endif">
 
         <div class="title">
             <h1>Shopping cart</h1>

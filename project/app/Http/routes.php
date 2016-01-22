@@ -44,6 +44,8 @@ Route::resource('admin/user', 'UsersController');
 Route::get('/admin/shop', 'AdminController@showProduct');
 Route::resource('/admin/mail', 'MailsController');
 Route::resource('/admin', 'AdminController');
+Route::get('/admin/shop/create', 'AdminController@viewCreateProduct');
+Route::post('/admin/shop/create', 'AdminController@createProduct');
 
 route::post('/admin/ajax/games/edit', 'AdminController@editGame');
 route::post('/admin/ajax/user/edit', 'AdminController@editUser');
@@ -63,3 +65,5 @@ Route::post('login', 'Auth\AuthController@postLogin');
 Route::controllers([
     'password' => 'Auth\PasswordController',
 ]);
+
+

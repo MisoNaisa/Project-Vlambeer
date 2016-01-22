@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Game;
+use App\Product;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
 use Auth;
 
 class AdminController extends Controller
@@ -188,14 +190,18 @@ class AdminController extends Controller
                 $product->description = $request['description'];
                 $product->price = $request['price'];
                 $product->category = $request['category'];
-                $product->color = $request['color'];
-                $product->size = $request['size'];
+                if($request == 'clothes') {
+                    $product->color = $request['color'];
+                    $product->size = $request['size'];
+                }
                 $product->sale = $request['sale'];
+
+
                 $product->sale_percentage = $request['sale_percentage'];
                 $product->sale_price = $sale_price;
                 $product->stock = $request['stock'];
                 $product->img = $request['img'];
-                
+
                 $product->save();
 
                 echo true;
@@ -205,6 +211,58 @@ class AdminController extends Controller
         else{
             return view('errors.unauthorized');
         }
+    }
+
+    public function viewCreateProduct(){
+        if(Auth::check()) {
+
+            if (Auth::user()->role == 'admin') {
+
+                $product = \App\Product::all();
+                return view('shop.create', compact('product'));
+            }
+        }
+        else{
+            return view('errors.unauthorized');
+        }
+    }
+
+    public function createProduct(Request $request){
+
+        $this->validate($request,[
+            'name' => 'required|max:50|string',
+            'description' => 'required|string',
+            'price' => 'numeric',
+            'category' => 'string',
+            'sale' => 'boolean',
+            'sale_percentage' => 'numeric',
+            'stock' => 'numeric',
+            'img' => 'string'
+        ]);
+
+        if($request['sale'] == 1){
+
+            $sale_price = ((100 - $request['sale_percentage']) / 100 * $request['price']);
+        } else {
+            $sale_price = '';
+        }
+
+        $product = new Product;
+        $product->name              = $request->input('name');
+        $product->description       = $request->input('description');
+        $product->price             = $request->input('price');
+        $product->category          = $request->input('category');
+        $product->color             = $request->input('color');
+        $product->size              = $request->input('size');
+        $product->sale              = $request->input('sale');
+        $product->sale_percentage   = $request->input('sale_percentage');
+        $product->sale_price        = $sale_price;
+        $product->stock             = $request->input('stock');
+        $product->img               = $request->input('img');
+
+        $product->save();
+
+        return redirect('admin/shop')->with('message', 'Product created succesfully');
     }
 
     public function update(Request $request, $id)

@@ -206,8 +206,15 @@ class ProductsController extends Controller
 
         $gameInfo = $games->getAllGameInfoById(34402);
 
-        $productimg = \App\Product::where('sale', 1)->get();
+        $productimg = Product::query()
+            ->orderByRaw("RAND()")
+            ->limit(5)
+            ->get();
 
-        return view('shop.index', compact('gameInfo', 'productArray', 'productimg'));
+        $product_sale_img = Product::query()
+            ->where('sale', 1)
+            ->get();
+
+        return view('shop.index', compact('gameInfo', 'productArray', 'productimg', 'product_sale_img'));
     }
 }
