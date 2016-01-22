@@ -66,6 +66,10 @@
                                         <td>Stock</td>
                                         <td><input class="stock" type="text" value="{{$product['attributes']['stock']}}"></td>
                                     </tr>
+                                    <tr>
+                                        <td>Image</td>
+                                        <td><input class="img" type="text" value="{{$product['attributes']['img']}}"></td>
+                                    </tr>
                                 </table>
                             </td>
                         </tr>
