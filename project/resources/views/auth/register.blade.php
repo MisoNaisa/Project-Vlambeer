@@ -83,7 +83,14 @@
                 <label for="country">Country</label>
                 <input class="form-control" type="text" name="country" value="{{ old('country') }}">
             </div>
-
+            
+            <div class="form-group">
+                <label for="newsletter">Newsletter</label>
+                <select name="newsletter">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
             <div class="form-group">
                 <input class="btn btn-primary" type="submit">
             </div>
