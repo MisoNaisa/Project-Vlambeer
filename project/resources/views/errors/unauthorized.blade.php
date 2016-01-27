@@ -23,7 +23,9 @@
                 <input class="btn btn-primary" type="submit" value="Login">
             </div>
 
-
+            <div class="form-group">
+                <a href="/register" class="btn btn-primary">Register</a>
+            </div>
         </form>
     </div>
 @endsection
